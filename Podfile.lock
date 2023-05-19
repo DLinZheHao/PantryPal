@@ -1,0 +1,20 @@
+PODS:
+  - MJRefresh (3.7.5)
+  - SwiftLint (0.52.2)
+
+DEPENDENCIES:
+  - MJRefresh
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - MJRefresh
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  SwiftLint: 1ac76dac888ca05cb0cf24d0c85887ec1209961d
+
+PODFILE CHECKSUM: 85bd4a5f70823c83f10e029b7ddefee4b2747966
+
+COCOAPODS: 1.12.0
