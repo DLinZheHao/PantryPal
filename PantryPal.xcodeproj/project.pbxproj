@@ -91,7 +91,6 @@
 				0326F2F00EBE78192A8E555F /* Pods-PantryPal.debug.xcconfig */,
 				950F5E5A7A08087526701DF8 /* Pods-PantryPal.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,6 +106,7 @@
 				05ED19612A1766590023A13E /* Frameworks */,
 				05ED19622A1766590023A13E /* Resources */,
 				70D43A2D007D6276568045F3 /* [CP] Embed Pods Frameworks */,
+				05ED197E2A1767C60023A13E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -164,6 +164,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05ED197E2A1767C60023A13E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		70D43A2D007D6276568045F3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
