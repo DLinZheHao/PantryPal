@@ -1,20 +1,28 @@
 PODS:
+  - IQKeyboardManagerSwift (6.5.11)
+  - JTAppleCalendar (7.1.8)
   - MJRefresh (3.7.5)
   - SwiftLint (0.52.2)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - JTAppleCalendar (~> 7.1)
   - MJRefresh
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - IQKeyboardManagerSwift
+    - JTAppleCalendar
     - MJRefresh
     - SwiftLint
 
 SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
+  JTAppleCalendar: b7fb40852f5f319fe55c8ec3861f1de0edc99cc8
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   SwiftLint: 1ac76dac888ca05cb0cf24d0c85887ec1209961d
 
-PODFILE CHECKSUM: 85bd4a5f70823c83f10e029b7ddefee4b2747966
+PODFILE CHECKSUM: 05d810469cd0d977c37f0725083a3fe0c5ef2f56
 
 COCOAPODS: 1.12.0

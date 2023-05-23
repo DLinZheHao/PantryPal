@@ -8,4 +8,6 @@ target 'PantryPal' do
   # Pods for PantryPal
   pod 'SwiftLint'
   pod 'MJRefresh'
+  pod 'JTAppleCalendar', '~> 7.1'
+  pod 'IQKeyboardManagerSwift'
 end
