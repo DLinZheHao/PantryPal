@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		05ED19682A1766590023A13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19672A1766590023A13E /* AppDelegate.swift */; };
 		05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19692A1766590023A13E /* SceneDelegate.swift */; };
-		05ED196C2A1766590023A13E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* ViewController.swift */; };
+		05ED196C2A1766590023A13E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* LoginViewController.swift */; };
 		05ED196F2A1766590023A13E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ED196D2A1766590023A13E /* Main.storyboard */; };
 		05ED19722A1766590023A13E /* PantryPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19702A1766590023A13E /* PantryPal.xcdatamodeld */; };
 		05ED19742A17665A0023A13E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05ED19732A17665A0023A13E /* Assets.xcassets */; };
@@ -50,7 +50,7 @@
 		05ED19642A1766590023A13E /* PantryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED19672A1766590023A13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED19692A1766590023A13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		05ED196B2A1766590023A13E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		05ED196B2A1766590023A13E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		05ED196E2A1766590023A13E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05ED19712A1766590023A13E /* PantryPal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PantryPal.xcdatamodel; sourceTree = "<group>"; };
 		05ED19732A17665A0023A13E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			children = (
 				05ED19672A1766590023A13E /* AppDelegate.swift */,
 				05ED19692A1766590023A13E /* SceneDelegate.swift */,
-				05ED196B2A1766590023A13E /* ViewController.swift */,
+				05ED196B2A1766590023A13E /* LoginViewController.swift */,
 				05ED196D2A1766590023A13E /* Main.storyboard */,
 				05ED19732A17665A0023A13E /* Assets.xcassets */,
 				05ED19752A17665A0023A13E /* LaunchScreen.storyboard */,
@@ -317,7 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05ED196C2A1766590023A13E /* ViewController.swift in Sources */,
+				05ED196C2A1766590023A13E /* LoginViewController.swift in Sources */,
 				05ED19722A1766590023A13E /* PantryPal.xcdatamodeld in Sources */,
 				05ED19682A1766590023A13E /* AppDelegate.swift in Sources */,
 				05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */,
