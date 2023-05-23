@@ -44,6 +44,7 @@
 		05ED1AB12A1C988E0023A13E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05ED1AB02A1C988E0023A13E /* GoogleService-Info.plist */; };
 		05ED1AB52A1CA2DE0023A13E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED1AB42A1CA2DE0023A13E /* RegisterViewController.swift */; };
 		05ED1AB72A1CA2F70023A13E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED1AB62A1CA2F70023A13E /* SignInViewController.swift */; };
+		05ED1ABB2A1CA63E0023A13E /* InformationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED1ABA2A1CA63E0023A13E /* InformationStackView.swift */; };
 		1D4E96006AE97AE367D41801 /* Pods_PantryPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6A1EA9F5C052F834352855 /* Pods_PantryPal.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		05ED1AB02A1C988E0023A13E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05ED1AB42A1CA2DE0023A13E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		05ED1AB62A1CA2F70023A13E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		05ED1ABA2A1CA63E0023A13E /* InformationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStackView.swift; sourceTree = "<group>"; };
 		950F5E5A7A08087526701DF8 /* Pods-PantryPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PantryPal.release.xcconfig"; path = "Target Support Files/Pods-PantryPal/Pods-PantryPal.release.xcconfig"; sourceTree = "<group>"; };
 		9D6A1EA9F5C052F834352855 /* Pods_PantryPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PantryPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -127,9 +129,9 @@
 			children = (
 				05ED1AB22A1CA0E30023A13E /* Views */,
 				05ED19672A1766590023A13E /* AppDelegate.swift */,
+				05ED19732A17665A0023A13E /* Assets.xcassets */,
 				05ED19692A1766590023A13E /* SceneDelegate.swift */,
 				05ED196D2A1766590023A13E /* Main.storyboard */,
-				05ED19732A17665A0023A13E /* Assets.xcassets */,
 				05ED19752A17665A0023A13E /* LaunchScreen.storyboard */,
 				05ED1AB02A1C988E0023A13E /* GoogleService-Info.plist */,
 				05ED19782A17665A0023A13E /* Info.plist */,
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				05ED1AB62A1CA2F70023A13E /* SignInViewController.swift */,
+				05ED1ABA2A1CA63E0023A13E /* InformationStackView.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05ED1ABB2A1CA63E0023A13E /* InformationStackView.swift in Sources */,
 				05ED196C2A1766590023A13E /* LoginViewController.swift in Sources */,
 				05ED1AB52A1CA2DE0023A13E /* RegisterViewController.swift in Sources */,
 				05ED1AB72A1CA2F70023A13E /* SignInViewController.swift in Sources */,
