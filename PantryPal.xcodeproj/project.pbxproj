@@ -42,6 +42,8 @@
 		05ED1AAD2A1C93400023A13E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 05ED1AAC2A1C93400023A13E /* FirebaseStorage */; };
 		05ED1AAF2A1C93400023A13E /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 05ED1AAE2A1C93400023A13E /* FirebaseStorageCombine-Community */; };
 		05ED1AB12A1C988E0023A13E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05ED1AB02A1C988E0023A13E /* GoogleService-Info.plist */; };
+		05ED1AB52A1CA2DE0023A13E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED1AB42A1CA2DE0023A13E /* RegisterViewController.swift */; };
+		05ED1AB72A1CA2F70023A13E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED1AB62A1CA2F70023A13E /* SignInViewController.swift */; };
 		1D4E96006AE97AE367D41801 /* Pods_PantryPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6A1EA9F5C052F834352855 /* Pods_PantryPal.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		05ED19762A17665A0023A13E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05ED19782A17665A0023A13E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05ED1AB02A1C988E0023A13E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		05ED1AB42A1CA2DE0023A13E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		05ED1AB62A1CA2F70023A13E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		950F5E5A7A08087526701DF8 /* Pods-PantryPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PantryPal.release.xcconfig"; path = "Target Support Files/Pods-PantryPal/Pods-PantryPal.release.xcconfig"; sourceTree = "<group>"; };
 		9D6A1EA9F5C052F834352855 /* Pods_PantryPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PantryPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,9 +125,9 @@
 		05ED19662A1766590023A13E /* PantryPal */ = {
 			isa = PBXGroup;
 			children = (
+				05ED1AB22A1CA0E30023A13E /* Views */,
 				05ED19672A1766590023A13E /* AppDelegate.swift */,
 				05ED19692A1766590023A13E /* SceneDelegate.swift */,
-				05ED196B2A1766590023A13E /* LoginViewController.swift */,
 				05ED196D2A1766590023A13E /* Main.storyboard */,
 				05ED19732A17665A0023A13E /* Assets.xcassets */,
 				05ED19752A17665A0023A13E /* LaunchScreen.storyboard */,
@@ -132,6 +136,40 @@
 				05ED19702A1766590023A13E /* PantryPal.xcdatamodeld */,
 			);
 			path = PantryPal;
+			sourceTree = "<group>";
+		};
+		05ED1AB22A1CA0E30023A13E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05ED1AB92A1CA3160023A13E /* Register */,
+				05ED1AB82A1CA3080023A13E /* SignIn */,
+				05ED1AB32A1CA0F00023A13E /* Login */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		05ED1AB32A1CA0F00023A13E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				05ED196B2A1766590023A13E /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		05ED1AB82A1CA3080023A13E /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				05ED1AB62A1CA2F70023A13E /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		05ED1AB92A1CA3160023A13E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				05ED1AB42A1CA2DE0023A13E /* RegisterViewController.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		19ABFE95C280C8C18AB53C58 /* Frameworks */ = {
@@ -318,6 +356,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				05ED196C2A1766590023A13E /* LoginViewController.swift in Sources */,
+				05ED1AB52A1CA2DE0023A13E /* RegisterViewController.swift in Sources */,
+				05ED1AB72A1CA2F70023A13E /* SignInViewController.swift in Sources */,
 				05ED19722A1766590023A13E /* PantryPal.xcdatamodeld in Sources */,
 				05ED19682A1766590023A13E /* AppDelegate.swift in Sources */,
 				05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */,
