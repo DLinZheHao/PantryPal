@@ -7,7 +7,7 @@
 import Firebase
 
 // 检查电子邮件是否已验证
-func checkEmailVerification(_ controller: UIViewController) -> Bool  {
+func checkEmailVerification(_ controller: UIViewController) -> Bool {
     guard let user = Auth.auth().currentUser else {
         print("用户未登录")
         situationJudgment(0, controller)
