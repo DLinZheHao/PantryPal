@@ -51,7 +51,6 @@
 		05ED1ACA2A1D8DEF0023A13E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED1AC92A1D8DEF0023A13E /* Alert.swift */; };
 		05ED1ACE2A1D971E0023A13E /* FridgeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED1ACC2A1D971E0023A13E /* FridgeListViewController.swift */; };
 		05ED1AD12A1D98120023A13E /* FridgeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ED1AD02A1D98120023A13E /* FridgeList.storyboard */; };
-		05ED1AD32A1D99220023A13E /* GetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED1AD22A1D99220023A13E /* GetController.swift */; };
 		1D4E96006AE97AE367D41801 /* Pods_PantryPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6A1EA9F5C052F834352855 /* Pods_PantryPal.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +75,6 @@
 		05ED1AC92A1D8DEF0023A13E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		05ED1ACC2A1D971E0023A13E /* FridgeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeListViewController.swift; sourceTree = "<group>"; };
 		05ED1AD02A1D98120023A13E /* FridgeList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FridgeList.storyboard; sourceTree = "<group>"; };
-		05ED1AD22A1D99220023A13E /* GetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetController.swift; sourceTree = "<group>"; };
 		950F5E5A7A08087526701DF8 /* Pods-PantryPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PantryPal.release.xcconfig"; path = "Target Support Files/Pods-PantryPal/Pods-PantryPal.release.xcconfig"; sourceTree = "<group>"; };
 		9D6A1EA9F5C052F834352855 /* Pods_PantryPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PantryPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -198,7 +196,6 @@
 				05ED1ABD2A1CF4A40023A13E /* UserDataInit.swift */,
 				05ED1AC32A1CFAD30023A13E /* CheckEmailVerification.swift */,
 				05ED1AC92A1D8DEF0023A13E /* Alert.swift */,
-				05ED1AD22A1D99220023A13E /* GetController.swift */,
 			);
 			path = Methods;
 			sourceTree = "<group>";
@@ -407,7 +404,6 @@
 				05ED1AC82A1CFC330023A13E /* SigninStackView.swift in Sources */,
 				05ED1ACA2A1D8DEF0023A13E /* Alert.swift in Sources */,
 				05ED19682A1766590023A13E /* AppDelegate.swift in Sources */,
-				05ED1AD32A1D99220023A13E /* GetController.swift in Sources */,
 				05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

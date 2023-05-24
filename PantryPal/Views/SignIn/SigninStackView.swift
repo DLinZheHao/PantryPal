@@ -27,7 +27,10 @@ class SigninStackView: UIStackView {
             controller.view.endEditing(true)
             print("成功登入")
             
-            
+//            guard let nextVC = ViewControllerMember.FridgeListViewController.getViewController() as? FridgeListViewController else { return }
+//
+//            nextVC.modalPresentationStyle = .fullScreen
+//            controller.present(nextVC, animated: true, completion: nil)
         }
     }
 }
