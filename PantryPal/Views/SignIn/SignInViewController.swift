@@ -9,16 +9,13 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
-    @IBOutlet weak var informationStackView: InformationStackView!
-    
+    @IBOutlet weak var signInStackView: SigninStackView!
+    @IBAction func signIn() {
+        signInStackView.signIn(self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
-}
-extension SignInViewController {
-    
-    @IBAction func tapRegister() {
-        informationStackView.register(self)
-    }
 }
