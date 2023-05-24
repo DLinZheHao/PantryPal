@@ -35,6 +35,7 @@ func createNewFridge(_ name: String) {
     ]
     membersDocument.setData(userIdData)
     
+    let fridgeDocumentId = document.documentID
     // 將創建使用者的資料加入創建冰箱
     let users = Firestore.firestore().collection("users")
     let currentUserData = users.document(currentUserId)
@@ -47,8 +48,8 @@ func createNewFridge(_ name: String) {
                 if var joinFridgesArray = data["join_fridges"] as? [String],
                    var ownFridgesArray = data["own_fridges"] as? [String] { // 將 arrayProperty 屬性轉換為 [String] 類型
                     // 修改陣列資料
-                    joinFridgesArray.append(document.documentID)
-                    ownFridgesArray.append(document.documentID)
+                    joinFridgesArray.append(fridgeDocumentId)
+                    ownFridgesArray.append(fridgeDocumentId)
                     
                     // 將修改後的陣列資料重新寫入屬性
                     data["join_fridges"] = joinFridgesArray

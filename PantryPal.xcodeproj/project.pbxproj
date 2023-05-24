@@ -12,6 +12,10 @@
 		051AC6922A1DA67C00B23C63 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6912A1DA67C00B23C63 /* UITableView+Extension.swift */; };
 		051AC6942A1DA72300B23C63 /* FetchFridgesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6932A1DA72300B23C63 /* FetchFridgesData.swift */; };
 		051AC6962A1DAA6C00B23C63 /* CreatNewFridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6952A1DAA6C00B23C63 /* CreatNewFridge.swift */; };
+		051AC6982A1DD98500B23C63 /* FridgeListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6972A1DD98500B23C63 /* FridgeListTableView.swift */; };
+		051AC69C2A1DDB2C00B23C63 /* FridgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC69B2A1DDB2C00B23C63 /* FridgeData.swift */; };
+		051AC69F2A1DED1F00B23C63 /* CreateFridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC69E2A1DED1F00B23C63 /* CreateFridgeView.swift */; };
+		051AC6A12A1DED2E00B23C63 /* CreateFridgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6A02A1DED2E00B23C63 /* CreateFridgeView.xib */; };
 		05ED19682A1766590023A13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19672A1766590023A13E /* AppDelegate.swift */; };
 		05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19692A1766590023A13E /* SceneDelegate.swift */; };
 		05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* LobbyViewController.swift */; };
@@ -67,6 +71,10 @@
 		051AC6912A1DA67C00B23C63 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		051AC6932A1DA72300B23C63 /* FetchFridgesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFridgesData.swift; sourceTree = "<group>"; };
 		051AC6952A1DAA6C00B23C63 /* CreatNewFridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatNewFridge.swift; sourceTree = "<group>"; };
+		051AC6972A1DD98500B23C63 /* FridgeListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeListTableView.swift; sourceTree = "<group>"; };
+		051AC69B2A1DDB2C00B23C63 /* FridgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeData.swift; sourceTree = "<group>"; };
+		051AC69E2A1DED1F00B23C63 /* CreateFridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFridgeView.swift; sourceTree = "<group>"; };
+		051AC6A02A1DED2E00B23C63 /* CreateFridgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateFridgeView.xib; sourceTree = "<group>"; };
 		05ED19642A1766590023A13E /* PantryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED19672A1766590023A13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED19692A1766590023A13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +147,31 @@
 			path = FridgeCell;
 			sourceTree = "<group>";
 		};
+		051AC6992A1DDB0200B23C63 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				051AC69A2A1DDB1200B23C63 /* Fridge */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		051AC69A2A1DDB1200B23C63 /* Fridge */ = {
+			isa = PBXGroup;
+			children = (
+				051AC69B2A1DDB2C00B23C63 /* FridgeData.swift */,
+			);
+			path = Fridge;
+			sourceTree = "<group>";
+		};
+		051AC69D2A1DEC8C00B23C63 /* CreateFridgeView */ = {
+			isa = PBXGroup;
+			children = (
+				051AC69E2A1DED1F00B23C63 /* CreateFridgeView.swift */,
+				051AC6A02A1DED2E00B23C63 /* CreateFridgeView.xib */,
+			);
+			path = CreateFridgeView;
+			sourceTree = "<group>";
+		};
 		05ED195B2A1766590023A13E = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +193,7 @@
 		05ED19662A1766590023A13E /* PantryPal */ = {
 			isa = PBXGroup;
 			children = (
+				051AC6992A1DDB0200B23C63 /* Models */,
 				05ED1AD42A1D9E060023A13E /* Extensions */,
 				05ED1ABC2A1CF48A0023A13E /* Methods */,
 				05ED1AB22A1CA0E30023A13E /* Views */,
@@ -227,8 +261,10 @@
 		05ED1ACB2A1D96E70023A13E /* FridgeList */ = {
 			isa = PBXGroup;
 			children = (
+				051AC69D2A1DEC8C00B23C63 /* CreateFridgeView */,
 				051AC68A2A1DA4CD00B23C63 /* FridgeCell */,
 				05ED1ACC2A1D971E0023A13E /* FridgeListViewController.swift */,
+				051AC6972A1DD98500B23C63 /* FridgeListTableView.swift */,
 				05ED1AD02A1D98120023A13E /* FridgeList.storyboard */,
 			);
 			path = FridgeList;
@@ -354,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05ED19772A17665A0023A13E /* LaunchScreen.storyboard in Resources */,
+				051AC6A12A1DED2E00B23C63 /* CreateFridgeView.xib in Resources */,
 				05ED1AC22A1CF8E70023A13E /* GoogleService-Info.plist in Resources */,
 				051AC6902A1DA51600B23C63 /* FridgeCell.xib in Resources */,
 				05ED19742A17665A0023A13E /* Assets.xcassets in Resources */,
@@ -428,12 +465,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051AC69C2A1DDB2C00B23C63 /* FridgeData.swift in Sources */,
+				051AC69F2A1DED1F00B23C63 /* CreateFridgeView.swift in Sources */,
 				05ED1ABB2A1CA63E0023A13E /* InformationStackView.swift in Sources */,
 				05ED1ACE2A1D971E0023A13E /* FridgeListViewController.swift in Sources */,
 				051AC6922A1DA67C00B23C63 /* UITableView+Extension.swift in Sources */,
 				05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */,
 				05ED1ABE2A1CF4A40023A13E /* UserDataInit.swift in Sources */,
 				05ED1AB72A1CA2F70023A13E /* RegisterViewController.swift in Sources */,
+				051AC6982A1DD98500B23C63 /* FridgeListTableView.swift in Sources */,
 				051AC6962A1DAA6C00B23C63 /* CreatNewFridge.swift in Sources */,
 				05ED1AD62A1D9E2F0023A13E /* UIStoryboard+Extension.swift in Sources */,
 				05ED1AC42A1CFAD30023A13E /* CheckEmailVerification.swift in Sources */,
