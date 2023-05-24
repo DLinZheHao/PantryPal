@@ -26,6 +26,8 @@ class SigninStackView: UIStackView {
             }
             controller.view.endEditing(true)
             print("成功登入")
+            
+            
         }
     }
 }
