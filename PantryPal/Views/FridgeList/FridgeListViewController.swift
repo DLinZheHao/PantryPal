@@ -24,6 +24,11 @@ class FridgeListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let barAppearance = UINavigationBarAppearance()
+        barAppearance.configureWithDefaultBackground()
+        barAppearance.backgroundEffect = UIBlurEffect(style: .systemMaterialDark)
+        UINavigationBar.appearance().scrollEdgeAppearance = barAppearance
+        
         fridgeListTableView.lk_registerCellWithNib(identifier: String(describing: FridgeCell.self), bundle: nil)
         
         fetchFridgeData { [weak self] getData in
@@ -61,18 +66,31 @@ extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         fridgeCell.nameLabel.text = fridges[indexPath.row].name
-        print("送出cell")
+        fridgeCell.selectionStyle = .default // 设置选择样式
         return fridgeCell
     }
     
-    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return false // 返回 false，不显示选中状态的动画
-    }
+//    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+//        return false // 返回 false，不显示选中状态的动画
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        let selectedCell = tableView.cellForRow(at: indexPath)
+        guard let nextVC = UIStoryboard.fridgeTabBar.instantiateViewController(
+            withIdentifier: String(describing: FridgeTabBarController.self)) as? FridgeTabBarController
+        else {
+            print("創建失敗")
+            return
+        }
+        guard let navigationController = self.navigationController else {
+            print("导航控制器不存在")
+            return
+        }
+        nextVC.fridgeId = fridges[indexPath.row].id
+        navigationController.pushViewController(nextVC, animated: true)
     }
 }
+
 extension FridgeListViewController {
     
     private func setUpCreatFridgeView() {

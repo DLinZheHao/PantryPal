@@ -1,12 +1,14 @@
 //
-//  FridgeData.swift
+//  FridgeAllData.swift
 //  PantryPal
 //
 //  Created by 林哲豪 on 2023/5/25.
 //
 
-struct FridgeData {
+struct FridgeAllData {
     let id: String
     let name: String
     let createdTime: Double
+    let ingredients: [IngredientData]?
+    let members: [MemberData]
 }

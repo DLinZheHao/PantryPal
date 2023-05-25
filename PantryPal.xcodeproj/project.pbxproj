@@ -13,13 +13,21 @@
 		051AC6942A1DA72300B23C63 /* FetchFridgesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6932A1DA72300B23C63 /* FetchFridgesData.swift */; };
 		051AC6962A1DAA6C00B23C63 /* CreatNewFridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6952A1DAA6C00B23C63 /* CreatNewFridge.swift */; };
 		051AC6982A1DD98500B23C63 /* FridgeListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6972A1DD98500B23C63 /* FridgeListTableView.swift */; };
-		051AC69C2A1DDB2C00B23C63 /* FridgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC69B2A1DDB2C00B23C63 /* FridgeData.swift */; };
 		051AC69F2A1DED1F00B23C63 /* CreateFridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC69E2A1DED1F00B23C63 /* CreateFridgeView.swift */; };
 		051AC6A12A1DED2E00B23C63 /* CreateFridgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6A02A1DED2E00B23C63 /* CreateFridgeView.xib */; };
 		051AC6A52A1EE18F00B23C63 /* FridgeTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6A42A1EE18F00B23C63 /* FridgeTabBar.storyboard */; };
 		051AC6A72A1EE1F500B23C63 /* FridgeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6A62A1EE1F500B23C63 /* FridgeTabBarController.swift */; };
 		051AC6AB2A1EE43000B23C63 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6A92A1EE43000B23C63 /* IngredientsViewController.swift */; };
 		051AC6AE2A1EE44B00B23C63 /* Ingredients.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6AD2A1EE44B00B23C63 /* Ingredients.storyboard */; };
+		051AC6B02A1EF9F300B23C63 /* GetFridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6AF2A1EF9F300B23C63 /* GetFridge.swift */; };
+		051AC6B32A1F089600B23C63 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6B22A1F089600B23C63 /* Calendar.storyboard */; };
+		051AC6B52A1F08A900B23C63 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6B42A1F08A900B23C63 /* CalendarViewController.swift */; };
+		051AC6B72A1F09BB00B23C63 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6B62A1F09BB00B23C63 /* UIImage+Extension.swift */; };
+		051AC6B92A1F1B2B00B23C63 /* UserLastUseFridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6B82A1F1B2B00B23C63 /* UserLastUseFridge.swift */; };
+		051AC6BB2A1F27C400B23C63 /* FridgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6BA2A1F27C400B23C63 /* FridgeData.swift */; };
+		051AC6BE2A1F2E9E00B23C63 /* MemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6BD2A1F2E9E00B23C63 /* MemberData.swift */; };
+		051AC6C12A1F360200B23C63 /* IngredientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6C02A1F360200B23C63 /* IngredientsData.swift */; };
+		051AC6C32A1F58F700B23C63 /* FridgeAllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6C22A1F58F700B23C63 /* FridgeAllData.swift */; };
 		05ED19682A1766590023A13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19672A1766590023A13E /* AppDelegate.swift */; };
 		05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19692A1766590023A13E /* SceneDelegate.swift */; };
 		05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* LobbyViewController.swift */; };
@@ -76,13 +84,21 @@
 		051AC6932A1DA72300B23C63 /* FetchFridgesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFridgesData.swift; sourceTree = "<group>"; };
 		051AC6952A1DAA6C00B23C63 /* CreatNewFridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatNewFridge.swift; sourceTree = "<group>"; };
 		051AC6972A1DD98500B23C63 /* FridgeListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeListTableView.swift; sourceTree = "<group>"; };
-		051AC69B2A1DDB2C00B23C63 /* FridgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeData.swift; sourceTree = "<group>"; };
 		051AC69E2A1DED1F00B23C63 /* CreateFridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFridgeView.swift; sourceTree = "<group>"; };
 		051AC6A02A1DED2E00B23C63 /* CreateFridgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateFridgeView.xib; sourceTree = "<group>"; };
 		051AC6A42A1EE18F00B23C63 /* FridgeTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FridgeTabBar.storyboard; sourceTree = "<group>"; };
 		051AC6A62A1EE1F500B23C63 /* FridgeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeTabBarController.swift; sourceTree = "<group>"; };
 		051AC6A92A1EE43000B23C63 /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
 		051AC6AD2A1EE44B00B23C63 /* Ingredients.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ingredients.storyboard; sourceTree = "<group>"; };
+		051AC6AF2A1EF9F300B23C63 /* GetFridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFridge.swift; sourceTree = "<group>"; };
+		051AC6B22A1F089600B23C63 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		051AC6B42A1F08A900B23C63 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		051AC6B62A1F09BB00B23C63 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		051AC6B82A1F1B2B00B23C63 /* UserLastUseFridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLastUseFridge.swift; sourceTree = "<group>"; };
+		051AC6BA2A1F27C400B23C63 /* FridgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeData.swift; sourceTree = "<group>"; };
+		051AC6BD2A1F2E9E00B23C63 /* MemberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberData.swift; sourceTree = "<group>"; };
+		051AC6C02A1F360200B23C63 /* IngredientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsData.swift; sourceTree = "<group>"; };
+		051AC6C22A1F58F700B23C63 /* FridgeAllData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeAllData.swift; sourceTree = "<group>"; };
 		05ED19642A1766590023A13E /* PantryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED19672A1766590023A13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED19692A1766590023A13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +174,8 @@
 		051AC6992A1DDB0200B23C63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				051AC6BF2A1F35EB00B23C63 /* Ingredients */,
+				051AC6BC2A1F2E8A00B23C63 /* Member */,
 				051AC69A2A1DDB1200B23C63 /* Fridge */,
 			);
 			path = Models;
@@ -166,7 +184,8 @@
 		051AC69A2A1DDB1200B23C63 /* Fridge */ = {
 			isa = PBXGroup;
 			children = (
-				051AC69B2A1DDB2C00B23C63 /* FridgeData.swift */,
+				051AC6BA2A1F27C400B23C63 /* FridgeData.swift */,
+				051AC6C22A1F58F700B23C63 /* FridgeAllData.swift */,
 			);
 			path = Fridge;
 			sourceTree = "<group>";
@@ -189,13 +208,38 @@
 			path = Fridge;
 			sourceTree = "<group>";
 		};
-		051AC6A82A1EE3CD00B23C63 /* Ingredient */ = {
+		051AC6A82A1EE3CD00B23C63 /* Ingredients */ = {
 			isa = PBXGroup;
 			children = (
 				051AC6AD2A1EE44B00B23C63 /* Ingredients.storyboard */,
 				051AC6A92A1EE43000B23C63 /* IngredientsViewController.swift */,
 			);
-			path = Ingredient;
+			path = Ingredients;
+			sourceTree = "<group>";
+		};
+		051AC6B12A1F085200B23C63 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				051AC6B22A1F089600B23C63 /* Calendar.storyboard */,
+				051AC6B42A1F08A900B23C63 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		051AC6BC2A1F2E8A00B23C63 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				051AC6BD2A1F2E9E00B23C63 /* MemberData.swift */,
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
+		051AC6BF2A1F35EB00B23C63 /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				051AC6C02A1F360200B23C63 /* IngredientsData.swift */,
+			);
+			path = Ingredients;
 			sourceTree = "<group>";
 		};
 		05ED195B2A1766590023A13E = {
@@ -238,7 +282,8 @@
 		05ED1AB22A1CA0E30023A13E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				051AC6A82A1EE3CD00B23C63 /* Ingredient */,
+				051AC6B12A1F085200B23C63 /* Calendar */,
+				051AC6A82A1EE3CD00B23C63 /* Ingredients */,
 				051AC6A32A1EE17600B23C63 /* Fridge */,
 				05ED1ACB2A1D96E70023A13E /* FridgeList */,
 				05ED1AB92A1CA3160023A13E /* Register */,
@@ -282,6 +327,8 @@
 				05ED1AC92A1D8DEF0023A13E /* Alert.swift */,
 				051AC6932A1DA72300B23C63 /* FetchFridgesData.swift */,
 				051AC6952A1DAA6C00B23C63 /* CreatNewFridge.swift */,
+				051AC6AF2A1EF9F300B23C63 /* GetFridge.swift */,
+				051AC6B82A1F1B2B00B23C63 /* UserLastUseFridge.swift */,
 			);
 			path = Methods;
 			sourceTree = "<group>";
@@ -303,6 +350,7 @@
 			children = (
 				05ED1AD52A1D9E2F0023A13E /* UIStoryboard+Extension.swift */,
 				051AC6912A1DA67C00B23C63 /* UITableView+Extension.swift */,
+				051AC6B62A1F09BB00B23C63 /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -425,6 +473,7 @@
 				051AC6902A1DA51600B23C63 /* FridgeCell.xib in Resources */,
 				05ED19742A17665A0023A13E /* Assets.xcassets in Resources */,
 				05ED1AD12A1D98120023A13E /* FridgeList.storyboard in Resources */,
+				051AC6B32A1F089600B23C63 /* Calendar.storyboard in Resources */,
 				05ED196F2A1766590023A13E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,13 +544,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				051AC69C2A1DDB2C00B23C63 /* FridgeData.swift in Sources */,
+				051AC6B52A1F08A900B23C63 /* CalendarViewController.swift in Sources */,
 				051AC69F2A1DED1F00B23C63 /* CreateFridgeView.swift in Sources */,
+				051AC6C12A1F360200B23C63 /* IngredientsData.swift in Sources */,
 				05ED1ABB2A1CA63E0023A13E /* InformationStackView.swift in Sources */,
 				05ED1ACE2A1D971E0023A13E /* FridgeListViewController.swift in Sources */,
+				051AC6BB2A1F27C400B23C63 /* FridgeData.swift in Sources */,
+				051AC6B92A1F1B2B00B23C63 /* UserLastUseFridge.swift in Sources */,
+				051AC6BE2A1F2E9E00B23C63 /* MemberData.swift in Sources */,
 				051AC6922A1DA67C00B23C63 /* UITableView+Extension.swift in Sources */,
+				051AC6B02A1EF9F300B23C63 /* GetFridge.swift in Sources */,
 				051AC6AB2A1EE43000B23C63 /* IngredientsViewController.swift in Sources */,
 				05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */,
+				051AC6C32A1F58F700B23C63 /* FridgeAllData.swift in Sources */,
 				05ED1ABE2A1CF4A40023A13E /* UserDataInit.swift in Sources */,
 				05ED1AB72A1CA2F70023A13E /* RegisterViewController.swift in Sources */,
 				051AC6A72A1EE1F500B23C63 /* FridgeTabBarController.swift in Sources */,
@@ -510,6 +565,7 @@
 				05ED1AD62A1D9E2F0023A13E /* UIStoryboard+Extension.swift in Sources */,
 				05ED1AC42A1CFAD30023A13E /* CheckEmailVerification.swift in Sources */,
 				05ED1AC62A1CFC130023A13E /* SignInViewController.swift in Sources */,
+				051AC6B72A1F09BB00B23C63 /* UIImage+Extension.swift in Sources */,
 				051AC6942A1DA72300B23C63 /* FetchFridgesData.swift in Sources */,
 				05ED19722A1766590023A13E /* PantryPal.xcdatamodeld in Sources */,
 				05ED1AC82A1CFC330023A13E /* SigninStackView.swift in Sources */,

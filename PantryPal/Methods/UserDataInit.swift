@@ -15,9 +15,9 @@ func userDataInit(email: String, name: String) {
           return
       }
     
-    let articles = Firestore.firestore().collection("users")
+    let users = Firestore.firestore().collection("users")
 
-    let document = articles.document(currentUserId)
+    let document = users.document(currentUserId)
 
     let data: [String: Any] = [
         "eamil": email,
