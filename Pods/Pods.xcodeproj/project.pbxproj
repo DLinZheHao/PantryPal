@@ -15,140 +15,182 @@
 			dependencies = (
 			);
 			name = SwiftLint;
-			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		009AFBCE756A4A5A9D15B7E5AE34EF82 /* JTAppleCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6262BC687ED98357B0A767E9E9B8351 /* JTAppleCalendar-dummy.m */; };
-		041B655D7F5932F03A65C154BC02BDAA /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C2453657942976261A32BFDB5A115 /* IQInvocation.swift */; };
-		04B0884964D9592302CA654E0B67E80E /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339AD4D66AEDB748DCCC2D39994746ED /* IQUIView+Hierarchy.swift */; };
-		08B185E08278AE7EC55F8BBB19693AC5 /* IQKeyboardManager+OrientationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61736FE790C153AB86B3A5DD82E147 /* IQKeyboardManager+OrientationNotification.swift */; };
-		0A4ACE3AFFFCB7846F824A803645CC5F /* MJRefreshTrailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DECAA9A1D1D14D2C819D449951D7ABE /* MJRefreshTrailer.m */; };
-		0A93D725DA34E6ACB26D9B2A714BBEB6 /* UIScrollView+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = B31FF57E76A63CA5DFF008E2066A663D /* UIScrollView+MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0EAF761A0091983FE7D83859EEC64D59 /* UICollectionViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0261C39EEB1EA3522746C79F436AFC5 /* UICollectionViewDelegates.swift */; };
-		0F94B2449CA1ADA76AE79C0BF6A08549 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B7C34C1207440F7E0BC273C320B2FA /* IQKeyboardManagerConstantsInternal.swift */; };
-		120C8FE618B70D53515D84A567B8559A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
-		164A826595EB505E1E9905A75B67F7EA /* JTAppleCalendarVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655F2BC5AF0AF04CDE0A8BFE9CB08CA /* JTAppleCalendarVariables.swift */; };
-		1672FB2B252B2925A7C34F82DE8BB84F /* InternalQueryFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97B7A5351F1305D12A6BF89AEDB4D8 /* InternalQueryFunctions.swift */; };
-		1740CBB33D469AEDD5D7291A9268FA97 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37C6A1C8541A75812E9CEF86970963 /* IQToolbar.swift */; };
-		1A9B9579E46EFBA63C5F57A6B17B5ECA /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3EE67B3A65BA769697B2EE956C9E27 /* IQKeyboardManagerSwift-dummy.m */; };
-		1D8031C86A94D32E00ED55B80428A0F3 /* IQKeyboardManager+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC48651E552118525076DB99883BE46 /* IQKeyboardManager+Toolbar.swift */; };
-		20616A47873318F80BFFEABAC9730122 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239074AC6EA1274886A65E599E4E57E7 /* IQTitleBarButtonItem.swift */; };
-		24EC44FF102C2635A476CEF7567F89DA /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E811D21C712381C9B2530F0D8A597DC /* IQPreviousNextView.swift */; };
-		29421B5D519A5B0801CB6E0716B5DB30 /* MJRefreshTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D86BF2E489D2EB5B099638BEE97B216 /* MJRefreshTrailer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2CA0B3B43A972DF3AD79F58092E3403E /* IQKeyboardManager+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161DAD258E4DD52009E9189F9D50729 /* IQKeyboardManager+Internal.swift */; };
-		2E5138271A6C79BDA3C0835F2596219B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D60AC13D33197690A05C641925DDDA /* UIKit.framework */; };
-		2EC96162DD6740ECE67FF38B8400A7C5 /* IQKeyboardManager+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F097FCEA40EC088FE874E7F09FF81BA /* IQKeyboardManager+Debug.swift */; };
-		31005F5A8B58CA1089E5B7DA1097A424 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F0A75A4D568C8769F23CC1EAA9AE62 /* MJRefreshBackFooter.m */; };
-		33A4F6D2199266B0F53AB5D2A91FD53C /* MJRefreshStateHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 56B9DC984AD515F722D4EE0591A36FA9 /* MJRefreshStateHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34C39BDBFE7A2CC585787F5AFCA39FDE /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAC18E6B63DD4FA4AE7FA493491BAA /* IQUIView+IQKeyboardToolbar.swift */; };
-		39CC66F1740898EBE3460C829841545B /* JTAppleCalendarDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEBD68F9F56F78CBAD39467DFF8730F /* JTAppleCalendarDelegateProtocol.swift */; };
-		3ABAB3A493A0B39CE0AABC1A30BF7D78 /* CalendarStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564943DBEC4A3ABF39F3C12A79A1CEF /* CalendarStructs.swift */; };
-		3DDC5EF8F09F2A192618936067DFE41F /* MJRefreshBackGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = A15976785F80636788981824A420D18E /* MJRefreshBackGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F01EED6380B596E1D0C1497CBCF9B95 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2381D09F9BECB11C289886F18D601439 /* IQUITextFieldView+Additions.swift */; };
-		3F57997C48B9AC2E8157E45521B6F662 /* MJRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D05AB39E9EED528D874467841F1064D /* MJRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		41CD40F5713CD71AD5AB1471E81C97E1 /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1480051324C66AC3DC03CC575EA2D8D /* IQBarButtonItem.swift */; };
-		43967A52DF5DF083B0771199EE89F88A /* MJRefreshAutoGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6539FC8CDA9BC52838B3B1DEA054C872 /* MJRefreshAutoGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4502D7E8FA8F03A1C87EE48533FEB8C0 /* MJRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C76F2CD9EB4659ED8E2EBE949DE1421D /* MJRefresh-dummy.m */; };
-		46CABB2581EDC02E6646E5FE296CEF9C /* MJRefreshBackStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = BB46F6CC88D7D5BF7B727EE2FA31399F /* MJRefreshBackStateFooter.m */; };
-		484548C5D780A8DA124E24C3A27720CD /* MJRefreshStateTrailer.m in Sources */ = {isa = PBXBuildFile; fileRef = F797F68F6590891067935AF5D6D8D4D5 /* MJRefreshStateTrailer.m */; };
-		4C67EADF56EAC30F45AEFE9436B138F7 /* UserInteractionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAD9015FCFB501FCA7421967822CC1 /* UserInteractionFunctions.swift */; };
-		4D31CCA291F1AAB8DB56EAC5E5100D16 /* MJRefreshAutoStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = E88ABF1FC2C0A0776A783E7E9071AC0C /* MJRefreshAutoStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5427DBACB1D189B22A74A5F95ECC6F7C /* MJRefreshBackNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = BF9D78F5CAA429237F0AE544C5D94D15 /* MJRefreshBackNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		565029FC535DDCF0D2286E6E2287928A /* Pods-PantryPal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D78DD625008DC78E684C7E853265D /* Pods-PantryPal-dummy.m */; };
-		569C9596A1EE66A0867C2F27DB4434FD /* MJRefreshComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 774750B8B2D0E6DC4F0C6231416EAE8F /* MJRefreshComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		572DBDC37429318F768FD7A21F1C0B70 /* MJRefreshBackStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CCC615BC57F6BBA00BECB2DE8F15AEC4 /* MJRefreshBackStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F24CA2DAA215F6E0AEC5AC773198F95 /* MJRefreshConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = D09FA834346FD21CEE2F43B23722A03F /* MJRefreshConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		60C6606FF8176EE5A38870CFD9F649C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
-		6372AFD5512AA9D634536E7543652957 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E3419F8D5DDAC748546E7E770C28FB /* UIScrollView+MJRefresh.m */; };
-		6579F1B66AB9CADABB69B726F8F15225 /* NSBundle+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 822D6B1954E66784338F4E46B3EEE445 /* NSBundle+MJRefresh.m */; };
-		684EAEA7A2A3C811871D464C9DD0E5D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
-		6866BDC5DB2452285680090A490EFD64 /* MJRefreshNormalTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = E67FCC086D6EABFA48E046D4FE5B6384 /* MJRefreshNormalTrailer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		69359A20750375B3BF91D193B60C406D /* MJRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = D6269031039733EE17E07A6CE280BC2B /* MJRefreshFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6D7EE0E37B82EC69E80A480DA3F564C6 /* MJRefreshConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E252B9635A65BEF4FA3CD6AE3478C690 /* MJRefreshConfig.m */; };
-		752B36F5BBCF8DED01BF1E444D975546 /* UICollectionViewLayout+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F31D07876ED870877F9CE7407BFE55 /* UICollectionViewLayout+MJRefresh.m */; };
-		7AC995F567A776FC1A80A9FA0733F3D1 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C7DB08A434D22E0DE02BD1DF77AE2 /* IQNSArray+Sort.swift */; };
-		7D24D21B28B00E91354E3A5A8A7EAD66 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DDAD4C5190570922EA9D8278F532D1C /* UIView+MJExtension.m */; };
-		82DDF0B89A354C9E5710B54ED0DF586B /* GlobalFunctionsAndExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AC1C74EB494F6A99CA7241006A4853 /* GlobalFunctionsAndExtensions.swift */; };
-		8445A8EF46C0A60907E9794537B1961D /* JTAppleCalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB8D54879825EBBDCC363E512C00A16 /* JTAppleCalendarLayout.swift */; };
-		85BC413BB35DE20594B6D84572FB49FC /* MJRefreshNormalTrailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF563A1B42038EF29087D65AD07FC9 /* MJRefreshNormalTrailer.m */; };
-		85F13B069B06ADF2B6DCA622E4645110 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0549B89201FB27740F192D34C9695AB /* IQKeyboardManagerConstants.swift */; };
-		86A03DE9366D1BE94EB99AA387EACD1F /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC3B80A85E584FED5738DC4C5C84F5C /* IQKeyboardManager.swift */; };
-		927DF15A74376F9FD582A3D17A293EC5 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F388F849366CA2B4D1559346CBD4110A /* MJRefreshAutoFooter.m */; };
-		94924F645CF5437A3F2290C43A4CFC59 /* JTAppleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3468483D1BA3EC6389164CD0BCD1C6 /* JTAppleCell.swift */; };
-		9807BF49C74281A14440DACC71E07C4A /* MJRefreshBackFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = ED029E8D94DC6E4941F7C3990272557E /* MJRefreshBackFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		98EAF4CA985CD43CFE416B235817CEFA /* MJRefreshGifHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = DBDB7670C6AD378A0297BF242583A726 /* MJRefreshGifHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C41EF0E685AD816D8C26D83B93AB6AF /* MJRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F90C50BBEE537A77A3634379AFE5FE /* MJRefreshStateHeader.m */; };
-		9CBB4022A009E076F2054741B70CF483 /* CalendarEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096BF36DED4CFF8B7014E0AFCF3B91A7 /* CalendarEnums.swift */; };
-		9FF44B0ACA998F466F11EC75434103F8 /* JTCalendarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9066CE7D75C00F396332D13741E4AA /* JTCalendarProtocols.swift */; };
-		A4BAEE317BFF650DCC888FC67BFBF7EF /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1E08C383984BCD5E356266554F4789 /* IQKeyboardManager+UIKeyboardNotification.swift */; };
-		AB5958BA59F34460139B065451B7D71D /* MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 815AEC6D8B998AE17E87DBA53D3C6A0D /* MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE0FF5B3C55AFD12E15909F98595C848 /* UIView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F73FD71294E4AF539953B3727C2F83D /* UIView+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AF4B3C88EF24097513282E7551F33385 /* MJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9F28AF9382FC7A00DC5F9054227D3F /* MJRefreshNormalHeader.m */; };
-		B1B6A2491AC437909DABE20C71BECDBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */; };
-		B5402265E04D513FAD8EA1EB234A969F /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE0BC4E481C08CA9D2648D2F5BD0A77 /* MJRefreshGifHeader.m */; };
-		B5B122B965516FA9349250A502C3A58D /* MJRefreshStateTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = 66F5C56DFCD32AF8C82CA1135A2B5F40 /* MJRefreshStateTrailer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B6B43B1B78EC0E52CC08F82841A22A31 /* IQKeyboardManagerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D33F3AA76C0CDF1351DEA6F13A2E055E /* IQKeyboardManagerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B6EC6D40823E66D5B389ACEAC9FD7AAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */; };
-		BAA4C06A1DE43F74573C2E49EC85D9B5 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B56B62D4F7AA7C5047224EA0F6C71 /* MJRefreshComponent.m */; };
-		BC29069E8C5679A176E284888F597C32 /* MJRefreshBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EBEFB64E51513CD9846AFD4983F5F3 /* MJRefreshBackNormalFooter.m */; };
-		BDFF68F76ED8639B0031A55390727068 /* UIScrollView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 515F27256D7766F21D184DB274B3F23F /* UIScrollView+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE6C672F9D4B3CE0D0D83079B8A740F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
-		BF1A148832BC2A213384F7F3700CF8B5 /* UICollectionViewLayout+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 23547090163524661D5FDAD9828A322F /* UICollectionViewLayout+MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C0BB204038A872BC358080346BFB3AA9 /* JTAppleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BD2CEC04D9EF95198D3F23187D081 /* JTAppleCollectionReusableView.swift */; };
-		C28E73E7C990B5831ABCDDA6F8275FD0 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 88AAEC0C87780364AA85FE5041E49F39 /* MJRefresh.bundle */; };
-		C3A160E82826D84E59889F7AC3157F42 /* MJRefreshAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 383A70BA7F5FC03E594B08C59AFE396F /* MJRefreshAutoGifFooter.m */; };
-		C81CB3B5D25BDBCB6D3A3632BE408229 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E19DDB3E6A51E83E4531B0D0BCD0E39 /* IQKeyboardReturnKeyHandler.swift */; };
-		CACF91D5DECB4EE985A5C2FF687BDDEE /* JTAppleCalendarLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C74B40CD4C6B82FC5DB017BB3DC4F7 /* JTAppleCalendarLayoutProtocol.swift */; };
-		D0038F642442AAE53C12ECA3240B5A6D /* MJRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEDF5123B007430CA8DB94506813883 /* MJRefreshAutoNormalFooter.m */; };
-		D0665D6E3CD34DD382F7E85551753C0A /* MJRefreshBackGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E486C29172AD47CD1CC5F1700352CFEA /* MJRefreshBackGifFooter.m */; };
-		D31356D54A39420DB91C892502CFFD57 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41997C07AE5AF11077F20FFA78644AB2 /* IQUIViewController+Additions.swift */; };
-		D43C0E831750DB310012D56EDB8F36A1 /* MJRefreshConst.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AEE8E7A779417BCE773422B687EDBAE /* MJRefreshConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D4EE280E59930BC6671457E8FDC01A48 /* InternalActionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6A015202CEF1B9FEEB58D30C18B62 /* InternalActionFunctions.swift */; };
-		D6516B5451008BF1ABA150E6482F6325 /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9098D5E9F019C6E28461B12A359AC561 /* IQKeyboardManager+UITextFieldViewNotification.swift */; };
-		DF33C3DE068D6116B3F551B0453ACD23 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149D1C4B044AC5EF33B106BEE878F22 /* IQUIScrollView+Additions.swift */; };
-		E15214E66D7A6069AA5E0B470A16F92F /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2836180330436159F16D631A903B2DBE /* MJRefreshConst.m */; };
-		E3A90F4FB659B5DDCF5DA603DDEF9E66 /* MJRefreshAutoStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB50D2F0CD05EF40907FA85CCF3AE0 /* MJRefreshAutoStateFooter.m */; };
-		E579107E3F34A6761997CE937C6DFF1A /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 664A20E7B4B1C78BB888C23A81D875F5 /* UIScrollView+MJExtension.m */; };
-		E6D1E0657F2E7190956CA155F09136A4 /* MJRefreshNormalHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CA98217EC53CC64A7547825F242C4C96 /* MJRefreshNormalHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E72E1BDDFF31003BD089544FC112FAAC /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BDACD2FC2313821823F1A8CE285770 /* IQTextView.swift */; };
-		EBDA5EBBAF0B3FBD870E565395974640 /* JTAppleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09696DE23259354A2533E044D9DEFFDA /* JTAppleCalendarView.swift */; };
-		EC7A19215B0957CF1EFFF58A1D79F273 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE442AEBA24F91D530BF0E9797D3AB3C /* MJRefreshFooter.m */; };
-		ECE9A68049B0A7FA86B09ED6050F4139 /* JTAppleCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C588756714C28D60D5F329061E24973D /* JTAppleCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE85A2DDCED7EE7AB3F57DE292D36C18 /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7134DFCAF65B6EC19C1EB9544456E /* MJRefreshHeader.m */; };
-		F0AD0E9222DC4A06FFC0B07737CE2FEA /* MJRefreshAutoFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C96546921AF2612A17B4F6CB48F3AF /* MJRefreshAutoFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0C8BC97DF076844B99C91F6703961D5 /* Pods-PantryPal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBC573B229E1A00E76D44056F301631 /* Pods-PantryPal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2B1C1D70C629AE19C0D5121B1BBA891 /* IQKeyboardManager+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218AF38D0EFD5E61D7ACF0128FCA610E /* IQKeyboardManager+Position.swift */; };
-		F71117E3C5158BD6036AA7F8AB71FC47 /* NSBundle+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 79737FAF434F00B7B315D95B8F5C30A4 /* NSBundle+MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA482C6F33494F529CF642D22DBA3B44 /* MJRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD96EDAB4DBF18C9FC2E5026FB8A04 /* MJRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FC42711B8E37AD9B5C2F735EDDAD441A /* MJRefreshAutoNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = D3FFB0DDFF3166662FB7F759BA0938FA /* MJRefreshAutoNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FDA46AEF3E374C4B1CEDB427608895CF /* UIScrollViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F9E9A4F74D47BED8C01FC7F468AEE5 /* UIScrollViewDelegates.swift */; };
+		003475471715C79534A569A1DE745889 /* FSCalendarCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 246E2C16D334E0526D1E13FBB70C27D9 /* FSCalendarCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		009AFBCE756A4A5A9D15B7E5AE34EF82 /* JTAppleCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC7F81D8A75E3CD9B1857052D52B734 /* JTAppleCalendar-dummy.m */; };
+		041B655D7F5932F03A65C154BC02BDAA /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6AA91AC194DC80E7F3DC5C1582C6B /* IQInvocation.swift */; };
+		046FDE140A36CD561C7A8E08A9E9F93D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316612CB60866F3952D1AEFFE9E409E7 /* Foundation.framework */; };
+		04B0884964D9592302CA654E0B67E80E /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2D8B67B8695FD3FAC67C83F6A5421 /* IQUIView+Hierarchy.swift */; };
+		08B185E08278AE7EC55F8BBB19693AC5 /* IQKeyboardManager+OrientationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DF35DC8C81009192D7672016700C5C /* IQKeyboardManager+OrientationNotification.swift */; };
+		09A5995D3A8C5C3874733BCDCB2703C9 /* Pods-PantryPal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D78DD625008DC78E684C7E853265D /* Pods-PantryPal-dummy.m */; };
+		0A4ACE3AFFFCB7846F824A803645CC5F /* MJRefreshTrailer.m in Sources */ = {isa = PBXBuildFile; fileRef = B664D718345E63CF94923F313B8FA9E2 /* MJRefreshTrailer.m */; };
+		0A93D725DA34E6ACB26D9B2A714BBEB6 /* UIScrollView+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 81A5A08ADCE68CE66F12EEB990846D5B /* UIScrollView+MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CCBB4361672C8994784F0CD9AFC876D /* FSCalendarHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DE26A5E814FDD51D7AD1DBF69DA757F /* FSCalendarHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EAF761A0091983FE7D83859EEC64D59 /* UICollectionViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA23F576EEDB2D569A5C942218EB729 /* UICollectionViewDelegates.swift */; };
+		0F94B2449CA1ADA76AE79C0BF6A08549 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46814B756E27F8080BE81C60257934B4 /* IQKeyboardManagerConstantsInternal.swift */; };
+		1152D5AAA7732A77B80CF0E33A68351C /* FSCalendarSeparatorDecorationView.h in Headers */ = {isa = PBXBuildFile; fileRef = BE0071A0F4A78A6D1F13B6C9B8AA958F /* FSCalendarSeparatorDecorationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		164A826595EB505E1E9905A75B67F7EA /* JTAppleCalendarVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD9200B3557B51EC4361EECCC3467A /* JTAppleCalendarVariables.swift */; };
+		1672FB2B252B2925A7C34F82DE8BB84F /* InternalQueryFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64250CC75E195BC000F2E59478FD3611 /* InternalQueryFunctions.swift */; };
+		1740CBB33D469AEDD5D7291A9268FA97 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A49362C84FA9921C851455638689E9 /* IQToolbar.swift */; };
+		1A9B9579E46EFBA63C5F57A6B17B5ECA /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3AB0F838E9AAFA4EADDA3989D0F49D /* IQKeyboardManagerSwift-dummy.m */; };
+		1CBDD971E01CC07B3D91E24935A15BC2 /* Pods-PantryPal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBC573B229E1A00E76D44056F301631 /* Pods-PantryPal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D8031C86A94D32E00ED55B80428A0F3 /* IQKeyboardManager+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A683448D673D554B83C07B0FA06BBF /* IQKeyboardManager+Toolbar.swift */; };
+		1FF421C714EDBE044E5EEB1E0C6A8571 /* FSCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F828937F9C73DB2C0C7B5500B65EF4A8 /* FSCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20616A47873318F80BFFEABAC9730122 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF284CE3FA099E03F22C61488A06A8 /* IQTitleBarButtonItem.swift */; };
+		24E5EE988A4BD7C15B55708C6D88AE04 /* FSCalendarStickyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDD402D72D9B646548C2F0608E1E195 /* FSCalendarStickyHeader.m */; };
+		24EC44FF102C2635A476CEF7567F89DA /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F21C26EAA04E75DDAED7A12D753DB /* IQPreviousNextView.swift */; };
+		29421B5D519A5B0801CB6E0716B5DB30 /* MJRefreshTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = B92BA1E74D98398A046F139B5C2A1883 /* MJRefreshTrailer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CA0B3B43A972DF3AD79F58092E3403E /* IQKeyboardManager+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA96FF8247385EFC10AD4FB34A78FA /* IQKeyboardManager+Internal.swift */; };
+		2E5138271A6C79BDA3C0835F2596219B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9E080A9A1ED9063D387790E4AE632 /* UIKit.framework */; };
+		2EC96162DD6740ECE67FF38B8400A7C5 /* IQKeyboardManager+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC9A51AC50048AEDE5AED3FF1C6242 /* IQKeyboardManager+Debug.swift */; };
+		31005F5A8B58CA1089E5B7DA1097A424 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C05B37B4F0109EBDB9F1241CC641BB /* MJRefreshBackFooter.m */; };
+		33A4F6D2199266B0F53AB5D2A91FD53C /* MJRefreshStateHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = B177C52999B70CB90EC7DA32DEDD23BC /* MJRefreshStateHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34C39BDBFE7A2CC585787F5AFCA39FDE /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10572CB0E61190B4156C0B78D7349F1 /* IQUIView+IQKeyboardToolbar.swift */; };
+		3960120DF8907DA574823ACE7ED96076 /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A311ECD852ECEF5988F3386F885147 /* FSCalendarWeekdayView.m */; };
+		39CC66F1740898EBE3460C829841545B /* JTAppleCalendarDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156FE9C31E0294339FF81C2E6064C960 /* JTAppleCalendarDelegateProtocol.swift */; };
+		39F986157716D5214013E395BDFA237A /* FSCalendarDelegationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 568DA163C97EE75F3FADB7DFFA5BE55F /* FSCalendarDelegationProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3ABAB3A493A0B39CE0AABC1A30BF7D78 /* CalendarStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2194AA16CCB4D1AD993821BC5EA0F29 /* CalendarStructs.swift */; };
+		3DDC5EF8F09F2A192618936067DFE41F /* MJRefreshBackGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F1333FB22F6CFF0EF31AD2DCCBC9D49 /* MJRefreshBackGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E4E56584545A9F057D6A39565EEBE81 /* FSCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A06C62BEA23BD7D180154638305DA80D /* FSCalendar-dummy.m */; };
+		3F01EED6380B596E1D0C1497CBCF9B95 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D725CA80C7C21000EF1C0031ECE9292D /* IQUITextFieldView+Additions.swift */; };
+		3F57997C48B9AC2E8157E45521B6F662 /* MJRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5AC56CDEA5217EB64D64DC9E9EDB68D /* MJRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41CD40F5713CD71AD5AB1471E81C97E1 /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D805A7CD08A0ADB5E96AC990ACDDF /* IQBarButtonItem.swift */; };
+		43967A52DF5DF083B0771199EE89F88A /* MJRefreshAutoGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 82FB30930516746002A1188084749793 /* MJRefreshAutoGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4502D7E8FA8F03A1C87EE48533FEB8C0 /* MJRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6C67400F7C91BD8652E423DBD874D2 /* MJRefresh-dummy.m */; };
+		4643DA364A3E80706B89D53043890B4D /* FSCalendarCollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA4A05CA6DA490B5365B5E9DEF9EC6D /* FSCalendarCollectionViewLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4683418880504CD2212FE56C4F1E8F80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9E080A9A1ED9063D387790E4AE632 /* UIKit.framework */; };
+		46CABB2581EDC02E6646E5FE296CEF9C /* MJRefreshBackStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4B0E1A1567BD3A7A0C906C3F6AC49 /* MJRefreshBackStateFooter.m */; };
+		484548C5D780A8DA124E24C3A27720CD /* MJRefreshStateTrailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E41C20E08FD81A6FF7D9E5AB856B8BF /* MJRefreshStateTrailer.m */; };
+		4C67EADF56EAC30F45AEFE9436B138F7 /* UserInteractionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA71BD0DBB978FD62C9C71F9716AAF /* UserInteractionFunctions.swift */; };
+		4D31CCA291F1AAB8DB56EAC5E5100D16 /* MJRefreshAutoStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 49008FF77A16C2E84C10BBC7B5AA09C0 /* MJRefreshAutoStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EC9E26EE87569C1B51B6DFF20700772 /* FSCalendarDynamicHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7875EF0FC03A7E858D8C115FF2E39C3F /* FSCalendarDynamicHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		517DF7507FDB12DBF9BA9D1536EDCC4F /* FSCalendarWeekdayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 532EAF6853934F1BB2CFBEEEB34FF708 /* FSCalendarWeekdayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5427DBACB1D189B22A74A5F95ECC6F7C /* MJRefreshBackNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = C13C404FC62687035C9CD71687205FC2 /* MJRefreshBackNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		569C9596A1EE66A0867C2F27DB4434FD /* MJRefreshComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C0EE0BB09276D64AA8D9253D96700AA /* MJRefreshComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		572DBDC37429318F768FD7A21F1C0B70 /* MJRefreshBackStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 570B17234624E52A6C4AC9D19B9CF27C /* MJRefreshBackStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F24CA2DAA215F6E0AEC5AC773198F95 /* MJRefreshConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 141E62DA6D36008E0FE2F62748EE8FA4 /* MJRefreshConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F847123FA3D224722CE24317DCEF968 /* FSCalendarExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = F414614563FAC22F7625909B66C09737 /* FSCalendarExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6040741383F6F8F6979D6C547230C132 /* FSCalendarSeparatorDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CB64DB44F2C56AF8A1A5188F27A4EB /* FSCalendarSeparatorDecorationView.m */; };
+		60C6606FF8176EE5A38870CFD9F649C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316612CB60866F3952D1AEFFE9E409E7 /* Foundation.framework */; };
+		60CFDC4002EA677B53ECC413F67C149D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316612CB60866F3952D1AEFFE9E409E7 /* Foundation.framework */; };
+		6201BB85A0AAF8FA6C4771308917BAB2 /* FSCalendarTransitionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB6EE31D7CF17C42DBFADF22212EA7A /* FSCalendarTransitionCoordinator.m */; };
+		62FFC4B2AA010A5445E5D9D6294C62B6 /* FSCalendarCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = E53CD74E30DC88A8DB82A25D929ECBEA /* FSCalendarCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6372AFD5512AA9D634536E7543652957 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB3D753D34C2A7C8FEB466171343304 /* UIScrollView+MJRefresh.m */; };
+		6579F1B66AB9CADABB69B726F8F15225 /* NSBundle+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB64FACF930FBD5C345148082CEBBC4 /* NSBundle+MJRefresh.m */; };
+		684EAEA7A2A3C811871D464C9DD0E5D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316612CB60866F3952D1AEFFE9E409E7 /* Foundation.framework */; };
+		6866BDC5DB2452285680090A490EFD64 /* MJRefreshNormalTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CAF6EF0731ED143AE986A024FCAAF42 /* MJRefreshNormalTrailer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69359A20750375B3BF91D193B60C406D /* MJRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3A8DFEBD9CAB39E6DCD90A681E8E04 /* MJRefreshFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D7EE0E37B82EC69E80A480DA3F564C6 /* MJRefreshConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D559F187C3ABBBC1433EE3A889BB66 /* MJRefreshConfig.m */; };
+		6DCF6F2A00DA4D32535EB01AE34F3563 /* FSCalendarCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D8BAC403A68B9F3DAC1B855EA335CEC /* FSCalendarCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74340052A3CD15A02A87D8D651CB8AB8 /* FSCalendarTransitionCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = C1F1ECA21A20333275BF23F9D4D28DA4 /* FSCalendarTransitionCoordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		752B36F5BBCF8DED01BF1E444D975546 /* UICollectionViewLayout+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DBE385AFB96EFA2C2E104365F778C /* UICollectionViewLayout+MJRefresh.m */; };
+		752DBFCDD74504EEA558FCD691F6D548 /* FSCalendarConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C12F9970F15FAACCEBCDD8C0709D812A /* FSCalendarConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AC995F567A776FC1A80A9FA0733F3D1 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2301D353E66A10292676A4A40C04D1 /* IQNSArray+Sort.swift */; };
+		7D24D21B28B00E91354E3A5A8A7EAD66 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7236A6E170D6A8CB8A8B1B1C00158046 /* UIView+MJExtension.m */; };
+		7E98902CA894CFE1F54E7934B24B0B37 /* FSCalendarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CA2A4FAB9BA9925D31B1059CFCF91B /* FSCalendarCollectionView.m */; };
+		7FDEAD728DF7397DAEE4237F07AD5A70 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F150FD69F8F69E3CD80FAC1FA0E900DB /* FSCalendarHeaderView.m */; };
+		82DDF0B89A354C9E5710B54ED0DF586B /* GlobalFunctionsAndExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536E5B009467366A13BAB1E57F9BA8B3 /* GlobalFunctionsAndExtensions.swift */; };
+		8445A8EF46C0A60907E9794537B1961D /* JTAppleCalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A1A32049A569B57E00DEAE5E535D04 /* JTAppleCalendarLayout.swift */; };
+		85BC413BB35DE20594B6D84572FB49FC /* MJRefreshNormalTrailer.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6E56F8BF6A7819C2589562B3700E95 /* MJRefreshNormalTrailer.m */; };
+		85F13B069B06ADF2B6DCA622E4645110 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5771CBDB93BE712D65A12455053BC7 /* IQKeyboardManagerConstants.swift */; };
+		86A03DE9366D1BE94EB99AA387EACD1F /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D8EDEB78F31DC9248E3FB92DE11290 /* IQKeyboardManager.swift */; };
+		8D5833379E9F51BFEEA066AA1C4A25A0 /* FSCalendarConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A807AAAA0EC5AB876E6333A97296038 /* FSCalendarConstants.m */; };
+		927DF15A74376F9FD582A3D17A293EC5 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B6AC98F66A60434B18365E8E51DF5 /* MJRefreshAutoFooter.m */; };
+		94924F645CF5437A3F2290C43A4CFC59 /* JTAppleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEEC6854DCBA31713E5199DC415753 /* JTAppleCell.swift */; };
+		9807BF49C74281A14440DACC71E07C4A /* MJRefreshBackFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DB8D83C8302311DFEC71EE163CED086 /* MJRefreshBackFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98EAF4CA985CD43CFE416B235817CEFA /* MJRefreshGifHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3793A14A157AC15E34745F3D8905C71E /* MJRefreshGifHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C41EF0E685AD816D8C26D83B93AB6AF /* MJRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D79A4F96E8FC851D0C07CB9EE15B5AA /* MJRefreshStateHeader.m */; };
+		9CBB4022A009E076F2054741B70CF483 /* CalendarEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2C4D0222C48CBDCDA5FFFB7477730 /* CalendarEnums.swift */; };
+		9FF44B0ACA998F466F11EC75434103F8 /* JTCalendarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B92C4EF1CC060FCD45C7672DB37F4 /* JTCalendarProtocols.swift */; };
+		A4BAEE317BFF650DCC888FC67BFBF7EF /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197AF97D65DCE90E423060EE3F3740B3 /* IQKeyboardManager+UIKeyboardNotification.swift */; };
+		A550F7F30921E5FFE67A755D67DA7683 /* FSCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = E69E8327A613A88A944AE88FDAC553E1 /* FSCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB5958BA59F34460139B065451B7D71D /* MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 402BA4550D1534B8511D515241D75A6A /* MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE0FF5B3C55AFD12E15909F98595C848 /* UIView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 30EFC62894573058A4CF474E68D4591D /* UIView+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF4B3C88EF24097513282E7551F33385 /* MJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C44AFBDDD94A00E757C49EA9B4F5CF /* MJRefreshNormalHeader.m */; };
+		B1B6A2491AC437909DABE20C71BECDBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F00BEE59DC7EC91BB1C827BEF78C6A7 /* CoreGraphics.framework */; };
+		B5402265E04D513FAD8EA1EB234A969F /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD56D67021A2C6583C40C20891B1A5D /* MJRefreshGifHeader.m */; };
+		B5B122B965516FA9349250A502C3A58D /* MJRefreshStateTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6C5E6D15834EA3FBE80A87B7A54D03 /* MJRefreshStateTrailer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6B43B1B78EC0E52CC08F82841A22A31 /* IQKeyboardManagerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50BF6A4FA1B168E16BCA5AE0B49771B4 /* IQKeyboardManagerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6EC6D40823E66D5B389ACEAC9FD7AAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251D60A893F479C33123291FB0EED416 /* QuartzCore.framework */; };
+		BAA4C06A1DE43F74573C2E49EC85D9B5 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E3F6BBA71D8670CF2D9422B7DDD8C /* MJRefreshComponent.m */; };
+		BC0B2FA367074EAF985420BE965303D3 /* FSCalendarAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = B0E390E5EA4B6C91CA1AE49AE8CBC515 /* FSCalendarAppearance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC1A04CE0A9851F3C003ECD156BE95AC /* FSCalendarStickyHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = FF26ABA52F8CF834F1EA1588C45F00DF /* FSCalendarStickyHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC29069E8C5679A176E284888F597C32 /* MJRefreshBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 227525FFD7BEED201792B8FFF4FBDBDD /* MJRefreshBackNormalFooter.m */; };
+		BDFF68F76ED8639B0031A55390727068 /* UIScrollView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 26F826E91C0174FEE01B238FFAA357A2 /* UIScrollView+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE6C672F9D4B3CE0D0D83079B8A740F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316612CB60866F3952D1AEFFE9E409E7 /* Foundation.framework */; };
+		BF1A148832BC2A213384F7F3700CF8B5 /* UICollectionViewLayout+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 061865FAD80E6B89FA69CB2BF2159A62 /* UICollectionViewLayout+MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0BB204038A872BC358080346BFB3AA9 /* JTAppleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F00014A3396D28E47A8D1716ACE908F /* JTAppleCollectionReusableView.swift */; };
+		C17CF6C18DAC9307799F1D7972965EDF /* FSCalendarDelegationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 5141C9998D022B9E0A375DD699D204F3 /* FSCalendarDelegationFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C28E73E7C990B5831ABCDDA6F8275FD0 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B619DE32B14D4A52A989A31FE48F1570 /* MJRefresh.bundle */; };
+		C3A160E82826D84E59889F7AC3157F42 /* MJRefreshAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E550F7B53FD1EBFFFA42E49B664DB2DB /* MJRefreshAutoGifFooter.m */; };
+		C6ED706364847164CB566CEA1A6FFDD6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251D60A893F479C33123291FB0EED416 /* QuartzCore.framework */; };
+		C7ACD835AAE2936FB6B623084612825D /* FSCalendarExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 892899D2EB22FE14A502447CBB1CF4FB /* FSCalendarExtensions.m */; };
+		C81CB3B5D25BDBCB6D3A3632BE408229 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1128198E8356B5CC4D37998C84D32228 /* IQKeyboardReturnKeyHandler.swift */; };
+		CACF91D5DECB4EE985A5C2FF687BDDEE /* JTAppleCalendarLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B53972E96EB03FF008D814901AED9F /* JTAppleCalendarLayoutProtocol.swift */; };
+		CE132491B81D44BB6B692C3F72FBC980 /* FSCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A5C8315F9702CAF92D68357A75085A /* FSCalendarCollectionViewLayout.m */; };
+		CF10A50704D5CF6F07D5949BA4AB3EAB /* FSCalendarDelegationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A8DC03F8138F9024FCDF2D19F055B8 /* FSCalendarDelegationFactory.m */; };
+		D0038F642442AAE53C12ECA3240B5A6D /* MJRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 30244F7DE5F344B967301A44972CCA27 /* MJRefreshAutoNormalFooter.m */; };
+		D0665D6E3CD34DD382F7E85551753C0A /* MJRefreshBackGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B51E6314FD5507FE27EEEFFE02AC9C0 /* MJRefreshBackGifFooter.m */; };
+		D31356D54A39420DB91C892502CFFD57 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B357050F98BAE18F821EC752129F19B /* IQUIViewController+Additions.swift */; };
+		D43C0E831750DB310012D56EDB8F36A1 /* MJRefreshConst.h in Headers */ = {isa = PBXBuildFile; fileRef = F440F705BA9D3C8428C76D6DAD3F8FE2 /* MJRefreshConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4EE280E59930BC6671457E8FDC01A48 /* InternalActionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F63E2043CA22A48EDB850346E25A66D /* InternalActionFunctions.swift */; };
+		D6516B5451008BF1ABA150E6482F6325 /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CC517985DD5C96931B2C47C0FDEBF1 /* IQKeyboardManager+UITextFieldViewNotification.swift */; };
+		DF33C3DE068D6116B3F551B0453ACD23 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5804779195753A0129DFC3B7F3A578F8 /* IQUIScrollView+Additions.swift */; };
+		E11220C77D9BB217D63867401FF624F6 /* FSCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 074B2B93655E41BD3128710415713485 /* FSCalendarCell.m */; };
+		E15214E66D7A6069AA5E0B470A16F92F /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CC6D8CCD475FDB98234291803E7D97 /* MJRefreshConst.m */; };
+		E3A90F4FB659B5DDCF5DA603DDEF9E66 /* MJRefreshAutoStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = BB149E9797BBA0A7F38FA59D513BE5CA /* MJRefreshAutoStateFooter.m */; };
+		E53DD07DFCDD2241779DBAAE71E77032 /* FSCalendarDelegationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 285CDD920F294359742966596263CC64 /* FSCalendarDelegationProxy.m */; };
+		E579107E3F34A6761997CE937C6DFF1A /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F2765BDBEC21EDD720874548173341A6 /* UIScrollView+MJExtension.m */; };
+		E6D1E0657F2E7190956CA155F09136A4 /* MJRefreshNormalHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C3107290275E5D1CCE67057A76AAA3 /* MJRefreshNormalHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E72E1BDDFF31003BD089544FC112FAAC /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33608FAD91C3E74BF24C21EFBF0B5E /* IQTextView.swift */; };
+		EBDA5EBBAF0B3FBD870E565395974640 /* JTAppleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F086CBC56E99D0C1F3ED72685E3758A /* JTAppleCalendarView.swift */; };
+		EC7A19215B0957CF1EFFF58A1D79F273 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA00C925CDC7CB148F32AB7AB5005207 /* MJRefreshFooter.m */; };
+		ECE9A68049B0A7FA86B09ED6050F4139 /* JTAppleCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C0BA204C0EAAC1E8273B4F235295F38 /* JTAppleCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE85A2DDCED7EE7AB3F57DE292D36C18 /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 981DA75E4C7685AC203983A686E21459 /* MJRefreshHeader.m */; };
+		F0AD0E9222DC4A06FFC0B07737CE2FEA /* MJRefreshAutoFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 345552A83D5B709B25E1820853519CE6 /* MJRefreshAutoFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1B9720240D5609A1DE32B8350FE0B5B /* FSCalendarCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EFD9599629CD20B22FD6426511758C /* FSCalendarCalculator.m */; };
+		F2B1C1D70C629AE19C0D5121B1BBA891 /* IQKeyboardManager+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC2FFC29A901EC5C6F58FC00E3D40B3 /* IQKeyboardManager+Position.swift */; };
+		F3F18A1FEC8212A61301637E40558A13 /* FSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E65C97952614ED03BCC87E0158E9B93 /* FSCalendarAppearance.m */; };
+		F71117E3C5158BD6036AA7F8AB71FC47 /* NSBundle+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 59F76D35C49669AA2D7EAEEB72E96DA6 /* NSBundle+MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7C20C67D0D5A1C73A0A057268A719C1 /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3067AD0B7CA40A7B7B53DDB549B78108 /* FSCalendar.m */; };
+		FA482C6F33494F529CF642D22DBA3B44 /* MJRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = F9A8880F0D2E193D5A223CBE9304079F /* MJRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC42711B8E37AD9B5C2F735EDDAD441A /* MJRefreshAutoNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = F593DF423435ABA37E201E458DACF851 /* MJRefreshAutoNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FDA46AEF3E374C4B1CEDB427608895CF /* UIScrollViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100697BBFE4551D5C5B3BBB6CF6298FD /* UIScrollViewDelegates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		454D011AF7C89ED2B34517DDC3C1F9EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
-			remoteInfo = IQKeyboardManagerSwift;
-		};
-		4621FA583808F69EDA9DC3622FCA0C67 /* PBXContainerItemProxy */ = {
+		1A688B2C368FA6E8C339AF3BA1A922E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6868056D761E163D10FDAF8CF1C4D9B8;
 			remoteInfo = MJRefresh;
 		};
-		C2571F3B4E074D0CC1399163CD923624 /* PBXContainerItemProxy */ = {
+		303E755A61D547EE343D2375DA6046E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
+			remoteInfo = IQKeyboardManagerSwift;
+		};
+		E3DF6B56B8067EFBBABEA08F12F783DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
 			remoteInfo = SwiftLint;
 		};
-		DB50269639D0617FC93F7CD8B8C93B17 /* PBXContainerItemProxy */ = {
+		F8C8BF93EEDEFE61BCA86F91F3A69A5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13285D54682BEAD805960F9E6EEB9949;
+			remoteInfo = FSCalendar;
+		};
+		FCF29DE39D4D74773CFC7D9933E1E4E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -158,136 +200,175 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0161DAD258E4DD52009E9189F9D50729 /* IQKeyboardManager+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Internal.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Internal.swift"; sourceTree = "<group>"; };
-		04D60AC13D33197690A05C641925DDDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		061865FAD80E6B89FA69CB2BF2159A62 /* UICollectionViewLayout+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionViewLayout+MJRefresh.h"; path = "MJRefresh/UICollectionViewLayout+MJRefresh.h"; sourceTree = "<group>"; };
 		0622DE0FFC103A438283EA2631349A3A /* Pods-PantryPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PantryPal.debug.xcconfig"; sourceTree = "<group>"; };
-		0890BB188DA2C54F13E4AF2C4F05B8B0 /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
-		0907D9D8FB23561A2724C9E4CA8AF32B /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
-		09696DE23259354A2533E044D9DEFFDA /* JTAppleCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarView.swift; path = Sources/JTAppleCalendarView.swift; sourceTree = "<group>"; };
-		096BF36DED4CFF8B7014E0AFCF3B91A7 /* CalendarEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarEnums.swift; path = Sources/CalendarEnums.swift; sourceTree = "<group>"; };
+		074B2B93655E41BD3128710415713485 /* FSCalendarCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarCell.m; path = FSCalendar/FSCalendarCell.m; sourceTree = "<group>"; };
+		07CA2A4FAB9BA9925D31B1059CFCF91B /* FSCalendarCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarCollectionView.m; path = FSCalendar/FSCalendarCollectionView.m; sourceTree = "<group>"; };
 		0A3E7378C5EF4BF9B8FC94AAF945F265 /* Pods-PantryPal-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PantryPal-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0C3EE67B3A65BA769697B2EE956C9E27 /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
-		0D1E08C383984BCD5E356266554F4789 /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
-		0DECAA9A1D1D14D2C819D449951D7ABE /* MJRefreshTrailer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshTrailer.m; path = MJRefresh/Base/MJRefreshTrailer.m; sourceTree = "<group>"; };
-		0EC3B80A85E584FED5738DC4C5C84F5C /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
-		12B7C34C1207440F7E0BC273C320B2FA /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
-		17AC1C74EB494F6A99CA7241006A4853 /* GlobalFunctionsAndExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlobalFunctionsAndExtensions.swift; path = Sources/GlobalFunctionsAndExtensions.swift; sourceTree = "<group>"; };
+		0AC2FFC29A901EC5C6F58FC00E3D40B3 /* IQKeyboardManager+Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Position.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Position.swift"; sourceTree = "<group>"; };
+		0AD56D67021A2C6583C40C20891B1A5D /* MJRefreshGifHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshGifHeader.m; path = MJRefresh/Custom/Header/MJRefreshGifHeader.m; sourceTree = "<group>"; };
+		0D79A4F96E8FC851D0C07CB9EE15B5AA /* MJRefreshStateHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshStateHeader.m; path = MJRefresh/Custom/Header/MJRefreshStateHeader.m; sourceTree = "<group>"; };
+		0E41C20E08FD81A6FF7D9E5AB856B8BF /* MJRefreshStateTrailer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshStateTrailer.m; path = MJRefresh/Custom/Trailer/MJRefreshStateTrailer.m; sourceTree = "<group>"; };
+		0F086CBC56E99D0C1F3ED72685E3758A /* JTAppleCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarView.swift; path = Sources/JTAppleCalendarView.swift; sourceTree = "<group>"; };
+		100697BBFE4551D5C5B3BBB6CF6298FD /* UIScrollViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIScrollViewDelegates.swift; path = Sources/UIScrollViewDelegates.swift; sourceTree = "<group>"; };
+		1128198E8356B5CC4D37998C84D32228 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
+		141E62DA6D36008E0FE2F62748EE8FA4 /* MJRefreshConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConfig.h; path = MJRefresh/MJRefreshConfig.h; sourceTree = "<group>"; };
+		1492441AC9F7AFDC203918780B2AF7A4 /* FSCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSCalendar.debug.xcconfig; sourceTree = "<group>"; };
+		156FE9C31E0294339FF81C2E6064C960 /* JTAppleCalendarDelegateProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarDelegateProtocol.swift; path = Sources/JTAppleCalendarDelegateProtocol.swift; sourceTree = "<group>"; };
 		1961688B2E388A053AC06B3FC57B75E6 /* Pods-PantryPal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PantryPal.modulemap"; sourceTree = "<group>"; };
-		19B6A015202CEF1B9FEEB58D30C18B62 /* InternalActionFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InternalActionFunctions.swift; path = Sources/InternalActionFunctions.swift; sourceTree = "<group>"; };
-		1F097FCEA40EC088FE874E7F09FF81BA /* IQKeyboardManager+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Debug.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift"; sourceTree = "<group>"; };
-		1F1D09881E8A58A3B02F960FB690A439 /* MJRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MJRefresh-Info.plist"; sourceTree = "<group>"; };
-		1F262954E53E5561A4DFC5595EBD9AA6 /* IQKeyboardManagerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.debug.xcconfig; sourceTree = "<group>"; };
+		197AF97D65DCE90E423060EE3F3740B3 /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
+		19EF284CE3FA099E03F22C61488A06A8 /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
+		1AB4B0E1A1567BD3A7A0C906C3F6AC49 /* MJRefreshBackStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackStateFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m; sourceTree = "<group>"; };
+		1C0EE0BB09276D64AA8D9253D96700AA /* MJRefreshComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshComponent.h; path = MJRefresh/Base/MJRefreshComponent.h; sourceTree = "<group>"; };
 		1F8E258F9BE7356CD2F57F52361FB03B /* Pods-PantryPal */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-PantryPal"; path = Pods_PantryPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		218AF38D0EFD5E61D7ACF0128FCA610E /* IQKeyboardManager+Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Position.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Position.swift"; sourceTree = "<group>"; };
-		23547090163524661D5FDAD9828A322F /* UICollectionViewLayout+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionViewLayout+MJRefresh.h"; path = "MJRefresh/UICollectionViewLayout+MJRefresh.h"; sourceTree = "<group>"; };
-		2381D09F9BECB11C289886F18D601439 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
-		239074AC6EA1274886A65E599E4E57E7 /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
-		2771630326F49981C0E832A44E411556 /* IQKeyboardManagerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "IQKeyboardManagerSwift-Info.plist"; sourceTree = "<group>"; };
-		2836180330436159F16D631A903B2DBE /* MJRefreshConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConst.m; path = MJRefresh/MJRefreshConst.m; sourceTree = "<group>"; };
+		20F63FED720AA79613E5D4112B1B56AE /* MJRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJRefresh.debug.xcconfig; sourceTree = "<group>"; };
+		21C05B37B4F0109EBDB9F1241CC641BB /* MJRefreshBackFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackFooter.m; path = MJRefresh/Base/MJRefreshBackFooter.m; sourceTree = "<group>"; };
+		227525FFD7BEED201792B8FFF4FBDBDD /* MJRefreshBackNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackNormalFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m; sourceTree = "<group>"; };
+		246E2C16D334E0526D1E13FBB70C27D9 /* FSCalendarCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarCell.h; path = FSCalendar/FSCalendarCell.h; sourceTree = "<group>"; };
+		248FD2482B1607B4BAE2CD8B85A64B59 /* JTAppleCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JTAppleCalendar.modulemap; sourceTree = "<group>"; };
+		251D60A893F479C33123291FB0EED416 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		26F826E91C0174FEE01B238FFAA357A2 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJExtension.h"; path = "MJRefresh/UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		285CDD920F294359742966596263CC64 /* FSCalendarDelegationProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarDelegationProxy.m; path = FSCalendar/FSCalendarDelegationProxy.m; sourceTree = "<group>"; };
 		2A81CDB2F65D35F5BD7FB1865C58E624 /* Pods-PantryPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PantryPal.release.xcconfig"; sourceTree = "<group>"; };
-		2A9F28AF9382FC7A00DC5F9054227D3F /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalHeader.m; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.m; sourceTree = "<group>"; };
-		2AFB50D2F0CD05EF40907FA85CCF3AE0 /* MJRefreshAutoStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoStateFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m; sourceTree = "<group>"; };
-		2BF469DD0D5909398F7C1E802229EBA8 /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
-		339AD4D66AEDB748DCCC2D39994746ED /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
+		2F00BEE59DC7EC91BB1C827BEF78C6A7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		2F1333FB22F6CFF0EF31AD2DCCBC9D49 /* MJRefreshBackGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackGifFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h; sourceTree = "<group>"; };
+		30244F7DE5F344B967301A44972CCA27 /* MJRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoNormalFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
+		3067AD0B7CA40A7B7B53DDB549B78108 /* FSCalendar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendar.m; path = FSCalendar/FSCalendar.m; sourceTree = "<group>"; };
+		30EFC62894573058A4CF474E68D4591D /* UIView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
+		316612CB60866F3952D1AEFFE9E409E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		345552A83D5B709B25E1820853519CE6 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoFooter.h; path = MJRefresh/Base/MJRefreshAutoFooter.h; sourceTree = "<group>"; };
+		34C2E3EE362EEABE61FE60FDC1DA93BD /* MJRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MJRefresh-Info.plist"; sourceTree = "<group>"; };
 		374AFF7CAB52D5926859AA4935875D99 /* Pods-PantryPal-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PantryPal-frameworks.sh"; sourceTree = "<group>"; };
-		383A70BA7F5FC03E594B08C59AFE396F /* MJRefreshAutoGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoGifFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m; sourceTree = "<group>"; };
-		3AEE8E7A779417BCE773422B687EDBAE /* MJRefreshConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConst.h; path = MJRefresh/MJRefreshConst.h; sourceTree = "<group>"; };
+		3793A14A157AC15E34745F3D8905C71E /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshGifHeader.h; path = MJRefresh/Custom/Header/MJRefreshGifHeader.h; sourceTree = "<group>"; };
 		3B0E6D3D96DBCD6A674BFE19A8567337 /* Pods-PantryPal-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PantryPal-acknowledgements.plist"; sourceTree = "<group>"; };
-		41997C07AE5AF11077F20FFA78644AB2 /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
-		440ECFBA16E3969994D28292ADA701CF /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
-		4AEDF5123B007430CA8DB94506813883 /* MJRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoNormalFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
-		4AF627E08A37DA61A415F61F072DEED8 /* JTAppleCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-prefix.pch"; sourceTree = "<group>"; };
-		4DDAD4C5190570922EA9D8278F532D1C /* UIView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
+		3C33608FAD91C3E74BF24C21EFBF0B5E /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
+		3D0D1B3637930A10A45730E2D497CBAA /* FSCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSCalendar.release.xcconfig; sourceTree = "<group>"; };
+		3D5DBE385AFB96EFA2C2E104365F778C /* UICollectionViewLayout+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionViewLayout+MJRefresh.m"; path = "MJRefresh/UICollectionViewLayout+MJRefresh.m"; sourceTree = "<group>"; };
+		3FA4A05CA6DA490B5365B5E9DEF9EC6D /* FSCalendarCollectionViewLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarCollectionViewLayout.h; path = FSCalendar/FSCalendarCollectionViewLayout.h; sourceTree = "<group>"; };
+		400D372805C3E869D16A4EA84F9525BF /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
+		402BA4550D1534B8511D515241D75A6A /* MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefresh.h; path = MJRefresh/MJRefresh.h; sourceTree = "<group>"; };
+		40C2D17C5E0BD46DE463D85B402E8CBB /* MJRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-prefix.pch"; sourceTree = "<group>"; };
+		41A49362C84FA9921C851455638689E9 /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
+		46814B756E27F8080BE81C60257934B4 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
+		49008FF77A16C2E84C10BBC7B5AA09C0 /* MJRefreshAutoStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoStateFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h; sourceTree = "<group>"; };
+		4CAF6EF0731ED143AE986A024FCAAF42 /* MJRefreshNormalTrailer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshNormalTrailer.h; path = MJRefresh/Custom/Trailer/MJRefreshNormalTrailer.h; sourceTree = "<group>"; };
 		4EBC573B229E1A00E76D44056F301631 /* Pods-PantryPal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PantryPal-umbrella.h"; sourceTree = "<group>"; };
-		500BF43EF12569715B7F40D49A276AF8 /* JTAppleCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JTAppleCalendar-Info.plist"; sourceTree = "<group>"; };
-		515F27256D7766F21D184DB274B3F23F /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJExtension.h"; path = "MJRefresh/UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
-		56A6F1EED2AF7A795A95A62DD91BDDE3 /* JTAppleCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTAppleCalendar.debug.xcconfig; sourceTree = "<group>"; };
-		56B9DC984AD515F722D4EE0591A36FA9 /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateHeader.h; path = MJRefresh/Custom/Header/MJRefreshStateHeader.h; sourceTree = "<group>"; };
-		5B97B7A5351F1305D12A6BF89AEDB4D8 /* InternalQueryFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InternalQueryFunctions.swift; path = Sources/InternalQueryFunctions.swift; sourceTree = "<group>"; };
-		6539FC8CDA9BC52838B3B1DEA054C872 /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoGifFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
-		664A20E7B4B1C78BB888C23A81D875F5 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJExtension.m"; path = "MJRefresh/UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
-		6655F2BC5AF0AF04CDE0A8BFE9CB08CA /* JTAppleCalendarVariables.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarVariables.swift; path = Sources/JTAppleCalendarVariables.swift; sourceTree = "<group>"; };
-		66EAD9015FCFB501FCA7421967822CC1 /* UserInteractionFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserInteractionFunctions.swift; path = Sources/UserInteractionFunctions.swift; sourceTree = "<group>"; };
-		66F5C56DFCD32AF8C82CA1135A2B5F40 /* MJRefreshStateTrailer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateTrailer.h; path = MJRefresh/Custom/Trailer/MJRefreshStateTrailer.h; sourceTree = "<group>"; };
-		6D86BF2E489D2EB5B099638BEE97B216 /* MJRefreshTrailer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshTrailer.h; path = MJRefresh/Base/MJRefreshTrailer.h; sourceTree = "<group>"; };
-		6E19DDB3E6A51E83E4531B0D0BCD0E39 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
-		6EEF563A1B42038EF29087D65AD07FC9 /* MJRefreshNormalTrailer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalTrailer.m; path = MJRefresh/Custom/Trailer/MJRefreshNormalTrailer.m; sourceTree = "<group>"; };
-		6F73FD71294E4AF539953B3727C2F83D /* UIView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
+		50BF6A4FA1B168E16BCA5AE0B49771B4 /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
+		5141C9998D022B9E0A375DD699D204F3 /* FSCalendarDelegationFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarDelegationFactory.h; path = FSCalendar/FSCalendarDelegationFactory.h; sourceTree = "<group>"; };
+		52C44AFBDDD94A00E757C49EA9B4F5CF /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalHeader.m; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.m; sourceTree = "<group>"; };
+		532EAF6853934F1BB2CFBEEEB34FF708 /* FSCalendarWeekdayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarWeekdayView.h; path = FSCalendar/FSCalendarWeekdayView.h; sourceTree = "<group>"; };
+		536E5B009467366A13BAB1E57F9BA8B3 /* GlobalFunctionsAndExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlobalFunctionsAndExtensions.swift; path = Sources/GlobalFunctionsAndExtensions.swift; sourceTree = "<group>"; };
+		55CC6D8CCD475FDB98234291803E7D97 /* MJRefreshConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConst.m; path = MJRefresh/MJRefreshConst.m; sourceTree = "<group>"; };
+		568DA163C97EE75F3FADB7DFFA5BE55F /* FSCalendarDelegationProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarDelegationProxy.h; path = FSCalendar/FSCalendarDelegationProxy.h; sourceTree = "<group>"; };
+		570B17234624E52A6C4AC9D19B9CF27C /* MJRefreshBackStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackStateFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h; sourceTree = "<group>"; };
+		5804779195753A0129DFC3B7F3A578F8 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
+		59F76D35C49669AA2D7EAEEB72E96DA6 /* NSBundle+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+MJRefresh.h"; path = "MJRefresh/NSBundle+MJRefresh.h"; sourceTree = "<group>"; };
+		5DE26A5E814FDD51D7AD1DBF69DA757F /* FSCalendarHeaderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarHeaderView.h; path = FSCalendar/FSCalendarHeaderView.h; sourceTree = "<group>"; };
+		5F00014A3396D28E47A8D1716ACE908F /* JTAppleCollectionReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCollectionReusableView.swift; path = Sources/JTAppleCollectionReusableView.swift; sourceTree = "<group>"; };
+		5F63E2043CA22A48EDB850346E25A66D /* InternalActionFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InternalActionFunctions.swift; path = Sources/InternalActionFunctions.swift; sourceTree = "<group>"; };
+		60A5C8315F9702CAF92D68357A75085A /* FSCalendarCollectionViewLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarCollectionViewLayout.m; path = FSCalendar/FSCalendarCollectionViewLayout.m; sourceTree = "<group>"; };
+		60A8DC03F8138F9024FCDF2D19F055B8 /* FSCalendarDelegationFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarDelegationFactory.m; path = FSCalendar/FSCalendarDelegationFactory.m; sourceTree = "<group>"; };
+		64250CC75E195BC000F2E59478FD3611 /* InternalQueryFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InternalQueryFunctions.swift; path = Sources/InternalQueryFunctions.swift; sourceTree = "<group>"; };
+		66C3107290275E5D1CCE67057A76AAA3 /* MJRefreshNormalHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshNormalHeader.h; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.h; sourceTree = "<group>"; };
+		6763C6A4F4FA5DA66711CCD2B5969093 /* IQKeyboardManagerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.debug.xcconfig; sourceTree = "<group>"; };
+		6C0BA204C0EAAC1E8273B4F235295F38 /* JTAppleCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-umbrella.h"; sourceTree = "<group>"; };
+		6D8BAC403A68B9F3DAC1B855EA335CEC /* FSCalendarCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarCollectionView.h; path = FSCalendar/FSCalendarCollectionView.h; sourceTree = "<group>"; };
+		6DED8CCCD90628EC26B3084190BD73F4 /* MJRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJRefresh.release.xcconfig; sourceTree = "<group>"; };
+		6DF9E080A9A1ED9063D387790E4AE632 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		6E65C97952614ED03BCC87E0158E9B93 /* FSCalendarAppearance.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarAppearance.m; path = FSCalendar/FSCalendarAppearance.m; sourceTree = "<group>"; };
+		6ECEEC6854DCBA31713E5199DC415753 /* JTAppleCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCell.swift; path = Sources/JTAppleCell.swift; sourceTree = "<group>"; };
+		6EDD402D72D9B646548C2F0608E1E195 /* FSCalendarStickyHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarStickyHeader.m; path = FSCalendar/FSCalendarStickyHeader.m; sourceTree = "<group>"; };
 		6FA0C9C3A7FA2FECB2989EEAB3F1BA02 /* Pods-PantryPal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PantryPal-Info.plist"; sourceTree = "<group>"; };
-		6FB8D54879825EBBDCC363E512C00A16 /* JTAppleCalendarLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayout.swift; path = Sources/JTAppleCalendarLayout.swift; sourceTree = "<group>"; };
-		725FEDD38C82A9F5745454CF30F60719 /* MJRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJRefresh.release.xcconfig; sourceTree = "<group>"; };
-		75F31D07876ED870877F9CE7407BFE55 /* UICollectionViewLayout+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionViewLayout+MJRefresh.m"; path = "MJRefresh/UICollectionViewLayout+MJRefresh.m"; sourceTree = "<group>"; };
-		774750B8B2D0E6DC4F0C6231416EAE8F /* MJRefreshComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshComponent.h; path = MJRefresh/Base/MJRefreshComponent.h; sourceTree = "<group>"; };
-		79737FAF434F00B7B315D95B8F5C30A4 /* NSBundle+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+MJRefresh.h"; path = "MJRefresh/NSBundle+MJRefresh.h"; sourceTree = "<group>"; };
-		79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7D05AB39E9EED528D874467841F1064D /* MJRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-umbrella.h"; sourceTree = "<group>"; };
-		7D9066CE7D75C00F396332D13741E4AA /* JTCalendarProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTCalendarProtocols.swift; path = Sources/JTCalendarProtocols.swift; sourceTree = "<group>"; };
-		815AEC6D8B998AE17E87DBA53D3C6A0D /* MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefresh.h; path = MJRefresh/MJRefresh.h; sourceTree = "<group>"; };
-		822D6B1954E66784338F4E46B3EEE445 /* NSBundle+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+MJRefresh.m"; path = "MJRefresh/NSBundle+MJRefresh.m"; sourceTree = "<group>"; };
-		82F0A75A4D568C8769F23CC1EAA9AE62 /* MJRefreshBackFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackFooter.m; path = MJRefresh/Base/MJRefreshBackFooter.m; sourceTree = "<group>"; };
-		82F9E9A4F74D47BED8C01FC7F468AEE5 /* UIScrollViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIScrollViewDelegates.swift; path = Sources/UIScrollViewDelegates.swift; sourceTree = "<group>"; };
-		840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		848B56B62D4F7AA7C5047224EA0F6C71 /* MJRefreshComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshComponent.m; path = MJRefresh/Base/MJRefreshComponent.m; sourceTree = "<group>"; };
-		88AAEC0C87780364AA85FE5041E49F39 /* MJRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
-		9098D5E9F019C6E28461B12A359AC561 /* IQKeyboardManager+UITextFieldViewNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UITextFieldViewNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UITextFieldViewNotification.swift"; sourceTree = "<group>"; };
-		95C74B40CD4C6B82FC5DB017BB3DC4F7 /* JTAppleCalendarLayoutProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayoutProtocol.swift; path = Sources/JTAppleCalendarLayoutProtocol.swift; sourceTree = "<group>"; };
-		9D902D3B0223572A9BB9AF6D538406B7 /* MJRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJRefresh.debug.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E811D21C712381C9B2530F0D8A597DC /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
-		A0C8E428D980D3C9293A3C2BF740F0CD /* JTAppleCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JTAppleCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A149D1C4B044AC5EF33B106BEE878F22 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
-		A15976785F80636788981824A420D18E /* MJRefreshBackGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackGifFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h; sourceTree = "<group>"; };
-		A1EBEFB64E51513CD9846AFD4983F5F3 /* MJRefreshBackNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackNormalFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m; sourceTree = "<group>"; };
-		A261413B3E5558C6AF39374009A8122C /* JTAppleCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTAppleCalendar.release.xcconfig; sourceTree = "<group>"; };
-		A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		A4BDACD2FC2313821823F1A8CE285770 /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
-		A7BAC18E6B63DD4FA4AE7FA493491BAA /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
-		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAC48651E552118525076DB99883BE46 /* IQKeyboardManager+Toolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Toolbar.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Toolbar.swift"; sourceTree = "<group>"; };
-		B1C96546921AF2612A17B4F6CB48F3AF /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoFooter.h; path = MJRefresh/Base/MJRefreshAutoFooter.h; sourceTree = "<group>"; };
-		B2B6074BD68A1B1BF1FB170E173133E2 /* JTAppleCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JTAppleCalendar.modulemap; sourceTree = "<group>"; };
-		B31FF57E76A63CA5DFF008E2066A663D /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJRefresh.h"; path = "MJRefresh/UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
-		BB46F6CC88D7D5BF7B727EE2FA31399F /* MJRefreshBackStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackStateFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m; sourceTree = "<group>"; };
-		BC61736FE790C153AB86B3A5DD82E147 /* IQKeyboardManager+OrientationNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+OrientationNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+OrientationNotification.swift"; sourceTree = "<group>"; };
-		BF9D78F5CAA429237F0AE544C5D94D15 /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackNormalFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
-		BFE0BC4E481C08CA9D2648D2F5BD0A77 /* MJRefreshGifHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshGifHeader.m; path = MJRefresh/Custom/Header/MJRefreshGifHeader.m; sourceTree = "<group>"; };
-		C3E3419F8D5DDAC748546E7E770C28FB /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJRefresh.m"; path = "MJRefresh/UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
-		C40BD2CEC04D9EF95198D3F23187D081 /* JTAppleCollectionReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCollectionReusableView.swift; path = Sources/JTAppleCollectionReusableView.swift; sourceTree = "<group>"; };
-		C588756714C28D60D5F329061E24973D /* JTAppleCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-umbrella.h"; sourceTree = "<group>"; };
-		C76F2CD9EB4659ED8E2EBE949DE1421D /* MJRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MJRefresh-dummy.m"; sourceTree = "<group>"; };
-		CA98217EC53CC64A7547825F242C4C96 /* MJRefreshNormalHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshNormalHeader.h; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.h; sourceTree = "<group>"; };
-		CCC615BC57F6BBA00BECB2DE8F15AEC4 /* MJRefreshBackStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackStateFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h; sourceTree = "<group>"; };
-		D0261C39EEB1EA3522746C79F436AFC5 /* UICollectionViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UICollectionViewDelegates.swift; path = Sources/UICollectionViewDelegates.swift; sourceTree = "<group>"; };
-		D09FA834346FD21CEE2F43B23722A03F /* MJRefreshConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConfig.h; path = MJRefresh/MJRefreshConfig.h; sourceTree = "<group>"; };
-		D33F3AA76C0CDF1351DEA6F13A2E055E /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
-		D3B7134DFCAF65B6EC19C1EB9544456E /* MJRefreshHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshHeader.m; path = MJRefresh/Base/MJRefreshHeader.m; sourceTree = "<group>"; };
-		D3FFB0DDFF3166662FB7F759BA0938FA /* MJRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoNormalFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
-		D6269031039733EE17E07A6CE280BC2B /* MJRefreshFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshFooter.h; path = MJRefresh/Base/MJRefreshFooter.h; sourceTree = "<group>"; };
-		D74C2453657942976261A32BFDB5A115 /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
-		DA3C7DB08A434D22E0DE02BD1DF77AE2 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
-		DBDB7670C6AD378A0297BF242583A726 /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshGifHeader.h; path = MJRefresh/Custom/Header/MJRefreshGifHeader.h; sourceTree = "<group>"; };
-		DE442AEBA24F91D530BF0E9797D3AB3C /* MJRefreshFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshFooter.m; path = MJRefresh/Base/MJRefreshFooter.m; sourceTree = "<group>"; };
-		E0549B89201FB27740F192D34C9695AB /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
-		E252B9635A65BEF4FA3CD6AE3478C690 /* MJRefreshConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConfig.m; path = MJRefresh/MJRefreshConfig.m; sourceTree = "<group>"; };
-		E486C29172AD47CD1CC5F1700352CFEA /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackGifFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
-		E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E564943DBEC4A3ABF39F3C12A79A1CEF /* CalendarStructs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarStructs.swift; path = Sources/CalendarStructs.swift; sourceTree = "<group>"; };
-		E6262BC687ED98357B0A767E9E9B8351 /* JTAppleCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JTAppleCalendar-dummy.m"; sourceTree = "<group>"; };
-		E67FCC086D6EABFA48E046D4FE5B6384 /* MJRefreshNormalTrailer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshNormalTrailer.h; path = MJRefresh/Custom/Trailer/MJRefreshNormalTrailer.h; sourceTree = "<group>"; };
-		E88ABF1FC2C0A0776A783E7E9071AC0C /* MJRefreshAutoStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoStateFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h; sourceTree = "<group>"; };
-		EB3468483D1BA3EC6389164CD0BCD1C6 /* JTAppleCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCell.swift; path = Sources/JTAppleCell.swift; sourceTree = "<group>"; };
-		EBE04C32A13B75EC06A0DCE7B2645BCF /* MJRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-prefix.pch"; sourceTree = "<group>"; };
-		ED029E8D94DC6E4941F7C3990272557E /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackFooter.h; path = MJRefresh/Base/MJRefreshBackFooter.h; sourceTree = "<group>"; };
+		71DB1BB9937B1D13BC53CC716A704BB8 /* JTAppleCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTAppleCalendar.debug.xcconfig; sourceTree = "<group>"; };
+		722D59881B8D43EB494C94FD0F48494A /* JTAppleCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-prefix.pch"; sourceTree = "<group>"; };
+		7236A6E170D6A8CB8A8B1B1C00158046 /* UIView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
+		7618FEC11490C750D4C1FC25EC6622D0 /* IQKeyboardManagerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "IQKeyboardManagerSwift-Info.plist"; sourceTree = "<group>"; };
+		77EFD9599629CD20B22FD6426511758C /* FSCalendarCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarCalculator.m; path = FSCalendar/FSCalendarCalculator.m; sourceTree = "<group>"; };
+		7875EF0FC03A7E858D8C115FF2E39C3F /* FSCalendarDynamicHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarDynamicHeader.h; path = FSCalendar/FSCalendarDynamicHeader.h; sourceTree = "<group>"; };
+		78B53972E96EB03FF008D814901AED9F /* JTAppleCalendarLayoutProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayoutProtocol.swift; path = Sources/JTAppleCalendarLayoutProtocol.swift; sourceTree = "<group>"; };
+		7B51E6314FD5507FE27EEEFFE02AC9C0 /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackGifFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
+		7CB64FACF930FBD5C345148082CEBBC4 /* NSBundle+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+MJRefresh.m"; path = "MJRefresh/NSBundle+MJRefresh.m"; sourceTree = "<group>"; };
+		7DB8D83C8302311DFEC71EE163CED086 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackFooter.h; path = MJRefresh/Base/MJRefreshBackFooter.h; sourceTree = "<group>"; };
+		81A5A08ADCE68CE66F12EEB990846D5B /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJRefresh.h"; path = "MJRefresh/UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		82FB30930516746002A1188084749793 /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoGifFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
+		892899D2EB22FE14A502447CBB1CF4FB /* FSCalendarExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarExtensions.m; path = FSCalendar/FSCalendarExtensions.m; sourceTree = "<group>"; };
+		8B357050F98BAE18F821EC752129F19B /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
+		8BAC9A51AC50048AEDE5AED3FF1C6242 /* IQKeyboardManager+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Debug.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift"; sourceTree = "<group>"; };
+		8EE9875CD8979C6BC9E8A2FDAACCD282 /* FSCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FSCalendar.modulemap; sourceTree = "<group>"; };
+		8F2B6AC98F66A60434B18365E8E51DF5 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoFooter.m; path = MJRefresh/Base/MJRefreshAutoFooter.m; sourceTree = "<group>"; };
+		8FB6AA91AC194DC80E7F3DC5C1582C6B /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
+		9163DC0251D42FC32EE2A5AC087D832D /* JTAppleCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JTAppleCalendar-Info.plist"; sourceTree = "<group>"; };
+		95209B8BB966524BC76543F99C75F5FE /* FSCalendar */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FSCalendar; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		981DA75E4C7685AC203983A686E21459 /* MJRefreshHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshHeader.m; path = MJRefresh/Base/MJRefreshHeader.m; sourceTree = "<group>"; };
+		995B955D417355B5DD382D35AB548C9E /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		9A0B92C4EF1CC060FCD45C7672DB37F4 /* JTCalendarProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTCalendarProtocols.swift; path = Sources/JTCalendarProtocols.swift; sourceTree = "<group>"; };
+		9A5771CBDB93BE712D65A12455053BC7 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
+		9A807AAAA0EC5AB876E6333A97296038 /* FSCalendarConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarConstants.m; path = FSCalendar/FSCalendarConstants.m; sourceTree = "<group>"; };
+		9B6C5E6D15834EA3FBE80A87B7A54D03 /* MJRefreshStateTrailer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateTrailer.h; path = MJRefresh/Custom/Trailer/MJRefreshStateTrailer.h; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E4E3F6BBA71D8670CF2D9422B7DDD8C /* MJRefreshComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshComponent.m; path = MJRefresh/Base/MJRefreshComponent.m; sourceTree = "<group>"; };
+		9FA23F576EEDB2D569A5C942218EB729 /* UICollectionViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UICollectionViewDelegates.swift; path = Sources/UICollectionViewDelegates.swift; sourceTree = "<group>"; };
+		A06C62BEA23BD7D180154638305DA80D /* FSCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSCalendar-dummy.m"; sourceTree = "<group>"; };
+		A0C8E428D980D3C9293A3C2BF740F0CD /* JTAppleCalendar */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JTAppleCalendar; path = JTAppleCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2CA71BD0DBB978FD62C9C71F9716AAF /* UserInteractionFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserInteractionFunctions.swift; path = Sources/UserInteractionFunctions.swift; sourceTree = "<group>"; };
+		A5AC56CDEA5217EB64D64DC9E9EDB68D /* MJRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-umbrella.h"; sourceTree = "<group>"; };
+		A8A311ECD852ECEF5988F3386F885147 /* FSCalendarWeekdayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarWeekdayView.m; path = FSCalendar/FSCalendarWeekdayView.m; sourceTree = "<group>"; };
+		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4D805A7CD08A0ADB5E96AC990ACDDF /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
+		B0E390E5EA4B6C91CA1AE49AE8CBC515 /* FSCalendarAppearance.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarAppearance.h; path = FSCalendar/FSCalendarAppearance.h; sourceTree = "<group>"; };
+		B10572CB0E61190B4156C0B78D7349F1 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
+		B177C52999B70CB90EC7DA32DEDD23BC /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateHeader.h; path = MJRefresh/Custom/Header/MJRefreshStateHeader.h; sourceTree = "<group>"; };
+		B619DE32B14D4A52A989A31FE48F1570 /* MJRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
+		B664D718345E63CF94923F313B8FA9E2 /* MJRefreshTrailer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshTrailer.m; path = MJRefresh/Base/MJRefreshTrailer.m; sourceTree = "<group>"; };
+		B83E82C22F69613F54BCCE0A0D9559F0 /* FSCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FSCalendar-Info.plist"; sourceTree = "<group>"; };
+		B8FA96FF8247385EFC10AD4FB34A78FA /* IQKeyboardManager+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Internal.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Internal.swift"; sourceTree = "<group>"; };
+		B92BA1E74D98398A046F139B5C2A1883 /* MJRefreshTrailer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshTrailer.h; path = MJRefresh/Base/MJRefreshTrailer.h; sourceTree = "<group>"; };
+		BB149E9797BBA0A7F38FA59D513BE5CA /* MJRefreshAutoStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoStateFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m; sourceTree = "<group>"; };
+		BC3AB0F838E9AAFA4EADDA3989D0F49D /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
+		BE0071A0F4A78A6D1F13B6C9B8AA958F /* FSCalendarSeparatorDecorationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarSeparatorDecorationView.h; path = FSCalendar/FSCalendarSeparatorDecorationView.h; sourceTree = "<group>"; };
+		C12F9970F15FAACCEBCDD8C0709D812A /* FSCalendarConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarConstants.h; path = FSCalendar/FSCalendarConstants.h; sourceTree = "<group>"; };
+		C13C404FC62687035C9CD71687205FC2 /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackNormalFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
+		C1F1ECA21A20333275BF23F9D4D28DA4 /* FSCalendarTransitionCoordinator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarTransitionCoordinator.h; path = FSCalendar/FSCalendarTransitionCoordinator.h; sourceTree = "<group>"; };
+		C5A1A32049A569B57E00DEAE5E535D04 /* JTAppleCalendarLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayout.swift; path = Sources/JTAppleCalendarLayout.swift; sourceTree = "<group>"; };
+		C5CB64DB44F2C56AF8A1A5188F27A4EB /* FSCalendarSeparatorDecorationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarSeparatorDecorationView.m; path = FSCalendar/FSCalendarSeparatorDecorationView.m; sourceTree = "<group>"; };
+		C8D8EDEB78F31DC9248E3FB92DE11290 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
+		CA9D0746E5E61231B41123782FE75520 /* IQKeyboardManagerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.release.xcconfig; sourceTree = "<group>"; };
+		CAB3D753D34C2A7C8FEB466171343304 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJRefresh.m"; path = "MJRefresh/UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		CB6E56F8BF6A7819C2589562B3700E95 /* MJRefreshNormalTrailer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalTrailer.m; path = MJRefresh/Custom/Trailer/MJRefreshNormalTrailer.m; sourceTree = "<group>"; };
+		CCB6EE31D7CF17C42DBFADF22212EA7A /* FSCalendarTransitionCoordinator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarTransitionCoordinator.m; path = FSCalendar/FSCalendarTransitionCoordinator.m; sourceTree = "<group>"; };
+		D3A683448D673D554B83C07B0FA06BBF /* IQKeyboardManager+Toolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Toolbar.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Toolbar.swift"; sourceTree = "<group>"; };
+		D44B22598C6B9FB6E232CAA0A837B274 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		D5DF35DC8C81009192D7672016700C5C /* IQKeyboardManager+OrientationNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+OrientationNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+OrientationNotification.swift"; sourceTree = "<group>"; };
+		D725CA80C7C21000EF1C0031ECE9292D /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
+		D98F21C26EAA04E75DDAED7A12D753DB /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
+		DA00C925CDC7CB148F32AB7AB5005207 /* MJRefreshFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshFooter.m; path = MJRefresh/Base/MJRefreshFooter.m; sourceTree = "<group>"; };
+		DC6C67400F7C91BD8652E423DBD874D2 /* MJRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MJRefresh-dummy.m"; sourceTree = "<group>"; };
+		DCC7F81D8A75E3CD9B1857052D52B734 /* JTAppleCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JTAppleCalendar-dummy.m"; sourceTree = "<group>"; };
+		DD2301D353E66A10292676A4A40C04D1 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
+		DFAD9200B3557B51EC4361EECCC3467A /* JTAppleCalendarVariables.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarVariables.swift; path = Sources/JTAppleCalendarVariables.swift; sourceTree = "<group>"; };
+		E1B2D8B67B8695FD3FAC67C83F6A5421 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
+		E2194AA16CCB4D1AD993821BC5EA0F29 /* CalendarStructs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarStructs.swift; path = Sources/CalendarStructs.swift; sourceTree = "<group>"; };
+		E3D559F187C3ABBBC1433EE3A889BB66 /* MJRefreshConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConfig.m; path = MJRefresh/MJRefreshConfig.m; sourceTree = "<group>"; };
+		E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MJRefresh; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E53CD74E30DC88A8DB82A25D929ECBEA /* FSCalendarCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarCalculator.h; path = FSCalendar/FSCalendarCalculator.h; sourceTree = "<group>"; };
+		E550F7B53FD1EBFFFA42E49B664DB2DB /* MJRefreshAutoGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoGifFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m; sourceTree = "<group>"; };
+		E69E8327A613A88A944AE88FDAC553E1 /* FSCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendar.h; path = FSCalendar/FSCalendar.h; sourceTree = "<group>"; };
+		EB39B4B9CFA7A5456B1D919DC5A0AD09 /* MJRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MJRefresh.modulemap; sourceTree = "<group>"; };
+		EC3A8DFEBD9CAB39E6DCD90A681E8E04 /* MJRefreshFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshFooter.h; path = MJRefresh/Base/MJRefreshFooter.h; sourceTree = "<group>"; };
 		ED6D78DD625008DC78E684C7E853265D /* Pods-PantryPal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PantryPal-dummy.m"; sourceTree = "<group>"; };
-		EEEBD68F9F56F78CBAD39467DFF8730F /* JTAppleCalendarDelegateProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarDelegateProtocol.swift; path = Sources/JTAppleCalendarDelegateProtocol.swift; sourceTree = "<group>"; };
-		F1480051324C66AC3DC03CC575EA2D8D /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
-		F388F849366CA2B4D1559346CBD4110A /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoFooter.m; path = MJRefresh/Base/MJRefreshAutoFooter.m; sourceTree = "<group>"; };
-		F797F68F6590891067935AF5D6D8D4D5 /* MJRefreshStateTrailer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshStateTrailer.m; path = MJRefresh/Custom/Trailer/MJRefreshStateTrailer.m; sourceTree = "<group>"; };
-		F7DD96EDAB4DBF18C9FC2E5026FB8A04 /* MJRefreshHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshHeader.h; path = MJRefresh/Base/MJRefreshHeader.h; sourceTree = "<group>"; };
-		F7F90C50BBEE537A77A3634379AFE5FE /* MJRefreshStateHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshStateHeader.m; path = MJRefresh/Custom/Header/MJRefreshStateHeader.m; sourceTree = "<group>"; };
-		FA37C6A1C8541A75812E9CEF86970963 /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
-		FAC2C05C3F1FEF685FA9EB2B7BADDF19 /* IQKeyboardManagerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.release.xcconfig; sourceTree = "<group>"; };
-		FBD7AA126FA1B8CE1D2A38307580D672 /* MJRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MJRefresh.modulemap; sourceTree = "<group>"; };
+		F150FD69F8F69E3CD80FAC1FA0E900DB /* FSCalendarHeaderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSCalendarHeaderView.m; path = FSCalendar/FSCalendarHeaderView.m; sourceTree = "<group>"; };
+		F2500B462439B62120CADD74D8992C74 /* JTAppleCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTAppleCalendar.release.xcconfig; sourceTree = "<group>"; };
+		F2765BDBEC21EDD720874548173341A6 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJExtension.m"; path = "MJRefresh/UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		F414614563FAC22F7625909B66C09737 /* FSCalendarExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarExtensions.h; path = FSCalendar/FSCalendarExtensions.h; sourceTree = "<group>"; };
+		F440F705BA9D3C8428C76D6DAD3F8FE2 /* MJRefreshConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConst.h; path = MJRefresh/MJRefreshConst.h; sourceTree = "<group>"; };
+		F593DF423435ABA37E201E458DACF851 /* MJRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoNormalFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
+		F6D2C4D0222C48CBDCDA5FFFB7477730 /* CalendarEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarEnums.swift; path = Sources/CalendarEnums.swift; sourceTree = "<group>"; };
+		F7CC517985DD5C96931B2C47C0FDEBF1 /* IQKeyboardManager+UITextFieldViewNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UITextFieldViewNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UITextFieldViewNotification.swift"; sourceTree = "<group>"; };
+		F828937F9C73DB2C0C7B5500B65EF4A8 /* FSCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSCalendar-umbrella.h"; sourceTree = "<group>"; };
+		F9A8880F0D2E193D5A223CBE9304079F /* MJRefreshHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshHeader.h; path = MJRefresh/Base/MJRefreshHeader.h; sourceTree = "<group>"; };
+		F9EF285DF869FF8C74C38232B437973C /* FSCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSCalendar-prefix.pch"; sourceTree = "<group>"; };
+		FA416D405CF731ADF8DF6FCD294D063A /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
+		FF26ABA52F8CF834F1EA1588C45F00DF /* FSCalendarStickyHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarStickyHeader.h; path = FSCalendar/FSCalendarStickyHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +377,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE6C672F9D4B3CE0D0D83079B8A740F2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EF5AED8C30410F7B21C2069BCE36F0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046FDE140A36CD561C7A8E08A9E9F93D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8243A64755C7A548C64DC56F66C1347B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60CFDC4002EA677B53ECC413F67C149D /* Foundation.framework in Frameworks */,
+				C6ED706364847164CB566CEA1A6FFDD6 /* QuartzCore.framework in Frameworks */,
+				4683418880504CD2212FE56C4F1E8F80 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,14 +409,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8E08EF48B51EC65FCD4BB4BC689C05F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				120C8FE618B70D53515D84A567B8559A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CEBD644774405BAF4AFAE4EC5EF6B39B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -329,130 +420,184 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06AB1601EF75E6B2C226810794CDC439 /* Support Files */ = {
+		0123F0AC3C24EC687531474023ABE003 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FBD7AA126FA1B8CE1D2A38307580D672 /* MJRefresh.modulemap */,
-				C76F2CD9EB4659ED8E2EBE949DE1421D /* MJRefresh-dummy.m */,
-				1F1D09881E8A58A3B02F960FB690A439 /* MJRefresh-Info.plist */,
-				EBE04C32A13B75EC06A0DCE7B2645BCF /* MJRefresh-prefix.pch */,
-				7D05AB39E9EED528D874467841F1064D /* MJRefresh-umbrella.h */,
-				9D902D3B0223572A9BB9AF6D538406B7 /* MJRefresh.debug.xcconfig */,
-				725FEDD38C82A9F5745454CF30F60719 /* MJRefresh.release.xcconfig */,
+				8EE9875CD8979C6BC9E8A2FDAACCD282 /* FSCalendar.modulemap */,
+				A06C62BEA23BD7D180154638305DA80D /* FSCalendar-dummy.m */,
+				B83E82C22F69613F54BCCE0A0D9559F0 /* FSCalendar-Info.plist */,
+				F9EF285DF869FF8C74C38232B437973C /* FSCalendar-prefix.pch */,
+				F828937F9C73DB2C0C7B5500B65EF4A8 /* FSCalendar-umbrella.h */,
+				1492441AC9F7AFDC203918780B2AF7A4 /* FSCalendar.debug.xcconfig */,
+				3D0D1B3637930A10A45730E2D497CBAA /* FSCalendar.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/MJRefresh";
+			path = "../Target Support Files/FSCalendar";
 			sourceTree = "<group>";
 		};
-		123E5A005A7A247440D80EFAD74EC56F /* Products */ = {
+		089D505E52029E0B98808B898AA45024 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift.framework */,
-				A0C8E428D980D3C9293A3C2BF740F0CD /* JTAppleCalendar.framework */,
-				E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh.framework */,
-				1F8E258F9BE7356CD2F57F52361FB03B /* Pods-PantryPal */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		28E2429F34ED9D3A1A5458E476115D37 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B2B6074BD68A1B1BF1FB170E173133E2 /* JTAppleCalendar.modulemap */,
-				E6262BC687ED98357B0A767E9E9B8351 /* JTAppleCalendar-dummy.m */,
-				500BF43EF12569715B7F40D49A276AF8 /* JTAppleCalendar-Info.plist */,
-				4AF627E08A37DA61A415F61F072DEED8 /* JTAppleCalendar-prefix.pch */,
-				C588756714C28D60D5F329061E24973D /* JTAppleCalendar-umbrella.h */,
-				56A6F1EED2AF7A795A95A62DD91BDDE3 /* JTAppleCalendar.debug.xcconfig */,
-				A261413B3E5558C6AF39374009A8122C /* JTAppleCalendar.release.xcconfig */,
+				248FD2482B1607B4BAE2CD8B85A64B59 /* JTAppleCalendar.modulemap */,
+				DCC7F81D8A75E3CD9B1857052D52B734 /* JTAppleCalendar-dummy.m */,
+				9163DC0251D42FC32EE2A5AC087D832D /* JTAppleCalendar-Info.plist */,
+				722D59881B8D43EB494C94FD0F48494A /* JTAppleCalendar-prefix.pch */,
+				6C0BA204C0EAAC1E8273B4F235295F38 /* JTAppleCalendar-umbrella.h */,
+				71DB1BB9937B1D13BC53CC716A704BB8 /* JTAppleCalendar.debug.xcconfig */,
+				F2500B462439B62120CADD74D8992C74 /* JTAppleCalendar.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/JTAppleCalendar";
 			sourceTree = "<group>";
 		};
-		39FB7183B5AAC86BEB84C7F368A60B87 /* JTAppleCalendar */ = {
+		33B122797F1BACEA39B72C0ED494D0DE /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				096BF36DED4CFF8B7014E0AFCF3B91A7 /* CalendarEnums.swift */,
-				E564943DBEC4A3ABF39F3C12A79A1CEF /* CalendarStructs.swift */,
-				17AC1C74EB494F6A99CA7241006A4853 /* GlobalFunctionsAndExtensions.swift */,
-				19B6A015202CEF1B9FEEB58D30C18B62 /* InternalActionFunctions.swift */,
-				5B97B7A5351F1305D12A6BF89AEDB4D8 /* InternalQueryFunctions.swift */,
-				EEEBD68F9F56F78CBAD39467DFF8730F /* JTAppleCalendarDelegateProtocol.swift */,
-				6FB8D54879825EBBDCC363E512C00A16 /* JTAppleCalendarLayout.swift */,
-				95C74B40CD4C6B82FC5DB017BB3DC4F7 /* JTAppleCalendarLayoutProtocol.swift */,
-				6655F2BC5AF0AF04CDE0A8BFE9CB08CA /* JTAppleCalendarVariables.swift */,
-				09696DE23259354A2533E044D9DEFFDA /* JTAppleCalendarView.swift */,
-				EB3468483D1BA3EC6389164CD0BCD1C6 /* JTAppleCell.swift */,
-				C40BD2CEC04D9EF95198D3F23187D081 /* JTAppleCollectionReusableView.swift */,
-				7D9066CE7D75C00F396332D13741E4AA /* JTCalendarProtocols.swift */,
-				D0261C39EEB1EA3522746C79F436AFC5 /* UICollectionViewDelegates.swift */,
-				82F9E9A4F74D47BED8C01FC7F468AEE5 /* UIScrollViewDelegates.swift */,
-				66EAD9015FCFB501FCA7421967822CC1 /* UserInteractionFunctions.swift */,
-				28E2429F34ED9D3A1A5458E476115D37 /* Support Files */,
+				402BA4550D1534B8511D515241D75A6A /* MJRefresh.h */,
+				345552A83D5B709B25E1820853519CE6 /* MJRefreshAutoFooter.h */,
+				8F2B6AC98F66A60434B18365E8E51DF5 /* MJRefreshAutoFooter.m */,
+				82FB30930516746002A1188084749793 /* MJRefreshAutoGifFooter.h */,
+				E550F7B53FD1EBFFFA42E49B664DB2DB /* MJRefreshAutoGifFooter.m */,
+				F593DF423435ABA37E201E458DACF851 /* MJRefreshAutoNormalFooter.h */,
+				30244F7DE5F344B967301A44972CCA27 /* MJRefreshAutoNormalFooter.m */,
+				49008FF77A16C2E84C10BBC7B5AA09C0 /* MJRefreshAutoStateFooter.h */,
+				BB149E9797BBA0A7F38FA59D513BE5CA /* MJRefreshAutoStateFooter.m */,
+				7DB8D83C8302311DFEC71EE163CED086 /* MJRefreshBackFooter.h */,
+				21C05B37B4F0109EBDB9F1241CC641BB /* MJRefreshBackFooter.m */,
+				2F1333FB22F6CFF0EF31AD2DCCBC9D49 /* MJRefreshBackGifFooter.h */,
+				7B51E6314FD5507FE27EEEFFE02AC9C0 /* MJRefreshBackGifFooter.m */,
+				C13C404FC62687035C9CD71687205FC2 /* MJRefreshBackNormalFooter.h */,
+				227525FFD7BEED201792B8FFF4FBDBDD /* MJRefreshBackNormalFooter.m */,
+				570B17234624E52A6C4AC9D19B9CF27C /* MJRefreshBackStateFooter.h */,
+				1AB4B0E1A1567BD3A7A0C906C3F6AC49 /* MJRefreshBackStateFooter.m */,
+				1C0EE0BB09276D64AA8D9253D96700AA /* MJRefreshComponent.h */,
+				9E4E3F6BBA71D8670CF2D9422B7DDD8C /* MJRefreshComponent.m */,
+				141E62DA6D36008E0FE2F62748EE8FA4 /* MJRefreshConfig.h */,
+				E3D559F187C3ABBBC1433EE3A889BB66 /* MJRefreshConfig.m */,
+				F440F705BA9D3C8428C76D6DAD3F8FE2 /* MJRefreshConst.h */,
+				55CC6D8CCD475FDB98234291803E7D97 /* MJRefreshConst.m */,
+				EC3A8DFEBD9CAB39E6DCD90A681E8E04 /* MJRefreshFooter.h */,
+				DA00C925CDC7CB148F32AB7AB5005207 /* MJRefreshFooter.m */,
+				3793A14A157AC15E34745F3D8905C71E /* MJRefreshGifHeader.h */,
+				0AD56D67021A2C6583C40C20891B1A5D /* MJRefreshGifHeader.m */,
+				F9A8880F0D2E193D5A223CBE9304079F /* MJRefreshHeader.h */,
+				981DA75E4C7685AC203983A686E21459 /* MJRefreshHeader.m */,
+				66C3107290275E5D1CCE67057A76AAA3 /* MJRefreshNormalHeader.h */,
+				52C44AFBDDD94A00E757C49EA9B4F5CF /* MJRefreshNormalHeader.m */,
+				4CAF6EF0731ED143AE986A024FCAAF42 /* MJRefreshNormalTrailer.h */,
+				CB6E56F8BF6A7819C2589562B3700E95 /* MJRefreshNormalTrailer.m */,
+				B177C52999B70CB90EC7DA32DEDD23BC /* MJRefreshStateHeader.h */,
+				0D79A4F96E8FC851D0C07CB9EE15B5AA /* MJRefreshStateHeader.m */,
+				9B6C5E6D15834EA3FBE80A87B7A54D03 /* MJRefreshStateTrailer.h */,
+				0E41C20E08FD81A6FF7D9E5AB856B8BF /* MJRefreshStateTrailer.m */,
+				B92BA1E74D98398A046F139B5C2A1883 /* MJRefreshTrailer.h */,
+				B664D718345E63CF94923F313B8FA9E2 /* MJRefreshTrailer.m */,
+				59F76D35C49669AA2D7EAEEB72E96DA6 /* NSBundle+MJRefresh.h */,
+				7CB64FACF930FBD5C345148082CEBBC4 /* NSBundle+MJRefresh.m */,
+				061865FAD80E6B89FA69CB2BF2159A62 /* UICollectionViewLayout+MJRefresh.h */,
+				3D5DBE385AFB96EFA2C2E104365F778C /* UICollectionViewLayout+MJRefresh.m */,
+				26F826E91C0174FEE01B238FFAA357A2 /* UIScrollView+MJExtension.h */,
+				F2765BDBEC21EDD720874548173341A6 /* UIScrollView+MJExtension.m */,
+				81A5A08ADCE68CE66F12EEB990846D5B /* UIScrollView+MJRefresh.h */,
+				CAB3D753D34C2A7C8FEB466171343304 /* UIScrollView+MJRefresh.m */,
+				30EFC62894573058A4CF474E68D4591D /* UIView+MJExtension.h */,
+				7236A6E170D6A8CB8A8B1B1C00158046 /* UIView+MJExtension.m */,
+				DD853848AD29E2A9DB8E8DCA2C6F1D1A /* Resources */,
+				CD478C6CD7A4DBCE69656301EBEBBEED /* Support Files */,
 			);
-			path = JTAppleCalendar;
+			name = MJRefresh;
+			path = MJRefresh;
 			sourceTree = "<group>";
 		};
-		3E67A56E20559FEDB78C64279119B220 /* Support Files */ = {
+		3B7C60AC03A5FF4E44805AE5E3FA6C57 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				440ECFBA16E3969994D28292ADA701CF /* SwiftLint.debug.xcconfig */,
-				2BF469DD0D5909398F7C1E802229EBA8 /* SwiftLint.release.xcconfig */,
+				95209B8BB966524BC76543F99C75F5FE /* FSCalendar */,
+				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
+				A0C8E428D980D3C9293A3C2BF740F0CD /* JTAppleCalendar */,
+				E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh */,
+				1F8E258F9BE7356CD2F57F52361FB03B /* Pods-PantryPal */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44A6B65DE63C8EAF0DD884EC7F8A77F3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D44B22598C6B9FB6E232CAA0A837B274 /* SwiftLint.debug.xcconfig */,
+				995B955D417355B5DD382D35AB548C9E /* SwiftLint.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftLint";
 			sourceTree = "<group>";
 		};
-		8E8517C5F5868030B5DE20180D1424FB /* Resources */ = {
+		5DE71AC60D798B7AF36276259A0695CB /* IQKeyboardManagerSwift */ = {
 			isa = PBXGroup;
 			children = (
-				88AAEC0C87780364AA85FE5041E49F39 /* MJRefresh.bundle */,
+				AE4D805A7CD08A0ADB5E96AC990ACDDF /* IQBarButtonItem.swift */,
+				8FB6AA91AC194DC80E7F3DC5C1582C6B /* IQInvocation.swift */,
+				C8D8EDEB78F31DC9248E3FB92DE11290 /* IQKeyboardManager.swift */,
+				8BAC9A51AC50048AEDE5AED3FF1C6242 /* IQKeyboardManager+Debug.swift */,
+				B8FA96FF8247385EFC10AD4FB34A78FA /* IQKeyboardManager+Internal.swift */,
+				D5DF35DC8C81009192D7672016700C5C /* IQKeyboardManager+OrientationNotification.swift */,
+				0AC2FFC29A901EC5C6F58FC00E3D40B3 /* IQKeyboardManager+Position.swift */,
+				D3A683448D673D554B83C07B0FA06BBF /* IQKeyboardManager+Toolbar.swift */,
+				197AF97D65DCE90E423060EE3F3740B3 /* IQKeyboardManager+UIKeyboardNotification.swift */,
+				F7CC517985DD5C96931B2C47C0FDEBF1 /* IQKeyboardManager+UITextFieldViewNotification.swift */,
+				9A5771CBDB93BE712D65A12455053BC7 /* IQKeyboardManagerConstants.swift */,
+				46814B756E27F8080BE81C60257934B4 /* IQKeyboardManagerConstantsInternal.swift */,
+				1128198E8356B5CC4D37998C84D32228 /* IQKeyboardReturnKeyHandler.swift */,
+				DD2301D353E66A10292676A4A40C04D1 /* IQNSArray+Sort.swift */,
+				D98F21C26EAA04E75DDAED7A12D753DB /* IQPreviousNextView.swift */,
+				3C33608FAD91C3E74BF24C21EFBF0B5E /* IQTextView.swift */,
+				19EF284CE3FA099E03F22C61488A06A8 /* IQTitleBarButtonItem.swift */,
+				41A49362C84FA9921C851455638689E9 /* IQToolbar.swift */,
+				5804779195753A0129DFC3B7F3A578F8 /* IQUIScrollView+Additions.swift */,
+				D725CA80C7C21000EF1C0031ECE9292D /* IQUITextFieldView+Additions.swift */,
+				E1B2D8B67B8695FD3FAC67C83F6A5421 /* IQUIView+Hierarchy.swift */,
+				B10572CB0E61190B4156C0B78D7349F1 /* IQUIView+IQKeyboardToolbar.swift */,
+				8B357050F98BAE18F821EC752129F19B /* IQUIViewController+Additions.swift */,
+				A0529953726F9E10D075A61429EF41CF /* Support Files */,
 			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		9049FE410CEB6065E720440B9CC6940A /* IQKeyboardManagerSwift */ = {
-			isa = PBXGroup;
-			children = (
-				F1480051324C66AC3DC03CC575EA2D8D /* IQBarButtonItem.swift */,
-				D74C2453657942976261A32BFDB5A115 /* IQInvocation.swift */,
-				0EC3B80A85E584FED5738DC4C5C84F5C /* IQKeyboardManager.swift */,
-				1F097FCEA40EC088FE874E7F09FF81BA /* IQKeyboardManager+Debug.swift */,
-				0161DAD258E4DD52009E9189F9D50729 /* IQKeyboardManager+Internal.swift */,
-				BC61736FE790C153AB86B3A5DD82E147 /* IQKeyboardManager+OrientationNotification.swift */,
-				218AF38D0EFD5E61D7ACF0128FCA610E /* IQKeyboardManager+Position.swift */,
-				AAC48651E552118525076DB99883BE46 /* IQKeyboardManager+Toolbar.swift */,
-				0D1E08C383984BCD5E356266554F4789 /* IQKeyboardManager+UIKeyboardNotification.swift */,
-				9098D5E9F019C6E28461B12A359AC561 /* IQKeyboardManager+UITextFieldViewNotification.swift */,
-				E0549B89201FB27740F192D34C9695AB /* IQKeyboardManagerConstants.swift */,
-				12B7C34C1207440F7E0BC273C320B2FA /* IQKeyboardManagerConstantsInternal.swift */,
-				6E19DDB3E6A51E83E4531B0D0BCD0E39 /* IQKeyboardReturnKeyHandler.swift */,
-				DA3C7DB08A434D22E0DE02BD1DF77AE2 /* IQNSArray+Sort.swift */,
-				9E811D21C712381C9B2530F0D8A597DC /* IQPreviousNextView.swift */,
-				A4BDACD2FC2313821823F1A8CE285770 /* IQTextView.swift */,
-				239074AC6EA1274886A65E599E4E57E7 /* IQTitleBarButtonItem.swift */,
-				FA37C6A1C8541A75812E9CEF86970963 /* IQToolbar.swift */,
-				A149D1C4B044AC5EF33B106BEE878F22 /* IQUIScrollView+Additions.swift */,
-				2381D09F9BECB11C289886F18D601439 /* IQUITextFieldView+Additions.swift */,
-				339AD4D66AEDB748DCCC2D39994746ED /* IQUIView+Hierarchy.swift */,
-				A7BAC18E6B63DD4FA4AE7FA493491BAA /* IQUIView+IQKeyboardToolbar.swift */,
-				41997C07AE5AF11077F20FFA78644AB2 /* IQUIViewController+Additions.swift */,
-				A2D10BB3AD8A83D444D235532411A5AF /* Support Files */,
-			);
+			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
-		A2D10BB3AD8A83D444D235532411A5AF /* Support Files */ = {
+		7F87023C9A5ADEFEE5CEB859745365E4 /* JTAppleCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				0890BB188DA2C54F13E4AF2C4F05B8B0 /* IQKeyboardManagerSwift.modulemap */,
-				0C3EE67B3A65BA769697B2EE956C9E27 /* IQKeyboardManagerSwift-dummy.m */,
-				2771630326F49981C0E832A44E411556 /* IQKeyboardManagerSwift-Info.plist */,
-				0907D9D8FB23561A2724C9E4CA8AF32B /* IQKeyboardManagerSwift-prefix.pch */,
-				D33F3AA76C0CDF1351DEA6F13A2E055E /* IQKeyboardManagerSwift-umbrella.h */,
-				1F262954E53E5561A4DFC5595EBD9AA6 /* IQKeyboardManagerSwift.debug.xcconfig */,
-				FAC2C05C3F1FEF685FA9EB2B7BADDF19 /* IQKeyboardManagerSwift.release.xcconfig */,
+				F6D2C4D0222C48CBDCDA5FFFB7477730 /* CalendarEnums.swift */,
+				E2194AA16CCB4D1AD993821BC5EA0F29 /* CalendarStructs.swift */,
+				536E5B009467366A13BAB1E57F9BA8B3 /* GlobalFunctionsAndExtensions.swift */,
+				5F63E2043CA22A48EDB850346E25A66D /* InternalActionFunctions.swift */,
+				64250CC75E195BC000F2E59478FD3611 /* InternalQueryFunctions.swift */,
+				156FE9C31E0294339FF81C2E6064C960 /* JTAppleCalendarDelegateProtocol.swift */,
+				C5A1A32049A569B57E00DEAE5E535D04 /* JTAppleCalendarLayout.swift */,
+				78B53972E96EB03FF008D814901AED9F /* JTAppleCalendarLayoutProtocol.swift */,
+				DFAD9200B3557B51EC4361EECCC3467A /* JTAppleCalendarVariables.swift */,
+				0F086CBC56E99D0C1F3ED72685E3758A /* JTAppleCalendarView.swift */,
+				6ECEEC6854DCBA31713E5199DC415753 /* JTAppleCell.swift */,
+				5F00014A3396D28E47A8D1716ACE908F /* JTAppleCollectionReusableView.swift */,
+				9A0B92C4EF1CC060FCD45C7672DB37F4 /* JTCalendarProtocols.swift */,
+				9FA23F576EEDB2D569A5C942218EB729 /* UICollectionViewDelegates.swift */,
+				100697BBFE4551D5C5B3BBB6CF6298FD /* UIScrollViewDelegates.swift */,
+				A2CA71BD0DBB978FD62C9C71F9716AAF /* UserInteractionFunctions.swift */,
+				089D505E52029E0B98808B898AA45024 /* Support Files */,
+			);
+			name = JTAppleCalendar;
+			path = JTAppleCalendar;
+			sourceTree = "<group>";
+		};
+		A0529953726F9E10D075A61429EF41CF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				400D372805C3E869D16A4EA84F9525BF /* IQKeyboardManagerSwift.modulemap */,
+				BC3AB0F838E9AAFA4EADDA3989D0F49D /* IQKeyboardManagerSwift-dummy.m */,
+				7618FEC11490C750D4C1FC25EC6622D0 /* IQKeyboardManagerSwift-Info.plist */,
+				FA416D405CF731ADF8DF6FCD294D063A /* IQKeyboardManagerSwift-prefix.pch */,
+				50BF6A4FA1B168E16BCA5AE0B49771B4 /* IQKeyboardManagerSwift-umbrella.h */,
+				6763C6A4F4FA5DA66711CCD2B5969093 /* IQKeyboardManagerSwift.debug.xcconfig */,
+				CA9D0746E5E61231B41123782FE75520 /* IQKeyboardManagerSwift.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/IQKeyboardManagerSwift";
@@ -475,12 +620,88 @@
 			path = "Target Support Files/Pods-PantryPal";
 			sourceTree = "<group>";
 		};
+		B04DF075F427DC3B6F0B48C4BB5578CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C56D3908CE0D7DCE94748C0D6330790A /* FSCalendar */,
+				5DE71AC60D798B7AF36276259A0695CB /* IQKeyboardManagerSwift */,
+				7F87023C9A5ADEFEE5CEB859745365E4 /* JTAppleCalendar */,
+				33B122797F1BACEA39B72C0ED494D0DE /* MJRefresh */,
+				C7E7E92ED49F817410CF883EC2A9CFEE /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F9D206BABE81E6BF0B9B23880B238CC7 /* iOS */,
+				EB0E3A0897B38211D65ACB5E48640571 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C56D3908CE0D7DCE94748C0D6330790A /* FSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				E69E8327A613A88A944AE88FDAC553E1 /* FSCalendar.h */,
+				3067AD0B7CA40A7B7B53DDB549B78108 /* FSCalendar.m */,
+				B0E390E5EA4B6C91CA1AE49AE8CBC515 /* FSCalendarAppearance.h */,
+				6E65C97952614ED03BCC87E0158E9B93 /* FSCalendarAppearance.m */,
+				E53CD74E30DC88A8DB82A25D929ECBEA /* FSCalendarCalculator.h */,
+				77EFD9599629CD20B22FD6426511758C /* FSCalendarCalculator.m */,
+				246E2C16D334E0526D1E13FBB70C27D9 /* FSCalendarCell.h */,
+				074B2B93655E41BD3128710415713485 /* FSCalendarCell.m */,
+				6D8BAC403A68B9F3DAC1B855EA335CEC /* FSCalendarCollectionView.h */,
+				07CA2A4FAB9BA9925D31B1059CFCF91B /* FSCalendarCollectionView.m */,
+				3FA4A05CA6DA490B5365B5E9DEF9EC6D /* FSCalendarCollectionViewLayout.h */,
+				60A5C8315F9702CAF92D68357A75085A /* FSCalendarCollectionViewLayout.m */,
+				C12F9970F15FAACCEBCDD8C0709D812A /* FSCalendarConstants.h */,
+				9A807AAAA0EC5AB876E6333A97296038 /* FSCalendarConstants.m */,
+				5141C9998D022B9E0A375DD699D204F3 /* FSCalendarDelegationFactory.h */,
+				60A8DC03F8138F9024FCDF2D19F055B8 /* FSCalendarDelegationFactory.m */,
+				568DA163C97EE75F3FADB7DFFA5BE55F /* FSCalendarDelegationProxy.h */,
+				285CDD920F294359742966596263CC64 /* FSCalendarDelegationProxy.m */,
+				7875EF0FC03A7E858D8C115FF2E39C3F /* FSCalendarDynamicHeader.h */,
+				F414614563FAC22F7625909B66C09737 /* FSCalendarExtensions.h */,
+				892899D2EB22FE14A502447CBB1CF4FB /* FSCalendarExtensions.m */,
+				5DE26A5E814FDD51D7AD1DBF69DA757F /* FSCalendarHeaderView.h */,
+				F150FD69F8F69E3CD80FAC1FA0E900DB /* FSCalendarHeaderView.m */,
+				BE0071A0F4A78A6D1F13B6C9B8AA958F /* FSCalendarSeparatorDecorationView.h */,
+				C5CB64DB44F2C56AF8A1A5188F27A4EB /* FSCalendarSeparatorDecorationView.m */,
+				FF26ABA52F8CF834F1EA1588C45F00DF /* FSCalendarStickyHeader.h */,
+				6EDD402D72D9B646548C2F0608E1E195 /* FSCalendarStickyHeader.m */,
+				C1F1ECA21A20333275BF23F9D4D28DA4 /* FSCalendarTransitionCoordinator.h */,
+				CCB6EE31D7CF17C42DBFADF22212EA7A /* FSCalendarTransitionCoordinator.m */,
+				532EAF6853934F1BB2CFBEEEB34FF708 /* FSCalendarWeekdayView.h */,
+				A8A311ECD852ECEF5988F3386F885147 /* FSCalendarWeekdayView.m */,
+				0123F0AC3C24EC687531474023ABE003 /* Support Files */,
+			);
+			name = FSCalendar;
+			path = FSCalendar;
+			sourceTree = "<group>";
+		};
+		C7E7E92ED49F817410CF883EC2A9CFEE /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				44A6B65DE63C8EAF0DD884EC7F8A77F3 /* Support Files */,
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		CD478C6CD7A4DBCE69656301EBEBBEED /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB39B4B9CFA7A5456B1D919DC5A0AD09 /* MJRefresh.modulemap */,
+				DC6C67400F7C91BD8652E423DBD874D2 /* MJRefresh-dummy.m */,
+				34C2E3EE362EEABE61FE60FDC1DA93BD /* MJRefresh-Info.plist */,
+				40C2D17C5E0BD46DE463D85B402E8CBB /* MJRefresh-prefix.pch */,
+				A5AC56CDEA5217EB64D64DC9E9EDB68D /* MJRefresh-umbrella.h */,
+				20F63FED720AA79613E5D4112B1B56AE /* MJRefresh.debug.xcconfig */,
+				6DED8CCCD90628EC26B3084190BD73F4 /* MJRefresh.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MJRefresh";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -488,8 +709,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
-				FCF68742F3AB52AFD5917A0B0B3C2578 /* Pods */,
-				123E5A005A7A247440D80EFAD74EC56F /* Products */,
+				B04DF075F427DC3B6F0B48C4BB5578CF /* Pods */,
+				3B7C60AC03A5FF4E44805AE5E3FA6C57 /* Products */,
 				D867DADC4CDB73E2ED6C9C471133D99F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -502,102 +723,33 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		E44F5BAA77779C04748F42C42DC7A9B1 /* MJRefresh */ = {
+		DD853848AD29E2A9DB8E8DCA2C6F1D1A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				815AEC6D8B998AE17E87DBA53D3C6A0D /* MJRefresh.h */,
-				B1C96546921AF2612A17B4F6CB48F3AF /* MJRefreshAutoFooter.h */,
-				F388F849366CA2B4D1559346CBD4110A /* MJRefreshAutoFooter.m */,
-				6539FC8CDA9BC52838B3B1DEA054C872 /* MJRefreshAutoGifFooter.h */,
-				383A70BA7F5FC03E594B08C59AFE396F /* MJRefreshAutoGifFooter.m */,
-				D3FFB0DDFF3166662FB7F759BA0938FA /* MJRefreshAutoNormalFooter.h */,
-				4AEDF5123B007430CA8DB94506813883 /* MJRefreshAutoNormalFooter.m */,
-				E88ABF1FC2C0A0776A783E7E9071AC0C /* MJRefreshAutoStateFooter.h */,
-				2AFB50D2F0CD05EF40907FA85CCF3AE0 /* MJRefreshAutoStateFooter.m */,
-				ED029E8D94DC6E4941F7C3990272557E /* MJRefreshBackFooter.h */,
-				82F0A75A4D568C8769F23CC1EAA9AE62 /* MJRefreshBackFooter.m */,
-				A15976785F80636788981824A420D18E /* MJRefreshBackGifFooter.h */,
-				E486C29172AD47CD1CC5F1700352CFEA /* MJRefreshBackGifFooter.m */,
-				BF9D78F5CAA429237F0AE544C5D94D15 /* MJRefreshBackNormalFooter.h */,
-				A1EBEFB64E51513CD9846AFD4983F5F3 /* MJRefreshBackNormalFooter.m */,
-				CCC615BC57F6BBA00BECB2DE8F15AEC4 /* MJRefreshBackStateFooter.h */,
-				BB46F6CC88D7D5BF7B727EE2FA31399F /* MJRefreshBackStateFooter.m */,
-				774750B8B2D0E6DC4F0C6231416EAE8F /* MJRefreshComponent.h */,
-				848B56B62D4F7AA7C5047224EA0F6C71 /* MJRefreshComponent.m */,
-				D09FA834346FD21CEE2F43B23722A03F /* MJRefreshConfig.h */,
-				E252B9635A65BEF4FA3CD6AE3478C690 /* MJRefreshConfig.m */,
-				3AEE8E7A779417BCE773422B687EDBAE /* MJRefreshConst.h */,
-				2836180330436159F16D631A903B2DBE /* MJRefreshConst.m */,
-				D6269031039733EE17E07A6CE280BC2B /* MJRefreshFooter.h */,
-				DE442AEBA24F91D530BF0E9797D3AB3C /* MJRefreshFooter.m */,
-				DBDB7670C6AD378A0297BF242583A726 /* MJRefreshGifHeader.h */,
-				BFE0BC4E481C08CA9D2648D2F5BD0A77 /* MJRefreshGifHeader.m */,
-				F7DD96EDAB4DBF18C9FC2E5026FB8A04 /* MJRefreshHeader.h */,
-				D3B7134DFCAF65B6EC19C1EB9544456E /* MJRefreshHeader.m */,
-				CA98217EC53CC64A7547825F242C4C96 /* MJRefreshNormalHeader.h */,
-				2A9F28AF9382FC7A00DC5F9054227D3F /* MJRefreshNormalHeader.m */,
-				E67FCC086D6EABFA48E046D4FE5B6384 /* MJRefreshNormalTrailer.h */,
-				6EEF563A1B42038EF29087D65AD07FC9 /* MJRefreshNormalTrailer.m */,
-				56B9DC984AD515F722D4EE0591A36FA9 /* MJRefreshStateHeader.h */,
-				F7F90C50BBEE537A77A3634379AFE5FE /* MJRefreshStateHeader.m */,
-				66F5C56DFCD32AF8C82CA1135A2B5F40 /* MJRefreshStateTrailer.h */,
-				F797F68F6590891067935AF5D6D8D4D5 /* MJRefreshStateTrailer.m */,
-				6D86BF2E489D2EB5B099638BEE97B216 /* MJRefreshTrailer.h */,
-				0DECAA9A1D1D14D2C819D449951D7ABE /* MJRefreshTrailer.m */,
-				79737FAF434F00B7B315D95B8F5C30A4 /* NSBundle+MJRefresh.h */,
-				822D6B1954E66784338F4E46B3EEE445 /* NSBundle+MJRefresh.m */,
-				23547090163524661D5FDAD9828A322F /* UICollectionViewLayout+MJRefresh.h */,
-				75F31D07876ED870877F9CE7407BFE55 /* UICollectionViewLayout+MJRefresh.m */,
-				515F27256D7766F21D184DB274B3F23F /* UIScrollView+MJExtension.h */,
-				664A20E7B4B1C78BB888C23A81D875F5 /* UIScrollView+MJExtension.m */,
-				B31FF57E76A63CA5DFF008E2066A663D /* UIScrollView+MJRefresh.h */,
-				C3E3419F8D5DDAC748546E7E770C28FB /* UIScrollView+MJRefresh.m */,
-				6F73FD71294E4AF539953B3727C2F83D /* UIView+MJExtension.h */,
-				4DDAD4C5190570922EA9D8278F532D1C /* UIView+MJExtension.m */,
-				8E8517C5F5868030B5DE20180D1424FB /* Resources */,
-				06AB1601EF75E6B2C226810794CDC439 /* Support Files */,
+				B619DE32B14D4A52A989A31FE48F1570 /* MJRefresh.bundle */,
 			);
-			path = MJRefresh;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		ECA19D9C323E0CBD1B896B3D6499A6F8 /* SwiftLint */ = {
+		EB0E3A0897B38211D65ACB5E48640571 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				3E67A56E20559FEDB78C64279119B220 /* Support Files */,
-			);
-			path = SwiftLint;
-			sourceTree = "<group>";
-		};
-		F9D206BABE81E6BF0B9B23880B238CC7 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */,
-				79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */,
-				A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */,
-				04D60AC13D33197690A05C641925DDDA /* UIKit.framework */,
+				2F00BEE59DC7EC91BB1C827BEF78C6A7 /* CoreGraphics.framework */,
+				316612CB60866F3952D1AEFFE9E409E7 /* Foundation.framework */,
+				251D60A893F479C33123291FB0EED416 /* QuartzCore.framework */,
+				6DF9E080A9A1ED9063D387790E4AE632 /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		FCF68742F3AB52AFD5917A0B0B3C2578 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9049FE410CEB6065E720440B9CC6940A /* IQKeyboardManagerSwift */,
-				39FB7183B5AAC86BEB84C7F368A60B87 /* JTAppleCalendar */,
-				E44F5BAA77779C04748F42C42DC7A9B1 /* MJRefresh */,
-				ECA19D9C323E0CBD1B896B3D6499A6F8 /* SwiftLint */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		765DB3C0DCB8A9ECC898B2D0A8C51F61 /* Headers */ = {
+		58203374267AE8F2D98B44A3EAB45D78 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0C8BC97DF076844B99C91F6703961D5 /* Pods-PantryPal-umbrella.h in Headers */,
+				1CBDD971E01CC07B3D91E24935A15BC2 /* Pods-PantryPal-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,9 +802,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF9900830C8DCDB380DFE67D911EBA65 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A550F7F30921E5FFE67A755D67DA7683 /* FSCalendar.h in Headers */,
+				1FF421C714EDBE044E5EEB1E0C6A8571 /* FSCalendar-umbrella.h in Headers */,
+				BC0B2FA367074EAF985420BE965303D3 /* FSCalendarAppearance.h in Headers */,
+				62FFC4B2AA010A5445E5D9D6294C62B6 /* FSCalendarCalculator.h in Headers */,
+				003475471715C79534A569A1DE745889 /* FSCalendarCell.h in Headers */,
+				6DCF6F2A00DA4D32535EB01AE34F3563 /* FSCalendarCollectionView.h in Headers */,
+				4643DA364A3E80706B89D53043890B4D /* FSCalendarCollectionViewLayout.h in Headers */,
+				752DBFCDD74504EEA558FCD691F6D548 /* FSCalendarConstants.h in Headers */,
+				C17CF6C18DAC9307799F1D7972965EDF /* FSCalendarDelegationFactory.h in Headers */,
+				39F986157716D5214013E395BDFA237A /* FSCalendarDelegationProxy.h in Headers */,
+				4EC9E26EE87569C1B51B6DFF20700772 /* FSCalendarDynamicHeader.h in Headers */,
+				5F847123FA3D224722CE24317DCEF968 /* FSCalendarExtensions.h in Headers */,
+				0CCBB4361672C8994784F0CD9AFC876D /* FSCalendarHeaderView.h in Headers */,
+				1152D5AAA7732A77B80CF0E33A68351C /* FSCalendarSeparatorDecorationView.h in Headers */,
+				BC1A04CE0A9851F3C003ECD156BE95AC /* FSCalendarStickyHeader.h in Headers */,
+				74340052A3CD15A02A87D8D651CB8AB8 /* FSCalendarTransitionCoordinator.h in Headers */,
+				517DF7507FDB12DBF9BA9D1536EDCC4F /* FSCalendarWeekdayView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		13285D54682BEAD805960F9E6EEB9949 /* FSCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B0A80925871C91B9D807A479DC9E1C8 /* Build configuration list for PBXNativeTarget "FSCalendar" */;
+			buildPhases = (
+				FF9900830C8DCDB380DFE67D911EBA65 /* Headers */,
+				0850BAB6F37BE1286C748B584A006CC9 /* Sources */,
+				8243A64755C7A548C64DC56F66C1347B /* Frameworks */,
+				6FDC92F7E5D72E9561F44586F35A4DEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FSCalendar;
+			productName = FSCalendar;
+			productReference = 95209B8BB966524BC76543F99C75F5FE /* FSCalendar */;
+			productType = "com.apple.product-type.framework";
+		};
 		421B6ABF460857FE6CA2905EFB5A4F74 /* JTAppleCalendar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 644E96FAE85BE62F64434125FB7E2DE5 /* Build configuration list for PBXNativeTarget "JTAppleCalendar" */;
@@ -668,7 +862,7 @@
 			);
 			name = JTAppleCalendar;
 			productName = JTAppleCalendar;
-			productReference = A0C8E428D980D3C9293A3C2BF740F0CD /* JTAppleCalendar.framework */;
+			productReference = A0C8E428D980D3C9293A3C2BF740F0CD /* JTAppleCalendar */;
 			productType = "com.apple.product-type.framework";
 		};
 		6868056D761E163D10FDAF8CF1C4D9B8 /* MJRefresh */ = {
@@ -686,7 +880,7 @@
 			);
 			name = MJRefresh;
 			productName = MJRefresh;
-			productReference = E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh.framework */;
+			productReference = E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh */;
 			productType = "com.apple.product-type.framework";
 		};
 		B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */ = {
@@ -704,25 +898,26 @@
 			);
 			name = IQKeyboardManagerSwift;
 			productName = IQKeyboardManagerSwift;
-			productReference = A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift.framework */;
+			productReference = A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */;
 			productType = "com.apple.product-type.framework";
 		};
 		E3F1DA9079DF75CED5C4208EA1F3BD5B /* Pods-PantryPal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D0B00AEDD7434DE56736A7A8732074A /* Build configuration list for PBXNativeTarget "Pods-PantryPal" */;
+			buildConfigurationList = 293DEF3836269610013C76ED9E702628 /* Build configuration list for PBXNativeTarget "Pods-PantryPal" */;
 			buildPhases = (
-				765DB3C0DCB8A9ECC898B2D0A8C51F61 /* Headers */,
-				9C385C506B71B8C245F0C26B4608C9DB /* Sources */,
-				B8E08EF48B51EC65FCD4BB4BC689C05F /* Frameworks */,
-				908FE368C8ACD40B067586076B07595F /* Resources */,
+				58203374267AE8F2D98B44A3EAB45D78 /* Headers */,
+				CD0B9D0B6774E18D0710A1ACF4B81C74 /* Sources */,
+				4EF5AED8C30410F7B21C2069BCE36F0E /* Frameworks */,
+				99B07ED4A6EB1C215D755C203C0DD1D8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7E1E57E7799D9BB5E2DBD12CBDBAD2E7 /* PBXTargetDependency */,
-				D2186AC80CDFFFDE1DED129A7BBE98A5 /* PBXTargetDependency */,
-				FA8DA7BA90E33889DCF3CAFD0E12BA22 /* PBXTargetDependency */,
-				10B18A77EA97CB2A8BD745D329259201 /* PBXTargetDependency */,
+				031EDA72813B3F1A218E5421CF152200 /* PBXTargetDependency */,
+				BBF1FAD0CD522B18E3559224D9D3B848 /* PBXTargetDependency */,
+				8C7025D061374FB061FF7EB2D815E89F /* PBXTargetDependency */,
+				90089E46B0C47446E6C5344F6E58E082 /* PBXTargetDependency */,
+				594ECCA4FF08DEE8092971FC6C6ABFA8 /* PBXTargetDependency */,
 			);
 			name = "Pods-PantryPal";
 			productName = Pods_PantryPal;
@@ -736,7 +931,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -747,10 +942,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 123E5A005A7A247440D80EFAD74EC56F /* Products */;
+			productRefGroup = 3B7C60AC03A5FF4E44805AE5E3FA6C57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				13285D54682BEAD805960F9E6EEB9949 /* FSCalendar */,
 				B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */,
 				421B6ABF460857FE6CA2905EFB5A4F74 /* JTAppleCalendar */,
 				6868056D761E163D10FDAF8CF1C4D9B8 /* MJRefresh */,
@@ -776,7 +972,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		908FE368C8ACD40B067586076B07595F /* Resources */ = {
+		6FDC92F7E5D72E9561F44586F35A4DEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99B07ED4A6EB1C215D755C203C0DD1D8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -793,6 +996,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0850BAB6F37BE1286C748B584A006CC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7C20C67D0D5A1C73A0A057268A719C1 /* FSCalendar.m in Sources */,
+				3E4E56584545A9F057D6A39565EEBE81 /* FSCalendar-dummy.m in Sources */,
+				F3F18A1FEC8212A61301637E40558A13 /* FSCalendarAppearance.m in Sources */,
+				F1B9720240D5609A1DE32B8350FE0B5B /* FSCalendarCalculator.m in Sources */,
+				E11220C77D9BB217D63867401FF624F6 /* FSCalendarCell.m in Sources */,
+				7E98902CA894CFE1F54E7934B24B0B37 /* FSCalendarCollectionView.m in Sources */,
+				CE132491B81D44BB6B692C3F72FBC980 /* FSCalendarCollectionViewLayout.m in Sources */,
+				8D5833379E9F51BFEEA066AA1C4A25A0 /* FSCalendarConstants.m in Sources */,
+				CF10A50704D5CF6F07D5949BA4AB3EAB /* FSCalendarDelegationFactory.m in Sources */,
+				E53DD07DFCDD2241779DBAAE71E77032 /* FSCalendarDelegationProxy.m in Sources */,
+				C7ACD835AAE2936FB6B623084612825D /* FSCalendarExtensions.m in Sources */,
+				7FDEAD728DF7397DAEE4237F07AD5A70 /* FSCalendarHeaderView.m in Sources */,
+				6040741383F6F8F6979D6C547230C132 /* FSCalendarSeparatorDecorationView.m in Sources */,
+				24E5EE988A4BD7C15B55708C6D88AE04 /* FSCalendarStickyHeader.m in Sources */,
+				6201BB85A0AAF8FA6C4771308917BAB2 /* FSCalendarTransitionCoordinator.m in Sources */,
+				3960120DF8907DA574823ACE7ED96076 /* FSCalendarWeekdayView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55EF599A224FDA2065A9190DB821A6F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -814,14 +1040,6 @@
 				0EAF761A0091983FE7D83859EEC64D59 /* UICollectionViewDelegates.swift in Sources */,
 				FDA46AEF3E374C4B1CEDB427608895CF /* UIScrollViewDelegates.swift in Sources */,
 				4C67EADF56EAC30F45AEFE9436B138F7 /* UserInteractionFunctions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9C385C506B71B8C245F0C26B4608C9DB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				565029FC535DDCF0D2286E6E2287928A /* Pods-PantryPal-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,39 +1106,53 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CD0B9D0B6774E18D0710A1ACF4B81C74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09A5995D3A8C5C3874733BCDCB2703C9 /* Pods-PantryPal-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		10B18A77EA97CB2A8BD745D329259201 /* PBXTargetDependency */ = {
+		031EDA72813B3F1A218E5421CF152200 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FSCalendar;
+			target = 13285D54682BEAD805960F9E6EEB9949 /* FSCalendar */;
+			targetProxy = F8C8BF93EEDEFE61BCA86F91F3A69A5A /* PBXContainerItemProxy */;
+		};
+		594ECCA4FF08DEE8092971FC6C6ABFA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftLint;
 			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = C2571F3B4E074D0CC1399163CD923624 /* PBXContainerItemProxy */;
+			targetProxy = E3DF6B56B8067EFBBABEA08F12F783DF /* PBXContainerItemProxy */;
 		};
-		7E1E57E7799D9BB5E2DBD12CBDBAD2E7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = IQKeyboardManagerSwift;
-			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
-			targetProxy = 454D011AF7C89ED2B34517DDC3C1F9EB /* PBXContainerItemProxy */;
-		};
-		D2186AC80CDFFFDE1DED129A7BBE98A5 /* PBXTargetDependency */ = {
+		8C7025D061374FB061FF7EB2D815E89F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JTAppleCalendar;
 			target = 421B6ABF460857FE6CA2905EFB5A4F74 /* JTAppleCalendar */;
-			targetProxy = DB50269639D0617FC93F7CD8B8C93B17 /* PBXContainerItemProxy */;
+			targetProxy = FCF29DE39D4D74773CFC7D9933E1E4E5 /* PBXContainerItemProxy */;
 		};
-		FA8DA7BA90E33889DCF3CAFD0E12BA22 /* PBXTargetDependency */ = {
+		90089E46B0C47446E6C5344F6E58E082 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MJRefresh;
 			target = 6868056D761E163D10FDAF8CF1C4D9B8 /* MJRefresh */;
-			targetProxy = 4621FA583808F69EDA9DC3622FCA0C67 /* PBXContainerItemProxy */;
+			targetProxy = 1A688B2C368FA6E8C339AF3BA1A922E3 /* PBXContainerItemProxy */;
+		};
+		BBF1FAD0CD522B18E3559224D9D3B848 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManagerSwift;
+			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
+			targetProxy = 303E755A61D547EE343D2375DA6046E5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0FFFD177440D556AC451E2CA2ED3D998 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 725FEDD38C82A9F5745454CF30F60719 /* MJRefresh.release.xcconfig */;
+			baseConfigurationReference = 6DED8CCCD90628EC26B3084190BD73F4 /* MJRefresh.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -933,7 +1165,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MJRefresh/MJRefresh-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -955,12 +1187,12 @@
 		};
 		26EA5A9600226D2B7D8D25152A304F3B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BF469DD0D5909398F7C1E802229EBA8 /* SwiftLint.release.xcconfig */;
+			baseConfigurationReference = 995B955D417355B5DD382D35AB548C9E /* SwiftLint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1006,7 +1238,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1073,7 +1304,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1101,12 +1331,10 @@
 			};
 			name = Release;
 		};
-		780754C6BBD5902DDB236A4E72A8C2B8 /* Debug */ = {
+		73FBC83DA060410357FD0C30D352B208 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0622DE0FFC103A438283EA2631349A3A /* Pods-PantryPal.debug.xcconfig */;
+			baseConfigurationReference = 1492441AC9F7AFDC203918780B2AF7A4 /* FSCalendar.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1115,23 +1343,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PantryPal/Pods-PantryPal-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FSCalendar/FSCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FSCalendar/FSCalendar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PantryPal/Pods-PantryPal.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/FSCalendar/FSCalendar.modulemap";
+				PRODUCT_MODULE_NAME = FSCalendar;
+				PRODUCT_NAME = FSCalendar;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1140,7 +1367,7 @@
 		};
 		89BC7E13F4919D57098D8AF9F8931E21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56A6F1EED2AF7A795A95A62DD91BDDE3 /* JTAppleCalendar.debug.xcconfig */;
+			baseConfigurationReference = 71DB1BB9937B1D13BC53CC716A704BB8 /* JTAppleCalendar.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1154,7 +1381,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/JTAppleCalendar/JTAppleCalendar-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JTAppleCalendar/JTAppleCalendar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1175,7 +1402,7 @@
 		};
 		9699D1605F28CF8B49169AC524F10E81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A261413B3E5558C6AF39374009A8122C /* JTAppleCalendar.release.xcconfig */;
+			baseConfigurationReference = F2500B462439B62120CADD74D8992C74 /* JTAppleCalendar.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1189,7 +1416,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/JTAppleCalendar/JTAppleCalendar-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JTAppleCalendar/JTAppleCalendar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1211,7 +1438,7 @@
 		};
 		9D8C08F259B4E57381CFE8BC28467628 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAC2C05C3F1FEF685FA9EB2B7BADDF19 /* IQKeyboardManagerSwift.release.xcconfig */;
+			baseConfigurationReference = CA9D0746E5E61231B41123782FE75520 /* IQKeyboardManagerSwift.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1224,7 +1451,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1244,7 +1471,42 @@
 			};
 			name = Release;
 		};
-		D77D7286C8049B2BC2B058F001C8F2F2 /* Release */ = {
+		A160472351B46C565056074E8EAAC9F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D0D1B3637930A10A45730E2D497CBAA /* FSCalendar.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FSCalendar/FSCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FSCalendar/FSCalendar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FSCalendar/FSCalendar.modulemap";
+				PRODUCT_MODULE_NAME = FSCalendar;
+				PRODUCT_NAME = FSCalendar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C8A5D12F5C823109B96430649DF8E731 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2A81CDB2F65D35F5BD7FB1865C58E624 /* Pods-PantryPal.release.xcconfig */;
 			buildSettings = {
@@ -1282,14 +1544,51 @@
 			};
 			name = Release;
 		};
+		E2954780F51C5FBE455C3963B1E79D5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0622DE0FFC103A438283EA2631349A3A /* Pods-PantryPal.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PantryPal/Pods-PantryPal-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PantryPal/Pods-PantryPal.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		E9E1A48A750B946DE9877594C6E735E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 440ECFBA16E3969994D28292ADA701CF /* SwiftLint.debug.xcconfig */;
+			baseConfigurationReference = D44B22598C6B9FB6E232CAA0A837B274 /* SwiftLint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1301,7 +1600,7 @@
 		};
 		F0377F003E77F0F91AC8FEE0F297E927 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F262954E53E5561A4DFC5595EBD9AA6 /* IQKeyboardManagerSwift.debug.xcconfig */;
+			baseConfigurationReference = 6763C6A4F4FA5DA66711CCD2B5969093 /* IQKeyboardManagerSwift.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1314,7 +1613,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1335,7 +1634,7 @@
 		};
 		FEB2E2F8BE8C2C7960D6CC1629D0A998 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D902D3B0223572A9BB9AF6D538406B7 /* MJRefresh.debug.xcconfig */;
+			baseConfigurationReference = 20F63FED720AA79613E5D4112B1B56AE /* MJRefresh.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1348,7 +1647,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MJRefresh/MJRefresh-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1370,6 +1669,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		293DEF3836269610013C76ED9E702628 /* Build configuration list for PBXNativeTarget "Pods-PantryPal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2954780F51C5FBE455C3963B1E79D5E /* Debug */,
+				C8A5D12F5C823109B96430649DF8E731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		42F76AA8E84D32E2DED70BBA35321CB1 /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1388,20 +1696,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		4B0A80925871C91B9D807A479DC9E1C8 /* Build configuration list for PBXNativeTarget "FSCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73FBC83DA060410357FD0C30D352B208 /* Debug */,
+				A160472351B46C565056074E8EAAC9F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		644E96FAE85BE62F64434125FB7E2DE5 /* Build configuration list for PBXNativeTarget "JTAppleCalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				89BC7E13F4919D57098D8AF9F8931E21 /* Debug */,
 				9699D1605F28CF8B49169AC524F10E81 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8D0B00AEDD7434DE56736A7A8732074A /* Build configuration list for PBXNativeTarget "Pods-PantryPal" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				780754C6BBD5902DDB236A4E72A8C2B8 /* Debug */,
-				D77D7286C8049B2BC2B058F001C8F2F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

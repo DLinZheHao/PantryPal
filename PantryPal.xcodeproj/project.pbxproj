@@ -20,14 +20,16 @@
 		051AC6AB2A1EE43000B23C63 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6A92A1EE43000B23C63 /* IngredientsViewController.swift */; };
 		051AC6AE2A1EE44B00B23C63 /* Ingredients.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6AD2A1EE44B00B23C63 /* Ingredients.storyboard */; };
 		051AC6B02A1EF9F300B23C63 /* GetFridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6AF2A1EF9F300B23C63 /* GetFridge.swift */; };
-		051AC6B32A1F089600B23C63 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6B22A1F089600B23C63 /* Calendar.storyboard */; };
-		051AC6B52A1F08A900B23C63 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6B42A1F08A900B23C63 /* CalendarViewController.swift */; };
 		051AC6B72A1F09BB00B23C63 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6B62A1F09BB00B23C63 /* UIImage+Extension.swift */; };
 		051AC6B92A1F1B2B00B23C63 /* UserLastUseFridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6B82A1F1B2B00B23C63 /* UserLastUseFridge.swift */; };
 		051AC6BB2A1F27C400B23C63 /* FridgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6BA2A1F27C400B23C63 /* FridgeData.swift */; };
 		051AC6BE2A1F2E9E00B23C63 /* MemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6BD2A1F2E9E00B23C63 /* MemberData.swift */; };
 		051AC6C12A1F360200B23C63 /* IngredientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6C02A1F360200B23C63 /* IngredientsData.swift */; };
 		051AC6C32A1F58F700B23C63 /* FridgeAllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6C22A1F58F700B23C63 /* FridgeAllData.swift */; };
+		051AC6CA2A1F901000B23C63 /* AddIngredients.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6C92A1F901000B23C63 /* AddIngredients.xib */; };
+		051AC6CC2A1F904000B23C63 /* AddIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6CB2A1F904000B23C63 /* AddIngredientsView.swift */; };
+		051AC6CF2A1F98AD00B23C63 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6CE2A1F98AD00B23C63 /* CalendarView.swift */; };
+		051AC6D12A1F98C200B23C63 /* Calendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6D02A1F98C200B23C63 /* Calendar.xib */; };
 		05ED19682A1766590023A13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19672A1766590023A13E /* AppDelegate.swift */; };
 		05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19692A1766590023A13E /* SceneDelegate.swift */; };
 		05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* LobbyViewController.swift */; };
@@ -91,14 +93,16 @@
 		051AC6A92A1EE43000B23C63 /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
 		051AC6AD2A1EE44B00B23C63 /* Ingredients.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ingredients.storyboard; sourceTree = "<group>"; };
 		051AC6AF2A1EF9F300B23C63 /* GetFridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFridge.swift; sourceTree = "<group>"; };
-		051AC6B22A1F089600B23C63 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
-		051AC6B42A1F08A900B23C63 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		051AC6B62A1F09BB00B23C63 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		051AC6B82A1F1B2B00B23C63 /* UserLastUseFridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLastUseFridge.swift; sourceTree = "<group>"; };
 		051AC6BA2A1F27C400B23C63 /* FridgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeData.swift; sourceTree = "<group>"; };
 		051AC6BD2A1F2E9E00B23C63 /* MemberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberData.swift; sourceTree = "<group>"; };
 		051AC6C02A1F360200B23C63 /* IngredientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsData.swift; sourceTree = "<group>"; };
 		051AC6C22A1F58F700B23C63 /* FridgeAllData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeAllData.swift; sourceTree = "<group>"; };
+		051AC6C92A1F901000B23C63 /* AddIngredients.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddIngredients.xib; sourceTree = "<group>"; };
+		051AC6CB2A1F904000B23C63 /* AddIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientsView.swift; sourceTree = "<group>"; };
+		051AC6CE2A1F98AD00B23C63 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		051AC6D02A1F98C200B23C63 /* Calendar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Calendar.xib; sourceTree = "<group>"; };
 		05ED19642A1766590023A13E /* PantryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED19672A1766590023A13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED19692A1766590023A13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,19 +215,12 @@
 		051AC6A82A1EE3CD00B23C63 /* Ingredients */ = {
 			isa = PBXGroup;
 			children = (
+				051AC6CD2A1F988B00B23C63 /* Calendar */,
+				051AC6C42A1F8F8800B23C63 /* AddIngredients */,
 				051AC6AD2A1EE44B00B23C63 /* Ingredients.storyboard */,
 				051AC6A92A1EE43000B23C63 /* IngredientsViewController.swift */,
 			);
 			path = Ingredients;
-			sourceTree = "<group>";
-		};
-		051AC6B12A1F085200B23C63 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				051AC6B22A1F089600B23C63 /* Calendar.storyboard */,
-				051AC6B42A1F08A900B23C63 /* CalendarViewController.swift */,
-			);
-			path = Calendar;
 			sourceTree = "<group>";
 		};
 		051AC6BC2A1F2E8A00B23C63 /* Member */ = {
@@ -240,6 +237,24 @@
 				051AC6C02A1F360200B23C63 /* IngredientsData.swift */,
 			);
 			path = Ingredients;
+			sourceTree = "<group>";
+		};
+		051AC6C42A1F8F8800B23C63 /* AddIngredients */ = {
+			isa = PBXGroup;
+			children = (
+				051AC6C92A1F901000B23C63 /* AddIngredients.xib */,
+				051AC6CB2A1F904000B23C63 /* AddIngredientsView.swift */,
+			);
+			path = AddIngredients;
+			sourceTree = "<group>";
+		};
+		051AC6CD2A1F988B00B23C63 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				051AC6CE2A1F98AD00B23C63 /* CalendarView.swift */,
+				051AC6D02A1F98C200B23C63 /* Calendar.xib */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		05ED195B2A1766590023A13E = {
@@ -282,7 +297,6 @@
 		05ED1AB22A1CA0E30023A13E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				051AC6B12A1F085200B23C63 /* Calendar */,
 				051AC6A82A1EE3CD00B23C63 /* Ingredients */,
 				051AC6A32A1EE17600B23C63 /* Fridge */,
 				05ED1ACB2A1D96E70023A13E /* FridgeList */,
@@ -470,10 +484,11 @@
 				051AC6AE2A1EE44B00B23C63 /* Ingredients.storyboard in Resources */,
 				051AC6A12A1DED2E00B23C63 /* CreateFridgeView.xib in Resources */,
 				05ED1AC22A1CF8E70023A13E /* GoogleService-Info.plist in Resources */,
+				051AC6CA2A1F901000B23C63 /* AddIngredients.xib in Resources */,
 				051AC6902A1DA51600B23C63 /* FridgeCell.xib in Resources */,
+				051AC6D12A1F98C200B23C63 /* Calendar.xib in Resources */,
 				05ED19742A17665A0023A13E /* Assets.xcassets in Resources */,
 				05ED1AD12A1D98120023A13E /* FridgeList.storyboard in Resources */,
-				051AC6B32A1F089600B23C63 /* Calendar.storyboard in Resources */,
 				05ED196F2A1766590023A13E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,7 +559,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				051AC6B52A1F08A900B23C63 /* CalendarViewController.swift in Sources */,
 				051AC69F2A1DED1F00B23C63 /* CreateFridgeView.swift in Sources */,
 				051AC6C12A1F360200B23C63 /* IngredientsData.swift in Sources */,
 				05ED1ABB2A1CA63E0023A13E /* InformationStackView.swift in Sources */,
@@ -556,6 +570,7 @@
 				051AC6B02A1EF9F300B23C63 /* GetFridge.swift in Sources */,
 				051AC6AB2A1EE43000B23C63 /* IngredientsViewController.swift in Sources */,
 				05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */,
+				051AC6CF2A1F98AD00B23C63 /* CalendarView.swift in Sources */,
 				051AC6C32A1F58F700B23C63 /* FridgeAllData.swift in Sources */,
 				05ED1ABE2A1CF4A40023A13E /* UserDataInit.swift in Sources */,
 				05ED1AB72A1CA2F70023A13E /* RegisterViewController.swift in Sources */,
@@ -567,6 +582,7 @@
 				05ED1AC62A1CFC130023A13E /* SignInViewController.swift in Sources */,
 				051AC6B72A1F09BB00B23C63 /* UIImage+Extension.swift in Sources */,
 				051AC6942A1DA72300B23C63 /* FetchFridgesData.swift in Sources */,
+				051AC6CC2A1F904000B23C63 /* AddIngredientsView.swift in Sources */,
 				05ED19722A1766590023A13E /* PantryPal.xcdatamodeld in Sources */,
 				05ED1AC82A1CFC330023A13E /* SigninStackView.swift in Sources */,
 				05ED1ACA2A1D8DEF0023A13E /* Alert.swift in Sources */,

@@ -29,7 +29,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6we-2F-ryD">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mxy-iz-y6e">
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mxy-iz-y6e">
                             <rect key="frame" x="152.66666666666666" y="0.66666666666666785" width="88" height="43"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="22"/>
@@ -39,7 +39,11 @@
                             </state>
                         </button>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="add" style="plain" id="E9m-oK-ozO"/>
+                            <barButtonItem title="Item" image="add" style="plain" id="E9m-oK-ozO">
+                                <connections>
+                                    <action selector="showAddIngredientsView" destination="Y6W-OH-hqX" id="Sfc-So-baN"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="Item" image="addMember" style="plain" id="YQg-YW-LT8"/>
                         </rightBarButtonItems>
                     </navigationItem>

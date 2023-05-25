@@ -10,4 +10,5 @@ target 'PantryPal' do
   pod 'MJRefresh'
   pod 'JTAppleCalendar', '~> 7.1'
   pod 'IQKeyboardManagerSwift'
+  pod 'FSCalendar'
 end
