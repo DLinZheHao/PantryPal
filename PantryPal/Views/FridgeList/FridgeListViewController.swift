@@ -65,6 +65,13 @@ extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
         return fridgeCell
     }
     
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false // 返回 false，不显示选中状态的动画
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
 }
 extension FridgeListViewController {
     
