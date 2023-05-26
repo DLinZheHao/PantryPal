@@ -11,6 +11,7 @@ extension UIStoryboard {
     static var fridgeList: UIStoryboard { return stStoryboard(name: "FridgeList") }
     static var fridgeTabBar: UIStoryboard { return stStoryboard(name: "FridgeTabBar") }
     static var ingredients: UIStoryboard { return stStoryboard(name: "Ingredients")}
+    static var barcodeScanner: UIStoryboard { return stStoryboard(name: "BarcodeScanner")}
     
     private static func stStoryboard(name: String) -> UIStoryboard {
         return UIStoryboard(name: name, bundle: nil)

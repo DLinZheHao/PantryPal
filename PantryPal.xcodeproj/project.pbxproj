@@ -30,6 +30,16 @@
 		051AC6CC2A1F904000B23C63 /* AddIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6CB2A1F904000B23C63 /* AddIngredientsView.swift */; };
 		051AC6CF2A1F98AD00B23C63 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6CE2A1F98AD00B23C63 /* CalendarView.swift */; };
 		051AC6D12A1F98C200B23C63 /* Calendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6D02A1F98C200B23C63 /* Calendar.xib */; };
+		051AC6D52A202ECA00B23C63 /* BarcodeIngredientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6D32A202ECA00B23C63 /* BarcodeIngredientData.swift */; };
+		051AC6D62A202ECA00B23C63 /* SimpTradConversionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6D42A202ECA00B23C63 /* SimpTradConversionData.swift */; };
+		051AC6D92A202F3600B23C63 /* BarcodeScanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6D82A202F3600B23C63 /* BarcodeScanner.storyboard */; };
+		051AC6DB2A202F6800B23C63 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6DA2A202F6800B23C63 /* BarcodeScannerViewController.swift */; };
+		051AC6DD2A203F0E00B23C63 /* FailGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6DC2A203F0E00B23C63 /* FailGetData.swift */; };
+		051AC6DF2A204EE900B23C63 /* FetchIngredientApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6DE2A204EE900B23C63 /* FetchIngredientApiData.swift */; };
+		051AC6E12A204F1400B23C63 /* SimpTradConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6E02A204F1300B23C63 /* SimpTradConversion.swift */; };
+		051AC6E32A206ECC00B23C63 /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6E22A206ECC00B23C63 /* UIResponder+Extension.swift */; };
+		051AC6E52A2076B600B23C63 /* FindSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6E42A2076B600B23C63 /* FindSubview.swift */; };
+		051AC6E72A20AB1800B23C63 /* UploadPictureToFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6E62A20AB1800B23C63 /* UploadPictureToFirebase.swift */; };
 		05ED19682A1766590023A13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19672A1766590023A13E /* AppDelegate.swift */; };
 		05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19692A1766590023A13E /* SceneDelegate.swift */; };
 		05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* LobbyViewController.swift */; };
@@ -103,6 +113,16 @@
 		051AC6CB2A1F904000B23C63 /* AddIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientsView.swift; sourceTree = "<group>"; };
 		051AC6CE2A1F98AD00B23C63 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		051AC6D02A1F98C200B23C63 /* Calendar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Calendar.xib; sourceTree = "<group>"; };
+		051AC6D32A202ECA00B23C63 /* BarcodeIngredientData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeIngredientData.swift; sourceTree = "<group>"; };
+		051AC6D42A202ECA00B23C63 /* SimpTradConversionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpTradConversionData.swift; sourceTree = "<group>"; };
+		051AC6D82A202F3600B23C63 /* BarcodeScanner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BarcodeScanner.storyboard; sourceTree = "<group>"; };
+		051AC6DA2A202F6800B23C63 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewController.swift; sourceTree = "<group>"; };
+		051AC6DC2A203F0E00B23C63 /* FailGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailGetData.swift; sourceTree = "<group>"; };
+		051AC6DE2A204EE900B23C63 /* FetchIngredientApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchIngredientApiData.swift; sourceTree = "<group>"; };
+		051AC6E02A204F1300B23C63 /* SimpTradConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpTradConversion.swift; sourceTree = "<group>"; };
+		051AC6E22A206ECC00B23C63 /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
+		051AC6E42A2076B600B23C63 /* FindSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSubview.swift; sourceTree = "<group>"; };
+		051AC6E62A20AB1800B23C63 /* UploadPictureToFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPictureToFirebase.swift; sourceTree = "<group>"; };
 		05ED19642A1766590023A13E /* PantryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED19672A1766590023A13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED19692A1766590023A13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +198,7 @@
 		051AC6992A1DDB0200B23C63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				051AC6D22A202EAB00B23C63 /* Barcode */,
 				051AC6BF2A1F35EB00B23C63 /* Ingredients */,
 				051AC6BC2A1F2E8A00B23C63 /* Member */,
 				051AC69A2A1DDB1200B23C63 /* Fridge */,
@@ -215,6 +236,7 @@
 		051AC6A82A1EE3CD00B23C63 /* Ingredients */ = {
 			isa = PBXGroup;
 			children = (
+				051AC6D72A202EDC00B23C63 /* Barcode */,
 				051AC6CD2A1F988B00B23C63 /* Calendar */,
 				051AC6C42A1F8F8800B23C63 /* AddIngredients */,
 				051AC6AD2A1EE44B00B23C63 /* Ingredients.storyboard */,
@@ -255,6 +277,25 @@
 				051AC6D02A1F98C200B23C63 /* Calendar.xib */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		051AC6D22A202EAB00B23C63 /* Barcode */ = {
+			isa = PBXGroup;
+			children = (
+				051AC6D32A202ECA00B23C63 /* BarcodeIngredientData.swift */,
+				051AC6D42A202ECA00B23C63 /* SimpTradConversionData.swift */,
+				051AC6DC2A203F0E00B23C63 /* FailGetData.swift */,
+			);
+			path = Barcode;
+			sourceTree = "<group>";
+		};
+		051AC6D72A202EDC00B23C63 /* Barcode */ = {
+			isa = PBXGroup;
+			children = (
+				051AC6D82A202F3600B23C63 /* BarcodeScanner.storyboard */,
+				051AC6DA2A202F6800B23C63 /* BarcodeScannerViewController.swift */,
+			);
+			path = Barcode;
 			sourceTree = "<group>";
 		};
 		05ED195B2A1766590023A13E = {
@@ -343,6 +384,10 @@
 				051AC6952A1DAA6C00B23C63 /* CreatNewFridge.swift */,
 				051AC6AF2A1EF9F300B23C63 /* GetFridge.swift */,
 				051AC6B82A1F1B2B00B23C63 /* UserLastUseFridge.swift */,
+				051AC6DE2A204EE900B23C63 /* FetchIngredientApiData.swift */,
+				051AC6E02A204F1300B23C63 /* SimpTradConversion.swift */,
+				051AC6E42A2076B600B23C63 /* FindSubview.swift */,
+				051AC6E62A20AB1800B23C63 /* UploadPictureToFirebase.swift */,
 			);
 			path = Methods;
 			sourceTree = "<group>";
@@ -365,6 +410,7 @@
 				05ED1AD52A1D9E2F0023A13E /* UIStoryboard+Extension.swift */,
 				051AC6912A1DA67C00B23C63 /* UITableView+Extension.swift */,
 				051AC6B62A1F09BB00B23C63 /* UIImage+Extension.swift */,
+				051AC6E22A206ECC00B23C63 /* UIResponder+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -489,6 +535,7 @@
 				051AC6D12A1F98C200B23C63 /* Calendar.xib in Resources */,
 				05ED19742A17665A0023A13E /* Assets.xcassets in Resources */,
 				05ED1AD12A1D98120023A13E /* FridgeList.storyboard in Resources */,
+				051AC6D92A202F3600B23C63 /* BarcodeScanner.storyboard in Resources */,
 				05ED196F2A1766590023A13E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,28 +610,37 @@
 				051AC6C12A1F360200B23C63 /* IngredientsData.swift in Sources */,
 				05ED1ABB2A1CA63E0023A13E /* InformationStackView.swift in Sources */,
 				05ED1ACE2A1D971E0023A13E /* FridgeListViewController.swift in Sources */,
+				051AC6DF2A204EE900B23C63 /* FetchIngredientApiData.swift in Sources */,
 				051AC6BB2A1F27C400B23C63 /* FridgeData.swift in Sources */,
 				051AC6B92A1F1B2B00B23C63 /* UserLastUseFridge.swift in Sources */,
 				051AC6BE2A1F2E9E00B23C63 /* MemberData.swift in Sources */,
 				051AC6922A1DA67C00B23C63 /* UITableView+Extension.swift in Sources */,
+				051AC6DB2A202F6800B23C63 /* BarcodeScannerViewController.swift in Sources */,
 				051AC6B02A1EF9F300B23C63 /* GetFridge.swift in Sources */,
 				051AC6AB2A1EE43000B23C63 /* IngredientsViewController.swift in Sources */,
+				051AC6E72A20AB1800B23C63 /* UploadPictureToFirebase.swift in Sources */,
 				05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */,
 				051AC6CF2A1F98AD00B23C63 /* CalendarView.swift in Sources */,
 				051AC6C32A1F58F700B23C63 /* FridgeAllData.swift in Sources */,
 				05ED1ABE2A1CF4A40023A13E /* UserDataInit.swift in Sources */,
+				051AC6E52A2076B600B23C63 /* FindSubview.swift in Sources */,
+				051AC6E32A206ECC00B23C63 /* UIResponder+Extension.swift in Sources */,
 				05ED1AB72A1CA2F70023A13E /* RegisterViewController.swift in Sources */,
 				051AC6A72A1EE1F500B23C63 /* FridgeTabBarController.swift in Sources */,
 				051AC6982A1DD98500B23C63 /* FridgeListTableView.swift in Sources */,
+				051AC6DD2A203F0E00B23C63 /* FailGetData.swift in Sources */,
+				051AC6D52A202ECA00B23C63 /* BarcodeIngredientData.swift in Sources */,
 				051AC6962A1DAA6C00B23C63 /* CreatNewFridge.swift in Sources */,
 				05ED1AD62A1D9E2F0023A13E /* UIStoryboard+Extension.swift in Sources */,
 				05ED1AC42A1CFAD30023A13E /* CheckEmailVerification.swift in Sources */,
 				05ED1AC62A1CFC130023A13E /* SignInViewController.swift in Sources */,
+				051AC6E12A204F1400B23C63 /* SimpTradConversion.swift in Sources */,
 				051AC6B72A1F09BB00B23C63 /* UIImage+Extension.swift in Sources */,
 				051AC6942A1DA72300B23C63 /* FetchFridgesData.swift in Sources */,
 				051AC6CC2A1F904000B23C63 /* AddIngredientsView.swift in Sources */,
 				05ED19722A1766590023A13E /* PantryPal.xcdatamodeld in Sources */,
 				05ED1AC82A1CFC330023A13E /* SigninStackView.swift in Sources */,
+				051AC6D62A202ECA00B23C63 /* SimpTradConversionData.swift in Sources */,
 				05ED1ACA2A1D8DEF0023A13E /* Alert.swift in Sources */,
 				05ED19682A1766590023A13E /* AppDelegate.swift in Sources */,
 				051AC68F2A1DA51600B23C63 /* FridgeCell.swift in Sources */,

@@ -13,6 +13,7 @@ enum ImageAsset: String {
     // Fridge tab - Tab
     case fridge
     case fridge_click
+    case watermelon
 }
 // swiftlint:enable identifier_name
 

@@ -13,3 +13,10 @@ func alert(_ message: String, _ controller: UIViewController) {
     alertController.addAction(okAction)
     controller.present(alertController, animated: true, completion: nil)
 }
+
+func alertTitle(_ message: String, _ controller: UIViewController, _ title: String) {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "好的", style: .default, handler: nil)
+    alertController.addAction(okAction)
+    controller.present(alertController, animated: true, completion: nil)
+}
