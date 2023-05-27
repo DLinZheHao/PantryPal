@@ -14,12 +14,13 @@ class IngredientsViewController: UIViewController {
     var completionHandler: ((URL?) -> Void)?
     var getImageCompletionHandler: ((UIImage) -> Void)?
     
+    var imageURL: String?
     var selectedFileURL: URL?
     var takingPicture: UIImagePickerController!
     
     var fridgeData: FridgeData?
     var memberData: [MemberData]?
-    var ingredientsData: [IngredientData]?
+    var ingredientsData: [PresentIngredientsData]?
     
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var changeFridgeButton: UIButton!
@@ -35,12 +36,16 @@ class IngredientsViewController: UIViewController {
         } ingredientCompletion: { [weak self] passIngredientsData in
             self?.ingredientsData = passIngredientsData
         }
+        getInitialPictureURL { [weak self] returnURL in
+            self?.imageURL = returnURL
+        }
+        
     }
 
 }
-// 新增食材畫面 掃描條碼 照片
+// 新增食材畫面: 掃描條碼 照片選擇
 extension IngredientsViewController {
-    
+    // MARK: 新增食材畫面
     @IBAction private func showAddIngredientsView() {
         guard let addIngredientsView = UINib(nibName: "AddIngredients", bundle: nil).instantiate(withOwner: self, options: nil).first as? AddIngredientsView else {
             print("畫面創建失敗")
@@ -59,8 +64,20 @@ extension IngredientsViewController {
         addIngredientsView.choosePictureButton.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
         addIngredientsView.takePictureButtin.addTarget(self, action: #selector(takePicture), for: .touchUpInside)
         addIngredientsView.ingredientsController = self
+        
+        guard let fridgeID = fridgeData?.id else {
+            alertTitle("開發錯誤: 沒有獲取到ID", self, "需要修正")
+            return
+        }
+        addIngredientsView.fridgeId = fridgeID
+        
+        guard let presetUrl = imageURL else {
+            alertTitle("開發錯誤: 沒有獲取成功初始url string", self, "需要修正")
+            return
+        }
+        addIngredientsView.imageUrl = presetUrl
     }
-    
+    // MARK: 食材畫面功能 - 掃描條碼
     @objc func barcodeScanner(_ sender: UIButton) {
         guard let nextVC = UIStoryboard.barcodeScanner.instantiateViewController(
             withIdentifier: String(describing: BarcodeScannerViewController.self)
@@ -73,7 +90,7 @@ extension IngredientsViewController {
             
             guard let senderSuperview = senderSuperview as? AddIngredientsView else { return }
             senderSuperview.barcodeTextField.text = barcodeString
-            
+            senderSuperview.barcode = barcodeString
             guard let price = Double(priceString) else {
                 print("\(priceString) 出現問題")
                 return
@@ -102,6 +119,8 @@ extension IngredientsViewController {
     @objc func takePicture(_ sender: UIButton) {
         getImageGo(type: 1)
     }
+    
+    
 }
 // 日曆控制
 extension IngredientsViewController: FSCalendarDelegate, FSCalendarDataSource {
@@ -119,7 +138,7 @@ extension IngredientsViewController: FSCalendarDelegate, FSCalendarDataSource {
 
         let targetView = findSubview(ofType: AddIngredientsView.self, in: (calendar.superview?.superview?.superview)!)
         guard let addIngredientsView = targetView else {
-            print("失敗")
+            print("日曆日期失敗")
             calendar.superview?.removeFromSuperview()
             return
         }
@@ -127,26 +146,25 @@ extension IngredientsViewController: FSCalendarDelegate, FSCalendarDataSource {
         calendar.superview?.removeFromSuperview()
     }
 }
-
 // 照片選擇控制區域
 extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    //去拍照或者去相册选择图片
-    func getImageGo(type:Int){
+    // 去拍照或者去相册选择图片
+    func getImageGo(type: Int) {
         takingPicture =  UIImagePickerController.init()
-        if(type == 1) {
+        if type == 1 {
             takingPicture.sourceType = .camera
-            //拍照时是否显示工具栏
-            //takingPicture.showsCameraControls = true
-        }else if( type == 2 ) {
+            // 拍照时是否显示工具栏
+            // takingPicture.showsCameraControls = true
+        }else if type == 2 {
             takingPicture.sourceType = .photoLibrary
         }
-        //是否截取，设置为true在获取图片后可以将其截取成正方形
+        // 是否截取，设置为true在获取图片后可以将其截取成正方形
         takingPicture.allowsEditing = false
         takingPicture.delegate = self
         present(takingPicture, animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         takingPicture.dismiss(animated: true, completion: nil)
         getImageClosure { [weak self] ingredientsImage in
             let addIngredientsView = findSubview(ofType: AddIngredientsView.self, in: (self?.view)!)
@@ -155,25 +173,31 @@ extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigati
         
         if let originalImage = info[.originalImage] as? UIImage {
             // 照片來自相簿
-            //image.image = originalImage
+            // image.image = originalImage
             getImageCompletionHandler!(originalImage)
             if let imageURL = info[.imageURL] as? URL {
                 selectedFileURL = imageURL
-                print("相冊：\(imageURL)")
+                //print("相冊：\(imageURL)")
+                let addIngredientsView = findSubview(ofType: AddIngredientsView.self, in: (self.view)!)
+                addIngredientsView?.imageUrl = imageURL.absoluteString
             } else {
                 // 將照片存儲到相冊並獲取 URL
                 saveImageToPhotoAlbum(originalImage) { [weak self] photoUrl in
                     self?.selectedFileURL = photoUrl!
-                    print("拍照：\(photoUrl)")
+                    let addIngredientsView = findSubview(ofType: AddIngredientsView.self, in: self!.view )
+                    addIngredientsView?.imageUrl = photoUrl!.absoluteString
+                    //print("拍照：\(photoUrl)")
                 }
             }
         } else if let editedImage = info[.editedImage] as? UIImage {
             // 拍攝的照片
-            //image.image = editedImage
-            
+            // image.image = editedImage
+            getImageCompletionHandler!(editedImage)
             // 將照片存儲到相冊並獲取 URL
-            saveImageToPhotoAlbum(editedImage) { [weak self] url in
-                self?.selectedFileURL = url
+            saveImageToPhotoAlbum(editedImage) { [weak self] photoUrl in
+                self?.selectedFileURL = photoUrl
+                let addIngredientsView = findSubview(ofType: AddIngredientsView.self, in: self!.view )
+                addIngredientsView?.imageUrl = photoUrl!.absoluteString
             }
         }
     }

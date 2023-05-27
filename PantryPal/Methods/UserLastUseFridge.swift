@@ -10,7 +10,7 @@ import Firebase
 
 func userLastUseFridge(fridgeCompletion: @escaping (FridgeData) -> Void,
                        memberCompletion: @escaping (Array<MemberData>) -> Void,
-                       ingredientCompletion: @escaping (Array<IngredientData>) -> Void) {
+                       ingredientCompletion: @escaping (Array<PresentIngredientsData>) -> Void) {
 // completion: @escaping (FridgeData) -> Void
     guard let currentUserId = Auth.auth().currentUser?.uid else {
         print("登入狀態有問題")
@@ -98,7 +98,7 @@ private func getMembers(_ fridgeId: String, completion: @escaping (Array<MemberD
     }
 }
 // 獲得冰箱食材資料
-private func getIngredients(_ fridgeId: String, completion: @escaping (Array<IngredientData>) -> Void) {
+private func getIngredients(_ fridgeId: String, completion: @escaping (Array<PresentIngredientsData>) -> Void) {
     let fridgeIngredients = Firestore.firestore().collection("fridges").document(fridgeId).collection("ingredients")
     
     fridgeIngredients.getDocuments { (documents, error) in
@@ -109,60 +109,55 @@ private func getIngredients(_ fridgeId: String, completion: @escaping (Array<Ing
             print("Fridge_ingredients資料不存在！")
             return
         }
-        var fridgeIngredients: [IngredientData] = []
         
         let semaphore = DispatchSemaphore(value: 1)
         let queue = DispatchQueue.global(qos: .background)
-        queue.async {
-            semaphore.wait()
+        
+        var allIngredientsID: [String] = []
+        for document in documents.documents {
+            let ingredientData = document.data()
+            guard let id = ingredientData["ingredients_id"] as? String else {
+                print("型態轉換失敗: 食材")
+                return
+            }
+            allIngredientsID.append(id)
+        }
+        
+        let ingredients = Firestore.firestore().collection("ingredients")
+        let query = ingredients.whereField("ingredients_id", in: allIngredientsID)
+        
+        query.getDocuments { (documents, error) in
+            var fridgeIngredients: [PresentIngredientsData] = []
+            guard let documents = documents else {
+                print("ingredients資料不存在！")
+                return
+            }
             for document in documents.documents {
-                let ingredientData = document.data()
-                guard let id = ingredientData["ingredient_id"] as? String else {
-                    print("型態轉換失敗")
+                let ingredientsData = document.data()
+                guard let ingredientsID = ingredientsData["ingredients_id"] as? String,
+                      let ingredientsName = ingredientsData["name"] as? String,
+                      let ingredientsPrice = ingredientsData["price"] as? Double,
+                      let ingredientsStoreStatus = ingredientsData["store_status"] as? Int,
+                      let ingredientsUrl = ingredientsData["url"] as? String,
+                      let ingredientsCreatedTime = ingredientsData["created_time"] as? Double,
+                      let ingredientsEnableNotifications = ingredientsData["enable_Notification"] as? Bool else {
+                    print("食材資料獲取失敗")
                     return
                 }
-                let ingredients = Firestore.firestore().collection("ingredients")
-                let query = ingredients.whereField("ingredients_id", isEqualTo: id)
-                query.getDocuments { (documents, error) in
-                    if let error = error {
-                        print("查詢食材時出錯：\(error.localizedDescription)")
-                    }
-                    guard let documents = documents, !documents.isEmpty else {
-                        print("ingredients資料不存在！")
-                        return
-                    }
-                    let ingredientsData = documents.documents[0].data()
-                    
-                    guard let ingredientsID = ingredientsData["ingredients_id"] as? String,
-                          let ingredientsName = ingredientsData["name"] as? String,
-                          let ingredientsPrice = ingredientsData["price"] as? Double,
-                          let ingredientsStoreStatus = ingredientsData["store_status"] as? Int,
-                          let ingredientsUrl = ingredientsData["url"] as? String,
-                          let ingredientsCreatedTime = ingredientsData["created_time"] as? Double,
-                          let ingredientsEnableNotifications = ingredientsData["enable_notifications"] as? Bool else {
-                        print("食材資料獲取失敗")
-                        return
-                    }
-                    
-                    let newIngredients = IngredientData(
-                        barcode: ingredientsData["barcode"] as? String,
-                        ingredientsID: ingredientsID,
-                        name: ingredientsName,
-                        price: ingredientsPrice,
-                        storeStatus: ingredientsStoreStatus,
-                        url: ingredientsUrl,
-                        createdTime: ingredientsCreatedTime,
-                        enableNotifications: ingredientsEnableNotifications
-                    )
-                    fridgeIngredients.append(newIngredients)
-                }
+                let newIngredients = PresentIngredientsData(
+                    barcode: ingredientsData["barcode"] as? String,
+                    ingredientsID: ingredientsID,
+                    name: ingredientsName,
+                    price: ingredientsPrice,
+                    storeStatus: ingredientsStoreStatus,
+                    url: ingredientsUrl,
+                    createdTime: ingredientsCreatedTime,
+                    enableNotifications: ingredientsEnableNotifications
+                )
+                fridgeIngredients.append(newIngredients)
             }
-            semaphore.signal()
-        }
-        queue.async {
-            semaphore.wait()
+            print("符合食材結果：\(fridgeIngredients)")
             completion(fridgeIngredients)
-            semaphore.signal()
         }
     }
 }

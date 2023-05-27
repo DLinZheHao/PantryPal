@@ -10,10 +10,44 @@ import CoreData
 import Firebase
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        //-- 注册推送
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self as UNUserNotificationCenterDelegate
+        center.getNotificationSettings { (setting) in
+            if setting.authorizationStatus == .notDetermined {
+                // 未注册
+                center.requestAuthorization(options: [.badge,.sound,.alert]) { (result, error) in
+                    print("显示内容：\(result) error：\(String(describing: error))")
+                    if(result){
+                        if !(error != nil){
+                            print("注册成功了！")
+                            DispatchQueue.main.async {
+                                application.registerForRemoteNotifications()
+                            }
+                        }
+                    } else{
+                        print("用户不允许推送")
+                    }
+                }
+            } else if (setting.authorizationStatus == .denied){
+                //用户已经拒绝推送通知
+                //-- 弹出页面提示用户去显示
+                
+            }else if (setting.authorizationStatus == .authorized){
+                //已注册 已授权 --注册同志获取 token
+                // 请求授权时异步进行的，这里需要在主线程进行通知的注册
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+                
+            }else{
+                // 其餘條件
+            }
+        }
         return true
     }
     
@@ -50,5 +84,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    // 在前景收到通知時所觸發的 function
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("在前景收到通知...")
+        completionHandler([.badge, .sound, .banner])
+    }
 }
