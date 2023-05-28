@@ -8,8 +8,9 @@
 import UIKit
 import FSCalendar
 import Photos
-
+import MJRefresh
 class IngredientsViewController: UIViewController {
+    var storeStatus = ["冷凍", "冷藏", "常溫"]
     
     var completionHandler: ((URL?) -> Void)?
     var getImageCompletionHandler: ((UIImage) -> Void)?
@@ -20,28 +21,74 @@ class IngredientsViewController: UIViewController {
     
     var fridgeData: FridgeData?
     var memberData: [MemberData]?
-    var ingredientsData: [PresentIngredientsData]?
+    var ingredientsData: [PresentIngredientsData] = []
     
-    @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var changeFridgeButton: UIButton!
+
+    @IBOutlet weak var ingredientTableView: UITableView! {
+        didSet {
+            ingredientTableView.delegate = self
+            ingredientTableView.dataSource = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ingredientTableView.lk_registerCellWithNib(identifier: String(describing: IngredientsTableViewCell.self), bundle: nil)
+        
+        let header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(refreshAction))
+        header.isAutomaticallyChangeAlpha = true
+        self.ingredientTableView.mj_header = header
+        
+        self.ingredientTableView.mj_header?.beginRefreshing()
         userLastUseFridge { [weak self] passFridgeData in
             self?.fridgeData = passFridgeData
-            self?.textLabel.text = self?.fridgeData?.name
             self?.changeFridgeButton.setTitle(self?.fridgeData?.name, for: .normal)
         } memberCompletion: { [weak self] passMemberData in
             self?.memberData = passMemberData
         } ingredientCompletion: { [weak self] passIngredientsData in
             self?.ingredientsData = passIngredientsData
+            DispatchQueue.main.async {
+                self?.ingredientTableView.reloadData()
+                self?.ingredientTableView.mj_header?.endRefreshing()
+            }
         }
         getInitialPictureURL { [weak self] returnURL in
             self?.imageURL = returnURL
         }
-        
     }
+}
+extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ingredientsData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: String(describing: IngredientsTableViewCell.self),
+            for: indexPath)
+        guard let ingredientsCell = cell as? IngredientsTableViewCell else { return cell }
 
+        ingredientsCell.ingredientsNameLabel.text = ingredientsData[indexPath.row].name
+        ingredientsCell.ingredientsPriceLabel.text = String(ingredientsData[indexPath.row].price)
+        ingredientsCell.ingredientsStatusLabel.text = storeStatus[ingredientsData[indexPath.row].storeStatus]
+        ingredientsCell.expirationLabel.text = getLeftTime(ingredientsData[indexPath.row].expiration)
+        if ingredientsData[indexPath.row].enableNotifications {
+            ingredientsCell.notificationImage.isHidden = false
+        } else {
+            ingredientsCell.notificationImage.isHidden = true
+        }
+        UIImage.downloadImage(from: URL(string: ingredientsData[indexPath.row].url)!) { image in
+            DispatchQueue.main.async {
+                ingredientsCell.ingredientsImage.image = image
+            }
+        }
+        return ingredientsCell
+    }
+    
 }
 // 新增食材畫面: 掃描條碼 照片選擇
 extension IngredientsViewController {
@@ -119,7 +166,6 @@ extension IngredientsViewController {
     @objc func takePicture(_ sender: UIButton) {
         getImageGo(type: 1)
     }
-    
     
 }
 // 日曆控制
@@ -239,5 +285,28 @@ extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigati
     
     func getImageClosure(completion: @escaping ((UIImage) -> Void)) {
         getImageCompletionHandler = completion
+    }
+}
+// MJRefresh
+extension IngredientsViewController {
+    @objc private func refreshAction() {
+        self.ingredientTableView.mj_header?.beginRefreshing()
+        userLastUseFridge { [weak self] passFridgeData in
+            self?.fridgeData = passFridgeData
+            self?.changeFridgeButton.setTitle(self?.fridgeData?.name, for: .normal)
+        } memberCompletion: { [weak self] passMemberData in
+            self?.memberData = passMemberData
+        } ingredientCompletion: { [weak self] passIngredientsData in
+            self?.ingredientsData = passIngredientsData
+            DispatchQueue.main.async {
+                self?.ingredientTableView.reloadData()
+            }
+        }
+        getInitialPictureURL { [weak self] returnURL in
+            self?.imageURL = returnURL
+        }
+        DispatchQueue.main.async {
+            self.ingredientTableView.mj_header?.endRefreshing()
+        }
     }
 }

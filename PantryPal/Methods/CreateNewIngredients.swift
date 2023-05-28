@@ -37,5 +37,8 @@ func createNewIndredients(_ ingredientData: DatabaseIngredientsData) {
         "barcode": ingredientData.barcode ?? ""
     ]
     fridgeDocument.setData(userIdData)
-        
+    
+    if ingredientData.enableNotification {
+        notificationRegister(ingredientData.expiration, ingredientData.name, document.documentID)
+    }
 }

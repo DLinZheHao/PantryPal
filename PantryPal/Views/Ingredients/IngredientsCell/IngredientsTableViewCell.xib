@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="114" id="KGk-i7-Jjw" customClass="IngredientsTableViewCell" customModule="PantryPal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tableViewCell_background_1" translatesAutoresizingMaskIntoConstraints="NO" id="HSF-3K-MG3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="114"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="watermelon" translatesAutoresizingMaskIntoConstraints="NO" id="Vb0-8p-Djb">
+                        <rect key="frame" x="13" y="13" width="100" height="88"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="88" id="Inx-Nc-4Q0"/>
+                            <constraint firstAttribute="width" constant="100" id="JdB-WA-3sj"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食材名稱" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaB-Na-pRs">
+                        <rect key="frame" x="124" y="14.999999999999998" width="180" height="20.333333333333329"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="180" id="Krv-kY-oXj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="價格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWj-LF-eA7">
+                        <rect key="frame" x="124" y="40" width="107" height="15.333333333333336"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="107" id="gCn-cN-BcS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="儲存狀態" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F48-hp-VYr">
+                        <rect key="frame" x="247" y="40" width="82" height="20.333333333333329"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="82" id="9G0-EG-XpH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HSm-DE-Anm">
+                        <rect key="frame" x="124" y="70.333333333333329" width="26" height="24.666666666666671"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="KiC-nR-EkC"/>
+                            <constraint firstAttribute="height" constant="26" id="qZI-b3-iRC"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="3天後過期" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAw-PD-cGX">
+                        <rect key="frame" x="158" y="72.333333333333329" width="228" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="228" id="ww1-Iy-yA0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="HSF-3K-MG3" secondAttribute="bottom" id="05M-a7-gVn"/>
+                    <constraint firstAttribute="trailing" secondItem="rAw-PD-cGX" secondAttribute="trailing" constant="7" id="6nv-ni-zHk"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rAw-PD-cGX" secondAttribute="bottom" constant="13" id="7aY-s2-jLE"/>
+                    <constraint firstAttribute="trailing" secondItem="F48-hp-VYr" secondAttribute="trailing" constant="64" id="AXA-Am-yUi"/>
+                    <constraint firstItem="LWj-LF-eA7" firstAttribute="top" secondItem="VaB-Na-pRs" secondAttribute="bottom" constant="4.6699999999999999" id="Cn3-Et-ZDA"/>
+                    <constraint firstAttribute="trailing" secondItem="HSF-3K-MG3" secondAttribute="trailing" id="Efe-Y0-JYC"/>
+                    <constraint firstItem="rAw-PD-cGX" firstAttribute="leading" secondItem="HSm-DE-Anm" secondAttribute="trailing" constant="8" symbolic="YES" id="Erx-Sy-jIY"/>
+                    <constraint firstAttribute="bottom" secondItem="Vb0-8p-Djb" secondAttribute="bottom" constant="13" id="G39-6h-MpI"/>
+                    <constraint firstAttribute="trailing" secondItem="VaB-Na-pRs" secondAttribute="trailing" constant="89" id="Klr-EI-0eZ"/>
+                    <constraint firstItem="HSF-3K-MG3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ML6-8g-ll4"/>
+                    <constraint firstItem="rAw-PD-cGX" firstAttribute="top" secondItem="F48-hp-VYr" secondAttribute="bottom" constant="12" id="NF3-DL-aaT"/>
+                    <constraint firstItem="Vb0-8p-Djb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="P36-6b-x7P"/>
+                    <constraint firstItem="F48-hp-VYr" firstAttribute="leading" secondItem="LWj-LF-eA7" secondAttribute="trailing" constant="16" id="Y2T-op-IP8"/>
+                    <constraint firstAttribute="bottom" secondItem="HSm-DE-Anm" secondAttribute="bottom" constant="18.670000000000002" id="ad8-fi-IGL"/>
+                    <constraint firstItem="F48-hp-VYr" firstAttribute="top" secondItem="VaB-Na-pRs" secondAttribute="bottom" constant="4.6699999999999999" id="fI5-U0-b0W"/>
+                    <constraint firstItem="VaB-Na-pRs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="fnn-2T-uQE"/>
+                    <constraint firstItem="Vb0-8p-Djb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="jre-Cf-y0b"/>
+                    <constraint firstItem="LWj-LF-eA7" firstAttribute="leading" secondItem="Vb0-8p-Djb" secondAttribute="trailing" constant="11" id="oTu-ei-COq"/>
+                    <constraint firstItem="HSF-3K-MG3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oiH-sc-oST"/>
+                    <constraint firstItem="HSm-DE-Anm" firstAttribute="leading" secondItem="Vb0-8p-Djb" secondAttribute="trailing" constant="11" id="pt5-Iu-hOy"/>
+                    <constraint firstItem="VaB-Na-pRs" firstAttribute="leading" secondItem="Vb0-8p-Djb" secondAttribute="trailing" constant="11" id="r2A-5w-jmu"/>
+                    <constraint firstItem="HSm-DE-Anm" firstAttribute="top" secondItem="LWj-LF-eA7" secondAttribute="bottom" constant="14" id="shm-4N-RGu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="expirationLabel" destination="rAw-PD-cGX" id="zA0-wv-8cW"/>
+                <outlet property="ingredientsImage" destination="Vb0-8p-Djb" id="oVh-jo-nbY"/>
+                <outlet property="ingredientsNameLabel" destination="VaB-Na-pRs" id="6Ce-Yu-cDl"/>
+                <outlet property="ingredientsPriceLabel" destination="LWj-LF-eA7" id="8Lc-FB-NFV"/>
+                <outlet property="ingredientsStatusLabel" destination="F48-hp-VYr" id="MlA-Oa-vs7"/>
+                <outlet property="notificationImage" destination="HSm-DE-Anm" id="S98-rz-BHv"/>
+            </connections>
+            <point key="canvasLocation" x="125.95419847328243" y="21.83098591549296"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="clock.fill" catalog="system" width="128" height="123"/>
+        <image name="tableViewCell_background_1" width="1920" height="1080"/>
+        <image name="watermelon" width="80" height="80"/>
+    </resources>
+</document>

@@ -15,6 +15,7 @@ struct PresentIngredientsData {
     let url: String
     let createdTime: Double
     let enableNotifications: Bool
+    let expiration: Date
 }
 
 struct DatabaseIngredientsData {

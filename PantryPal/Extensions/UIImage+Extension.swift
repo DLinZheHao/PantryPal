@@ -14,6 +14,7 @@ enum ImageAsset: String {
     case fridge
     case fridge_click
     case watermelon
+    case tableViewCell_background_1
 }
 // swiftlint:enable identifier_name
 
@@ -29,6 +30,7 @@ extension UIImage {
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
                 completion(nil)
+                print("圖片下載失敗！！！")
                 return
             }
             DispatchQueue.main.async {
