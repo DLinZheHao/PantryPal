@@ -15,6 +15,7 @@ enum ImageAsset: String {
     case fridge_click
     case watermelon
     case tableViewCell_background_1
+    case members
 }
 // swiftlint:enable identifier_name
 

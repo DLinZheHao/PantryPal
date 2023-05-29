@@ -18,11 +18,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CGk-yN-EdC" customClass="FridgeListTableView" customModule="PantryPal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZES-9y-fQP">
-                                <rect key="frame" x="354" y="59" width="23" height="50"/>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CGk-yN-EdC" secondAttribute="trailing" id="0ay-pZ-0CP"/>
+                            <constraint firstItem="CGk-yN-EdC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="BVp-mV-YnB"/>
+                            <constraint firstItem="CGk-yN-EdC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="b6K-UE-jmd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="CGk-yN-EdC" secondAttribute="bottom" id="oDZ-bv-NMt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KFw-sg-gWs">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="wLv-Mg-gkl">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZES-9y-fQP">
+                                <rect key="frame" x="354" y="103" width="23" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,24 +45,31 @@
                                     <action selector="created" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uwM-Rb-BPt"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CGk-yN-EdC" secondAttribute="trailing" id="0ay-pZ-0CP"/>
-                            <constraint firstItem="ZES-9y-fQP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="6Oh-GG-A0e"/>
-                            <constraint firstItem="CGk-yN-EdC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="BVp-mV-YnB"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZES-9y-fQP" secondAttribute="trailing" constant="16" id="C38-gX-ceh"/>
-                            <constraint firstItem="CGk-yN-EdC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="b6K-UE-jmd"/>
-                            <constraint firstItem="CGk-yN-EdC" firstAttribute="top" secondItem="ZES-9y-fQP" secondAttribute="bottom" id="g1G-m5-UbW"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="CGk-yN-EdC" secondAttribute="bottom" id="oDZ-bv-NMt"/>
-                        </constraints>
-                    </view>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="fridgeListTableView" destination="CGk-yN-EdC" id="yvc-54-MdH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Thj-z1-vNs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="geB-A6-avX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Tq-Vj-rcy">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="PBc-rs-4ne"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAB-Ps-JgF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>

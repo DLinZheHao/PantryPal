@@ -50,11 +50,11 @@ func createNewFridge(_ name: String) {
                     // 修改陣列資料
                     joinFridgesArray.append(fridgeDocumentId)
                     ownFridgesArray.append(fridgeDocumentId)
-                    
+
                     // 將修改後的陣列資料重新寫入屬性
                     data["join_fridges"] = joinFridgesArray
                     data["own_fridges"] = ownFridgesArray
-                    
+
                     // 更新文檔數據
                     currentUserData.setData(data, merge: true) { error in
                         if let error = error {

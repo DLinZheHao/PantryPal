@@ -19,11 +19,16 @@ class IngredientsViewController: UIViewController {
     var selectedFileURL: URL?
     var takingPicture: UIImagePickerController!
     
+    var currentFridgeID: String?
     var fridgeData: FridgeData?
     var memberData: [MemberData]?
     var ingredientsData: [PresentIngredientsData] = []
     
-    @IBOutlet weak var changeFridgeButton: UIButton!
+    @IBOutlet weak var changeFridgeButton: UIButton! {
+        didSet {
+            changeFridgeButton.addTarget(self, action: #selector(changeFridge), for: .touchUpInside)
+        }
+    }
 
     @IBOutlet weak var ingredientTableView: UITableView! {
         didSet {
@@ -34,34 +39,50 @@ class IngredientsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setRightItem()
         ingredientTableView.lk_registerCellWithNib(identifier: String(describing: IngredientsTableViewCell.self), bundle: nil)
         
         let header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(refreshAction))
         header.isAutomaticallyChangeAlpha = true
         self.ingredientTableView.mj_header = header
         
-        self.ingredientTableView.mj_header?.beginRefreshing()
-        userLastUseFridge { [weak self] passFridgeData in
-            self?.fridgeData = passFridgeData
-            self?.changeFridgeButton.setTitle(self?.fridgeData?.name, for: .normal)
-        } memberCompletion: { [weak self] passMemberData in
-            self?.memberData = passMemberData
-        } ingredientCompletion: { [weak self] passIngredientsData in
-            self?.ingredientsData = passIngredientsData
-            DispatchQueue.main.async {
-                self?.ingredientTableView.reloadData()
-                self?.ingredientTableView.mj_header?.endRefreshing()
-            }
-        }
-        getInitialPictureURL { [weak self] returnURL in
-            self?.imageURL = returnURL
-        }
+        getData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+        ingredientsData = []
+        ingredientTableView.reloadData()
+        
+        getData()
     }
 }
+// MARK: - 切換冰箱
+extension IngredientsViewController {
+    @objc func changeFridge() {
+        guard let nextVC = UIStoryboard.fridgeList.instantiateViewController(
+            withIdentifier: String(describing: FridgeListViewController.self)
+        ) as? FridgeListViewController
+        else {
+            print("創建失敗")
+            return }
+        
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+// MARK: - 新創食材完後刷新頁面
+extension IngredientsViewController: GetRefreshSignal {
+    func getSignal() {
+        print("執行")
+        getData()
+    }
+    
+}
+// MARK: - tableView 控制
 extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredientsData.count
     }
@@ -89,8 +110,92 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
         return ingredientsCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let nextVC = UIStoryboard.ingredientsDetail.instantiateViewController(
+            withIdentifier: String(describing: IngredientsDetailViewController.self)
+        ) as? IngredientsDetailViewController
+        else {
+            print("創建失敗")
+            return }
+        nextVC.ingredientsData = ingredientsData[indexPath.row]
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "刪除") { [weak self] (action, sourceView, completionHandler) in
+            if let id = self?.currentFridgeID,
+               let ingredientsID = self?.ingredientsData[indexPath.row].ingredientsID {
+                deleteIngredients(id, ingredientsID) { [weak self] in
+                    self?.getData()
+                }
+            }
+            completionHandler(true)
+        }
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return swipeConfiguration
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let runOutAction = UIContextualAction(style: .normal, title: "用完") { [weak self] (action, sourceView, completionHandler) in
+            if let id = self?.currentFridgeID,
+               let ingredientsID = self?.ingredientsData[indexPath.row].ingredientsID,
+               let createdTime = self?.ingredientsData[indexPath.row].createdTime,
+               let expiration = self?.ingredientsData[indexPath.row].expiration,
+               let price = self?.ingredientsData[indexPath.row].price {
+                processingAction(fridgeID: id,
+                       createdTime: createdTime,
+                       expiration: expiration,
+                       action: 0,
+                       price: price,
+                       ingredientsID: ingredientsID) { [weak self] in
+                    self?.getData()
+                }
+            }
+            completionHandler(true)
+        }
+        let expiredAction = UIContextualAction(style: .normal, title: "過期") { [weak self] (action, sourceView, completionHandler) in
+            if let id = self?.currentFridgeID,
+               let ingredientsID = self?.ingredientsData[indexPath.row].ingredientsID,
+               let createdTime = self?.ingredientsData[indexPath.row].createdTime,
+               let expiration = self?.ingredientsData[indexPath.row].expiration,
+               let price = self?.ingredientsData[indexPath.row].price {
+                processingAction(fridgeID: id,
+                       createdTime: createdTime,
+                       expiration: expiration,
+                       action: 1,
+                       price: price,
+                       ingredientsID: ingredientsID) { [weak self] in
+                    self?.getData()
+                }
+            }
+            completionHandler(true)
+        }
+        let throwAway = UIContextualAction(style: .normal, title: "丟棄") { [weak self] (action, sourceView, completionHandler) in
+            if let id = self?.currentFridgeID,
+               let ingredientsID = self?.ingredientsData[indexPath.row].ingredientsID,
+               let createdTime = self?.ingredientsData[indexPath.row].createdTime,
+               let expiration = self?.ingredientsData[indexPath.row].expiration,
+               let price = self?.ingredientsData[indexPath.row].price {
+                processingAction(fridgeID: id,
+                       createdTime: createdTime,
+                       expiration: expiration,
+                       action: 2,
+                       price: price,
+                       ingredientsID: ingredientsID) { [weak self] in
+                    self?.getData()
+                }
+            }
+            completionHandler(true)
+        }
+        runOutAction.backgroundColor = .gray
+        expiredAction.backgroundColor = .black
+        throwAway.backgroundColor = .orange
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [runOutAction, expiredAction, throwAway])
+        
+        return swipeConfiguration
+    }
 }
-// 新增食材畫面: 掃描條碼 照片選擇
+// MARK: - 新增食材畫面: 掃描條碼 照片選擇
 extension IngredientsViewController {
     // MARK: 新增食材畫面
     @IBAction private func showAddIngredientsView() {
@@ -111,7 +216,7 @@ extension IngredientsViewController {
         addIngredientsView.choosePictureButton.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
         addIngredientsView.takePictureButtin.addTarget(self, action: #selector(takePicture), for: .touchUpInside)
         addIngredientsView.ingredientsController = self
-        
+        addIngredientsView.delegate = self
         guard let fridgeID = fridgeData?.id else {
             alertTitle("開發錯誤: 沒有獲取到ID", self, "需要修正")
             return
@@ -168,7 +273,7 @@ extension IngredientsViewController {
     }
     
 }
-// 日曆控制
+// MARK: - 日曆控制
 extension IngredientsViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
         let today = Date()
@@ -192,7 +297,7 @@ extension IngredientsViewController: FSCalendarDelegate, FSCalendarDataSource {
         calendar.superview?.removeFromSuperview()
     }
 }
-// 照片選擇控制區域
+// MARK: - 照片選擇控制區域
 extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // 去拍照或者去相册选择图片
     func getImageGo(type: Int) {
@@ -287,11 +392,21 @@ extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigati
         getImageCompletionHandler = completion
     }
 }
-// MJRefresh
+// MARK: - MJRefresh
 extension IngredientsViewController {
     @objc private func refreshAction() {
         self.ingredientTableView.mj_header?.beginRefreshing()
-        userLastUseFridge { [weak self] passFridgeData in
+        getData()
+        DispatchQueue.main.async {
+            self.ingredientTableView.mj_header?.endRefreshing()
+        }
+    }
+}
+// MARK: 動作簡化
+extension IngredientsViewController {
+    private func getData() {
+        userLastUseFridge { [weak self] (passFridgeData, passFridgeID) in
+            self?.currentFridgeID = passFridgeID
             self?.fridgeData = passFridgeData
             self?.changeFridgeButton.setTitle(self?.fridgeData?.name, for: .normal)
         } memberCompletion: { [weak self] passMemberData in
@@ -305,8 +420,26 @@ extension IngredientsViewController {
         getInitialPictureURL { [weak self] returnURL in
             self?.imageURL = returnURL
         }
-        DispatchQueue.main.async {
-            self.ingredientTableView.mj_header?.endRefreshing()
-        }
     }
 }
+// MARK: navigation bar item setting & action
+extension IngredientsViewController {
+    private func setRightItem() {
+        let image = UIImage.asset(.members)// 替换为您的图像名称
+        let button = UIButton(type: .custom)
+        button.setImage(image, for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 43, height: 43) // 设置按钮的宽度和高度
+        button.addTarget(self, action: #selector(goMemberPage), for: .touchUpInside)
+
+        let customView = UIView(frame: button.frame)
+        customView.addSubview(button)
+
+        let barButtonItem = UIBarButtonItem(customView: customView)
+        navigationItem.rightBarButtonItems?.append(barButtonItem)
+    }
+    @objc func goMemberPage() {
+        
+    }
+}
+
+

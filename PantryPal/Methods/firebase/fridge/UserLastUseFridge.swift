@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-func userLastUseFridge(fridgeCompletion: @escaping (FridgeData) -> Void,
+func userLastUseFridge(fridgeCompletion: @escaping (FridgeData, String) -> Void,
                        memberCompletion: @escaping (Array<MemberData>) -> Void,
                        ingredientCompletion: @escaping (Array<PresentIngredientsData>) -> Void) {
 // completion: @escaping (FridgeData) -> Void
@@ -58,7 +58,7 @@ func userLastUseFridge(fridgeCompletion: @escaping (FridgeData) -> Void,
                 print("冰箱文檔發生錯誤")
                 return
             }
-            fridgeCompletion(FridgeData(id: id, name: name, createdTime: createdTime))
+            fridgeCompletion(FridgeData(id: id, name: name, createdTime: createdTime), lastUseFridgeId)
             print("使用者當前冰箱資料： \(fridgeData)")
             
             getMembers(lastUseFridgeId) { memberData in

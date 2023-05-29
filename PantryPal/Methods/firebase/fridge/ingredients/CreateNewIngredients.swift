@@ -7,7 +7,7 @@
 
 import Firebase
 
-func createNewIndredients(_ ingredientData: DatabaseIngredientsData) {
+func createNewIndredients(_ ingredientData: DatabaseIngredientsData, completion: @escaping () -> Void) {
     // 新增冰箱 document 屬性
     let ingredients = Firestore.firestore().collection("ingredients")
     
@@ -16,7 +16,6 @@ func createNewIndredients(_ ingredientData: DatabaseIngredientsData) {
     let data: [String: Any] = [
         "ingredients_id": document.documentID,
         "barcode": ingredientData.barcode ?? "",
-        "belong_fridge": ingredientData.belongFridge,
         "describe": ingredientData.describe,
         "name": ingredientData.name,
         "price": ingredientData.price,
@@ -36,7 +35,10 @@ func createNewIndredients(_ ingredientData: DatabaseIngredientsData) {
         "ingredients_id": document.documentID,
         "barcode": ingredientData.barcode ?? ""
     ]
-    fridgeDocument.setData(userIdData)
+    fridgeDocument.setData(userIdData) {_ in
+        print("執行作業")
+        completion()
+    }
     
     if ingredientData.enableNotification {
         notificationRegister(ingredientData.expiration, ingredientData.name, document.documentID)

@@ -41,14 +41,11 @@
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="add" style="plain" id="E9m-oK-ozO">
-                                <connections>
-                                    <action selector="showAddIngredientsView" destination="Y6W-OH-hqX" id="Sfc-So-baN"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="addMember" style="plain" id="YQg-YW-LT8"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="E9m-oK-ozO">
+                            <connections>
+                                <action selector="showAddIngredientsView" destination="Y6W-OH-hqX" id="Sfc-So-baN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="changeFridgeButton" destination="Mxy-iz-y6e" id="pMp-E4-glP"/>
@@ -81,8 +78,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="40" height="40"/>
-        <image name="addMember" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

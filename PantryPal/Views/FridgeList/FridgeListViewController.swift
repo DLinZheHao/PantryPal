@@ -24,6 +24,8 @@ class FridgeListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = true
+        
         let barAppearance = UINavigationBarAppearance()
         barAppearance.configureWithDefaultBackground()
         barAppearance.backgroundEffect = UIBlurEffect(style: .systemMaterialDark)
@@ -45,9 +47,7 @@ class FridgeListViewController: UIViewController {
             self?.fridgeListTableView.reloadData()
         }
     }
-    
 }
-
 extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -75,19 +75,16 @@ extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
 //    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCell = tableView.cellForRow(at: indexPath)
-        guard let nextVC = UIStoryboard.fridgeTabBar.instantiateViewController(
-            withIdentifier: String(describing: FridgeTabBarController.self)) as? FridgeTabBarController
-        else {
-            print("創建失敗")
-            return
+        chooseFridge(fridges[indexPath.row].id) { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
         }
-        guard let navigationController = self.navigationController else {
-            print("导航控制器不存在")
-            return
-        }
-        nextVC.fridgeId = fridges[indexPath.row].id
-        navigationController.pushViewController(nextVC, animated: true)
+//        let selectedCell = tableView.cellForRow(at: indexPath)
+//        guard let nextVC = UIStoryboard.fridgeTabBar.instantiateViewController(
+//            withIdentifier: String(describing: FridgeTabBarController.self)) as? FridgeTabBarController
+//        else {
+//            print("創建失敗")
+//            return
+//        }
     }
 }
 
@@ -120,8 +117,11 @@ extension FridgeListViewController {
         if !checkEnterIsEmpty(createView.fridgeNameTextfield) {
             guard let fridgeName = createView.fridgeNameTextfield.text else { return }
             createNewFridge(fridgeName)
-            sender.superview?.removeFromSuperview()
-            
+            fetchFridgeData { [weak self] getData in
+                self?.fridges = getData
+                self?.fridgeListTableView.reloadData()
+                sender.superview?.removeFromSuperview()
+            }
         } else {
             alert("輸入欄位為空，請重新輸入", self)
         }

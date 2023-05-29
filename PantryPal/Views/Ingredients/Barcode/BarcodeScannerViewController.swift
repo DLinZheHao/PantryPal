@@ -30,7 +30,7 @@ class BarcodeScannerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tabBarController?.tabBar.isHidden = true
         // AVCaptureDevice.default 類別設計作為特定裝置型態來找出所有可用裝置
         // 這裡指定支援媒體型態為 .video 的裝置
         // 取得後置鏡頭來擷取影片

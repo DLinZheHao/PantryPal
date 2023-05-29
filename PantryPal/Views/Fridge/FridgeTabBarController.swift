@@ -28,14 +28,15 @@ extension FridgeTabBarController {
             switch self {
             case .ingredients:
                 controller = UIStoryboard.ingredients.instantiateInitialViewController()!
+                controller.tabBarItem = makeTabBarItem("冰箱")
             }
-            controller.tabBarItem = makeTabBarItem()
-            controller.tabBarItem.imageInsets = UIEdgeInsets(top: 6.0, left: 0.0, bottom: -6.0, right: 0.0)
+            
+            // controller.tabBarItem.imageInsets = UIEdgeInsets(top: 6.0, left: 0.0, bottom: -6.0, right: 0.0)
             return controller
         }
         
-        private func makeTabBarItem() -> UITabBarItem {
-            return UITabBarItem(title: nil, image: image, selectedImage: selectedImage)
+        private func makeTabBarItem(_ title: String) -> UITabBarItem {
+            return UITabBarItem(title: title, image: image, selectedImage: selectedImage)
         }
         
         private var image: UIImage? {

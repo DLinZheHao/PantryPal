@@ -6,12 +6,18 @@
 //
 import UIKit
 import FSCalendar
+protocol GetRefreshSignal {
+    func getSignal()
+}
+
 class AddIngredientsView: UIView, FSCalendarDelegate {
     var fridgeId: String?
     var ingredientsController: IngredientsViewController?
     var imageUrl: String?
     var barcode: String?
     var isEnable = false
+    
+    var delegate: GetRefreshSignal?
     
     @IBOutlet weak var barcodeTextField: UITextField!
     @IBOutlet weak var ingredientsNameTextField: UITextField!
@@ -57,6 +63,7 @@ extension AddIngredientsView {
     }
     
     @IBAction private func sendData() {
+        print("delegate: \(delegate)")
         let priceText = priceTextfield.text
         let price = Double(priceText ?? "0")
         let storeStatus = storeStatusSegment.selectedSegmentIndex
@@ -75,6 +82,7 @@ extension AddIngredientsView {
             alertTitle("開發錯誤 日期轉換", ingredientsController!, "需要修正")
             return
         }
+        print("測試日曆： \(date)")
         guard let belongFridgeId = fridgeId else {
             alertTitle("開發錯誤 沒有冰箱id", ingredientsController!, "需要修正")
             return
@@ -113,7 +121,10 @@ extension AddIngredientsView {
                                                    expiration: date,
                                                    belongFridge: belongFridgeId)
 
-                    createNewIndredients(data!)
+                    createNewIndredients(data!) { [self] in
+                        print("嘗試執行")
+                        delegate!.getSignal()
+                    }
                 } else {
                     // 無法取得圖片的下載 URL
                     print("無法獲取圖片的下載 URL")
