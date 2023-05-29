@@ -11,12 +11,14 @@ import FSCalendar
 
 class IngredientsDetailViewController: UIViewController {
     
+    var fridgeId: String?
     var ingredientsData: PresentIngredientsData?
     var completionHandler: ((URL?) -> Void)?
     var getImageCompletionHandler: ((UIImage) -> Void)?
+    var originNotificationSetting: Bool?
     
     var imageURL: String?
-    var selectedFileURL: URL?
+    var selectedFileURL: String?
     var takingPicture: UIImagePickerController!
     
     @IBOutlet weak var ingredientsImage: UIImageView!
@@ -24,6 +26,7 @@ class IngredientsDetailViewController: UIViewController {
     @IBOutlet weak var ingredientsPrice: UITextField!
     @IBOutlet weak var ingredientsExpiration: UITextField!
     @IBOutlet weak var ingredientsBarcode: UITextField!
+    @IBOutlet weak var ingredientsDescription: UITextView!
     @IBOutlet weak var ingredientsStoreStatus: UISegmentedControl!
     @IBOutlet weak var ingredientsNotification: UISegmentedControl!
     @IBOutlet weak var sendButton: UIButton!
@@ -54,12 +57,24 @@ extension IngredientsDetailViewController {
         ingredientsBarcode.text = ingredientsData.barcode
         ingredientsStoreStatus.selectedSegmentIndex = ingredientsData.storeStatus
         
+        originNotificationSetting = ingredientsData.enableNotifications
+        
         if ingredientsData.enableNotifications {
             ingredientsNotification.selectedSegmentIndex = 1
         } else {
             ingredientsNotification.selectedSegmentIndex = 0
         }
-
+        imageURL = ingredientsData.url
+        ingredientsDescription.text = ingredientsData.description
+        guard let url = imageURL else {
+            alertTitle("開發錯誤: 圖片url獲取失敗", self, "需要修正")
+            return
+        }
+        UIImage.downloadImage(from: URL(string: url)!) { [weak self] image in
+            DispatchQueue.main.async {
+                self?.ingredientsImage.image = image
+            }
+        }
     }
 }
 // MARK: 掃描功能
@@ -92,7 +107,6 @@ extension IngredientsDetailViewController {
         }
         navigationController?.pushViewController(nextVC, animated: true)
     }
-
 }
 // MARK: 照片功能連接
 extension IngredientsDetailViewController {
@@ -113,7 +127,7 @@ extension IngredientsDetailViewController: UIImagePickerControllerDelegate, UINa
             takingPicture.sourceType = .camera
             // 拍照时是否显示工具栏
             // takingPicture.showsCameraControls = true
-        }else if type == 2 {
+        } else if type == 2 {
             takingPicture.sourceType = .photoLibrary
         }
         // 是否截取，设置为true在获取图片后可以将其截取成正方形
@@ -125,9 +139,7 @@ extension IngredientsDetailViewController: UIImagePickerControllerDelegate, UINa
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         takingPicture.dismiss(animated: true, completion: nil)
         getImageClosure { [weak self] ingredientsImage in
-            // MARK: ---------- 施工開始區域 -----------------
-            ingredientsImage.image = ingredientsImage
-            // MARK: ---------- 施工結束區域 -----------------
+            self?.ingredientsImage.image = ingredientsImage
         }
         
         if let originalImage = info[.originalImage] as? UIImage {
@@ -135,19 +147,11 @@ extension IngredientsDetailViewController: UIImagePickerControllerDelegate, UINa
             // image.image = originalImage
             getImageCompletionHandler!(originalImage)
             if let imageURL = info[.imageURL] as? URL {
-                selectedFileURL = imageURL
-                // MARK: ---------- 施工開始區域 -----------------
-                let addIngredientsView = findSubview(ofType: AddIngredientsView.self, in: (self.view)!)
-                addIngredientsView?.imageUrl = imageURL.absoluteString
-                // MARK: ---------- 施工結束區域 -----------------
+                selectedFileURL = imageURL.absoluteString
             } else {
                 // 將照片存儲到相冊並獲取 URL
                 saveImageToPhotoAlbum(originalImage) { [weak self] photoUrl in
-                    self?.selectedFileURL = photoUrl!
-                    // MARK: ---------- 施工開始區域 -----------------
-                    let addIngredientsView = findSubview(ofType: AddIngredientsView.self, in: self!.view )
-                    addIngredientsView?.imageUrl = photoUrl!.absoluteString
-                    // MARK: ---------- 施工結束區域 -----------------
+                    self?.selectedFileURL = photoUrl?.absoluteString
                 }
             }
         } else if let editedImage = info[.editedImage] as? UIImage {
@@ -156,11 +160,7 @@ extension IngredientsDetailViewController: UIImagePickerControllerDelegate, UINa
             getImageCompletionHandler!(editedImage)
             // 將照片存儲到相冊並獲取 URL
             saveImageToPhotoAlbum(editedImage) { [weak self] photoUrl in
-                self?.selectedFileURL = photoUrl
-                // MARK: ---------- 施工開始區域 -----------------
-                let addIngredientsView = findSubview(ofType: AddIngredientsView.self, in: self!.view )
-                addIngredientsView?.imageUrl = photoUrl!.absoluteString
-                // MARK: ---------- 施工結束區域 -----------------
+                self?.selectedFileURL = photoUrl?.absoluteString
             }
         }
     }
@@ -226,5 +226,96 @@ extension IngredientsDetailViewController: FSCalendarDelegate, FSCalendarDataSou
         }
         addIngredientsView.expireTimeTextfield.text = dateFormatter.string(from: date)
         calendar.superview?.removeFromSuperview()
+    }
+}
+// MARK: - 送出資料
+extension IngredientsDetailViewController {
+    @IBAction private func sendData() {
+        let priceText = ingredientsPrice.text
+        let price = Double(priceText ?? "0")
+        let storeStatus = ingredientsStoreStatus.selectedSegmentIndex
+        guard let url = imageURL else {
+            alertTitle("開發錯誤 url", self, "需要修正")
+            return
+        }
+        guard let expireDate = ingredientsExpiration.text, !expireDate.isEmpty else {
+            alertTitle("沒有選擇過期時間", self, "提示")
+            return
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy年MM月dd日"
+
+        guard let date = dateFormatter.date(from: expireDate) else {
+            alertTitle("開發錯誤 日期轉換", self, "需要修正")
+            return
+        }
+        print("測試日曆： \(date)")
+        guard let belongFridgeId = fridgeId else {
+            alertTitle("開發錯誤 沒有冰箱id", self, "需要修正")
+            return
+        }
+
+        guard let fileURL = URL(string: url) else {
+            print("沒有選取圖片")
+            return
+        }
+        guard let name = ingredientsName.text else {
+            alertTitle("食材名稱輸入格為空", self, "提示")
+            return
+        }
+        guard let ingredientID = ingredientsData?.ingredientsID else {
+            alertTitle("開發錯誤: 食材ID獲取失敗", self, "需要修正")
+            return
+        }
+        
+        let isNotificationEnable: Bool?
+
+        if ingredientsNotification.selectedSegmentIndex == 0 {
+            isNotificationEnable = false
+        } else {
+            isNotificationEnable = true
+        }
+        let barcode = ingredientsBarcode.text ?? ""
+        let describe = ingredientsDescription.text ?? ""
+        
+        uploadPictureToFirebase(fileURL) { [weak self] (url, error) in
+            if let error = error {
+                // 上傳失敗，處理錯誤
+                print("上傳失敗：\(error.localizedDescription)")
+            } else {
+                // 上傳成功，取得圖片的下載 URL
+                if let downloadURL = url {
+                    // 使用圖片的下載 URL 做相關操作
+                    print("圖片上傳成功，下載 URL：\(downloadURL.absoluteString)")
+                    
+                    var data: DatabaseIngredientsData?
+                    
+                    data = DatabaseIngredientsData(barcode: barcode,
+                                                   name: name,
+                                                   price: price ?? 0,
+                                                   storeStatus: storeStatus,
+                                                   url: downloadURL.absoluteString,
+                                                   enableNotification: isNotificationEnable!,
+                                                   describe: describe,
+                                                   expiration: date,
+                                                   belongFridge: belongFridgeId)
+
+                    if self?.originNotificationSetting == isNotificationEnable {
+                        print("已經註冊過或是不需要開啟")
+                    } else if self?.originNotificationSetting == false && isNotificationEnable == true {
+                        notificationRegister(date, name, (self?.fridgeId)!)
+                    } else if self?.originNotificationSetting == true && isNotificationEnable == false {
+                        notificationDelete((self?.fridgeId)!)
+                    }
+                    // 修改已經存在的ingredients 資料
+                    
+                    reviseIngredientsData(ingredientID, data!)
+                    self?.navigationController?.popViewController(animated: true)
+                } else {
+                    // 無法取得圖片的下載 URL
+                    print("無法獲取圖片的下載 URL")
+                }
+            }
+        }
     }
 }

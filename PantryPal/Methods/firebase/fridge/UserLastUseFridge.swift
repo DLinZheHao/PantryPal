@@ -142,7 +142,8 @@ private func getIngredients(_ fridgeId: String, completion: @escaping (Array<Pre
                       let ingredientsUrl = ingredientsData["url"] as? String,
                       let ingredientsCreatedTime = ingredientsData["created_time"] as? Double,
                       let ingredientsEnableNotifications = ingredientsData["enable_Notification"] as? Bool,
-                      let ingredietnsExpiration = ingredientsData["expiration"] as? Timestamp else {
+                      let ingredietnsExpiration = ingredientsData["expiration"] as? Timestamp,
+                      let ingredientsDescription = ingredientsData["describe"] as? String else {
                     print("食材資料獲取失敗")
                     continue
                 }
@@ -155,7 +156,8 @@ private func getIngredients(_ fridgeId: String, completion: @escaping (Array<Pre
                     url: ingredientsUrl,
                     createdTime: ingredientsCreatedTime,
                     enableNotifications: ingredientsEnableNotifications,
-                    expiration: ingredietnsExpiration.dateValue()
+                    expiration: ingredietnsExpiration.dateValue(),
+                    description: ingredientsDescription
                 )
                 fridgeIngredients.append(newIngredients)
             }

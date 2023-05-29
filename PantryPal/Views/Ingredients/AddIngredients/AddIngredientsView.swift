@@ -61,9 +61,8 @@ extension AddIngredientsView {
             calendarView.heightAnchor.constraint(equalToConstant: 400)
         ])
     }
-    
+    // MARK: 送出資料
     @IBAction private func sendData() {
-        print("delegate: \(delegate)")
         let priceText = priceTextfield.text
         let price = Double(priceText ?? "0")
         let storeStatus = storeStatusSegment.selectedSegmentIndex
@@ -133,7 +132,9 @@ extension AddIngredientsView {
         }
         removeFromSuperview()
     }
-
+    @IBAction func closeView() {
+        removeFromSuperview()
+    }
     @objc func enableAlert() {
         enableImageView.isHidden = isEnable
         isEnable = !isEnable

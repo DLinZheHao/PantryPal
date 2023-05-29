@@ -16,6 +16,7 @@ struct PresentIngredientsData {
     let createdTime: Double
     let enableNotifications: Bool
     let expiration: Date
+    let description: String
 }
 
 struct DatabaseIngredientsData {

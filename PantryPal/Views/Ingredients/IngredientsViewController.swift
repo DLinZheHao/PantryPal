@@ -118,6 +118,11 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
             print("創建失敗")
             return }
         nextVC.ingredientsData = ingredientsData[indexPath.row]
+        guard let fridgeID = currentFridgeID else {
+            alertTitle("開發錯誤: 沒有按照流程獲得ID", self, "需要修正")
+            return 
+        }
+        nextVC.fridgeId = fridgeID
         navigationController?.pushViewController(nextVC, animated: true)
     }
     
