@@ -23,7 +23,7 @@
 		051AC6B72A1F09BB00B23C63 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6B62A1F09BB00B23C63 /* UIImage+Extension.swift */; };
 		051AC6B92A1F1B2B00B23C63 /* UserLastUseFridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6B82A1F1B2B00B23C63 /* UserLastUseFridge.swift */; };
 		051AC6BB2A1F27C400B23C63 /* FridgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6BA2A1F27C400B23C63 /* FridgeData.swift */; };
-		051AC6BE2A1F2E9E00B23C63 /* MemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6BD2A1F2E9E00B23C63 /* MemberData.swift */; };
+		051AC6BE2A1F2E9E00B23C63 /* MemberIDData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6BD2A1F2E9E00B23C63 /* MemberIDData.swift */; };
 		051AC6C12A1F360200B23C63 /* IngredientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6C02A1F360200B23C63 /* IngredientsData.swift */; };
 		051AC6C32A1F58F700B23C63 /* FridgeAllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AC6C22A1F58F700B23C63 /* FridgeAllData.swift */; };
 		051AC6CA2A1F901000B23C63 /* AddIngredients.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051AC6C92A1F901000B23C63 /* AddIngredients.xib */; };
@@ -52,6 +52,13 @@
 		0554DFA72A2429DF00956B04 /* IngredientsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFA62A2429DF00956B04 /* IngredientsDetailViewController.swift */; };
 		0554DFA92A249E8600956B04 /* ReviseIngredientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFA82A249E8600956B04 /* ReviseIngredientsData.swift */; };
 		0554DFAB2A24D43D00956B04 /* DeleteFridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFAA2A24D43D00956B04 /* DeleteFridge.swift */; };
+		0554DFB12A25959B00956B04 /* Members.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0554DFB02A25959B00956B04 /* Members.storyboard */; };
+		0554DFB32A2595B500956B04 /* example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFB22A2595B500956B04 /* example.swift */; };
+		0554DFB62A2598E700956B04 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFB52A2598E700956B04 /* UICollectionView+Extension.swift */; };
+		0554DFB82A2599B700956B04 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFB72A2599B700956B04 /* MemberViewController.swift */; };
+		0554DFBC2A259ABA00956B04 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFBB2A259ABA00956B04 /* MemberCollectionViewCell.swift */; };
+		0554DFC22A259BFE00956B04 /* MemberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0554DFC12A259BFE00956B04 /* MemberCollectionViewCell.xib */; };
+		0554DFC52A259D9600956B04 /* GetMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFC42A259D9600956B04 /* GetMembers.swift */; };
 		05ED19682A1766590023A13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19672A1766590023A13E /* AppDelegate.swift */; };
 		05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19692A1766590023A13E /* SceneDelegate.swift */; };
 		05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* LobbyViewController.swift */; };
@@ -119,7 +126,7 @@
 		051AC6B62A1F09BB00B23C63 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		051AC6B82A1F1B2B00B23C63 /* UserLastUseFridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLastUseFridge.swift; sourceTree = "<group>"; };
 		051AC6BA2A1F27C400B23C63 /* FridgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeData.swift; sourceTree = "<group>"; };
-		051AC6BD2A1F2E9E00B23C63 /* MemberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberData.swift; sourceTree = "<group>"; };
+		051AC6BD2A1F2E9E00B23C63 /* MemberIDData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberIDData.swift; sourceTree = "<group>"; };
 		051AC6C02A1F360200B23C63 /* IngredientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsData.swift; sourceTree = "<group>"; };
 		051AC6C22A1F58F700B23C63 /* FridgeAllData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeAllData.swift; sourceTree = "<group>"; };
 		051AC6C92A1F901000B23C63 /* AddIngredients.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddIngredients.xib; sourceTree = "<group>"; };
@@ -148,6 +155,13 @@
 		0554DFA62A2429DF00956B04 /* IngredientsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsDetailViewController.swift; sourceTree = "<group>"; };
 		0554DFA82A249E8600956B04 /* ReviseIngredientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviseIngredientsData.swift; sourceTree = "<group>"; };
 		0554DFAA2A24D43D00956B04 /* DeleteFridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFridge.swift; sourceTree = "<group>"; };
+		0554DFB02A25959B00956B04 /* Members.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Members.storyboard; sourceTree = "<group>"; };
+		0554DFB22A2595B500956B04 /* example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example.swift; sourceTree = "<group>"; };
+		0554DFB52A2598E700956B04 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		0554DFB72A2599B700956B04 /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
+		0554DFBB2A259ABA00956B04 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
+		0554DFC12A259BFE00956B04 /* MemberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberCollectionViewCell.xib; sourceTree = "<group>"; };
+		0554DFC42A259D9600956B04 /* GetMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMembers.swift; sourceTree = "<group>"; };
 		05ED19642A1766590023A13E /* PantryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED19672A1766590023A13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED19692A1766590023A13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -277,7 +291,7 @@
 		051AC6BC2A1F2E8A00B23C63 /* Member */ = {
 			isa = PBXGroup;
 			children = (
-				051AC6BD2A1F2E9E00B23C63 /* MemberData.swift */,
+				051AC6BD2A1F2E9E00B23C63 /* MemberIDData.swift */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -339,6 +353,7 @@
 		051AC6F12A21F48C00B23C63 /* fridge */ = {
 			isa = PBXGroup;
 			children = (
+				0554DFC32A259D7700956B04 /* member */,
 				051AC6F22A21F4AE00B23C63 /* ingredients */,
 				051AC6B82A1F1B2B00B23C63 /* UserLastUseFridge.swift */,
 				051AC6932A1DA72300B23C63 /* FetchFridgesData.swift */,
@@ -381,6 +396,10 @@
 		0554DFA22A24266100956B04 /* Member */ = {
 			isa = PBXGroup;
 			children = (
+				0554DFB42A2595E900956B04 /* memberCell */,
+				0554DFB72A2599B700956B04 /* MemberViewController.swift */,
+				0554DFB02A25959B00956B04 /* Members.storyboard */,
+				0554DFB22A2595B500956B04 /* example.swift */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -392,6 +411,23 @@
 				0554DFA62A2429DF00956B04 /* IngredientsDetailViewController.swift */,
 			);
 			path = IngredientsDetail;
+			sourceTree = "<group>";
+		};
+		0554DFB42A2595E900956B04 /* memberCell */ = {
+			isa = PBXGroup;
+			children = (
+				0554DFBB2A259ABA00956B04 /* MemberCollectionViewCell.swift */,
+				0554DFC12A259BFE00956B04 /* MemberCollectionViewCell.xib */,
+			);
+			path = memberCell;
+			sourceTree = "<group>";
+		};
+		0554DFC32A259D7700956B04 /* member */ = {
+			isa = PBXGroup;
+			children = (
+				0554DFC42A259D9600956B04 /* GetMembers.swift */,
+			);
+			path = member;
 			sourceTree = "<group>";
 		};
 		05ED195B2A1766590023A13E = {
@@ -506,6 +542,7 @@
 				051AC6912A1DA67C00B23C63 /* UITableView+Extension.swift */,
 				051AC6B62A1F09BB00B23C63 /* UIImage+Extension.swift */,
 				051AC6E22A206ECC00B23C63 /* UIResponder+Extension.swift */,
+				0554DFB52A2598E700956B04 /* UICollectionView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -627,10 +664,12 @@
 				05ED1AC22A1CF8E70023A13E /* GoogleService-Info.plist in Resources */,
 				051AC6CA2A1F901000B23C63 /* AddIngredients.xib in Resources */,
 				051AC6902A1DA51600B23C63 /* FridgeCell.xib in Resources */,
+				0554DFB12A25959B00956B04 /* Members.storyboard in Resources */,
 				051AC6D12A1F98C200B23C63 /* Calendar.xib in Resources */,
 				051AC6FB2A2210CA00B23C63 /* IngredientsTableViewCell.xib in Resources */,
 				05ED19742A17665A0023A13E /* Assets.xcassets in Resources */,
 				0554DFA52A2429A900956B04 /* IngredientsDetail.storyboard in Resources */,
+				0554DFC22A259BFE00956B04 /* MemberCollectionViewCell.xib in Resources */,
 				05ED1AD12A1D98120023A13E /* FridgeList.storyboard in Resources */,
 				051AC6D92A202F3600B23C63 /* BarcodeScanner.storyboard in Resources */,
 				05ED196F2A1766590023A13E /* Main.storyboard in Resources */,
@@ -704,6 +743,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				051AC69F2A1DED1F00B23C63 /* CreateFridgeView.swift in Sources */,
+				0554DFC52A259D9600956B04 /* GetMembers.swift in Sources */,
 				051AC6C12A1F360200B23C63 /* IngredientsData.swift in Sources */,
 				0554DFA92A249E8600956B04 /* ReviseIngredientsData.swift in Sources */,
 				05ED1ABB2A1CA63E0023A13E /* InformationStackView.swift in Sources */,
@@ -711,7 +751,7 @@
 				051AC6DF2A204EE900B23C63 /* FetchIngredientApiData.swift in Sources */,
 				051AC6BB2A1F27C400B23C63 /* FridgeData.swift in Sources */,
 				051AC6B92A1F1B2B00B23C63 /* UserLastUseFridge.swift in Sources */,
-				051AC6BE2A1F2E9E00B23C63 /* MemberData.swift in Sources */,
+				051AC6BE2A1F2E9E00B23C63 /* MemberIDData.swift in Sources */,
 				051AC6922A1DA67C00B23C63 /* UITableView+Extension.swift in Sources */,
 				051AC6DB2A202F6800B23C63 /* BarcodeScannerViewController.swift in Sources */,
 				051AC6B02A1EF9F300B23C63 /* GetFridge.swift in Sources */,
@@ -721,6 +761,7 @@
 				051AC6CF2A1F98AD00B23C63 /* CalendarView.swift in Sources */,
 				051AC6C32A1F58F700B23C63 /* FridgeAllData.swift in Sources */,
 				05ED1ABE2A1CF4A40023A13E /* UserDataInit.swift in Sources */,
+				0554DFB82A2599B700956B04 /* MemberViewController.swift in Sources */,
 				051AC6E52A2076B600B23C63 /* FindSubview.swift in Sources */,
 				051AC6E32A206ECC00B23C63 /* UIResponder+Extension.swift in Sources */,
 				051AC7272A2356DD00B23C63 /* DeleteIngredients.swift in Sources */,
@@ -729,11 +770,13 @@
 				051AC6A72A1EE1F500B23C63 /* FridgeTabBarController.swift in Sources */,
 				051AC6982A1DD98500B23C63 /* FridgeListTableView.swift in Sources */,
 				051AC6DD2A203F0E00B23C63 /* FailGetData.swift in Sources */,
+				0554DFB32A2595B500956B04 /* example.swift in Sources */,
 				051AC6D52A202ECA00B23C63 /* BarcodeIngredientData.swift in Sources */,
 				051AC6FA2A2210CA00B23C63 /* IngredientsTableViewCell.swift in Sources */,
 				051AC6962A1DAA6C00B23C63 /* CreatNewFridge.swift in Sources */,
 				05ED1AD62A1D9E2F0023A13E /* UIStoryboard+Extension.swift in Sources */,
 				05ED1AC42A1CFAD30023A13E /* CheckEmailVerification.swift in Sources */,
+				0554DFB62A2598E700956B04 /* UICollectionView+Extension.swift in Sources */,
 				0554DFA72A2429DF00956B04 /* IngredientsDetailViewController.swift in Sources */,
 				05ED1AC62A1CFC130023A13E /* SignInViewController.swift in Sources */,
 				051AC6E12A204F1400B23C63 /* SimpTradConversion.swift in Sources */,
@@ -742,6 +785,7 @@
 				051AC6EB2A2102A800B23C63 /* CreateNewIngredients.swift in Sources */,
 				051AC6CC2A1F904000B23C63 /* AddIngredientsView.swift in Sources */,
 				05EE823B2A23724700946AB7 /* IngredientsRecording.swift in Sources */,
+				0554DFBC2A259ABA00956B04 /* MemberCollectionViewCell.swift in Sources */,
 				05ED19722A1766590023A13E /* PantryPal.xcdatamodeld in Sources */,
 				05ED1AC82A1CFC330023A13E /* SigninStackView.swift in Sources */,
 				051AC6D62A202ECA00B23C63 /* SimpTradConversionData.swift in Sources */,

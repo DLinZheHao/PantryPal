@@ -10,5 +10,5 @@ struct FridgeAllData {
     let name: String
     let createdTime: Double
     let ingredients: [PresentIngredientsData]?
-    let members: [MemberData]
+    let members: [MemberIDData]
 }

@@ -20,7 +20,7 @@ func userDataInit(email: String, name: String) {
     let document = users.document(currentUserId)
 
     let data: [String: Any] = [
-        "eamil": email,
+        "email": email,
         "id": currentUserId,
         "name": name,
         "own_fridges": [],

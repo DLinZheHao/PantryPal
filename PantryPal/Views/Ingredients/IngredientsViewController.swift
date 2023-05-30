@@ -21,7 +21,7 @@ class IngredientsViewController: UIViewController {
     
     var currentFridgeID: String?
     var fridgeData: FridgeData?
-    var memberData: [MemberData]?
+    var memberData: [MemberIDData]?
     var ingredientsData: [PresentIngredientsData] = []
     
     @IBOutlet weak var changeFridgeButton: UIButton! {
@@ -443,8 +443,13 @@ extension IngredientsViewController {
         navigationItem.rightBarButtonItems?.append(barButtonItem)
     }
     @objc func goMemberPage() {
-        
+        guard let nextVC = UIStoryboard.members.instantiateViewController(
+            withIdentifier: String(describing: MemberViewController.self)
+        ) as? MemberViewController else {
+            print("創建失敗")
+            return
+        }
+        nextVC.currentFridgeID = currentFridgeID
+        present(nextVC, animated: true, completion: nil)
     }
 }
-
-

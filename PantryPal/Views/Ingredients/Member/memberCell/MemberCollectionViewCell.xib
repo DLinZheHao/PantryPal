@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Vwb-1e-93C" customClass="MemberCollectionViewCell" customModule="PantryPal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zde-dv-kvF">
+                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xax-mb-K5n">
+                        <rect key="frame" x="24" y="14" width="80" height="76.666666666666671"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="4a7-JW-oXh"/>
+                            <constraint firstAttribute="height" constant="80" id="J5u-f7-L9X"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用者名稱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svt-sd-PGP">
+                        <rect key="frame" x="7" y="100" width="114" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="114" id="AKf-hF-hZQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.94894558569999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Svt-sd-PGP" secondAttribute="trailing" constant="7" id="5Vv-Sk-hS0"/>
+                    <constraint firstItem="xax-mb-K5n" firstAttribute="top" secondItem="zde-dv-kvF" secondAttribute="top" constant="12" id="7cG-aB-QWc"/>
+                    <constraint firstItem="Svt-sd-PGP" firstAttribute="top" secondItem="xax-mb-K5n" secondAttribute="bottom" constant="8" symbolic="YES" id="Lrv-O9-HDk"/>
+                    <constraint firstItem="xax-mb-K5n" firstAttribute="leading" secondItem="zde-dv-kvF" secondAttribute="leading" constant="24" id="R9J-A9-ltz"/>
+                    <constraint firstAttribute="bottom" secondItem="Svt-sd-PGP" secondAttribute="bottom" constant="7" id="VGq-Vf-w9i"/>
+                    <constraint firstItem="Svt-sd-PGP" firstAttribute="leading" secondItem="zde-dv-kvF" secondAttribute="leading" constant="7" id="u0a-B5-z1x"/>
+                    <constraint firstAttribute="trailing" secondItem="xax-mb-K5n" secondAttribute="trailing" constant="24" id="waG-QU-nVv"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="memberImage" destination="xax-mb-K5n" id="15k-rV-NkH"/>
+                <outlet property="memberNameLabel" destination="Svt-sd-PGP" id="5Sg-sK-Up4"/>
+            </connections>
+            <point key="canvasLocation" x="155.72519083969465" y="25.35211267605634"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+    </resources>
+</document>

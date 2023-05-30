@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 func userLastUseFridge(fridgeCompletion: @escaping (FridgeData, String) -> Void,
-                       memberCompletion: @escaping (Array<MemberData>) -> Void,
+                       memberCompletion: @escaping (Array<MemberIDData>) -> Void,
                        ingredientCompletion: @escaping (Array<PresentIngredientsData>) -> Void) {
 // completion: @escaping (FridgeData) -> Void
     guard let currentUserId = Auth.auth().currentUser?.uid else {
@@ -72,7 +72,7 @@ func userLastUseFridge(fridgeCompletion: @escaping (FridgeData, String) -> Void,
     }
 }
 // 獲得冰箱成員資料
-private func getMembers(_ fridgeId: String, completion: @escaping (Array<MemberData>) -> Void) {
+private func getMembers(_ fridgeId: String, completion: @escaping (Array<MemberIDData>) -> Void) {
     let members = Firestore.firestore().collection("fridges").document(fridgeId).collection("members")
     
     members.getDocuments { (documents, error) in
@@ -83,14 +83,14 @@ private func getMembers(_ fridgeId: String, completion: @escaping (Array<MemberD
             print("members資料不存在！")
             return
         }
-        var fridgeMember: [MemberData] = []
+        var fridgeMember: [MemberIDData] = []
         for document in documents.documents {
             let memberData = document.data()
             guard let id = memberData["id"] as? String else {
                 print("型態轉換失敗")
                 return
             }
-            let newFridge = MemberData(id: id)
+            let newFridge = MemberIDData(id: id)
             fridgeMember.append(newFridge)
         }
         print("當前冰箱成員：\(fridgeMember)")
