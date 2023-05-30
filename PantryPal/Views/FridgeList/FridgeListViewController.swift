@@ -9,6 +9,7 @@ import UIKit
 
 class FridgeListViewController: UIViewController {
     
+    var currentFridgeID: String?
     var fridges: [FridgeData] = []
     
     @IBOutlet weak var fridgeListTableView: FridgeListTableView! {
@@ -48,6 +49,7 @@ class FridgeListViewController: UIViewController {
         }
     }
 }
+// MARK: tableview 控制
 extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -69,27 +71,35 @@ extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
         fridgeCell.selectionStyle = .default // 设置选择样式
         return fridgeCell
     }
-    
-//    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-//        return false // 返回 false，不显示选中状态的动画
-//    }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         chooseFridge(fridges[indexPath.row].id) { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         }
-//        let selectedCell = tableView.cellForRow(at: indexPath)
-//        guard let nextVC = UIStoryboard.fridgeTabBar.instantiateViewController(
-//            withIdentifier: String(describing: FridgeTabBarController.self)) as? FridgeTabBarController
-//        else {
-//            print("創建失敗")
-//            return
-//        }
     }
-}
-
-extension FridgeListViewController {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "刪除") { [weak self] (action, sourceView, completionHandler) in
+            if let id = self?.fridges[indexPath.row].id,
+               let currentID = self?.currentFridgeID,
+               id != currentID {
+                deleteFridge(id) { [weak self] in
+                    fetchFridgeData { [weak self] getData in
+                        self?.fridges = getData
+                        self?.fridgeListTableView.reloadData()
+                    }
+                }
+            } else {
+                alert("不可以刪除當前使用的冰箱，請先選擇其他冰箱在進行刪除", self!)
+            }
+            completionHandler(true)
+        }
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return swipeConfiguration
+    }
     
+}
+// MARK: - 新增fridge view
+extension FridgeListViewController {
     private func setUpCreatFridgeView() {
         guard let customView = UINib(nibName: "CreateFridgeView", bundle: nil).instantiate(withOwner: self, options: nil).first as? CreateFridgeView else {
             print("畫面創建失敗")
@@ -116,12 +126,14 @@ extension FridgeListViewController {
         
         if !checkEnterIsEmpty(createView.fridgeNameTextfield) {
             guard let fridgeName = createView.fridgeNameTextfield.text else { return }
-            createNewFridge(fridgeName)
-            fetchFridgeData { [weak self] getData in
-                self?.fridges = getData
-                self?.fridgeListTableView.reloadData()
-                sender.superview?.removeFromSuperview()
+            createNewFridge(fridgeName) {
+                fetchFridgeData { [weak self] getData in
+                    self?.fridges = getData
+                    self?.fridgeListTableView.reloadData()
+                    sender.superview?.removeFromSuperview()
+                }
             }
+            
         } else {
             alert("輸入欄位為空，請重新輸入", self)
         }

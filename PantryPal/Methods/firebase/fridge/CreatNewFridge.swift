@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-func createNewFridge(_ name: String) {
+func createNewFridge(_ name: String, completion: @escaping () -> Void) {
     guard let currentUserId = Auth.auth().currentUser?.uid else {
         print("登入狀態有問題")
         return
@@ -63,6 +63,7 @@ func createNewFridge(_ name: String) {
                         } else {
                             // 文檔數據更新成功
                             print("文檔數據更新成功")
+                            completion()
                         }
                     }
                 }

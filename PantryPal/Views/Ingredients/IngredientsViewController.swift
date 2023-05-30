@@ -65,7 +65,7 @@ extension IngredientsViewController {
         else {
             print("創建失敗")
             return }
-        
+        nextVC.currentFridgeID = currentFridgeID!
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }

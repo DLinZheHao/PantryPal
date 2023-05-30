@@ -51,6 +51,7 @@
 		0554DFA52A2429A900956B04 /* IngredientsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0554DFA42A2429A900956B04 /* IngredientsDetail.storyboard */; };
 		0554DFA72A2429DF00956B04 /* IngredientsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFA62A2429DF00956B04 /* IngredientsDetailViewController.swift */; };
 		0554DFA92A249E8600956B04 /* ReviseIngredientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFA82A249E8600956B04 /* ReviseIngredientsData.swift */; };
+		0554DFAB2A24D43D00956B04 /* DeleteFridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFAA2A24D43D00956B04 /* DeleteFridge.swift */; };
 		05ED19682A1766590023A13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19672A1766590023A13E /* AppDelegate.swift */; };
 		05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19692A1766590023A13E /* SceneDelegate.swift */; };
 		05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* LobbyViewController.swift */; };
@@ -146,6 +147,7 @@
 		0554DFA42A2429A900956B04 /* IngredientsDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IngredientsDetail.storyboard; sourceTree = "<group>"; };
 		0554DFA62A2429DF00956B04 /* IngredientsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsDetailViewController.swift; sourceTree = "<group>"; };
 		0554DFA82A249E8600956B04 /* ReviseIngredientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviseIngredientsData.swift; sourceTree = "<group>"; };
+		0554DFAA2A24D43D00956B04 /* DeleteFridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFridge.swift; sourceTree = "<group>"; };
 		05ED19642A1766590023A13E /* PantryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED19672A1766590023A13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED19692A1766590023A13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				051AC6952A1DAA6C00B23C63 /* CreatNewFridge.swift */,
 				051AC6AF2A1EF9F300B23C63 /* GetFridge.swift */,
 				051AC7242A233C5A00B23C63 /* ChooseFridge.swift */,
+				0554DFAA2A24D43D00956B04 /* DeleteFridge.swift */,
 			);
 			path = fridge;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				051AC6FD2A22E01300B23C63 /* GetTimeLeft.swift in Sources */,
 				05ED1ACA2A1D8DEF0023A13E /* Alert.swift in Sources */,
 				05ED19682A1766590023A13E /* AppDelegate.swift in Sources */,
+				0554DFAB2A24D43D00956B04 /* DeleteFridge.swift in Sources */,
 				051AC68F2A1DA51600B23C63 /* FridgeCell.swift in Sources */,
 				051AC7252A233C5A00B23C63 /* ChooseFridge.swift in Sources */,
 				05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */,
