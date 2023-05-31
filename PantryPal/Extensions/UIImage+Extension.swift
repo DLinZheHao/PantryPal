@@ -16,6 +16,10 @@ enum ImageAsset: String {
     case watermelon
     case tableViewCell_background_1
     case members
+    case fridge_select
+    case fridge_not_select
+    case teamLink_not_select
+    case teamLink_select
 }
 // swiftlint:enable identifier_name
 

@@ -59,6 +59,14 @@
 		0554DFBC2A259ABA00956B04 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFBB2A259ABA00956B04 /* MemberCollectionViewCell.swift */; };
 		0554DFC22A259BFE00956B04 /* MemberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0554DFC12A259BFE00956B04 /* MemberCollectionViewCell.xib */; };
 		0554DFC52A259D9600956B04 /* GetMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFC42A259D9600956B04 /* GetMembers.swift */; };
+		0554DFC92A25CDE100956B04 /* TeamLink.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0554DFC82A25CDE100956B04 /* TeamLink.storyboard */; };
+		0554DFEE2A25E66B00956B04 /* TeamLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFED2A25E66B00956B04 /* TeamLinkViewController.swift */; };
+		0554DFF22A25F60400956B04 /* AddMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFF12A25F60400956B04 /* AddMemberViewController.swift */; };
+		0554DFF42A25F61200956B04 /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFF32A25F61200956B04 /* ManageViewController.swift */; };
+		0554DFF72A26C56100956B04 /* GetLastUserFridgeForMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFF62A26C56100956B04 /* GetLastUserFridgeForMember.swift */; };
+		0554DFFA2A26D5A100956B04 /* GenerateQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFF92A26D5A100956B04 /* GenerateQRCode.swift */; };
+		0554DFFD2A26E66900956B04 /* ManageMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0554DFFC2A26E66900956B04 /* ManageMemberTableViewCell.xib */; };
+		0554DFFF2A26E69300956B04 /* ManageMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFFE2A26E69300956B04 /* ManageMemberTableViewCell.swift */; };
 		05ED19682A1766590023A13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19672A1766590023A13E /* AppDelegate.swift */; };
 		05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19692A1766590023A13E /* SceneDelegate.swift */; };
 		05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* LobbyViewController.swift */; };
@@ -162,6 +170,14 @@
 		0554DFBB2A259ABA00956B04 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
 		0554DFC12A259BFE00956B04 /* MemberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberCollectionViewCell.xib; sourceTree = "<group>"; };
 		0554DFC42A259D9600956B04 /* GetMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMembers.swift; sourceTree = "<group>"; };
+		0554DFC82A25CDE100956B04 /* TeamLink.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamLink.storyboard; sourceTree = "<group>"; };
+		0554DFED2A25E66B00956B04 /* TeamLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLinkViewController.swift; sourceTree = "<group>"; };
+		0554DFF12A25F60400956B04 /* AddMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberViewController.swift; sourceTree = "<group>"; };
+		0554DFF32A25F61200956B04 /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
+		0554DFF62A26C56100956B04 /* GetLastUserFridgeForMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLastUserFridgeForMember.swift; sourceTree = "<group>"; };
+		0554DFF92A26D5A100956B04 /* GenerateQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateQRCode.swift; sourceTree = "<group>"; };
+		0554DFFC2A26E66900956B04 /* ManageMemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageMemberTableViewCell.xib; sourceTree = "<group>"; };
+		0554DFFE2A26E69300956B04 /* ManageMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMemberTableViewCell.swift; sourceTree = "<group>"; };
 		05ED19642A1766590023A13E /* PantryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED19672A1766590023A13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED19692A1766590023A13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +254,7 @@
 		051AC6992A1DDB0200B23C63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0554DFF82A26D58500956B04 /* QRcode */,
 				051AC6D22A202EAB00B23C63 /* Barcode */,
 				051AC6BF2A1F35EB00B23C63 /* Ingredients */,
 				051AC6BC2A1F2E8A00B23C63 /* Member */,
@@ -344,6 +361,7 @@
 		051AC6F02A21F46A00B23C63 /* firebase */ = {
 			isa = PBXGroup;
 			children = (
+				0554DFF52A26C54100956B04 /* fridgeMember */,
 				051AC6F12A21F48C00B23C63 /* fridge */,
 				05ED1ABD2A1CF4A40023A13E /* UserDataInit.swift */,
 			);
@@ -430,6 +448,59 @@
 			path = member;
 			sourceTree = "<group>";
 		};
+		0554DFC72A25C5B700956B04 /* TeamLink */ = {
+			isa = PBXGroup;
+			children = (
+				0554DFF02A25F19E00956B04 /* Manage */,
+				0554DFEF2A25F19800956B04 /* AddMember */,
+				0554DFC82A25CDE100956B04 /* TeamLink.storyboard */,
+				0554DFED2A25E66B00956B04 /* TeamLinkViewController.swift */,
+			);
+			path = TeamLink;
+			sourceTree = "<group>";
+		};
+		0554DFEF2A25F19800956B04 /* AddMember */ = {
+			isa = PBXGroup;
+			children = (
+				0554DFF12A25F60400956B04 /* AddMemberViewController.swift */,
+			);
+			path = AddMember;
+			sourceTree = "<group>";
+		};
+		0554DFF02A25F19E00956B04 /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+				0554DFFB2A26E58B00956B04 /* ManageMemberCell */,
+				0554DFF32A25F61200956B04 /* ManageViewController.swift */,
+			);
+			path = Manage;
+			sourceTree = "<group>";
+		};
+		0554DFF52A26C54100956B04 /* fridgeMember */ = {
+			isa = PBXGroup;
+			children = (
+				0554DFF62A26C56100956B04 /* GetLastUserFridgeForMember.swift */,
+			);
+			path = fridgeMember;
+			sourceTree = "<group>";
+		};
+		0554DFF82A26D58500956B04 /* QRcode */ = {
+			isa = PBXGroup;
+			children = (
+				0554DFF92A26D5A100956B04 /* GenerateQRCode.swift */,
+			);
+			path = QRcode;
+			sourceTree = "<group>";
+		};
+		0554DFFB2A26E58B00956B04 /* ManageMemberCell */ = {
+			isa = PBXGroup;
+			children = (
+				0554DFFC2A26E66900956B04 /* ManageMemberTableViewCell.xib */,
+				0554DFFE2A26E69300956B04 /* ManageMemberTableViewCell.swift */,
+			);
+			path = ManageMemberCell;
+			sourceTree = "<group>";
+		};
 		05ED195B2A1766590023A13E = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +542,7 @@
 		05ED1AB22A1CA0E30023A13E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0554DFC72A25C5B700956B04 /* TeamLink */,
 				051AC6A82A1EE3CD00B23C63 /* Ingredients */,
 				051AC6A32A1EE17600B23C63 /* Fridge */,
 				05ED1ACB2A1D96E70023A13E /* FridgeList */,
@@ -659,7 +731,9 @@
 			files = (
 				05ED19772A17665A0023A13E /* LaunchScreen.storyboard in Resources */,
 				051AC6A52A1EE18F00B23C63 /* FridgeTabBar.storyboard in Resources */,
+				0554DFFD2A26E66900956B04 /* ManageMemberTableViewCell.xib in Resources */,
 				051AC6AE2A1EE44B00B23C63 /* Ingredients.storyboard in Resources */,
+				0554DFC92A25CDE100956B04 /* TeamLink.storyboard in Resources */,
 				051AC6A12A1DED2E00B23C63 /* CreateFridgeView.xib in Resources */,
 				05ED1AC22A1CF8E70023A13E /* GoogleService-Info.plist in Resources */,
 				051AC6CA2A1F901000B23C63 /* AddIngredients.xib in Resources */,
@@ -762,7 +836,9 @@
 				051AC6C32A1F58F700B23C63 /* FridgeAllData.swift in Sources */,
 				05ED1ABE2A1CF4A40023A13E /* UserDataInit.swift in Sources */,
 				0554DFB82A2599B700956B04 /* MemberViewController.swift in Sources */,
+				0554DFFA2A26D5A100956B04 /* GenerateQRCode.swift in Sources */,
 				051AC6E52A2076B600B23C63 /* FindSubview.swift in Sources */,
+				0554DFF22A25F60400956B04 /* AddMemberViewController.swift in Sources */,
 				051AC6E32A206ECC00B23C63 /* UIResponder+Extension.swift in Sources */,
 				051AC7272A2356DD00B23C63 /* DeleteIngredients.swift in Sources */,
 				051AC6ED2A21C27800B23C63 /* GetInitialPictureURL.swift in Sources */,
@@ -772,6 +848,7 @@
 				051AC6DD2A203F0E00B23C63 /* FailGetData.swift in Sources */,
 				0554DFB32A2595B500956B04 /* example.swift in Sources */,
 				051AC6D52A202ECA00B23C63 /* BarcodeIngredientData.swift in Sources */,
+				0554DFFF2A26E69300956B04 /* ManageMemberTableViewCell.swift in Sources */,
 				051AC6FA2A2210CA00B23C63 /* IngredientsTableViewCell.swift in Sources */,
 				051AC6962A1DAA6C00B23C63 /* CreatNewFridge.swift in Sources */,
 				05ED1AD62A1D9E2F0023A13E /* UIStoryboard+Extension.swift in Sources */,
@@ -788,11 +865,14 @@
 				0554DFBC2A259ABA00956B04 /* MemberCollectionViewCell.swift in Sources */,
 				05ED19722A1766590023A13E /* PantryPal.xcdatamodeld in Sources */,
 				05ED1AC82A1CFC330023A13E /* SigninStackView.swift in Sources */,
+				0554DFF72A26C56100956B04 /* GetLastUserFridgeForMember.swift in Sources */,
 				051AC6D62A202ECA00B23C63 /* SimpTradConversionData.swift in Sources */,
 				051AC6FD2A22E01300B23C63 /* GetTimeLeft.swift in Sources */,
+				0554DFF42A25F61200956B04 /* ManageViewController.swift in Sources */,
 				05ED1ACA2A1D8DEF0023A13E /* Alert.swift in Sources */,
 				05ED19682A1766590023A13E /* AppDelegate.swift in Sources */,
 				0554DFAB2A24D43D00956B04 /* DeleteFridge.swift in Sources */,
+				0554DFEE2A25E66B00956B04 /* TeamLinkViewController.swift in Sources */,
 				051AC68F2A1DA51600B23C63 /* FridgeCell.swift in Sources */,
 				051AC7252A233C5A00B23C63 /* ChooseFridge.swift in Sources */,
 				05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */,
