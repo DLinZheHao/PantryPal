@@ -19,8 +19,10 @@ class SigninStackView: UIStackView {
 //            alert("輸入格不能為空白", controller)
 //            return
 //        }
-        let emallAddress = "a8570870z@gmail.com"
-        let password = "0917652683c"
+//        let emallAddress = "a8570870z@gmail.com"
+//        let password = "0917652683c"
+        let emallAddress = "123@gmail.com"
+        let password = "123456789"
         Auth.auth().signIn(withEmail: emallAddress, password: password) { _, error in
             if error != nil {
                 alert("登入錯誤，請重新嘗試", controller)

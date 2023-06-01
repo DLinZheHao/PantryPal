@@ -73,3 +73,34 @@ func createNewFridge(_ name: String, completion: @escaping () -> Void) {
         }
     }
 }
+
+func createNewFridgeForInitUser(_ name: String, completion: @escaping (String) -> Void) {
+    guard let currentUserId = Auth.auth().currentUser?.uid else {
+        print("登入狀態有問題")
+        return
+    }
+    
+    // 新增冰箱 document 屬性
+    let fridges = Firestore.firestore().collection("fridges")
+    
+    let document = fridges.document()
+    
+    let data: [String: Any] = [
+        "id": document.documentID,
+        "name": name,
+        "created_time": Date().timeIntervalSince1970
+    ]
+    document.setData(data)
+    
+    // 新增冰箱 memeber document 的屬性 （創建用戶）
+    let members = fridges.document(document.documentID).collection("members")
+    let membersDocument = members.document(currentUserId)
+    
+    let userIdData: [String: Any] = [
+        "id": currentUserId
+    ]
+    membersDocument.setData(userIdData)
+    
+    let fridgeDocumentId = document.documentID
+    completion(fridgeDocumentId)
+}

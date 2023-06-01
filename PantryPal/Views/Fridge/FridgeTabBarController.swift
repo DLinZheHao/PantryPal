@@ -9,7 +9,7 @@ import UIKit
 
 class FridgeTabBarController: UITabBarController {
     var fridgeId: String?
-    private let tabs: [Tab] = [.ingredients, .teamLink]
+    private let tabs: [Tab] = [.ingredients, .teamLink, .join]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +23,7 @@ extension FridgeTabBarController {
     private enum Tab {
         case ingredients
         case teamLink
+        case join
         
         func makeViewController() -> UIViewController {
             let controller: UIViewController
@@ -33,6 +34,9 @@ extension FridgeTabBarController {
             case .teamLink:
                 controller = UIStoryboard.teamLink.instantiateInitialViewController()!
                 controller.tabBarItem = makeTabBarItem("成員")
+            case .join:
+                controller = UIStoryboard.join.instantiateInitialViewController()!
+                controller.tabBarItem = makeTabBarItem("加入")
             }
             
             // controller.tabBarItem.imageInsets = UIEdgeInsets(top: 6.0, left: 0.0, bottom: -6.0, right: 0.0)
@@ -49,6 +53,8 @@ extension FridgeTabBarController {
                 return .asset(.fridge_not_select)!.withRenderingMode(.alwaysOriginal)
             case .teamLink:
                 return .asset(.teamLink_not_select)!.withRenderingMode(.alwaysOriginal)
+            case .join:
+                return .asset(.join_not_select)!.withRenderingMode(.alwaysOriginal)
             }
         }
 
@@ -58,6 +64,8 @@ extension FridgeTabBarController {
                 return .asset(.fridge_select)!.withRenderingMode(.alwaysOriginal)
             case .teamLink:
                 return .asset(.teamLink_select)!.withRenderingMode(.alwaysOriginal)
+            case .join:
+                return .asset(.join_select)!.withRenderingMode(.alwaysOriginal)
             }
         }
         

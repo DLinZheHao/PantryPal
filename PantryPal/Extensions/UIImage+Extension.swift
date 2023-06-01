@@ -20,6 +20,9 @@ enum ImageAsset: String {
     case fridge_not_select
     case teamLink_not_select
     case teamLink_select
+    case join_not_select
+    case join_select
+    
 }
 // swiftlint:enable identifier_name
 

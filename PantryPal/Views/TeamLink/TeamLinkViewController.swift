@@ -12,6 +12,7 @@ class TeamLinkViewController: UIViewController {
     var memberData: [MemberData] = []
     
     var addMemberViewController: AddMemberViewController?
+    var manageMemberViewController: ManageMemberViewController?
     
     private enum FunctionType: Int {
         case addMember = 0
@@ -42,7 +43,10 @@ class TeamLinkViewController: UIViewController {
         super.viewWillAppear(animated)
         getData()
         if addMemberViewController != nil {
-            updateContainerViewData()
+            updateAddContainerViewData()
+        }
+        if manageMemberViewController != nil {
+            updateManageContainerViewData()
         }
     }
     
@@ -54,11 +58,19 @@ class TeamLinkViewController: UIViewController {
             
             userLastUseFridgeForMember { data in
                 addMemberVC.qrCodeImageView.image = generateQRCode(from: data.id)
+                addMemberVC.currentFridge = data.id
             } manageClosure: { _ in
                 print("不做事")
             }
         } else {
-            guard let manageVC = segue.destination as? ManageViewController else { return }
+            guard let manageVC = segue.destination as? ManageMemberViewController else { return }
+            manageMemberViewController = manageVC
+            userLastUseFridgeForMember { data in
+                manageVC.currentFridgeID = data.id
+            } manageClosure: { memberData in
+                manageVC.memberData = memberData
+                manageVC.memberManageTableView.reloadData()
+            }
         }
 
     }
@@ -105,12 +117,23 @@ extension TeamLinkViewController {
             self?.memberData = memberDataArray
         }
     }
-    func updateContainerViewData() {
-        print("執行container view 更新")
+    private func updateAddContainerViewData() {
         userLastUseFridgeForMember { [weak self] data in
             self?.addMemberViewController!.qrCodeImageView.image = generateQRCode(from: data.id)
+            self?.addMemberViewController!.currentFridge = data.id
+            self?.addMemberViewController!.searchEmailLabel.text = "   "
+            self?.addMemberViewController!.searchNameLabel.text = "   "
+            self?.addMemberViewController!.addButton.isHidden = true
         } manageClosure: { _ in
             print("不做事")
+        }
+    }
+    private func updateManageContainerViewData() {
+        userLastUseFridgeForMember { data in
+            print("不做事")
+        } manageClosure: { [weak self] memberData in
+            self?.manageMemberViewController!.memberData = memberData
+            self?.manageMemberViewController!.memberManageTableView.reloadData()
         }
     }
 
