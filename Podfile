@@ -11,4 +11,5 @@ target 'PantryPal' do
   pod 'JTAppleCalendar', '~> 7.1'
   pod 'IQKeyboardManagerSwift'
   pod 'FSCalendar'
+  pod 'FoldingCell'
 end

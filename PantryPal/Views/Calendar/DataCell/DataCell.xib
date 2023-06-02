@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataCell" rowHeight="365" id="50S-ie-v2T" customClass="DataCell" customModule="PantryPal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="365"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="50S-ie-v2T" id="T1h-kC-Loc" customClass="RotatedView" customModule="PantryPal" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="365"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXn-o0-UWZ" userLabel="Foreground" customClass="RotatedView" customModule="FoldingCell">
+                        <rect key="frame" x="8" y="8" width="377" height="124"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="124" id="lOu-xP-Bnh"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WiO-J9-l4G" userLabel="Container">
+                        <rect key="frame" x="8" y="140" width="377" height="213"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGa-sD-GDV" userLabel="FristContainerView">
+                                <rect key="frame" x="0.0" y="0.0" width="377" height="213"/>
+                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                                <color key="tintColor" systemColor="systemBrownColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="213" id="Bly-OL-I3H"/>
+                            <constraint firstAttribute="trailing" secondItem="SGa-sD-GDV" secondAttribute="trailing" id="EeU-hn-bLC"/>
+                            <constraint firstItem="SGa-sD-GDV" firstAttribute="leading" secondItem="WiO-J9-l4G" secondAttribute="leading" id="L5t-nM-rRW"/>
+                            <constraint firstAttribute="bottom" secondItem="SGa-sD-GDV" secondAttribute="bottom" id="epE-0p-3Bg"/>
+                            <constraint firstItem="SGa-sD-GDV" firstAttribute="top" secondItem="WiO-J9-l4G" secondAttribute="top" id="iZC-Zh-EvT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="WiO-J9-l4G" secondAttribute="trailing" constant="8" id="64Z-0S-1Zd"/>
+                    <constraint firstAttribute="bottom" secondItem="WiO-J9-l4G" secondAttribute="bottom" constant="12" id="C3a-8g-Xp2"/>
+                    <constraint firstItem="KXn-o0-UWZ" firstAttribute="top" secondItem="T1h-kC-Loc" secondAttribute="top" constant="8" identifier="ForegroundViewTop" id="Lnm-cw-MHG" userLabel="ForegroundViewTop"/>
+                    <constraint firstItem="WiO-J9-l4G" firstAttribute="leading" secondItem="T1h-kC-Loc" secondAttribute="leading" constant="8" id="Ser-1K-SGT"/>
+                    <constraint firstItem="KXn-o0-UWZ" firstAttribute="leading" secondItem="T1h-kC-Loc" secondAttribute="leading" constant="8" id="cQy-7t-rsx"/>
+                    <constraint firstItem="WiO-J9-l4G" firstAttribute="top" secondItem="T1h-kC-Loc" secondAttribute="top" constant="140" identifier="ContainerViewTop" id="kCP-4p-fAk" userLabel="ContainerViewTop"/>
+                    <constraint firstAttribute="trailing" secondItem="KXn-o0-UWZ" secondAttribute="trailing" constant="8" id="oil-qN-YTM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="WiO-J9-l4G" id="dQq-kV-XaY"/>
+                <outlet property="containerViewTop" destination="kCP-4p-fAk" id="0tg-U5-n8s"/>
+                <outlet property="foregroundView" destination="KXn-o0-UWZ" id="3hC-25-ig6"/>
+                <outlet property="foregroundViewTop" destination="Lnm-cw-MHG" id="DIZ-Jl-5nk"/>
+            </connections>
+            <point key="canvasLocation" x="75.572519083969468" y="-60.91549295774648"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

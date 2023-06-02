@@ -142,54 +142,22 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let runOutAction = UIContextualAction(style: .normal, title: "用完") { [weak self] (action, sourceView, completionHandler) in
-            if let id = self?.currentFridgeID,
-               let ingredientsID = self?.ingredientsData[indexPath.row].ingredientsID,
-               let createdTime = self?.ingredientsData[indexPath.row].createdTime,
-               let expiration = self?.ingredientsData[indexPath.row].expiration,
-               let price = self?.ingredientsData[indexPath.row].price {
-                processingAction(fridgeID: id,
-                       createdTime: createdTime,
-                       expiration: expiration,
-                       action: 0,
-                       price: price,
-                       ingredientsID: ingredientsID) { [weak self] in
-                    self?.getData()
-                }
-            }
+           
+            guard let ingredientDataArray = self?.ingredientsData,
+                  let currentFridgeID = self?.currentFridgeID else { return }
+            self?.historyAction(action: 0, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
             completionHandler(true)
         }
         let expiredAction = UIContextualAction(style: .normal, title: "過期") { [weak self] (action, sourceView, completionHandler) in
-            if let id = self?.currentFridgeID,
-               let ingredientsID = self?.ingredientsData[indexPath.row].ingredientsID,
-               let createdTime = self?.ingredientsData[indexPath.row].createdTime,
-               let expiration = self?.ingredientsData[indexPath.row].expiration,
-               let price = self?.ingredientsData[indexPath.row].price {
-                processingAction(fridgeID: id,
-                       createdTime: createdTime,
-                       expiration: expiration,
-                       action: 1,
-                       price: price,
-                       ingredientsID: ingredientsID) { [weak self] in
-                    self?.getData()
-                }
-            }
+            guard let ingredientDataArray = self?.ingredientsData,
+                  let currentFridgeID = self?.currentFridgeID else { return }
+            self?.historyAction(action: 0, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
             completionHandler(true)
         }
         let throwAway = UIContextualAction(style: .normal, title: "丟棄") { [weak self] (action, sourceView, completionHandler) in
-            if let id = self?.currentFridgeID,
-               let ingredientsID = self?.ingredientsData[indexPath.row].ingredientsID,
-               let createdTime = self?.ingredientsData[indexPath.row].createdTime,
-               let expiration = self?.ingredientsData[indexPath.row].expiration,
-               let price = self?.ingredientsData[indexPath.row].price {
-                processingAction(fridgeID: id,
-                       createdTime: createdTime,
-                       expiration: expiration,
-                       action: 2,
-                       price: price,
-                       ingredientsID: ingredientsID) { [weak self] in
-                    self?.getData()
-                }
-            }
+            guard let ingredientDataArray = self?.ingredientsData,
+                  let currentFridgeID = self?.currentFridgeID else { return }
+            self?.historyAction(action: 0, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
             completionHandler(true)
         }
         runOutAction.backgroundColor = .gray
@@ -198,6 +166,26 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [runOutAction, expiredAction, throwAway])
         
         return swipeConfiguration
+    }
+    private func historyAction(action: Int, ingredietnsDataArray: [PresentIngredientsData], indexPath: IndexPath, fridgeID: String) {
+        
+        
+        let ingredientsHistoryData = IngredientsHistoryData(barcode: ingredietnsDataArray[indexPath.row].barcode,
+                                                            ingredientsID: ingredietnsDataArray[indexPath.row].ingredientsID,
+                                                            name: ingredietnsDataArray[indexPath.row].name,
+                                                            price: ingredietnsDataArray[indexPath.row].price,
+                                                            storeStatus: ingredietnsDataArray[indexPath.row].storeStatus,
+                                                            url: ingredietnsDataArray[indexPath.row].url,
+                                                            createdTime: ingredietnsDataArray[indexPath.row].createdTime,
+                                                            enableNotifications: ingredietnsDataArray[indexPath.row].enableNotifications,
+                                                            expiration: ingredietnsDataArray[indexPath.row].expiration,
+                                                            description: ingredietnsDataArray[indexPath.row].description,
+                                                            action: action)
+
+        processingAction(fridgeID: fridgeID, ingredientsHistoryData: ingredientsHistoryData) { [weak self] in
+            self?.getData()
+        }
+        
     }
 }
 // MARK: - 新增食材畫面: 掃描條碼 照片選擇
@@ -418,6 +406,11 @@ extension IngredientsViewController {
             self?.memberData = passMemberData
         } ingredientCompletion: { [weak self] passIngredientsData in
             self?.ingredientsData = passIngredientsData
+            DispatchQueue.main.async {
+                self?.ingredientTableView.reloadData()
+            }
+        } fallCompletion: { [weak self] in
+            self?.ingredientsData = []
             DispatchQueue.main.async {
                 self?.ingredientTableView.reloadData()
             }

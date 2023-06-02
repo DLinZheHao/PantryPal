@@ -26,12 +26,7 @@ class FridgeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
-        
-        let barAppearance = UINavigationBarAppearance()
-        barAppearance.configureWithDefaultBackground()
-        barAppearance.backgroundEffect = UIBlurEffect(style: .systemMaterialDark)
-        UINavigationBar.appearance().scrollEdgeAppearance = barAppearance
-        
+            
         fridgeListTableView.lk_registerCellWithNib(identifier: String(describing: FridgeCell.self), bundle: nil)
         
         fetchFridgeData { [weak self] getData in

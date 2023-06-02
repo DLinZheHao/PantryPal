@@ -9,6 +9,13 @@ import UIKit
 import FSCalendar
 
 class CalendarViewController: UIViewController {
+    enum Const {
+        static let closeCellHeight: CGFloat = 124
+        static let openCellHeight: CGFloat = 213
+        static let rowsCount = 10
+    }
+    var cellHeights: [CGFloat] = []
+    
     var chineseCalendar: Calendar!
     var calendarClickBlock: ((Bool, Int) -> Void)?
 
@@ -16,6 +23,13 @@ class CalendarViewController: UIViewController {
     private var calendarBackgroundHeightConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var calendarBackground: UIImageView!
+    
+    @IBOutlet weak var dataTableView: UITableView! {
+        didSet {
+            dataTableView.dataSource = self
+            dataTableView.delegate = self
+        }
+    }
     
     @IBOutlet weak var calendarView: FSCalendar! {
         didSet {
@@ -25,7 +39,102 @@ class CalendarViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        calendarSetUp()
+        dataTableView.register(UINib(nibName: "DataCell", bundle: nil), forCellReuseIdentifier: "DataCell")
+        setup()
+        ingredientsLog(chooseDay: Date())
+    }
+    
+}
+// MARK: tableView 控制
+extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        return 10
+    }
+
+    func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard case let cell as DataCell = cell else {
+            return
+        }
+
+        cell.backgroundColor = .clear
+
+        if cellHeights[indexPath.row] == Const.closeCellHeight {
+            cell.unfold(false, animated: false, completion: nil)
+        } else {
+            cell.unfold(true, animated: false, completion: nil)
+        }
+
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath)
+        guard let dataCell = cell as? DataCell else { return cell}
+        let durations: [TimeInterval] = [0.26, 0.2, 0.2]
+        dataCell.durationsForExpandedState = durations
+        dataCell.durationsForCollapsedState = durations
+        return dataCell
+    }
+
+    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeights[indexPath.row]
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let cell = tableView.cellForRow(at: indexPath)
+        guard let dataCell = cell as? DataCell else { return }
+        if dataCell.isAnimating() {
+            return
+        }
+
+        var duration = 0.0
+        let cellIsCollapsed = cellHeights[indexPath.row] == Const.closeCellHeight
+        if cellIsCollapsed {
+            cellHeights[indexPath.row] = Const.openCellHeight
+            dataCell.unfold(true, animated: true, completion: nil)
+            duration = 0.5
+        } else {
+            cellHeights[indexPath.row] = Const.closeCellHeight
+            dataCell.unfold(false, animated: true, completion: nil)
+            duration = 0.8
+        }
+
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            
+            if dataCell.frame.maxY > tableView.frame.maxY {
+                tableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+            }
+        }, completion: nil)
+    }
+    // MARK: Helpers
+    private func setup() {
+        cellHeights = Array(repeating: Const.closeCellHeight, count: Const.rowsCount)
+        dataTableView.estimatedRowHeight = Const.closeCellHeight
+        dataTableView.rowHeight = UITableView.automaticDimension
+        // dataTableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
+        if #available(iOS 10.0, *) {
+            dataTableView.refreshControl = UIRefreshControl()
+            dataTableView.refreshControl?.addTarget(self, action: #selector(refreshHandler), for: .valueChanged)
+        }
+    }
+    
+    // MARK: Actions
+    @objc func refreshHandler() {
+        let deadlineTime = DispatchTime.now() + .seconds(1)
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: { [weak self] in
+            if #available(iOS 10.0, *) {
+                self?.dataTableView.refreshControl?.endRefreshing()
+            }
+            self?.dataTableView.reloadData()
+        })
+    }
+}
+// MARK: 日曆控制及相關設定
+extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
+    func calendarSetUp() {
         chineseCalendar = Calendar(identifier: .chinese)
         calendarView.pagingEnabled = true
         calendarView.scrollEnabled = true
@@ -74,46 +183,18 @@ class CalendarViewController: UIViewController {
         ])
     }
     
-}
-extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
         return true
     }
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy年MM月dd日"
-        print(dateFormatter.string(from: date))
 
-        let result = compareOneDay(date, withAnotherDay: Date())
-        let timestamp = getNowTimestampWithDate(date)
-        
-        if result == -1 {
-            calendarClickBlock?(false, timestamp)
-        } else {
-            calendarClickBlock?(true, timestamp)
-        }
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        ingredientsLog(chooseDay: date)
     }
+    
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         return 0
     }
-
-    func compareOneDay(_ currentDay: Date, withAnotherDay baseDay: Date) -> Int {
-        let calendar = Calendar.current
-        let result = calendar.compare(currentDay, to: baseDay, toGranularity: .day)
-        switch result {
-        case .orderedDescending:
-            return 1
-        case .orderedAscending:
-            return -1
-        default:
-            return 0
-        }
-    }
-    
-    func getNowTimestampWithDate(_ date: Date) -> Int {
-        return Int(date.timeIntervalSince1970)
-    }
+    // MARK: 手勢切換日曆
     @objc func handleSwipeGesture(_ gesture: UISwipeGestureRecognizer) {
         print("觸發 ")
         if gesture.direction == .down {

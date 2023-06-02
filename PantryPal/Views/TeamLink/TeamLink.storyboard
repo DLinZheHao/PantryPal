@@ -102,7 +102,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="FNu-Kd-uex">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7z7-rg-PL8">
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7z7-rg-PL8">
                             <rect key="frame" x="159.66666666666666" y="5" width="74" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -160,6 +160,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Sgj-GD-F9X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="z8H-cd-t25" secondAttribute="trailing" id="CYR-kA-J5P"/>
@@ -260,6 +261,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="hka-Bw-QrN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="38W-Dm-DGM" firstAttribute="leading" secondItem="RFk-MQ-6bG" secondAttribute="trailing" constant="8" symbolic="YES" id="5pm-BB-b39"/>

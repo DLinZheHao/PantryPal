@@ -10,7 +10,8 @@ import Firebase
 
 func userLastUseFridge(fridgeCompletion: @escaping (FridgeData, String) -> Void,
                        memberCompletion: @escaping (Array<MemberIDData>) -> Void,
-                       ingredientCompletion: @escaping (Array<PresentIngredientsData>) -> Void) {
+                       ingredientCompletion: @escaping (Array<PresentIngredientsData>) -> Void,
+                       fallCompletion: @escaping () -> Void ) {
 // completion: @escaping (FridgeData) -> Void
     guard let currentUserId = Auth.auth().currentUser?.uid else {
         print("登入狀態有問題")
@@ -66,6 +67,8 @@ func userLastUseFridge(fridgeCompletion: @escaping (FridgeData, String) -> Void,
             }
             getIngredients(lastUseFridgeId) { ingredientData in
                 ingredientCompletion(ingredientData)
+            } fall: {
+                fallCompletion()
             }
             
         }
@@ -98,7 +101,7 @@ private func getMembers(_ fridgeId: String, completion: @escaping (Array<MemberI
     }
 }
 // 獲得冰箱食材資料
-private func getIngredients(_ fridgeId: String, completion: @escaping (Array<PresentIngredientsData>) -> Void) {
+private func getIngredients(_ fridgeId: String, completion: @escaping (Array<PresentIngredientsData>) -> Void, fall: @escaping () -> Void) {
     let fridgeIngredients = Firestore.firestore().collection("fridges").document(fridgeId).collection("ingredients")
     
     fridgeIngredients.getDocuments { (documents, error) in
@@ -107,6 +110,7 @@ private func getIngredients(_ fridgeId: String, completion: @escaping (Array<Pre
         }
         guard let documents = documents, !documents.isEmpty else {
             print("Fridge_ingredients資料不存在！")
+            fall()
             return
         }
         
@@ -130,6 +134,7 @@ private func getIngredients(_ fridgeId: String, completion: @escaping (Array<Pre
             var fridgeIngredients: [PresentIngredientsData] = []
             guard let documents = documents else {
                 print("ingredients資料不存在！")
+                fall()
                 return
             }
             for document in documents.documents {
