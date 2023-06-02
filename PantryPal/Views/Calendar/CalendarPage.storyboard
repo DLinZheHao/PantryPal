@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calendar View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="CalendarViewController" customModule="PantryPal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background4" translatesAutoresizingMaskIntoConstraints="NO" id="eyl-be-B4G">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_background2" translatesAutoresizingMaskIntoConstraints="NO" id="Z7y-Nf-kyM">
+                                <rect key="frame" x="0.0" y="89" width="393" height="329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="tiU-23-wxK"/>
+                                    <constraint firstAttribute="height" constant="329" id="wYY-Td-myz"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIv-kP-auf" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="89" width="393" height="329"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="U5U-2c-lvv"/>
+                                    <constraint firstAttribute="height" constant="329" id="tgo-8w-y8v"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cIv-kP-auf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="0yB-1l-JnR"/>
+                            <constraint firstItem="cIv-kP-auf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2Ah-Wl-uL9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eyl-be-B4G" secondAttribute="trailing" id="7YG-zJ-1kC"/>
+                            <constraint firstItem="cIv-kP-auf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="BHy-uq-fKJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="eyl-be-B4G" secondAttribute="bottom" id="RHV-1l-WdM"/>
+                            <constraint firstItem="Z7y-Nf-kyM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TTq-Tx-Gzi"/>
+                            <constraint firstItem="eyl-be-B4G" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Xgd-vs-Og8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Z7y-Nf-kyM" secondAttribute="trailing" id="beQ-kC-h4X"/>
+                            <constraint firstItem="Z7y-Nf-kyM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="kmv-ci-7yz"/>
+                            <constraint firstItem="eyl-be-B4G" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pEB-VR-evF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendarBackground" destination="Z7y-Nf-kyM" id="FeJ-uj-r4n"/>
+                        <outlet property="calendarView" destination="cIv-kP-auf" id="HZu-yy-Sbc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background4" width="1200" height="1604"/>
+        <image name="calendar_background2" width="5000" height="5000"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

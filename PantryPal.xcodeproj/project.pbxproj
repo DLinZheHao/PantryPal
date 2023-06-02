@@ -79,6 +79,8 @@
 		0554E0182A27838600956B04 /* QRCodeScanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0554E0172A27838600956B04 /* QRCodeScanner.storyboard */; };
 		0554E01A2A281D5800956B04 /* QRCdoeInviteAccept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554E0192A281D5800956B04 /* QRCdoeInviteAccept.swift */; };
 		0554E01C2A28356600956B04 /* DeleteMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554E01B2A28356600956B04 /* DeleteMember.swift */; };
+		0554E0202A285AF100956B04 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554E01F2A285AF100956B04 /* CalendarViewController.swift */; };
+		0554E0222A285B0A00956B04 /* CalendarPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0554E0212A285B0A00956B04 /* CalendarPage.storyboard */; };
 		05ED19682A1766590023A13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19672A1766590023A13E /* AppDelegate.swift */; };
 		05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19692A1766590023A13E /* SceneDelegate.swift */; };
 		05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* LobbyViewController.swift */; };
@@ -202,6 +204,8 @@
 		0554E0172A27838600956B04 /* QRCodeScanner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCodeScanner.storyboard; sourceTree = "<group>"; };
 		0554E0192A281D5800956B04 /* QRCdoeInviteAccept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCdoeInviteAccept.swift; sourceTree = "<group>"; };
 		0554E01B2A28356600956B04 /* DeleteMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMember.swift; sourceTree = "<group>"; };
+		0554E01F2A285AF100956B04 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		0554E0212A285B0A00956B04 /* CalendarPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarPage.storyboard; sourceTree = "<group>"; };
 		05ED19642A1766590023A13E /* PantryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED19672A1766590023A13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED19692A1766590023A13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -560,6 +564,15 @@
 			path = QRCodeScanner;
 			sourceTree = "<group>";
 		};
+		0554E01E2A28597200956B04 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				0554E01F2A285AF100956B04 /* CalendarViewController.swift */,
+				0554E0212A285B0A00956B04 /* CalendarPage.storyboard */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		05ED195B2A1766590023A13E = {
 			isa = PBXGroup;
 			children = (
@@ -601,6 +614,7 @@
 		05ED1AB22A1CA0E30023A13E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0554E01E2A28597200956B04 /* Calendar */,
 				0554E0022A2723D000956B04 /* Join */,
 				0554DFC72A25C5B700956B04 /* TeamLink */,
 				051AC6A82A1EE3CD00B23C63 /* Ingredients */,
@@ -795,6 +809,7 @@
 				0554DFFD2A26E66900956B04 /* ManageMemberTableViewCell.xib in Resources */,
 				051AC6AE2A1EE44B00B23C63 /* Ingredients.storyboard in Resources */,
 				0554DFC92A25CDE100956B04 /* TeamLink.storyboard in Resources */,
+				0554E0222A285B0A00956B04 /* CalendarPage.storyboard in Resources */,
 				051AC6A12A1DED2E00B23C63 /* CreateFridgeView.xib in Resources */,
 				05ED1AC22A1CF8E70023A13E /* GoogleService-Info.plist in Resources */,
 				051AC6CA2A1F901000B23C63 /* AddIngredients.xib in Resources */,
@@ -902,6 +917,7 @@
 				05ED1ABE2A1CF4A40023A13E /* UserDataInit.swift in Sources */,
 				0554DFB82A2599B700956B04 /* MemberViewController.swift in Sources */,
 				0554DFFA2A26D5A100956B04 /* GenerateQRCode.swift in Sources */,
+				0554E0202A285AF100956B04 /* CalendarViewController.swift in Sources */,
 				0554E00C2A27426600956B04 /* InviteData.swift in Sources */,
 				051AC6E52A2076B600B23C63 /* FindSubview.swift in Sources */,
 				0554E0082A27345C00956B04 /* FridgeMemberAddInvite.swift in Sources */,

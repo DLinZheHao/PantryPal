@@ -17,6 +17,7 @@ extension UIStoryboard {
     static var teamLink: UIStoryboard { return stStoryboard(name: "TeamLink")}
     static var join: UIStoryboard { return stStoryboard(name: "Join")}
     static var qrCodeScanner: UIStoryboard { return stStoryboard(name: "QRCodeScanner")}
+    static var calendarPage: UIStoryboard { return stStoryboard(name: "CalendarPage")}
     
     private static func stStoryboard(name: String) -> UIStoryboard {
         return UIStoryboard(name: name, bundle: nil)

@@ -22,7 +22,9 @@ enum ImageAsset: String {
     case teamLink_select
     case join_not_select
     case join_select
-    
+    case calendar_not_select
+    case calendar_select
+    case calendar_background
 }
 // swiftlint:enable identifier_name
 
