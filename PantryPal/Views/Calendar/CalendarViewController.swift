@@ -9,9 +9,11 @@ import UIKit
 import FSCalendar
 
 class CalendarViewController: UIViewController {
+    var historyData: [IngredientsHistoryPresentData] = []
+    
     enum Const {
-        static let closeCellHeight: CGFloat = 124
-        static let openCellHeight: CGFloat = 213
+        static let closeCellHeight: CGFloat = 75
+        static let openCellHeight: CGFloat = 225
         static let rowsCount = 10
     }
     var cellHeights: [CGFloat] = []
@@ -42,14 +44,19 @@ class CalendarViewController: UIViewController {
         calendarSetUp()
         dataTableView.register(UINib(nibName: "DataCell", bundle: nil), forCellReuseIdentifier: "DataCell")
         setup()
-        ingredientsLog(chooseDay: Date())
+        ingredientsLog(chooseDay: Date()){ [weak self] dataArray in
+            self?.historyData = dataArray
+            DispatchQueue.main.async {
+                self?.dataTableView.reloadData()
+            }
+        }
     }
     
 }
 // MARK: tableView 控制
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 10
+        return historyData.count
     }
 
     func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -73,6 +80,27 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         dataCell.durationsForExpandedState = durations
         dataCell.durationsForCollapsedState = durations
+        
+        // 放入資料
+        dataCell.ingredientsNameLabel.text = historyData[indexPath.row].name
+        dataCell.numberLabel.text = "#\(indexPath.row + 1)"
+        dataCell.priceLabel.text = "\(historyData[indexPath.row].price)元"
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy年MM月dd日"
+        let date = Date(timeIntervalSince1970: historyData[indexPath.row].createdTime)
+        dataCell.createdTimeLabel.text = "創建於：\(dateFormatter.string(from: date))"
+        
+        dataCell.storeStatusLabel.text = "\(StoreStatus.getStatus(input: historyData[indexPath.row].storeStatus))"
+        dataCell.statusLabel.text = "狀態：\(ActionStatus.getStatus(input: historyData[indexPath.row].action))"
+        dataCell.barcodeLabel.text = historyData[indexPath.row].barcode
+        dataCell.descriptionTextView.text = historyData[indexPath.row].description
+        
+        UIImage.downloadImage(from: URL(string: historyData[indexPath.row].url)!) { image in
+            DispatchQueue.main.async {
+                dataCell.ingredientsImage.image = image
+            }
+        }
         return dataCell
     }
 
@@ -188,7 +216,12 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        ingredientsLog(chooseDay: date)
+        ingredientsLog(chooseDay: date) { [weak self] dataArray in
+            self?.historyData = dataArray
+            DispatchQueue.main.async {
+                self?.dataTableView.reloadData()
+            }
+        }
     }
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {

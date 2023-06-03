@@ -86,6 +86,7 @@
 		0554E01C2A28356600956B04 /* DeleteMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554E01B2A28356600956B04 /* DeleteMember.swift */; };
 		0554E0202A285AF100956B04 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554E01F2A285AF100956B04 /* CalendarViewController.swift */; };
 		0554E0222A285B0A00956B04 /* CalendarPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0554E0212A285B0A00956B04 /* CalendarPage.storyboard */; };
+		05A643212A2B1B5100D37AF6 /* StoreStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A643202A2B1B5100D37AF6 /* StoreStatus.swift */; };
 		05ED19682A1766590023A13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19672A1766590023A13E /* AppDelegate.swift */; };
 		05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19692A1766590023A13E /* SceneDelegate.swift */; };
 		05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* LobbyViewController.swift */; };
@@ -216,6 +217,7 @@
 		0554E01B2A28356600956B04 /* DeleteMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMember.swift; sourceTree = "<group>"; };
 		0554E01F2A285AF100956B04 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		0554E0212A285B0A00956B04 /* CalendarPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarPage.storyboard; sourceTree = "<group>"; };
+		05A643202A2B1B5100D37AF6 /* StoreStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreStatus.swift; sourceTree = "<group>"; };
 		05ED19642A1766590023A13E /* PantryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED19672A1766590023A13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED19692A1766590023A13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 			children = (
 				052C90222A2979FD00671811 /* IngredientsHistoryData.swift */,
 				051AC6C02A1F360200B23C63 /* IngredientsData.swift */,
+				05A643202A2B1B5100D37AF6 /* StoreStatus.swift */,
 			);
 			path = Ingredients;
 			sourceTree = "<group>";
@@ -991,6 +994,7 @@
 				051AC6FD2A22E01300B23C63 /* GetTimeLeft.swift in Sources */,
 				0554E01C2A28356600956B04 /* DeleteMember.swift in Sources */,
 				0554DFF42A25F61200956B04 /* ManageMemberViewController.swift in Sources */,
+				05A643212A2B1B5100D37AF6 /* StoreStatus.swift in Sources */,
 				05ED1ACA2A1D8DEF0023A13E /* Alert.swift in Sources */,
 				05ED19682A1766590023A13E /* AppDelegate.swift in Sources */,
 				0554DFAB2A24D43D00956B04 /* DeleteFridge.swift in Sources */,

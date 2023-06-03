@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-func ingredientsLog(chooseDay: Date) {
+func ingredientsLog(chooseDay: Date, successCompletion: @escaping ([IngredientsHistoryPresentData]) -> Void) {
     guard let currentUserId = Auth.auth().currentUser?.uid else {
         print("登入狀態有問題")
         return
@@ -23,12 +23,12 @@ func ingredientsLog(chooseDay: Date) {
         guard let data = documentSnapshot?.data() else { return }
         guard let lastUseFridgeID = data["last_use_fridge"] as? String else { return }
         
-        getHistoryIngredients(lastUseFridgeID, chooseDay)
+        getHistoryIngredients(lastUseFridgeID, chooseDay, successCompletion)
     }
     
 }
 
-func getHistoryIngredients(_ fridgeID: String, _ chooseDay: Date) {
+func getHistoryIngredients(_ fridgeID: String, _ chooseDay: Date, _ completion: @escaping ([IngredientsHistoryPresentData]) -> Void) {
     let fridges = Firestore.firestore().collection("fridges")
     let fridgeDoc = fridges.document(fridgeID)
     let historyIngredients = fridgeDoc.collection("history_ingredients")
@@ -69,6 +69,7 @@ func getHistoryIngredients(_ fridgeID: String, _ chooseDay: Date) {
             } 
         }
         print("今日結果：\(historyArray)")
+        completion(historyArray)
     }
     
 }

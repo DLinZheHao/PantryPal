@@ -10,6 +10,16 @@ import FoldingCell
 
 class DataCell: FoldingCell {
 
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var ingredientsNameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var createdTimeLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var barcodeLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var ingredientsImage: UIImageView!
+    
+    @IBOutlet weak var storeStatusLabel: UILabel!
     override func awakeFromNib() {
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
@@ -25,4 +35,5 @@ class DataCell: FoldingCell {
         let durations = [0.26, 0.2, 0.2]
         return durations[itemIndex]
     }
+    
 }
