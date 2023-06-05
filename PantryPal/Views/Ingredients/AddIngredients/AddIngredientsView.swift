@@ -16,7 +16,7 @@ class AddIngredientsView: UIView, FSCalendarDelegate {
     var imageUrl: String?
     var barcode: String?
     var isEnable = false
-    
+    var chineseCalendar: Calendar!
     var delegate: GetRefreshSignal?
     
     @IBOutlet weak var barcodeTextField: UITextField!
@@ -50,6 +50,31 @@ extension AddIngredientsView {
             print("畫面創建失敗")
             return
         }
+        chineseCalendar = Calendar(identifier: .chinese)
+        calendarView.calendar.pagingEnabled = true
+        calendarView.calendar.scrollEnabled = true
+        
+        let locale = Locale(identifier: "zh_CN")
+        calendarView.calendar.locale = locale
+        calendarView.calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
+        calendarView.calendar.placeholderType = .none
+        calendarView.calendar.appearance.titleDefaultColor = .black
+        calendarView.calendar.appearance.titleTodayColor = .white
+        calendarView.calendar.appearance.todayColor = .lightGray
+        calendarView.calendar.appearance.weekdayTextColor = .black
+        calendarView.calendar.appearance.titleWeekendColor = .lightGray
+        calendarView.calendar.appearance.subtitleWeekendColor = .yellow
+        calendarView.calendar.backgroundColor = UIColor(hex: "#87CEEB", alpha: 0.8)
+        calendarView.calendar.appearance.headerTitleColor = .black
+        calendarView.calendar.appearance.headerDateFormat = "yyyy年MM月"
+        
+        calendarView.calendar.appearance.selectionColor = .darkGray
+        calendarView.calendar.appearance.subtitleSelectionColor = .yellow
+        calendarView.calendar.appearance.borderRadius = 0.4
+
+        calendarView.calendar.scrollDirection = .horizontal
+        calendarView.calendar.scope = .month
+        
         self.superview?.addSubview(calendarView)
         calendarView.calendar.delegate = ingredientsController
         calendarView.calendar.dataSource = ingredientsController
@@ -133,6 +158,12 @@ extension AddIngredientsView {
         removeFromSuperview()
     }
     @IBAction func closeView() {
+        let targetView = findSubview(ofType: BlackBackgroundView.self, in: self.superview!)
+        guard let blackBackgroundView = targetView else {
+            removeFromSuperview()
+            return
+        }
+        blackBackgroundView.removeFromSuperview()
         removeFromSuperview()
     }
     @objc func enableAlert() {

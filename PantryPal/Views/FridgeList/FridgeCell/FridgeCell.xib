@@ -16,23 +16,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background7" translatesAutoresizingMaskIntoConstraints="NO" id="xkB-w4-G2O">
+                        <rect key="frame" x="12" y="12" width="296" height="87"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="87" id="xKo-ZO-XOR"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="冰箱名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2v-GK-Tf8">
                         <rect key="frame" x="100" y="34.666666666666664" width="120" height="41.999999999999993"/>
                         <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="30"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.34209890463917525" green="0.34209890463917525" blue="0.34209890463917525" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="xkB-w4-G2O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="6iA-2g-0DN"/>
                     <constraint firstItem="k2v-GK-Tf8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CrP-SQ-6wL"/>
+                    <constraint firstAttribute="bottom" secondItem="xkB-w4-G2O" secondAttribute="bottom" constant="12" id="EDh-F8-VIC"/>
                     <constraint firstItem="k2v-GK-Tf8" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="FN0-5R-bYp"/>
+                    <constraint firstItem="xkB-w4-G2O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="IMS-Cl-IVl"/>
+                    <constraint firstAttribute="trailing" secondItem="xkB-w4-G2O" secondAttribute="trailing" constant="12" id="onN-tZ-Cg9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="backgroundImageView" destination="xkB-w4-G2O" id="VX6-2F-K2f"/>
                 <outlet property="nameLabel" destination="k2v-GK-Tf8" id="bU5-7F-3Sd"/>
             </connections>
             <point key="canvasLocation" x="129.7709923664122" y="12.323943661971832"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="background7" width="1920" height="700"/>
+    </resources>
 </document>

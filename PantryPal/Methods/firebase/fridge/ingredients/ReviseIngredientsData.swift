@@ -24,6 +24,7 @@ func reviseIngredientsData(_ ingredientsID: String, _ databaseIngredientsData: D
                 data["store_status"] = databaseIngredientsData.storeStatus
                 data["enable_Notification"] = databaseIngredientsData.enableNotification
                 data["describe"] = databaseIngredientsData.describe
+                data["url"] = databaseIngredientsData.url
                 
                 // 更新文檔數據
                 ingredientsDoc.setData(data, merge: true) { error in

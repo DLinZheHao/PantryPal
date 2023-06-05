@@ -115,14 +115,14 @@ extension BarcodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     sleep(2)
                     simpTradConversion(goodsName) { [weak self] convertName in
                         DispatchQueue.main.async {
-                            self?.navigationController?.popViewController(animated: true)
+                            self?.presentingViewController?.dismiss(animated: true)
                             self?.barcodeReturn!(barcode, goodsPrice)
                             self?.ingredientsNameReturn!(convertName)
                         }
                     }
                 } fallCompletion: { [weak self] errorMessage in
                     DispatchQueue.main.async {
-                        self?.navigationController?.popViewController(animated: true)
+                        self?.presentingViewController?.dismiss(animated: true)
                         self?.notInDatabase!(errorMessage)
                     }
                 }

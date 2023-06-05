@@ -16,15 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tc6-Et-QJu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background8" translatesAutoresizingMaskIntoConstraints="NO" id="vPx-ng-GaS">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tc6-Et-QJu">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tc6-Et-QJu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="1Xa-FB-t8I"/>
+                            <constraint firstAttribute="trailing" secondItem="vPx-ng-GaS" secondAttribute="trailing" id="6UL-Fa-hWf"/>
+                            <constraint firstItem="vPx-ng-GaS" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="6lU-JV-9Fa"/>
+                            <constraint firstItem="vPx-ng-GaS" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="8aJ-PP-TuR"/>
+                            <constraint firstAttribute="bottom" secondItem="vPx-ng-GaS" secondAttribute="bottom" id="PaE-IF-PmM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tc6-Et-QJu" secondAttribute="trailing" id="az1-TP-She"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="tc6-Et-QJu" secondAttribute="bottom" id="cQd-jH-z8g"/>
                             <constraint firstItem="tc6-Et-QJu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="osm-YN-FB4"/>
@@ -41,11 +48,6 @@
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="E9m-oK-ozO">
-                            <connections>
-                                <action selector="showAddIngredientsView" destination="Y6W-OH-hqX" id="Sfc-So-baN"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="changeFridgeButton" destination="Mxy-iz-y6e" id="pMp-E4-glP"/>
@@ -64,7 +66,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="t5b-J6-8oS">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <navigationBarAppearance key="scrollEdgeAppearance"/>
+                        <color key="backgroundColor" red="0.84086233379999997" green="0.91034370659999997" blue="0.96670848129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.84086233379999997" green="0.91034370659999997" blue="0.96670848129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -77,6 +82,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background8" width="1080" height="2160"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

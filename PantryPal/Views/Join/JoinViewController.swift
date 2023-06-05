@@ -65,6 +65,12 @@ extension JoinViewController: UITableViewDelegate, UITableViewDataSource {
                 
             }
         }
+        inviteCell.getRejectClosure { [weak self] inputCell in
+            guard let cellIndexPath = tableView.indexPath(for: inputCell) else {
+                return
+            }
+            deleteInviteRequest((self?.inviteData[cellIndexPath.row].receiver)!, (self?.inviteData[cellIndexPath.row].sender)!)
+        }
         return inviteCell
     }
     

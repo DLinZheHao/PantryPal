@@ -31,9 +31,27 @@ class IngredientsDetailViewController: UIViewController {
     @IBOutlet weak var ingredientsNotification: UISegmentedControl!
     @IBOutlet weak var sendButton: UIButton!
     
+    @IBOutlet weak var dismissImageView: UIImageView!
+    @IBAction private func chooseCalendar() {
+        guard let calendarView = UINib(nibName: "Calendar", bundle: nil).instantiate(withOwner: self, options: nil).first as? CalendarView else {
+            print("畫面創建失敗")
+            return
+        }
+        view.addSubview(calendarView)
+        calendarView.calendar.delegate = self
+        calendarView.calendar.dataSource = self
+        calendarView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            calendarView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 250),
+            calendarView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            calendarView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
+            calendarView.heightAnchor.constraint(equalToConstant: 400)
+        ])
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
+        setDismissAction() 
         setIngredientsData()
     }
     
@@ -105,7 +123,9 @@ extension IngredientsDetailViewController {
         } errorCompletion: { [weak self] errorMessage in
             alertTitle(errorMessage, self!, "錯誤")
         }
-        navigationController?.pushViewController(nextVC, animated: true)
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        present(nextVC, animated: true)
     }
 }
 // MARK: 照片功能連接
@@ -147,11 +167,11 @@ extension IngredientsDetailViewController: UIImagePickerControllerDelegate, UINa
             // image.image = originalImage
             getImageCompletionHandler!(originalImage)
             if let imageURL = info[.imageURL] as? URL {
-                selectedFileURL = imageURL.absoluteString
+                self.imageURL = imageURL.absoluteString
             } else {
                 // 將照片存儲到相冊並獲取 URL
                 saveImageToPhotoAlbum(originalImage) { [weak self] photoUrl in
-                    self?.selectedFileURL = photoUrl?.absoluteString
+                    self?.imageURL = photoUrl?.absoluteString
                 }
             }
         } else if let editedImage = info[.editedImage] as? UIImage {
@@ -160,7 +180,7 @@ extension IngredientsDetailViewController: UIImagePickerControllerDelegate, UINa
             getImageCompletionHandler!(editedImage)
             // 將照片存儲到相冊並獲取 URL
             saveImageToPhotoAlbum(editedImage) { [weak self] photoUrl in
-                self?.selectedFileURL = photoUrl?.absoluteString
+                self?.imageURL = photoUrl?.absoluteString
             }
         }
     }
@@ -218,13 +238,7 @@ extension IngredientsDetailViewController: FSCalendarDelegate, FSCalendarDataSou
         dateFormatter.dateFormat = "yyyy年MM月dd日"
         print(dateFormatter.string(from: date))
 
-        let targetView = findSubview(ofType: AddIngredientsView.self, in: (calendar.superview?.superview?.superview)!)
-        guard let addIngredientsView = targetView else {
-            print("日曆日期失敗")
-            calendar.superview?.removeFromSuperview()
-            return
-        }
-        addIngredientsView.expireTimeTextfield.text = dateFormatter.string(from: date)
+        ingredientsExpiration.text = dateFormatter.string(from: date)
         calendar.superview?.removeFromSuperview()
     }
 }
@@ -255,7 +269,7 @@ extension IngredientsDetailViewController {
             return
         }
 
-        guard let fileURL = URL(string: url) else {
+        guard var fileURL = URL(string: url) else {
             print("沒有選取圖片")
             return
         }
@@ -277,7 +291,6 @@ extension IngredientsDetailViewController {
         }
         let barcode = ingredientsBarcode.text ?? ""
         let describe = ingredientsDescription.text ?? ""
-        
         uploadPictureToFirebase(fileURL) { [weak self] (url, error) in
             if let error = error {
                 // 上傳失敗，處理錯誤
@@ -310,12 +323,25 @@ extension IngredientsDetailViewController {
                     // 修改已經存在的ingredients 資料
                     
                     reviseIngredientsData(ingredientID, data!)
-                    self?.navigationController?.popViewController(animated: true)
+                    self?.presentingViewController?.dismiss(animated: true)
                 } else {
                     // 無法取得圖片的下載 URL
                     print("無法獲取圖片的下載 URL")
                 }
             }
         }
+    }
+}
+extension IngredientsDetailViewController {
+    private func setDismissAction() {
+        // 创建一个UITapGestureRecognizer对象
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
+
+        // 将手势识别器添加到UIImageView上
+        dismissImageView.isUserInteractionEnabled = true
+        dismissImageView.addGestureRecognizer(tapGesture)
+    }
+    @objc func imageViewTapped() {
+        self.presentingViewController?.dismiss(animated: true)
     }
 }

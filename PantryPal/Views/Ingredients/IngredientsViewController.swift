@@ -9,7 +9,12 @@ import UIKit
 import FSCalendar
 import Photos
 import MJRefresh
+import Floaty
+import Lottie
+import IQKeyboardManagerSwift
+
 class IngredientsViewController: UIViewController {
+    private var animationView: LottieAnimationView?
     var storeStatus = ["冷凍", "冷藏", "常溫"]
     
     var completionHandler: ((URL?) -> Void)?
@@ -24,11 +29,7 @@ class IngredientsViewController: UIViewController {
     var memberData: [MemberIDData]?
     var ingredientsData: [PresentIngredientsData] = []
     
-    @IBOutlet weak var changeFridgeButton: UIButton! {
-        didSet {
-            changeFridgeButton.addTarget(self, action: #selector(changeFridge), for: .touchUpInside)
-        }
-    }
+    @IBOutlet weak var changeFridgeButton: UIButton!
 
     @IBOutlet weak var ingredientTableView: UITableView! {
         didSet {
@@ -39,7 +40,8 @@ class IngredientsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setRightItem()
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        layoutFAB()
         ingredientTableView.lk_registerCellWithNib(identifier: String(describing: IngredientsTableViewCell.self), bundle: nil)
         
         let header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(refreshAction))
@@ -56,9 +58,32 @@ class IngredientsViewController: UIViewController {
         getData()
     }
 }
+// MARK: - Floaty
+extension IngredientsViewController {
+    func layoutFAB() {
+        let floaty = Floaty()
+        floaty.addItem("新增食材", icon: .asset(.outline_kitchen_black_36pt)) { [weak self] (_) in
+            self?.showAddIngredientsView()
+        }
+        floaty.addItem("查看成員", icon: .asset(.outline_people_black_36pt)) { [weak self] (_) in
+            self?.goMemberPage()
+        }
+        floaty.addItem("切換冰箱", icon: .asset(.outline_change_circle_black_36pt)) { [weak self] (_) in
+            self?.changeFridge()
+        }
+        floaty.addItem("新增冰箱", icon: .asset(.outline_add_box_black_36pt)) { [weak self] (_) in
+            self?.setUpCreatFridgeView()
+        }
+        floaty.plusColor = .white
+        floaty.paddingX = self.view.frame.width / 2 - floaty.frame.width / 2 - CGFloat(155)
+        floaty.paddingY = 120
+        floaty.sticky = true
+        self.view.addSubview(floaty)
+    }
+}
 // MARK: - 切換冰箱
 extension IngredientsViewController {
-    @objc func changeFridge() {
+    private func changeFridge() {
         guard let nextVC = UIStoryboard.fridgeList.instantiateViewController(
             withIdentifier: String(describing: FridgeListViewController.self)
         ) as? FridgeListViewController
@@ -66,16 +91,101 @@ extension IngredientsViewController {
             print("創建失敗")
             return }
         nextVC.currentFridgeID = currentFridgeID!
-        navigationController?.pushViewController(nextVC, animated: true)
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        present(nextVC, animated: true, completion: nil)
+        // navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+// MARK: - 新增冰箱
+extension IngredientsViewController {
+    private func setUpCreatFridgeView() {
+        let blackView = BlackBackgroundView()
+        blackView.frame = view.frame
+        blackView.backgroundColor = .black
+        blackView.alpha = 0.2
+        view.addSubview(blackView)
+        
+        guard let customView = UINib(nibName: "CreateFridgeView", bundle: nil).instantiate(withOwner: self, options: nil).first as? CreateFridgeView else {
+            print("畫面創建失敗")
+            return
+        }
+        customView.frame = CGRect(x: 0, y: 900, width: view.frame.width, height: 250)
+        view.addSubview(customView)
+
+        customView.closeButton.addTarget(self, action: #selector(closeCreateView), for: .touchUpInside)
+        customView.sendButton.addTarget(self, action: #selector(createNewFridgeAction), for: .touchUpInside)
+        
+        let animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut)
+        animator.addAnimations {
+            customView.frame.origin.y = CGFloat(150)
+        }
+        animator.startAnimation()
+        
+    }
+    
+    @objc private func closeCreateView(_ sender: UIButton) {
+        let targetView = findSubview(ofType: BlackBackgroundView.self, in: self.view)
+        guard let blackBackgroundView = targetView else {
+            print("找不到")
+            sender.superview?.removeFromSuperview()
+            return
+        }
+        blackBackgroundView.removeFromSuperview()
+        sender.superview?.removeFromSuperview()
+    }
+    @objc private func createNewFridgeAction(_ sender: UIButton) {
+        guard let createView = sender.superview as? CreateFridgeView else { return }
+        
+        if !checkEnterIsEmpty(createView.fridgeNameTextfield) {
+            guard let fridgeName = createView.fridgeNameTextfield.text else { return }
+            createNewFridge(fridgeName) {
+                fetchFridgeData { [weak self] _ in
+                    self?.getData()
+                    let targetView = findSubview(ofType: BlackBackgroundView.self, in: self!.view)
+                    guard let blackBackgroundView = targetView else {
+                        print("找不到")
+                        sender.superview?.removeFromSuperview()
+                        return
+                    }
+                    blackBackgroundView.removeFromSuperview()
+                    sender.superview?.removeFromSuperview()
+                }
+            }
+            
+        } else {
+            alert("輸入欄位為空，請重新輸入", self)
+        }
+    }
+    
+    private func isTextFieldEmptyOrWhitespace(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else {
+            return true
+        }
+        
+        let trimmedText = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmedText.isEmpty
+    }
+    
+    private func checkEnterIsEmpty(_ textField: UITextField) -> Bool {
+        if isTextFieldEmptyOrWhitespace(textField) {
+            alert("title 輸入欄為空，請重新輸入", self)
+            textField.text = ""
+            return true
+        }
+        return false
     }
 }
 // MARK: - 新創食材完後刷新頁面
 extension IngredientsViewController: GetRefreshSignal {
     func getSignal() {
-        print("執行")
         getData()
+        let targetView = findSubview(ofType: BlackBackgroundView.self, in: self.view)
+        guard let blackBackgroundView = targetView else {
+            return
+        }
+        blackBackgroundView.removeFromSuperview()
     }
-    
 }
 // MARK: - tableView 控制
 extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -92,10 +202,11 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
             withIdentifier: String(describing: IngredientsTableViewCell.self),
             for: indexPath)
         guard let ingredientsCell = cell as? IngredientsTableViewCell else { return cell }
-
+        ingredientsCell.backgroundColor = UIColor.clear
+        ingredientsCell.contentView.backgroundColor = UIColor.clear
         ingredientsCell.ingredientsNameLabel.text = ingredientsData[indexPath.row].name
-        ingredientsCell.ingredientsPriceLabel.text = String(ingredientsData[indexPath.row].price)
-        ingredientsCell.ingredientsStatusLabel.text = storeStatus[ingredientsData[indexPath.row].storeStatus]
+        ingredientsCell.ingredientsPriceLabel.text = "\(String(ingredientsData[indexPath.row].price))元"
+        ingredientsCell.ingredientsStatusLabel.text = "\(storeStatus[ingredientsData[indexPath.row].storeStatus])保存"
         ingredientsCell.expirationLabel.text = getLeftTime(ingredientsData[indexPath.row].expiration)
         if ingredientsData[indexPath.row].enableNotifications {
             ingredientsCell.notificationImage.isHidden = false
@@ -123,7 +234,10 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
             return 
         }
         nextVC.fridgeId = fridgeID
-        navigationController?.pushViewController(nextVC, animated: true)
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        present(nextVC, animated: true, completion: nil)
+       
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -188,28 +302,29 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
         
     }
 }
-// MARK: - 新增食材畫面: 掃描條碼 照片選擇
+// MARK: - Floaty 新增食材畫面: 掃描條碼 照片選擇
 extension IngredientsViewController {
-    // MARK: 新增食材畫面
-    @IBAction private func showAddIngredientsView() {
+
+    private func showAddIngredientsView() {
+        let blackView = BlackBackgroundView()
+        blackView.frame = view.frame
+        blackView.backgroundColor = .black
+        blackView.alpha = 0.2
+        view.addSubview(blackView)
+        
         guard let addIngredientsView = UINib(nibName: "AddIngredients", bundle: nil).instantiate(withOwner: self, options: nil).first as? AddIngredientsView else {
             print("畫面創建失敗")
             return
         }
+        addIngredientsView.frame = CGRect(x: 0, y: 900, width: view.frame.width, height: 400)
         view.addSubview(addIngredientsView)
         
-        addIngredientsView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            addIngredientsView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
-            addIngredientsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            addIngredientsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            addIngredientsView.heightAnchor.constraint(equalToConstant: 400)
-        ])
         addIngredientsView.scannerButton.addTarget(self, action: #selector(barcodeScanner), for: .touchUpInside)
         addIngredientsView.choosePictureButton.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
         addIngredientsView.takePictureButtin.addTarget(self, action: #selector(takePicture), for: .touchUpInside)
         addIngredientsView.ingredientsController = self
         addIngredientsView.delegate = self
+        
         guard let fridgeID = fridgeData?.id else {
             alertTitle("開發錯誤: 沒有獲取到ID", self, "需要修正")
             return
@@ -221,6 +336,13 @@ extension IngredientsViewController {
             return
         }
         addIngredientsView.imageUrl = presetUrl
+
+        let animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut)
+        animator.addAnimations {
+            addIngredientsView.frame.origin.y = CGFloat(150)
+        }
+        animator.startAnimation()
+
     }
     // MARK: 食材畫面功能 - 掃描條碼
     @objc func barcodeScanner(_ sender: UIButton) {
@@ -268,6 +390,7 @@ extension IngredientsViewController {
 }
 // MARK: - 日曆控制
 extension IngredientsViewController: FSCalendarDelegate, FSCalendarDataSource {
+    
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
         let today = Date()
         if date <= today {
@@ -299,7 +422,7 @@ extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigati
             takingPicture.sourceType = .camera
             // 拍照时是否显示工具栏
             // takingPicture.showsCameraControls = true
-        }else if type == 2 {
+        } else if type == 2 {
             takingPicture.sourceType = .photoLibrary
         }
         // 是否截取，设置为true在获取图片后可以将其截取成正方形
@@ -307,7 +430,6 @@ extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigati
         takingPicture.delegate = self
         present(takingPicture, animated: true, completion: nil)
     }
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         takingPicture.dismiss(animated: true, completion: nil)
         getImageClosure { [weak self] ingredientsImage in
@@ -406,36 +528,35 @@ extension IngredientsViewController {
             self?.memberData = passMemberData
         } ingredientCompletion: { [weak self] passIngredientsData in
             self?.ingredientsData = passIngredientsData
-            DispatchQueue.main.async {
+            print("執行")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                self?.view.removeAllLottieViews()
                 self?.ingredientTableView.reloadData()
             }
         } fallCompletion: { [weak self] in
             self?.ingredientsData = []
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                self?.view.removeAllLottieViews()
                 self?.ingredientTableView.reloadData()
             }
-        }
+        } loadding: { [weak self] in
+            self?.animationView = .init(name: "loadding")
+            self?.animationView!.frame = (self?.view.bounds)!
+            self?.animationView!.contentMode = .scaleAspectFit
+            self?.animationView!.loopMode = .loop
+            self?.animationView!.animationSpeed = 1.3
+            self?.view.addSubview((self?.animationView!)!)
+            self?.animationView!.play()
+        } 
         getInitialPictureURL { [weak self] returnURL in
             self?.imageURL = returnURL
         }
     }
 }
-// MARK: navigation bar item setting & action
+// MARK: go member Page
 extension IngredientsViewController {
-    private func setRightItem() {
-        let image = UIImage.asset(.members)// 替换为您的图像名称
-        let button = UIButton(type: .custom)
-        button.setImage(image, for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 43, height: 43) // 设置按钮的宽度和高度
-        button.addTarget(self, action: #selector(goMemberPage), for: .touchUpInside)
 
-        let customView = UIView(frame: button.frame)
-        customView.addSubview(button)
-
-        let barButtonItem = UIBarButtonItem(customView: customView)
-        navigationItem.rightBarButtonItems?.append(barButtonItem)
-    }
-    @objc func goMemberPage() {
+    func goMemberPage() {
         guard let nextVC = UIStoryboard.members.instantiateViewController(
             withIdentifier: String(describing: MemberViewController.self)
         ) as? MemberViewController else {
@@ -446,3 +567,4 @@ extension IngredientsViewController {
         present(nextVC, animated: true, completion: nil)
     }
 }
+

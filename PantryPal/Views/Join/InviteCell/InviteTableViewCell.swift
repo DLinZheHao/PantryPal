@@ -10,7 +10,7 @@ import UIKit
 class InviteTableViewCell: UITableViewCell {
 
     var acceptInviteClosure: ((UITableViewCell) -> Void)?
-    
+    var rejectInviteClosure: ((UITableViewCell) -> Void)?
     @IBOutlet weak var fridgeNameLabel: UILabel!
     @IBOutlet weak var refuseButton: UIButton!
     @IBOutlet weak var acceptButton: UIButton!
@@ -27,8 +27,13 @@ class InviteTableViewCell: UITableViewCell {
     func getClosure(completion: @escaping (UITableViewCell) -> Void) {
         acceptInviteClosure = completion
     }
-    
+    func getRejectClosure(completion: @escaping (UITableViewCell) -> Void) {
+        rejectInviteClosure = completion
+    }
     @IBAction func acceptButtonTapped() {
         acceptInviteClosure!(self)
+    }
+    @IBAction func rejectButtonTaaped() {
+        rejectInviteClosure!(self)
     }
 }

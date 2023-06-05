@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import MJRefresh
 class ManageMemberViewController: UIViewController {
     var memberData: [MemberData] = []
     var currentFridgeID: String?
@@ -20,6 +20,17 @@ class ManageMemberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         memberManageTableView.lk_registerCellWithNib(identifier: String(describing: ManageMemberTableViewCell.self), bundle: nil)
+        
+        let header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(refreshAction))
+        header.isAutomaticallyChangeAlpha = true
+        self.memberManageTableView.mj_header = header
+    }
+    @objc private func refreshAction() {
+        self.memberManageTableView.mj_header?.beginRefreshing()
+//        getData()
+        DispatchQueue.main.async {
+            self.memberManageTableView.mj_header?.endRefreshing()
+        }
     }
 }
 
@@ -47,7 +58,7 @@ extension ManageMemberViewController: UITableViewDelegate, UITableViewDataSource
         let deleteAction = UIContextualAction(style: .destructive, title: "刪除") { [weak self] (action, sourceView, completionHandler) in
             if let fridgeID = self?.currentFridgeID,
                let targetUserID = self?.memberData[indexPath.row].id {
-                deleteMember(fridgeID, targetUserID) { [weak self] in
+                deleteMember(self!, fridgeID, targetUserID) { [weak self] in
                     userLastUseFridgeForMember { data in
                         print("不做事")
                     } manageClosure: { memberData in

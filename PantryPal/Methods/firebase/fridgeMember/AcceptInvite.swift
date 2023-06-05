@@ -58,4 +58,21 @@ func acceptInvite(_ inviteData: InviteData, completion: @escaping () -> Void) {
             }
         }
     }
+    let fridges = Firestore.firestore().collection("fridges")
+    let fridgeDoc = fridges.document(inviteData.fridge)
+    let members = fridgeDoc.collection("members")
+    
+    // 要新增的文件資料
+    let newMemberData: [String: Any] = [
+        "id": inviteData.receiver
+    ]
+    let newMemberRef = members.document(inviteData.receiver)
+    // 新增文件到 "members" 集合
+    newMemberRef.setData(newMemberData) { (error) in
+        if let error = error {
+            print("新增文件失敗：\(error.localizedDescription)")
+        } else {
+            print("新增文件成功")
+        }
+    }
 }

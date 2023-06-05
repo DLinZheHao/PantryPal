@@ -16,7 +16,7 @@ func getAllInvite(completion: @escaping ([InviteData]) -> Void) {
     let inviteRequest = Firestore.firestore().collection("invite_requests")
     let inviteRequestQuery = inviteRequest.whereField("receiver", isEqualTo: currentUserId).whereField("status", isEqualTo: 0).order(by: "created_time")
     
-    inviteRequestQuery.getDocuments { (querySnapshot, error) in
+    inviteRequestQuery.addSnapshotListener { (querySnapshot, error) in
         if error != nil {
             print("發生錯誤：\(error)")
             return

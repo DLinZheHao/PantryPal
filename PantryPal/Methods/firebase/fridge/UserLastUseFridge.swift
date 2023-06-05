@@ -11,12 +11,13 @@ import Firebase
 func userLastUseFridge(fridgeCompletion: @escaping (FridgeData, String) -> Void,
                        memberCompletion: @escaping (Array<MemberIDData>) -> Void,
                        ingredientCompletion: @escaping (Array<PresentIngredientsData>) -> Void,
-                       fallCompletion: @escaping () -> Void ) {
-// completion: @escaping (FridgeData) -> Void
+                       fallCompletion: @escaping () -> Void,
+                       loadding: @escaping () -> Void) {
     guard let currentUserId = Auth.auth().currentUser?.uid else {
         print("登入狀態有問題")
         return
     }
+    loadding()
     let users = Firestore.firestore().collection("users")
     let document = users.document(currentUserId)
     
@@ -61,6 +62,7 @@ func userLastUseFridge(fridgeCompletion: @escaping (FridgeData, String) -> Void,
             }
             fridgeCompletion(FridgeData(id: id, name: name, createdTime: createdTime), lastUseFridgeId)
             print("使用者當前冰箱資料： \(fridgeData)")
+            
             
             getMembers(lastUseFridgeId) { memberData in
                 memberCompletion(memberData)
@@ -107,7 +109,10 @@ private func getIngredients(_ fridgeId: String, completion: @escaping (Array<Pre
     fridgeIngredients.getDocuments { (documents, error) in
         if let error = error {
             print("查詢成員時出錯：\(error.localizedDescription)")
+            fall()
+            return
         }
+        
         guard let documents = documents, !documents.isEmpty else {
             print("Fridge_ingredients資料不存在！")
             fall()
@@ -127,47 +132,77 @@ private func getIngredients(_ fridgeId: String, completion: @escaping (Array<Pre
             allIngredientsID.append(id)
         }
         
-        let ingredients = Firestore.firestore().collection("ingredients")
-        let query = ingredients.whereField("ingredients_id", in: allIngredientsID)
+        var fridgeIngredients: [PresentIngredientsData] = []
+        let group = DispatchGroup()
         
-        query.getDocuments { (documents, error) in
-            var fridgeIngredients: [PresentIngredientsData] = []
-            guard let documents = documents else {
-                print("ingredients資料不存在！")
-                fall()
-                return
-            }
-            for document in documents.documents {
-                let ingredientsData = document.data()
-
-                guard let ingredientsID = ingredientsData["ingredients_id"] as? String,
-                      let ingredientsName = ingredientsData["name"] as? String,
-                      let ingredientsPrice = ingredientsData["price"] as? Double,
-                      let ingredientsStoreStatus = ingredientsData["store_status"] as? Int,
-                      let ingredientsUrl = ingredientsData["url"] as? String,
-                      let ingredientsCreatedTime = ingredientsData["created_time"] as? Double,
-                      let ingredientsEnableNotifications = ingredientsData["enable_Notification"] as? Bool,
-                      let ingredietnsExpiration = ingredientsData["expiration"] as? Timestamp,
-                      let ingredientsDescription = ingredientsData["describe"] as? String else {
-                    print("食材資料獲取失敗")
-                    continue
+        for chunk in allIngredientsID.chunked(into: 10) {
+            group.enter()
+            
+            let ingredients = Firestore.firestore().collection("ingredients")
+            let query = ingredients.whereField("ingredients_id", in: chunk)
+            
+            query.getDocuments { (documents, error) in
+                defer {
+                    group.leave()
                 }
-                let newIngredients = PresentIngredientsData(
-                    barcode: ingredientsData["barcode"] as? String,
-                    ingredientsID: ingredientsID,
-                    name: ingredientsName,
-                    price: ingredientsPrice,
-                    storeStatus: ingredientsStoreStatus,
-                    url: ingredientsUrl,
-                    createdTime: ingredientsCreatedTime,
-                    enableNotifications: ingredientsEnableNotifications,
-                    expiration: ingredietnsExpiration.dateValue(),
-                    description: ingredientsDescription
-                )
-                fridgeIngredients.append(newIngredients)
+                
+                if let error = error {
+                    print("查詢食材時出錯：\(error.localizedDescription)")
+                    fall()
+                    return
+                }
+                
+                guard let documents = documents else {
+                    print("ingredients資料不存在！")
+                    fall()
+                    return
+                }
+                
+                for document in documents.documents {
+                    let ingredientsData = document.data()
+                    
+                    guard let ingredientsID = ingredientsData["ingredients_id"] as? String,
+                          let ingredientsName = ingredientsData["name"] as? String,
+                          let ingredientsPrice = ingredientsData["price"] as? Double,
+                          let ingredientsStoreStatus = ingredientsData["store_status"] as? Int,
+                          let ingredientsUrl = ingredientsData["url"] as? String,
+                          let ingredientsCreatedTime = ingredientsData["created_time"] as? Double,
+                          let ingredientsEnableNotifications = ingredientsData["enable_Notification"] as? Bool,
+                          let ingredietnsExpiration = ingredientsData["expiration"] as? Timestamp,
+                          let ingredientsDescription = ingredientsData["describe"] as? String else {
+                        print("食材資料獲取失敗")
+                        continue
+                    }
+                    
+                    let newIngredients = PresentIngredientsData(
+                        barcode: ingredientsData["barcode"] as? String,
+                        ingredientsID: ingredientsID,
+                        name: ingredientsName,
+                        price: ingredientsPrice,
+                        storeStatus: ingredientsStoreStatus,
+                        url: ingredientsUrl,
+                        createdTime: ingredientsCreatedTime,
+                        enableNotifications: ingredientsEnableNotifications,
+                        expiration: ingredietnsExpiration.dateValue(),
+                        description: ingredientsDescription
+                    )
+                    
+                    fridgeIngredients.append(newIngredients)
+                }
             }
+        }
+        
+        group.notify(queue: queue) {
             print("符合食材結果：\(fridgeIngredients)")
             completion(fridgeIngredients)
+        }
+    }
+}
+
+extension Array {
+    func chunked(into size: Int) -> [[Element]] {
+        return stride(from: 0, to: count, by: size).map {
+            Array(self[$0 ..< Swift.min($0 + size, count)])
         }
     }
 }

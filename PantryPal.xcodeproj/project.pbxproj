@@ -53,6 +53,7 @@
 		052C90282A29951300671811 /* DataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052C90262A29951300671811 /* DataCell.xib */; };
 		052C902B2A29B20500671811 /* isSameDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C902A2A29B20500671811 /* isSameDay.swift */; };
 		052C902D2A29B2C000671811 /* IngredientLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C902C2A29B2C000671811 /* IngredientLog.swift */; };
+		055346142A2D6A1900D0C544 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055346132A2D6A1900D0C544 /* UIColor+Extension.swift */; };
 		0554DFA52A2429A900956B04 /* IngredientsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0554DFA42A2429A900956B04 /* IngredientsDetail.storyboard */; };
 		0554DFA72A2429DF00956B04 /* IngredientsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFA62A2429DF00956B04 /* IngredientsDetailViewController.swift */; };
 		0554DFA92A249E8600956B04 /* ReviseIngredientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554DFA82A249E8600956B04 /* ReviseIngredientsData.swift */; };
@@ -87,6 +88,12 @@
 		0554E0202A285AF100956B04 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554E01F2A285AF100956B04 /* CalendarViewController.swift */; };
 		0554E0222A285B0A00956B04 /* CalendarPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0554E0212A285B0A00956B04 /* CalendarPage.storyboard */; };
 		05A643212A2B1B5100D37AF6 /* StoreStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A643202A2B1B5100D37AF6 /* StoreStatus.swift */; };
+		05A643692A2B5F0100D37AF6 /* BlackBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A643682A2B5F0100D37AF6 /* BlackBackgroundView.swift */; };
+		05A643932A2B8A6B00D37AF6 /* add_ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 05A643922A2B8A6B00D37AF6 /* add_ingredients.json */; };
+		05A643962A2B8AB500D37AF6 /* AddSuccess.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A643952A2B8AB500D37AF6 /* AddSuccess.xib */; };
+		05A643982A2B8AC800D37AF6 /* AddSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A643972A2B8AC800D37AF6 /* AddSuccessView.swift */; };
+		05A643A02A2B926400D37AF6 /* loadding.json in Resources */ = {isa = PBXBuildFile; fileRef = 05A6439F2A2B926400D37AF6 /* loadding.json */; };
+		05A643A22A2B97FF00D37AF6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A643A12A2B97FF00D37AF6 /* UIView+Extension.swift */; };
 		05ED19682A1766590023A13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19672A1766590023A13E /* AppDelegate.swift */; };
 		05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED19692A1766590023A13E /* SceneDelegate.swift */; };
 		05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED196B2A1766590023A13E /* LobbyViewController.swift */; };
@@ -184,6 +191,7 @@
 		052C90262A29951300671811 /* DataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataCell.xib; sourceTree = "<group>"; };
 		052C902A2A29B20500671811 /* isSameDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isSameDay.swift; sourceTree = "<group>"; };
 		052C902C2A29B2C000671811 /* IngredientLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientLog.swift; sourceTree = "<group>"; };
+		055346132A2D6A1900D0C544 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0554DFA42A2429A900956B04 /* IngredientsDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IngredientsDetail.storyboard; sourceTree = "<group>"; };
 		0554DFA62A2429DF00956B04 /* IngredientsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsDetailViewController.swift; sourceTree = "<group>"; };
 		0554DFA82A249E8600956B04 /* ReviseIngredientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviseIngredientsData.swift; sourceTree = "<group>"; };
@@ -218,6 +226,12 @@
 		0554E01F2A285AF100956B04 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		0554E0212A285B0A00956B04 /* CalendarPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarPage.storyboard; sourceTree = "<group>"; };
 		05A643202A2B1B5100D37AF6 /* StoreStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreStatus.swift; sourceTree = "<group>"; };
+		05A643682A2B5F0100D37AF6 /* BlackBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackBackgroundView.swift; sourceTree = "<group>"; };
+		05A643922A2B8A6B00D37AF6 /* add_ingredients.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = add_ingredients.json; sourceTree = "<group>"; };
+		05A643952A2B8AB500D37AF6 /* AddSuccess.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSuccess.xib; sourceTree = "<group>"; };
+		05A643972A2B8AC800D37AF6 /* AddSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSuccessView.swift; sourceTree = "<group>"; };
+		05A6439F2A2B926400D37AF6 /* loadding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadding.json; sourceTree = "<group>"; };
+		05A643A12A2B97FF00D37AF6 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		05ED19642A1766590023A13E /* PantryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ED19672A1766590023A13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05ED19692A1766590023A13E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -333,6 +347,7 @@
 		051AC6A82A1EE3CD00B23C63 /* Ingredients */ = {
 			isa = PBXGroup;
 			children = (
+				051AC69D2A1DEC8C00B23C63 /* CreateFridgeView */,
 				0554DFA32A24295800956B04 /* IngredientsDetail */,
 				0554DFA22A24266100956B04 /* Member */,
 				051AC6F32A220EFA00B23C63 /* IngredientsCell */,
@@ -369,6 +384,7 @@
 			children = (
 				051AC6C92A1F901000B23C63 /* AddIngredients.xib */,
 				051AC6CB2A1F904000B23C63 /* AddIngredientsView.swift */,
+				05A643682A2B5F0100D37AF6 /* BlackBackgroundView.swift */,
 			);
 			path = AddIngredients;
 			sourceTree = "<group>";
@@ -445,13 +461,6 @@
 				051AC6F92A2210CA00B23C63 /* IngredientsTableViewCell.xib */,
 			);
 			path = IngredientsCell;
-			sourceTree = "<group>";
-		};
-		051AC6FE2A22E6CE00B23C63 /* Third Party Wrappers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Third Party Wrappers";
 			sourceTree = "<group>";
 		};
 		052C90242A29950000671811 /* DataCell */ = {
@@ -606,6 +615,25 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		05A643912A2B8A5100D37AF6 /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				05A6439F2A2B926400D37AF6 /* loadding.json */,
+				05A643942A2B8A8100D37AF6 /* AddSuccess */,
+			);
+			path = Lotties;
+			sourceTree = "<group>";
+		};
+		05A643942A2B8A8100D37AF6 /* AddSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				05A643952A2B8AB500D37AF6 /* AddSuccess.xib */,
+				05A643972A2B8AC800D37AF6 /* AddSuccessView.swift */,
+				05A643922A2B8A6B00D37AF6 /* add_ingredients.json */,
+			);
+			path = AddSuccess;
+			sourceTree = "<group>";
+		};
 		05ED195B2A1766590023A13E = {
 			isa = PBXGroup;
 			children = (
@@ -627,7 +655,7 @@
 		05ED19662A1766590023A13E /* PantryPal */ = {
 			isa = PBXGroup;
 			children = (
-				051AC6FE2A22E6CE00B23C63 /* Third Party Wrappers */,
+				05A643912A2B8A5100D37AF6 /* Lotties */,
 				051AC6992A1DDB0200B23C63 /* Models */,
 				05ED1AD42A1D9E060023A13E /* Extensions */,
 				05ED1ABC2A1CF48A0023A13E /* Methods */,
@@ -706,7 +734,6 @@
 		05ED1ACB2A1D96E70023A13E /* FridgeList */ = {
 			isa = PBXGroup;
 			children = (
-				051AC69D2A1DEC8C00B23C63 /* CreateFridgeView */,
 				051AC68A2A1DA4CD00B23C63 /* FridgeCell */,
 				05ED1ACC2A1D971E0023A13E /* FridgeListViewController.swift */,
 				051AC6972A1DD98500B23C63 /* FridgeListTableView.swift */,
@@ -723,6 +750,8 @@
 				051AC6B62A1F09BB00B23C63 /* UIImage+Extension.swift */,
 				051AC6E22A206ECC00B23C63 /* UIResponder+Extension.swift */,
 				0554DFB52A2598E700956B04 /* UICollectionView+Extension.swift */,
+				05A643A12A2B97FF00D37AF6 /* UIView+Extension.swift */,
+				055346132A2D6A1900D0C544 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -846,6 +875,7 @@
 				0554DFC92A25CDE100956B04 /* TeamLink.storyboard in Resources */,
 				0554E0222A285B0A00956B04 /* CalendarPage.storyboard in Resources */,
 				051AC6A12A1DED2E00B23C63 /* CreateFridgeView.xib in Resources */,
+				05A643962A2B8AB500D37AF6 /* AddSuccess.xib in Resources */,
 				05ED1AC22A1CF8E70023A13E /* GoogleService-Info.plist in Resources */,
 				051AC6CA2A1F901000B23C63 /* AddIngredients.xib in Resources */,
 				051AC6902A1DA51600B23C63 /* FridgeCell.xib in Resources */,
@@ -853,12 +883,14 @@
 				051AC6D12A1F98C200B23C63 /* Calendar.xib in Resources */,
 				051AC6FB2A2210CA00B23C63 /* IngredientsTableViewCell.xib in Resources */,
 				05ED19742A17665A0023A13E /* Assets.xcassets in Resources */,
+				05A643A02A2B926400D37AF6 /* loadding.json in Resources */,
 				0554DFA52A2429A900956B04 /* IngredientsDetail.storyboard in Resources */,
 				0554DFC22A259BFE00956B04 /* MemberCollectionViewCell.xib in Resources */,
 				05ED1AD12A1D98120023A13E /* FridgeList.storyboard in Resources */,
 				051AC6D92A202F3600B23C63 /* BarcodeScanner.storyboard in Resources */,
 				05ED196F2A1766590023A13E /* Main.storyboard in Resources */,
 				0554E0182A27838600956B04 /* QRCodeScanner.storyboard in Resources */,
+				05A643932A2B8A6B00D37AF6 /* add_ingredients.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -936,6 +968,7 @@
 				05ED1ABB2A1CA63E0023A13E /* InformationStackView.swift in Sources */,
 				05ED1ACE2A1D971E0023A13E /* FridgeListViewController.swift in Sources */,
 				051AC6DF2A204EE900B23C63 /* FetchIngredientApiData.swift in Sources */,
+				05A643982A2B8AC800D37AF6 /* AddSuccessView.swift in Sources */,
 				052C90232A2979FD00671811 /* IngredientsHistoryData.swift in Sources */,
 				051AC6BB2A1F27C400B23C63 /* FridgeData.swift in Sources */,
 				051AC6B92A1F1B2B00B23C63 /* UserLastUseFridge.swift in Sources */,
@@ -945,6 +978,7 @@
 				051AC6B02A1EF9F300B23C63 /* GetFridge.swift in Sources */,
 				0554E0062A27240E00956B04 /* JoinViewController.swift in Sources */,
 				051AC6AB2A1EE43000B23C63 /* IngredientsViewController.swift in Sources */,
+				05A643A22A2B97FF00D37AF6 /* UIView+Extension.swift in Sources */,
 				0554E0132A2773FB00956B04 /* AcceptInvite.swift in Sources */,
 				051AC6E72A20AB1800B23C63 /* UploadPictureToFirebase.swift in Sources */,
 				05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */,
@@ -956,12 +990,14 @@
 				0554E0202A285AF100956B04 /* CalendarViewController.swift in Sources */,
 				0554E00C2A27426600956B04 /* InviteData.swift in Sources */,
 				051AC6E52A2076B600B23C63 /* FindSubview.swift in Sources */,
+				055346142A2D6A1900D0C544 /* UIColor+Extension.swift in Sources */,
 				0554E0082A27345C00956B04 /* FridgeMemberAddInvite.swift in Sources */,
 				0554DFF22A25F60400956B04 /* AddMemberViewController.swift in Sources */,
 				051AC6E32A206ECC00B23C63 /* UIResponder+Extension.swift in Sources */,
 				051AC7272A2356DD00B23C63 /* DeleteIngredients.swift in Sources */,
 				051AC6ED2A21C27800B23C63 /* GetInitialPictureURL.swift in Sources */,
 				05ED1AB72A1CA2F70023A13E /* RegisterViewController.swift in Sources */,
+				05A643692A2B5F0100D37AF6 /* BlackBackgroundView.swift in Sources */,
 				051AC6A72A1EE1F500B23C63 /* FridgeTabBarController.swift in Sources */,
 				051AC6982A1DD98500B23C63 /* FridgeListTableView.swift in Sources */,
 				051AC6DD2A203F0E00B23C63 /* FailGetData.swift in Sources */,

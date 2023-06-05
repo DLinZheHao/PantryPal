@@ -25,6 +25,10 @@ enum ImageAsset: String {
     case calendar_not_select
     case calendar_select
     case calendar_background
+    case outline_kitchen_black_36pt
+    case outline_people_black_36pt
+    case outline_change_circle_black_36pt
+    case outline_add_box_black_36pt
 }
 // swiftlint:enable identifier_name
 

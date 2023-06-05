@@ -12,4 +12,6 @@ target 'PantryPal' do
   pod 'IQKeyboardManagerSwift'
   pod 'FSCalendar'
   pod 'FoldingCell'
+  pod 'Floaty', '~> 4.2.0'
+  pod 'lottie-ios'
 end

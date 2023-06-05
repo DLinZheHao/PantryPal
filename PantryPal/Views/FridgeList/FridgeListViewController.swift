@@ -12,6 +12,7 @@ class FridgeListViewController: UIViewController {
     var currentFridgeID: String?
     var fridges: [FridgeData] = []
     
+    @IBOutlet weak var dissmissImageView: UIImageView!
     @IBOutlet weak var fridgeListTableView: FridgeListTableView! {
         didSet {
             fridgeListTableView.dataSource = self
@@ -26,7 +27,8 @@ class FridgeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
-            
+        setDismissAction()
+        
         fridgeListTableView.lk_registerCellWithNib(identifier: String(describing: FridgeCell.self), bundle: nil)
         
         fetchFridgeData { [weak self] getData in
@@ -61,7 +63,8 @@ extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
             print("cell 創建失敗")
             return cell!
         }
-        
+        fridgeCell.backgroundColor = UIColor.clear
+        fridgeCell.contentView.backgroundColor = UIColor.clear
         fridgeCell.nameLabel.text = fridges[indexPath.row].name
         fridgeCell.selectionStyle = .default // 设置选择样式
         return fridgeCell
@@ -69,7 +72,7 @@ extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         chooseFridge(fridges[indexPath.row].id) { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
+            self?.presentingViewController?.dismiss(animated: true)
         }
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -150,5 +153,19 @@ extension FridgeListViewController {
             return true
         }
         return false
+    }
+}
+
+extension FridgeListViewController {
+    private func setDismissAction() {
+        // 创建一个UITapGestureRecognizer对象
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
+
+        // 将手势识别器添加到UIImageView上
+        dissmissImageView.isUserInteractionEnabled = true
+        dissmissImageView.addGestureRecognizer(tapGesture)
+    }
+    @objc func imageViewTapped() {
+        self.presentingViewController?.dismiss(animated: true)
     }
 }

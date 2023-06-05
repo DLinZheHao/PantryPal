@@ -8,18 +8,21 @@
 import Foundation
 
 func getLeftTime(_ futureDate: Date) -> String {
-    let remainingTime = futureDate.timeIntervalSinceNow
+    let calendar = Calendar.current
+    let currentDate = Date()
 
-    if remainingTime > 0 {
-        let remainingHours = Int(remainingTime / (60 * 60))
-        let remainingMinutes = Int((remainingTime.truncatingRemainder(dividingBy: (60 * 60))) / 60)
-        let remainingSeconds = Int(remainingTime.truncatingRemainder(dividingBy: 60))
+    let components = calendar.dateComponents([.day, .hour], from: currentDate, to: futureDate)
 
-        //print("剩餘時間: \(remainingHours)小時 \(remainingMinutes)分鐘 \(remainingSeconds)秒")
-        return "剩餘時間: \(remainingHours)小時 \(remainingMinutes)分鐘 "
+    if let remainingDays = components.day, let remainingHours = components.hour {
+        if remainingDays > 0 {
+            return "剩餘時間: \(remainingDays)天 \(remainingHours)小時"
+        } else if remainingHours > 0 {
+            return "剩餘時間: \(remainingHours)小時"
+        } else {
+            return "已過期"
+        }
     } else {
-        //print("指定時間已過")
         return "已過期"
     }
-
 }
+

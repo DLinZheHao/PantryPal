@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-func deleteMember(_ fridgeID: String, _ userID: String, successCompletion: @escaping () -> Void) {
+func deleteMember(_ controller: UIViewController, _ fridgeID: String, _ userID: String, successCompletion: @escaping () -> Void) {
     guard let currentUserId = Auth.auth().currentUser?.uid else {
         print("登入狀態有問題")
         return
@@ -29,6 +29,7 @@ func deleteMember(_ fridgeID: String, _ userID: String, successCompletion: @esca
         ownfridgeArray = ownFridgesData
         
         if currentUserId == userID {
+            alert("不能刪除自己", controller)
             print("不能刪除自己")
             return
         }
@@ -36,7 +37,9 @@ func deleteMember(_ fridgeID: String, _ userID: String, successCompletion: @esca
         if ownfridgeArray.contains(fridgeID) {
             deleteTargetMember(userID, fridgeID)
             deleteFridgeUser(userID, fridgeID, completion: successCompletion)
+            deleteInviteRequest(userID, currentUserId)
         } else {
+            alert("不是冰箱擁有者，不能進行成員刪除", controller)
             print("不是冰箱擁有者，不能進行成員刪除")
         }
         
@@ -91,4 +94,30 @@ private func deleteFridgeUser(_ targetUserID: String, _ fridgeID: String, comple
         }
     }
     
+}
+func deleteInviteRequest(_ receiver: String, _ sender: String) {
+    let inviteRequests = Firestore.firestore().collection("invite_requests")
+    let query = inviteRequests.whereField("receiver", isEqualTo: receiver).whereField("sender", isEqualTo: sender)
+    
+    query.getDocuments { (querySnapshot, error) in
+        if let error = error {
+            print("查詢資料失敗：\(error.localizedDescription)")
+            return
+        }
+        
+        guard let querySnapshot = querySnapshot else {
+            print("查詢結果為空")
+            return
+        }
+        
+        for document in querySnapshot.documents {
+            document.reference.delete { (error) in
+                if let error = error {
+                    print("刪除文件失敗：\(error.localizedDescription)")
+                } else {
+                    print("刪除文件成功")
+                }
+            }
+        }
+    }
 }

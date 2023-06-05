@@ -9,12 +9,12 @@ import UIKit
 
 class FridgeCell: UITableViewCell {
 
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
+    @IBOutlet weak var backgroundImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        backgroundImageView.layer.cornerRadius = 10
+        backgroundImageView.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

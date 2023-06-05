@@ -44,7 +44,7 @@ func getHistoryIngredients(_ fridgeID: String, _ chooseDay: Date, _ completion: 
         for document in documents {
             let data = document.data()
             guard let actionTime = data["action_time"] as? Double else { return }
-            if isSameDay(timeInterval: actionTime, referenceDate: chooseDay) {
+            if isSameDay(timeInterval: actionTime, date: chooseDay) {
                 guard let barcode = data["barcode"] as? String,
                       let action = data["action"] as? Int,
                       let ingredientsID = data["ingredients_id"] as? String,
@@ -73,5 +73,3 @@ func getHistoryIngredients(_ fridgeID: String, _ chooseDay: Date, _ completion: 
     }
     
 }
-
-

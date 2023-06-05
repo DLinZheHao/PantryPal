@@ -15,10 +15,14 @@ class IngredientsTableViewCell: UITableViewCell {
     @IBOutlet weak var ingredientsPriceLabel: UILabel!
     @IBOutlet weak var ingredientsStatusLabel: UILabel!
     @IBOutlet weak var expirationLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        backgroundImageView.layer.cornerRadius = 10
+        backgroundImageView.layer.masksToBounds = true
+        ingredientsImage.layer.cornerRadius = ingredientsImage.bounds.width / 2
+        ingredientsImage.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
