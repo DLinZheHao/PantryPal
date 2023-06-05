@@ -208,6 +208,13 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
         ingredientsCell.ingredientsPriceLabel.text = "\(String(ingredientsData[indexPath.row].price))元"
         ingredientsCell.ingredientsStatusLabel.text = "\(storeStatus[ingredientsData[indexPath.row].storeStatus])保存"
         ingredientsCell.expirationLabel.text = getLeftTime(ingredientsData[indexPath.row].expiration)
+        
+        if ingredientsCell.expirationLabel.text == "已過期" {
+            ingredientsCell.backgroundImageView.backgroundColor = UIColor(hex: "E2271A", alpha: 0.8)
+        } else {
+            ingredientsCell.backgroundImageView.backgroundColor = UIColor(hex: "#16CDBF", alpha: 0.8)
+        }
+        
         if ingredientsData[indexPath.row].enableNotifications {
             ingredientsCell.notificationImage.isHidden = false
         } else {

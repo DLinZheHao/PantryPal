@@ -20,6 +20,7 @@ class IngredientsDetailViewController: UIViewController {
     var imageURL: String?
     var selectedFileURL: String?
     var takingPicture: UIImagePickerController!
+    var chineseCalendar: Calendar!
     
     @IBOutlet weak var ingredientsImage: UIImageView!
     @IBOutlet weak var ingredientsName: UITextField!
@@ -38,6 +39,14 @@ class IngredientsDetailViewController: UIViewController {
             return
         }
         view.addSubview(calendarView)
+        chineseCalendar = Calendar(identifier: .chinese)
+        calendarView.calendar.pagingEnabled = true
+        calendarView.calendar.scrollEnabled = true
+        
+        let locale = Locale(identifier: "zh_CN")
+        calendarView.calendar.locale = locale
+        calendarView.calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
+        calendarView.calendar.appearance.headerDateFormat = "yyyy年MM月"
         calendarView.calendar.delegate = self
         calendarView.calendar.dataSource = self
         calendarView.translatesAutoresizingMaskIntoConstraints = false
