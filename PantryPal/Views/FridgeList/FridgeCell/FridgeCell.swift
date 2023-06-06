@@ -11,6 +11,12 @@ class FridgeCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var backgroundColorView: UIView!
+    
+    var onEditButtonTapped: ((UITableViewCell) -> Void)?
+
+    @IBAction func editButtonTapped(_ sender: Any) {
+        onEditButtonTapped?(self)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColorView.layer.cornerRadius = 10

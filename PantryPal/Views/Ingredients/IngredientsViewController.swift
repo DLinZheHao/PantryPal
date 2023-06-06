@@ -673,7 +673,7 @@ extension IngredientsViewController {
         present(nextVC, animated: true, completion: nil)
     }
 }
-
+// MARK: searchBar 控制區域
 extension IngredientsViewController: UISearchBarDelegate {
     func search(_ searchTerm: String) {
         print("搜尋觸發")

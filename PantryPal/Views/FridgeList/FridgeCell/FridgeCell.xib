@@ -18,9 +18,27 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZj-vh-1Q3">
                         <rect key="frame" x="12" y="12" width="296" height="87"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa2-IU-vYv">
+                                <rect key="frame" x="250" y="26" width="30" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="BFz-D5-aNg"/>
+                                    <constraint firstAttribute="height" constant="35" id="O6h-K2-QCF"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="outline_edit_black_48pt"/>
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Qoh-aw-gK6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.10329274894630107" green="0.44693129990398228" blue="0.43896747088051102" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="fa2-IU-vYv" firstAttribute="top" secondItem="eZj-vh-1Q3" secondAttribute="top" constant="26" id="QzU-aW-TFc"/>
                             <constraint firstAttribute="height" constant="87" id="moT-RN-AS5"/>
+                            <constraint firstAttribute="bottom" secondItem="fa2-IU-vYv" secondAttribute="bottom" constant="26" id="qsh-Ob-AUJ"/>
+                            <constraint firstAttribute="trailing" secondItem="fa2-IU-vYv" secondAttribute="trailing" constant="16" id="u7Z-jl-AzT"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="冰箱名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2v-GK-Tf8">
@@ -48,4 +66,7 @@
             <point key="canvasLocation" x="129.7709923664122" y="12.323943661971832"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="outline_edit_black_48pt" width="48" height="48"/>
+    </resources>
 </document>

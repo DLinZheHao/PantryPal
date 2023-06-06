@@ -63,9 +63,12 @@ extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
             print("cell 創建失敗")
             return cell!
         }
-        print("成功創建")
-        // fridgeCell.backgroundColor = UIColor.clear
-        // fridgeCell.contentView.backgroundColor = UIColor.clear
+        fridgeCell.onEditButtonTapped = { [weak self] inputCell in
+            guard let cellIndexPath = tableView.indexPath(for: inputCell) else {
+                return
+            }
+            self?.editText(at: cellIndexPath)
+        }
         fridgeCell.nameLabel.text = fridges[indexPath.row].name
         fridgeCell.selectionStyle = .default // 设置选择样式
         return fridgeCell
@@ -95,7 +98,34 @@ extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
         return swipeConfiguration
     }
-    
+    func editText(at indexPath: IndexPath) {
+            let alertController = UIAlertController(title: "編輯冰箱名稱", message: nil, preferredStyle: .alert)
+            alertController.addTextField { textField in
+                textField.placeholder = "輸入名稱"
+                textField.text = self.fridges[indexPath.row].name
+            }
+
+            let saveAction = UIAlertAction(title: "儲存", style: .default) { [weak self] _ in
+                guard let textField = alertController.textFields?.first,
+                      let newText = textField.text else {
+                    return
+                }
+                changeFridgeName(self!.fridges[indexPath.row].id, newText) { [weak self] in
+                    fetchFridgeData { [weak self] getData in
+                        self?.fridges = getData
+                        self?.fridgeListTableView.reloadData()
+                    }
+                }
+            }
+
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+
+            alertController.addAction(saveAction)
+            alertController.addAction(cancelAction)
+
+            present(alertController, animated: true, completion: nil)
+        }
+
 }
 // MARK: - 新增fridge view
 extension FridgeListViewController {

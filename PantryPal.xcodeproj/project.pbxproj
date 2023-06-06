@@ -53,6 +53,7 @@
 		052C90282A29951300671811 /* DataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052C90262A29951300671811 /* DataCell.xib */; };
 		052C902B2A29B20500671811 /* isSameDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C902A2A29B20500671811 /* isSameDay.swift */; };
 		052C902D2A29B2C000671811 /* IngredientLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C902C2A29B2C000671811 /* IngredientLog.swift */; };
+		053525EC2A2EFBA500FE05AE /* changeFridgeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053525EB2A2EFBA500FE05AE /* changeFridgeName.swift */; };
 		055346142A2D6A1900D0C544 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055346132A2D6A1900D0C544 /* UIColor+Extension.swift */; };
 		0553461B2A2EB77600D0C544 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553461A2A2EB77600D0C544 /* HeaderView.swift */; };
 		0553461D2A2EB79600D0C544 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0553461C2A2EB79600D0C544 /* HeaderView.xib */; };
@@ -194,6 +195,7 @@
 		052C90262A29951300671811 /* DataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataCell.xib; sourceTree = "<group>"; };
 		052C902A2A29B20500671811 /* isSameDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isSameDay.swift; sourceTree = "<group>"; };
 		052C902C2A29B2C000671811 /* IngredientLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientLog.swift; sourceTree = "<group>"; };
+		053525EB2A2EFBA500FE05AE /* changeFridgeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeFridgeName.swift; sourceTree = "<group>"; };
 		055346132A2D6A1900D0C544 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0553461A2A2EB77600D0C544 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0553461C2A2EB79600D0C544 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				051AC6AF2A1EF9F300B23C63 /* GetFridge.swift */,
 				051AC7242A233C5A00B23C63 /* ChooseFridge.swift */,
 				0554DFAA2A24D43D00956B04 /* DeleteFridge.swift */,
+				053525EB2A2EFBA500FE05AE /* changeFridgeName.swift */,
 			);
 			path = fridge;
 			sourceTree = "<group>";
@@ -1031,6 +1034,7 @@
 				052C902B2A29B20500671811 /* isSameDay.swift in Sources */,
 				0554DFB32A2595B500956B04 /* example.swift in Sources */,
 				0554E01A2A281D5800956B04 /* QRCdoeInviteAccept.swift in Sources */,
+				053525EC2A2EFBA500FE05AE /* changeFridgeName.swift in Sources */,
 				051AC6D52A202ECA00B23C63 /* BarcodeIngredientData.swift in Sources */,
 				0554DFFF2A26E69300956B04 /* ManageMemberTableViewCell.swift in Sources */,
 				052C90272A29951300671811 /* DataCell.swift in Sources */,
