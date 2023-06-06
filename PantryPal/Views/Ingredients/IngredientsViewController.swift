@@ -29,6 +29,8 @@ class IngredientsViewController: UIViewController {
     var memberData: [MemberIDData]?
     var ingredientsData: [PresentIngredientsData] = []
     
+    var searchIngredientsData = [PresentIngredientsData]()
+    
     var header: HeaderView?
     
     @IBOutlet weak var ingredientTableView: UITableView! {
@@ -293,6 +295,8 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: String(describing: HeaderView.self)) as? HeaderView
         header = headerView
+        headerView?.searchBar.searchBarStyle = .minimal
+        headerView?.searchBar.delegate = self
         headerView?.controller = self
         headerView?.dataArray = ingredientsData
         return headerView
@@ -668,4 +672,36 @@ extension IngredientsViewController {
         nextVC.currentFridgeID = currentFridgeID
         present(nextVC, animated: true, completion: nil)
     }
+}
+
+extension IngredientsViewController: UISearchBarDelegate {
+    func search(_ searchTerm: String) {
+        print("搜尋觸發")
+        if searchTerm.isEmpty {
+            print("沒有結果")
+            // searchIngredientsData = ingredientsData
+        } else {
+            print("有結果")
+            searchIngredientsData = ingredientsData
+            ingredientsData = ingredientsData.filter {
+                $0.name.contains(searchTerm)
+            }
+            header?.dataArray = ingredientsData
+        }
+        ingredientTableView.reloadData()
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchTerm = searchBar.text ?? ""
+        search(searchTerm)
+        searchBar.resignFirstResponder()
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            // 清除按鈕被按下，搜索文字被清空
+            // 在這裡處理相應操作
+            print("清除按鈕觸發")
+            getData()
+        }
+    }
+
 }

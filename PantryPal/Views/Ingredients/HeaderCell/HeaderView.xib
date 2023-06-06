@@ -11,11 +11,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="rqr-J9-2h1" customClass="HeaderView" customModule="PantryPal" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIc-bp-4cH">
-                    <rect key="frame" x="292" y="10" width="86" height="30"/>
+                    <rect key="frame" x="292" y="10" width="86" height="40"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="名稱排序 ▾">
                         <color key="titleColor" red="0.2823529541" green="0.47843140360000003" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -24,19 +24,32 @@
                         <action selector="sortTapped:" destination="rqr-J9-2h1" eventType="touchUpInside" id="dFp-ca-zH4"/>
                     </connections>
                 </button>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Cd4-0i-fjo">
+                    <rect key="frame" x="5" y="3" width="265" height="54"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <scopeButtonTitles>
+                        <string>Title</string>
+                        <string>Title</string>
+                    </scopeButtonTitles>
+                </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="9Vi-di-pa7"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="aIc-bp-4cH" firstAttribute="top" secondItem="rqr-J9-2h1" secondAttribute="top" constant="10" id="0An-41-7Pf"/>
+                <constraint firstAttribute="bottom" secondItem="Cd4-0i-fjo" secondAttribute="bottom" constant="3" id="1c7-Tu-yoo"/>
                 <constraint firstItem="9Vi-di-pa7" firstAttribute="bottom" secondItem="aIc-bp-4cH" secondAttribute="bottom" constant="10" id="F1d-k9-aJR"/>
                 <constraint firstAttribute="trailing" secondItem="aIc-bp-4cH" secondAttribute="trailing" constant="15" id="NEU-fx-5JL"/>
+                <constraint firstItem="aIc-bp-4cH" firstAttribute="leading" secondItem="Cd4-0i-fjo" secondAttribute="trailing" constant="22" id="cfu-Gt-ots"/>
+                <constraint firstItem="Cd4-0i-fjo" firstAttribute="leading" secondItem="rqr-J9-2h1" secondAttribute="leading" constant="5" id="euL-ja-uKF"/>
+                <constraint firstItem="Cd4-0i-fjo" firstAttribute="top" secondItem="rqr-J9-2h1" secondAttribute="top" constant="3" id="k83-X3-v9k"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="orderButton" destination="aIc-bp-4cH" id="gvG-Kf-1Kl"/>
+                <outlet property="searchBar" destination="Cd4-0i-fjo" id="eYz-x5-8ny"/>
             </connections>
-            <point key="canvasLocation" x="145.80152671755724" y="-533.45070422535218"/>
+            <point key="canvasLocation" x="145.80152671755724" y="-533.80281690140851"/>
         </view>
     </objects>
     <resources>

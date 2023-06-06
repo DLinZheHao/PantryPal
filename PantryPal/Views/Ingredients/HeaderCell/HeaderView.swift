@@ -9,6 +9,7 @@ import UIKit
 
 class HeaderView: UITableViewHeaderFooterView {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     var controller: UIViewController?
     var dataArray: [PresentIngredientsData]?
     
