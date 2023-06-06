@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Ingredients View Controller-->
+        <!--冰箱名稱-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="IngredientsViewController" id="Y6W-OH-hqX" customClass="IngredientsViewController" customModule="PantryPal" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,59 +16,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background8" translatesAutoresizingMaskIntoConstraints="NO" id="vPx-ng-GaS">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tc6-Et-QJu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tc6-Et-QJu">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="tc6-Et-QJu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="1Xa-FB-t8I"/>
-                            <constraint firstAttribute="trailing" secondItem="vPx-ng-GaS" secondAttribute="trailing" id="6UL-Fa-hWf"/>
-                            <constraint firstItem="vPx-ng-GaS" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="6lU-JV-9Fa"/>
-                            <constraint firstItem="vPx-ng-GaS" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="8aJ-PP-TuR"/>
-                            <constraint firstAttribute="bottom" secondItem="vPx-ng-GaS" secondAttribute="bottom" id="PaE-IF-PmM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tc6-Et-QJu" secondAttribute="trailing" id="az1-TP-She"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="tc6-Et-QJu" secondAttribute="bottom" id="cQd-jH-z8g"/>
                             <constraint firstItem="tc6-Et-QJu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="osm-YN-FB4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6we-2F-ryD">
-                        <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mxy-iz-y6e">
-                            <rect key="frame" x="152.66666666666666" y="0.66666666666666785" width="88" height="43"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="22"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="冰箱名稱">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="冰箱名稱" id="6we-2F-ryD"/>
                     <connections>
-                        <outlet property="changeFridgeButton" destination="Mxy-iz-y6e" id="pMp-E4-glP"/>
                         <outlet property="ingredientTableView" destination="tc6-Et-QJu" id="xUi-L8-qyw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1055.7251908396945" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cey-k9-H3A">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B3S-9b-2rq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t5b-J6-8oS">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="t5b-J6-8oS">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.84086233379999997" green="0.91034370659999997" blue="0.96670848129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" red="0.84086233379999997" green="0.91034370659999997" blue="0.96670848129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -82,7 +63,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background8" width="1080" height="2160"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

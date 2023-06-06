@@ -10,11 +10,15 @@ import UIKit
 class FridgeCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundColorView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundImageView.layer.cornerRadius = 10
-        backgroundImageView.layer.masksToBounds = true
+        backgroundColorView.layer.cornerRadius = 10
+        backgroundColorView.layer.masksToBounds = true
+        backgroundColorView.layer.shadowColor = UIColor.black.cgColor
+        backgroundColorView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        backgroundColorView.layer.shadowOpacity = 0.2
+        backgroundColorView.layer.shadowRadius = 4.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -63,8 +63,9 @@ extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
             print("cell 創建失敗")
             return cell!
         }
-        fridgeCell.backgroundColor = UIColor.clear
-        fridgeCell.contentView.backgroundColor = UIColor.clear
+        print("成功創建")
+        // fridgeCell.backgroundColor = UIColor.clear
+        // fridgeCell.contentView.backgroundColor = UIColor.clear
         fridgeCell.nameLabel.text = fridges[indexPath.row].name
         fridgeCell.selectionStyle = .default // 设置选择样式
         return fridgeCell

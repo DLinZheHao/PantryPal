@@ -20,7 +20,8 @@ class CalendarViewController: UIViewController {
     
     var chineseCalendar: Calendar!
     var calendarClickBlock: ((Bool, Int) -> Void)?
-
+    var currentDate: Date?
+    
     private var calendarViewHeightConstraint: NSLayoutConstraint!
     private var calendarBackgroundHeightConstraint: NSLayoutConstraint!
 
@@ -51,7 +52,6 @@ class CalendarViewController: UIViewController {
             }
         }
     }
-    
 }
 // MARK: tableView 控制
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
@@ -84,7 +84,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         // 放入資料
         dataCell.ingredientsNameLabel.text = historyData[indexPath.row].name
         dataCell.numberLabel.text = "#\(indexPath.row + 1)"
-        dataCell.priceLabel.text = "\(historyData[indexPath.row].price)元"
+        dataCell.priceLabel.text = "\(Int(historyData[indexPath.row].price))元"
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy年MM月dd日"
@@ -151,12 +151,21 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Actions
     @objc func refreshHandler() {
+        
         let deadlineTime = DispatchTime.now() + .seconds(1)
         DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: { [weak self] in
             if #available(iOS 10.0, *) {
                 self?.dataTableView.refreshControl?.endRefreshing()
             }
-            self?.dataTableView.reloadData()
+            if self!.currentDate != nil {
+                ingredientsLog(chooseDay: self!.currentDate!) { [weak self] dataArray in
+                    self?.historyData = dataArray
+                    DispatchQueue.main.async {
+                        self?.dataTableView.reloadData()
+                    }
+                }
+                
+            }
         })
     }
 }
@@ -216,6 +225,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        currentDate = date
         ingredientsLog(chooseDay: date) { [weak self] dataArray in
             self?.historyData = dataArray
             DispatchQueue.main.async {
@@ -223,7 +233,6 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
             }
         }
     }
-    
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         return 0
     }

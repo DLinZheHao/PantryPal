@@ -34,6 +34,10 @@
                                     <constraint firstAttribute="height" constant="329" id="tgo-8w-y8v"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKn-t7-3eP">
+                                <rect key="frame" x="0.0" y="418" width="393" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="x4Y-bf-xdw">
                                 <rect key="frame" x="0.0" y="418" width="393" height="400"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,8 +60,10 @@
                             <constraint firstItem="cIv-kP-auf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2Ah-Wl-uL9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="x4Y-bf-xdw" secondAttribute="trailing" id="2ZQ-4x-Pxn"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eyl-be-B4G" secondAttribute="trailing" id="7YG-zJ-1kC"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="QKn-t7-3eP" secondAttribute="bottom" id="8cX-ko-UZC"/>
                             <constraint firstItem="cIv-kP-auf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="BHy-uq-fKJ"/>
                             <constraint firstItem="x4Y-bf-xdw" firstAttribute="top" secondItem="Z7y-Nf-kyM" secondAttribute="bottom" id="DhB-HH-JSK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QKn-t7-3eP" secondAttribute="trailing" id="K6e-UN-ZZo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="x4Y-bf-xdw" secondAttribute="bottom" id="Qas-KY-zDP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="eyl-be-B4G" secondAttribute="bottom" id="RHV-1l-WdM"/>
                             <constraint firstItem="Z7y-Nf-kyM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TTq-Tx-Gzi"/>
@@ -66,6 +72,8 @@
                             <constraint firstItem="x4Y-bf-xdw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fbd-a3-XJP"/>
                             <constraint firstItem="Z7y-Nf-kyM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="kmv-ci-7yz"/>
                             <constraint firstItem="eyl-be-B4G" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pEB-VR-evF"/>
+                            <constraint firstItem="QKn-t7-3eP" firstAttribute="top" secondItem="Z7y-Nf-kyM" secondAttribute="bottom" id="vOH-4B-si9"/>
+                            <constraint firstItem="QKn-t7-3eP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yEB-tq-ru3"/>
                         </constraints>
                     </view>
                     <connections>

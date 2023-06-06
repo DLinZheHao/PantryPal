@@ -19,6 +19,9 @@ class BarcodeScannerViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var topbar: UIView!
+    @IBAction func dismissAction() {
+        self.presentingViewController?.dismiss(animated: true)
+    }
     private let supportedCodeTypes = [ AVMetadataObject.ObjectType.upce,
                                        AVMetadataObject.ObjectType.ean8,
                                        AVMetadataObject.ObjectType.ean13 ]
@@ -60,7 +63,7 @@ class BarcodeScannerViewController: UIViewController {
             // 初始化影片預覽層，並將其作為子層加入 viewPreview 視圖的圖層中
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
             videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            videoPreviewLayer?.frame = view.layer.bounds
+            videoPreviewLayer?.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 200)
             view.layer.addSublayer(videoPreviewLayer!)
             
             DispatchQueue.global(qos: .userInitiated).async {
@@ -70,10 +73,12 @@ class BarcodeScannerViewController: UIViewController {
             qrCodeFrameView = UIView()
 
             if let qrCodeFrameView = qrCodeFrameView {
-                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+                qrCodeFrameView.frame = CGRect(x: 15, y: 200, width: view.frame.width - 30, height: 350)
+                qrCodeFrameView.layer.borderColor = UIColor.blue.cgColor
                 qrCodeFrameView.layer.borderWidth = 2
                 view.addSubview(qrCodeFrameView)
                 view.bringSubviewToFront(qrCodeFrameView)
+                print("有執行")
             }
             
         } catch {
@@ -92,7 +97,13 @@ extension BarcodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         // 檢查  metadataObjects 陣列為非空值，它至少需包含一個物件
         if metadataObjects.count == 0 {
-            qrCodeFrameView?.frame = CGRect.zero
+            
+            let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut)
+            animator.addAnimations {
+                self.qrCodeFrameView?.frame = CGRect.zero
+            }
+            animator.startAnimation()
+            //qrCodeFrameView?.frame = CGRect.zero
             messageLabel.text = "No QR code is detected"
             return
         }
@@ -105,7 +116,12 @@ extension BarcodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             let barcodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             
             guard let barcodeObjectBounds = barcodeObject?.bounds else { return }
-            qrCodeFrameView?.frame = barcodeObjectBounds
+            let animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut)
+            animator.addAnimations {
+                self.qrCodeFrameView?.frame = barcodeObjectBounds
+            }
+            animator.startAnimation()
+            // qrCodeFrameView?.frame = barcodeObjectBounds
             
             if metadataObj.stringValue != nil {
                 captureSession.stopRunning()
@@ -115,14 +131,16 @@ extension BarcodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     sleep(2)
                     simpTradConversion(goodsName) { [weak self] convertName in
                         DispatchQueue.main.async {
-                            self?.presentingViewController?.dismiss(animated: true)
+                            self?.navigationController?.popViewController(animated: true)
+//                            self?.presentingViewController?.dismiss(animated: true)
                             self?.barcodeReturn!(barcode, goodsPrice)
                             self?.ingredientsNameReturn!(convertName)
                         }
                     }
                 } fallCompletion: { [weak self] errorMessage in
                     DispatchQueue.main.async {
-                        self?.presentingViewController?.dismiss(animated: true)
+                        self?.navigationController?.popViewController(animated: true)
+//                        self?.presentingViewController?.dismiss(animated: true)
                         self?.notInDatabase!(errorMessage)
                     }
                 }

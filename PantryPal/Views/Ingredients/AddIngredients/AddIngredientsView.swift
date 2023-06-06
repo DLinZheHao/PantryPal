@@ -26,7 +26,7 @@ class AddIngredientsView: UIView, FSCalendarDelegate {
     @IBOutlet weak var expireTimeTextfield: UITextField!
     @IBOutlet weak var ingredientsImageView: UIImageView!
     @IBOutlet weak var ingredientsDescribe: UITextView!
-    
+    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var takePictureButtin: UIButton!
     @IBOutlet weak var choosePictureButton: UIButton!
     @IBOutlet weak var storeStatusSegment: UISegmentedControl!
@@ -64,7 +64,7 @@ extension AddIngredientsView {
         calendarView.calendar.appearance.weekdayTextColor = .black
         calendarView.calendar.appearance.titleWeekendColor = .lightGray
         calendarView.calendar.appearance.subtitleWeekendColor = .yellow
-        calendarView.calendar.backgroundColor = UIColor(hex: "#87CEEB", alpha: 0.8)
+        calendarView.calendar.backgroundColor = UIColor(hex: "DCDCDC")
         calendarView.calendar.appearance.headerTitleColor = .black
         calendarView.calendar.appearance.headerDateFormat = "yyyy年MM月"
         
@@ -88,6 +88,16 @@ extension AddIngredientsView {
     }
     // MARK: 送出資料
     @IBAction private func sendData() {
+        // 获取TabBarController的引用
+        if let tabBarController = ingredientsController?.tabBarController {
+
+            // 遍历所有选项卡并開啟它们
+            if let tabItems = tabBarController.tabBar.items {
+                for tabItem in tabItems {
+                    tabItem.isEnabled = true
+                }
+            }
+        }
         let priceText = priceTextfield.text
         let price = Double(priceText ?? "0")
         let storeStatus = storeStatusSegment.selectedSegmentIndex
@@ -158,6 +168,17 @@ extension AddIngredientsView {
         removeFromSuperview()
     }
     @IBAction func closeView() {
+        // 获取TabBarController的引用
+        if let tabBarController = ingredientsController?.tabBarController {
+
+            // 遍历所有选项卡并開啟它们
+            if let tabItems = tabBarController.tabBar.items {
+                for tabItem in tabItems {
+                    tabItem.isEnabled = true
+                }
+            }
+        }
+        
         let targetView = findSubview(ofType: BlackBackgroundView.self, in: self.superview!)
         guard let blackBackgroundView = targetView else {
             removeFromSuperview()

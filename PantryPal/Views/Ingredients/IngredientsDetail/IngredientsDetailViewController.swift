@@ -22,6 +22,8 @@ class IngredientsDetailViewController: UIViewController {
     var takingPicture: UIImagePickerController!
     var chineseCalendar: Calendar!
     
+    @IBOutlet weak var choosePictureButton: UIButton!
+    @IBOutlet weak var takePictureButton: UIButton!
     @IBOutlet weak var ingredientsImage: UIImageView!
     @IBOutlet weak var ingredientsName: UITextField!
     @IBOutlet weak var ingredientsPrice: UITextField!
@@ -31,7 +33,6 @@ class IngredientsDetailViewController: UIViewController {
     @IBOutlet weak var ingredientsStoreStatus: UISegmentedControl!
     @IBOutlet weak var ingredientsNotification: UISegmentedControl!
     @IBOutlet weak var sendButton: UIButton!
-    
     @IBOutlet weak var dismissImageView: UIImageView!
     @IBAction private func chooseCalendar() {
         guard let calendarView = UINib(nibName: "Calendar", bundle: nil).instantiate(withOwner: self, options: nil).first as? CalendarView else {
@@ -59,11 +60,15 @@ class IngredientsDetailViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarController?.tabBar.isHidden = true
+        // 设置默认状态下的字体颜色
+        ingredientsStoreStatus.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        
+        // 设置选中状态下的字体颜色
+        ingredientsStoreStatus.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.init(hex: "487A71")], for: .selected)
+        setUp()
         setDismissAction() 
         setIngredientsData()
     }
-    
 }
 // MARK: 畫面設定
 extension IngredientsDetailViewController {
@@ -143,7 +148,7 @@ extension IngredientsDetailViewController {
         getImageGo(type: 2)
     }
     
-    @IBAction  func takePicture(_ sender: UIButton) {
+    @IBAction func takePicture(_ sender: UIButton) {
         getImageGo(type: 1)
     }
 }
@@ -352,5 +357,18 @@ extension IngredientsDetailViewController {
     }
     @objc func imageViewTapped() {
         self.presentingViewController?.dismiss(animated: true)
+    }
+    private func setUp() {
+        tabBarController?.tabBar.isHidden = true
+        ingredientsImage.layer.cornerRadius = 10.0
+        ingredientsImage.layer.masksToBounds = true
+        choosePictureButton.layer.cornerRadius = 10.0
+        choosePictureButton.layer.masksToBounds = true
+        takePictureButton.layer.cornerRadius = 10.0
+        takePictureButton.layer.masksToBounds = true
+        ingredientsDescription.layer.cornerRadius = 10.0
+        ingredientsDescription.layer.masksToBounds = true
+        sendButton.layer.cornerRadius = 10.0
+        sendButton.layer.masksToBounds = true
     }
 }

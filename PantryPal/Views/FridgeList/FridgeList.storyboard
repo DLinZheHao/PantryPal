@@ -17,18 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background6" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-h0-pno">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CGk-yN-EdC" customClass="FridgeListTableView" customModule="PantryPal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="109" width="393" height="709"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dismiss" translatesAutoresizingMaskIntoConstraints="NO" id="FPs-wo-g97">
-                                <rect key="frame" x="20" y="70" width="25" height="25"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outline_keyboard_arrow_left_black_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="FPs-wo-g97">
+                                <rect key="frame" x="11" y="59" width="40" height="47"/>
+                                <color key="tintColor" red="0.2823529541" green="0.47843140360000003" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="N1g-3F-0P7"/>
-                                    <constraint firstAttribute="height" constant="25" id="a7j-PQ-cs8"/>
+                                    <constraint firstAttribute="width" constant="40" id="N1g-3F-0P7"/>
+                                    <constraint firstAttribute="height" constant="47" id="a7j-PQ-cs8"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -36,15 +34,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CGk-yN-EdC" secondAttribute="trailing" id="0ay-pZ-0CP"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gLi-h0-pno" secondAttribute="trailing" id="2sM-oa-ObA"/>
                             <constraint firstItem="CGk-yN-EdC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="BVp-mV-YnB"/>
-                            <constraint firstAttribute="bottom" secondItem="gLi-h0-pno" secondAttribute="bottom" id="GGo-B2-gCs"/>
                             <constraint firstItem="CGk-yN-EdC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="b6K-UE-jmd"/>
-                            <constraint firstItem="gLi-h0-pno" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="dtf-bL-2X9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="CGk-yN-EdC" secondAttribute="bottom" id="oDZ-bv-NMt"/>
-                            <constraint firstItem="gLi-h0-pno" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pJF-c8-bpR"/>
-                            <constraint firstItem="FPs-wo-g97" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="poZ-r5-Eqh"/>
-                            <constraint firstItem="FPs-wo-g97" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="70" id="vNL-mB-cb9"/>
+                            <constraint firstItem="FPs-wo-g97" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="11" id="poZ-r5-Eqh"/>
+                            <constraint firstItem="FPs-wo-g97" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="59" id="vNL-mB-cb9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KFw-sg-gWs">
@@ -74,8 +68,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background6" width="1080" height="2160"/>
-        <image name="dismiss" width="366" height="366"/>
+        <image name="outline_keyboard_arrow_left_black_48pt" width="48" height="48"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

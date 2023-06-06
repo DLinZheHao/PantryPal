@@ -23,6 +23,15 @@ func isSameDay(timeInterval: TimeInterval, date: Date) -> Bool {
         referenceComponents.month == dateComponents.month &&
         referenceComponents.day == dateComponents.day
 }
+func isDateToday(_ date: Date) -> Bool {
+    let calendar = Calendar.current
+    let today = Date()
+    
+    let components = calendar.dateComponents([.year, .month, .day], from: date)
+    let todayComponents = calendar.dateComponents([.year, .month, .day], from: today)
+    
+    return components.year == todayComponents.year && components.month == todayComponents.month && components.day == todayComponents.day
+}
 
 
 //func isSameDay(timeInterval: TimeInterval, referenceDate: Date) -> Bool {
