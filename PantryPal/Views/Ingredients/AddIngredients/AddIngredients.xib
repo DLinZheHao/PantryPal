@@ -99,7 +99,7 @@
                         <constraint firstAttribute="width" constant="20.670000000000002" id="Fv8-c2-cmS"/>
                         <constraint firstAttribute="height" constant="29" id="Luo-SZ-U2y"/>
                     </constraints>
-                    <color key="tintColor" red="0.2823529541" green="0.47843140360000003" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" red="0.28235294117647058" green="0.47843137254901957" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="calendar" catalog="system"/>
                     <connections>

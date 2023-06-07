@@ -54,6 +54,11 @@
 		052C902B2A29B20500671811 /* isSameDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C902A2A29B20500671811 /* isSameDay.swift */; };
 		052C902D2A29B2C000671811 /* IngredientLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C902C2A29B2C000671811 /* IngredientLog.swift */; };
 		053525EC2A2EFBA500FE05AE /* changeFridgeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053525EB2A2EFBA500FE05AE /* changeFridgeName.swift */; };
+		053525F02A2F094000FE05AE /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 053525EF2A2F094000FE05AE /* MessageKit */; };
+		053525F22A2F0A3300FE05AE /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053525F12A2F0A3300FE05AE /* Chat.storyboard */; };
+		053525F42A2F0A4F00FE05AE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053525F32A2F0A4F00FE05AE /* ChatViewController.swift */; };
+		053743402A300B6F00722FF2 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537433F2A300B6F00722FF2 /* InputView.swift */; };
+		053743422A301A1800722FF2 /* SlackInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053743412A301A1800722FF2 /* SlackInputBar.swift */; };
 		055346142A2D6A1900D0C544 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055346132A2D6A1900D0C544 /* UIColor+Extension.swift */; };
 		0553461B2A2EB77600D0C544 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553461A2A2EB77600D0C544 /* HeaderView.swift */; };
 		0553461D2A2EB79600D0C544 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0553461C2A2EB79600D0C544 /* HeaderView.xib */; };
@@ -196,6 +201,10 @@
 		052C902A2A29B20500671811 /* isSameDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isSameDay.swift; sourceTree = "<group>"; };
 		052C902C2A29B2C000671811 /* IngredientLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientLog.swift; sourceTree = "<group>"; };
 		053525EB2A2EFBA500FE05AE /* changeFridgeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeFridgeName.swift; sourceTree = "<group>"; };
+		053525F12A2F0A3300FE05AE /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		053525F32A2F0A4F00FE05AE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0537433F2A300B6F00722FF2 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		053743412A301A1800722FF2 /* SlackInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackInputBar.swift; sourceTree = "<group>"; };
 		055346132A2D6A1900D0C544 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0553461A2A2EB77600D0C544 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0553461C2A2EB79600D0C544 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -287,6 +296,7 @@
 				05ED1AA72A1C93400023A13E /* FirebasePerformance in Frameworks */,
 				05ED1A9D2A1C93400023A13E /* FirebaseInAppMessaging-Beta in Frameworks */,
 				05ED1A9B2A1C93400023A13E /* FirebaseFunctionsCombine-Community in Frameworks */,
+				053525F02A2F094000FE05AE /* MessageKit in Frameworks */,
 				05ED1A8B2A1C93400023A13E /* FirebaseCrashlytics in Frameworks */,
 				05ED1AA12A1C93400023A13E /* FirebaseInstallations in Frameworks */,
 				05ED1AA92A1C93400023A13E /* FirebaseRemoteConfig in Frameworks */,
@@ -489,6 +499,25 @@
 				052C902C2A29B2C000671811 /* IngredientLog.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		053525ED2A2F07BE00FE05AE /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				0537433E2A300B4A00722FF2 /* inputView */,
+				053525F12A2F0A3300FE05AE /* Chat.storyboard */,
+				053525F32A2F0A4F00FE05AE /* ChatViewController.swift */,
+				053743412A301A1800722FF2 /* SlackInputBar.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		0537433E2A300B4A00722FF2 /* inputView */ = {
+			isa = PBXGroup;
+			children = (
+				0537433F2A300B6F00722FF2 /* InputView.swift */,
+			);
+			path = inputView;
 			sourceTree = "<group>";
 		};
 		055346152A2EB46E00D0C544 /* HeaderCell */ = {
@@ -702,6 +731,7 @@
 		05ED1AB22A1CA0E30023A13E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				053525ED2A2F07BE00FE05AE /* Chat */,
 				0554E01E2A28597200956B04 /* Calendar */,
 				0554E0022A2723D000956B04 /* Join */,
 				0554DFC72A25C5B700956B04 /* TeamLink */,
@@ -848,6 +878,7 @@
 				05ED1AAA2A1C93400023A13E /* FirebaseRemoteConfigSwift */,
 				05ED1AAC2A1C93400023A13E /* FirebaseStorage */,
 				05ED1AAE2A1C93400023A13E /* FirebaseStorageCombine-Community */,
+				053525EF2A2F094000FE05AE /* MessageKit */,
 			);
 			productName = PantryPal;
 			productReference = 05ED19642A1766590023A13E /* PantryPal.app */;
@@ -879,6 +910,7 @@
 			mainGroup = 05ED195B2A1766590023A13E;
 			packageReferences = (
 				05ED1A792A1C93400023A13E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				053525EE2A2F094000FE05AE /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			productRefGroup = 05ED19652A1766590023A13E /* Products */;
 			projectDirPath = "";
@@ -912,6 +944,7 @@
 				051AC6D12A1F98C200B23C63 /* Calendar.xib in Resources */,
 				051AC6FB2A2210CA00B23C63 /* IngredientsTableViewCell.xib in Resources */,
 				05ED19742A17665A0023A13E /* Assets.xcassets in Resources */,
+				053525F22A2F0A3300FE05AE /* Chat.storyboard in Resources */,
 				05A643A02A2B926400D37AF6 /* loadding.json in Resources */,
 				0554DFA52A2429A900956B04 /* IngredientsDetail.storyboard in Resources */,
 				0554DFC22A259BFE00956B04 /* MemberCollectionViewCell.xib in Resources */,
@@ -1016,7 +1049,9 @@
 				05ED1ABE2A1CF4A40023A13E /* UserDataInit.swift in Sources */,
 				0554DFB82A2599B700956B04 /* MemberViewController.swift in Sources */,
 				0554DFFA2A26D5A100956B04 /* GenerateQRCode.swift in Sources */,
+				053743422A301A1800722FF2 /* SlackInputBar.swift in Sources */,
 				0554E0202A285AF100956B04 /* CalendarViewController.swift in Sources */,
+				053525F42A2F0A4F00FE05AE /* ChatViewController.swift in Sources */,
 				0554E00C2A27426600956B04 /* InviteData.swift in Sources */,
 				051AC6E52A2076B600B23C63 /* FindSubview.swift in Sources */,
 				055346142A2D6A1900D0C544 /* UIColor+Extension.swift in Sources */,
@@ -1027,6 +1062,7 @@
 				051AC7272A2356DD00B23C63 /* DeleteIngredients.swift in Sources */,
 				051AC6ED2A21C27800B23C63 /* GetInitialPictureURL.swift in Sources */,
 				05ED1AB72A1CA2F70023A13E /* RegisterViewController.swift in Sources */,
+				053743402A300B6F00722FF2 /* InputView.swift in Sources */,
 				05A643692A2B5F0100D37AF6 /* BlackBackgroundView.swift in Sources */,
 				051AC6A72A1EE1F500B23C63 /* FridgeTabBarController.swift in Sources */,
 				051AC6982A1DD98500B23C63 /* FridgeListTableView.swift in Sources */,
@@ -1294,6 +1330,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		053525EE2A2F094000FE05AE /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		05ED1A792A1C93400023A13E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1305,6 +1349,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		053525EF2A2F094000FE05AE /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 053525EE2A2F094000FE05AE /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
 		05ED1A7A2A1C93400023A13E /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 05ED1A792A1C93400023A13E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

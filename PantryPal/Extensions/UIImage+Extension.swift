@@ -29,6 +29,10 @@ enum ImageAsset: String {
     case outline_people_black_36pt
     case outline_change_circle_black_36pt
     case outline_add_box_black_36pt
+    case chat_not_select
+    case chat_select
+    case outline_send_black_48pt
+    case outline_send_black_36pt
 }
 // swiftlint:enable identifier_name
 
