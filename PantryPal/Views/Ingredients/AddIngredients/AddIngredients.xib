@@ -137,7 +137,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BB7-DO-nWO">
                     <rect key="frame" x="85" y="199" width="45" height="25"/>
-                    <color key="backgroundColor" red="0.2823529541" green="0.47843140360000003" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.28235294117647058" green="0.47843137254901957" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="45" id="ucQ-Dq-gap"/>
                     </constraints>

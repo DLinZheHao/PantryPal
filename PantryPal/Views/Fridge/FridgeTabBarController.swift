@@ -9,7 +9,7 @@ import UIKit
 
 class FridgeTabBarController: UITabBarController {
     var fridgeId: String?
-    private let tabs: [Tab] = [.ingredients, .teamLink, .join, .calendarPage, .chat]
+    private let tabs: [Tab] = [.ingredients, .teamLink, .join, .calendarPage]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +25,7 @@ extension FridgeTabBarController {
         case teamLink
         case join
         case calendarPage
-        case chat
+
         
         func makeViewController() -> UIViewController {
             let controller: UIViewController
@@ -42,9 +42,6 @@ extension FridgeTabBarController {
             case .calendarPage:
                 controller = UIStoryboard.calendarPage.instantiateInitialViewController()!
                 controller.tabBarItem = makeTabBarItem("日曆")
-            case .chat:
-                controller = UIStoryboard.chat.instantiateInitialViewController()!
-                controller.tabBarItem = makeTabBarItem("聊天")
             }
             
             // controller.tabBarItem.imageInsets = UIEdgeInsets(top: 6.0, left: 0.0, bottom: -6.0, right: 0.0)
@@ -65,8 +62,6 @@ extension FridgeTabBarController {
                 return .asset(.join_not_select)!.withRenderingMode(.alwaysOriginal)
             case .calendarPage:
                 return .asset(.calendar_not_select)!.withRenderingMode(.alwaysOriginal)
-            case .chat:
-                return .asset(.chat_not_select)!.withRenderingMode(.alwaysOriginal)
             }
         }
 
@@ -80,8 +75,6 @@ extension FridgeTabBarController {
                 return .asset(.join_select)!.withRenderingMode(.alwaysOriginal)
             case .calendarPage:
                 return .asset(.calendar_select)!.withRenderingMode(.alwaysOriginal)
-            case .chat:
-                return .asset(.chat_select)!.withRenderingMode(.alwaysOriginal)
             }
         }
         

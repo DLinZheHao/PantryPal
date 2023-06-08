@@ -32,35 +32,3 @@ func isDateToday(_ date: Date) -> Bool {
     
     return components.year == todayComponents.year && components.month == todayComponents.month && components.day == todayComponents.day
 }
-
-
-//func isSameDay(timeInterval: TimeInterval, referenceDate: Date) -> Bool {
-//    let date = Date(timeIntervalSince1970: timeInterval)
-//
-//    let dateFormatter = DateFormatter()
-//    dateFormatter.dateFormat = "yyyy年MM月dd日"
-//
-//    let dateString = dateFormatter.string(from: date)
-//    let referenceDateString = dateFormatter.string(from: referenceDate)
-//
-//    print("\(dateString) 與 \(referenceDateString)")
-//    return dateString == referenceDateString
-//}
-//func isSameDay(timeInterval: TimeInterval, referenceDate: Date) -> Bool {
-//    let date = Date(timeIntervalSince1970: timeInterval)
-//
-//    let calendar = Calendar.current
-//    return calendar.isDate(date, inSameDayAs: referenceDate)
-//}
-
-//func isSameDay(timeInterval: TimeInterval, referenceDate: Date) -> Bool {
-//    let date = Date(timeIntervalSince1970: timeInterval)
-//
-//    let calendar = Calendar.current
-//    let components = calendar.dateComponents([.year, .month, .day], from: date)
-//    let referenceComponents = calendar.dateComponents([.year, .month, .day], from: referenceDate)
-//
-//    return components.year == referenceComponents.year &&
-//           components.month == referenceComponents.month &&
-//           components.day == referenceComponents.day
-//}

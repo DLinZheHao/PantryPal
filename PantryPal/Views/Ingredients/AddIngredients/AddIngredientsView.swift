@@ -192,4 +192,3 @@ extension AddIngredientsView {
         isEnable = !isEnable
     }
 }
-

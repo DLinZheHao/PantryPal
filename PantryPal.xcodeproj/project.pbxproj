@@ -59,6 +59,9 @@
 		053525F42A2F0A4F00FE05AE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053525F32A2F0A4F00FE05AE /* ChatViewController.swift */; };
 		053743402A300B6F00722FF2 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537433F2A300B6F00722FF2 /* InputView.swift */; };
 		053743422A301A1800722FF2 /* SlackInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053743412A301A1800722FF2 /* SlackInputBar.swift */; };
+		053743472A306D7500722FF2 /* CreateNewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053743462A306D7500722FF2 /* CreateNewMessage.swift */; };
+		053743492A30792B00722FF2 /* GetChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053743482A30792B00722FF2 /* GetChatMessage.swift */; };
+		0537434C2A307AFA00722FF2 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537434B2A307AFA00722FF2 /* MessageData.swift */; };
 		055346142A2D6A1900D0C544 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055346132A2D6A1900D0C544 /* UIColor+Extension.swift */; };
 		0553461B2A2EB77600D0C544 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553461A2A2EB77600D0C544 /* HeaderView.swift */; };
 		0553461D2A2EB79600D0C544 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0553461C2A2EB79600D0C544 /* HeaderView.xib */; };
@@ -205,6 +208,9 @@
 		053525F32A2F0A4F00FE05AE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		0537433F2A300B6F00722FF2 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		053743412A301A1800722FF2 /* SlackInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackInputBar.swift; sourceTree = "<group>"; };
+		053743462A306D7500722FF2 /* CreateNewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewMessage.swift; sourceTree = "<group>"; };
+		053743482A30792B00722FF2 /* GetChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChatMessage.swift; sourceTree = "<group>"; };
+		0537434B2A307AFA00722FF2 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
 		055346132A2D6A1900D0C544 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0553461A2A2EB77600D0C544 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0553461C2A2EB79600D0C544 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -326,6 +332,7 @@
 		051AC6992A1DDB0200B23C63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0537434A2A307AE800722FF2 /* Chat */,
 				0554DFF82A26D58500956B04 /* QRcode */,
 				051AC6D22A202EAB00B23C63 /* Barcode */,
 				051AC6BF2A1F35EB00B23C63 /* Ingredients */,
@@ -439,9 +446,10 @@
 		051AC6F02A21F46A00B23C63 /* firebase */ = {
 			isa = PBXGroup;
 			children = (
+				053743452A306D4500722FF2 /* Chat */,
+				053743432A306CFF00722FF2 /* Register */,
 				0554DFF52A26C54100956B04 /* fridgeMember */,
 				051AC6F12A21F48C00B23C63 /* fridge */,
-				05ED1ABD2A1CF4A40023A13E /* UserDataInit.swift */,
 			);
 			path = firebase;
 			sourceTree = "<group>";
@@ -518,6 +526,46 @@
 				0537433F2A300B6F00722FF2 /* InputView.swift */,
 			);
 			path = inputView;
+			sourceTree = "<group>";
+		};
+		053743432A306CFF00722FF2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				05ED1ABD2A1CF4A40023A13E /* UserDataInit.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		053743442A306D1F00722FF2 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				05ED1AC32A1CFAD30023A13E /* CheckEmailVerification.swift */,
+				05ED1AC92A1D8DEF0023A13E /* Alert.swift */,
+				051AC6E02A204F1300B23C63 /* SimpTradConversion.swift */,
+				051AC6E42A2076B600B23C63 /* FindSubview.swift */,
+				051AC6E62A20AB1800B23C63 /* UploadPictureToFirebase.swift */,
+				051AC6EC2A21C27800B23C63 /* GetInitialPictureURL.swift */,
+				051AC6EE2A21F45B00B23C63 /* UNUserNotificationCenter.swift */,
+				051AC6FC2A22E01300B23C63 /* GetTimeLeft.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		053743452A306D4500722FF2 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				053743462A306D7500722FF2 /* CreateNewMessage.swift */,
+				053743482A30792B00722FF2 /* GetChatMessage.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		0537434A2A307AE800722FF2 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				0537434B2A307AFA00722FF2 /* MessageData.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		055346152A2EB46E00D0C544 /* HeaderCell */ = {
@@ -774,17 +822,10 @@
 		05ED1ABC2A1CF48A0023A13E /* Methods */ = {
 			isa = PBXGroup;
 			children = (
+				053743442A306D1F00722FF2 /* Basic */,
 				0553461E2A2EBFBC00D0C544 /* Sorted */,
 				052C90292A29B1AF00671811 /* Calendar */,
 				051AC6F02A21F46A00B23C63 /* firebase */,
-				05ED1AC32A1CFAD30023A13E /* CheckEmailVerification.swift */,
-				05ED1AC92A1D8DEF0023A13E /* Alert.swift */,
-				051AC6E02A204F1300B23C63 /* SimpTradConversion.swift */,
-				051AC6E42A2076B600B23C63 /* FindSubview.swift */,
-				051AC6E62A20AB1800B23C63 /* UploadPictureToFirebase.swift */,
-				051AC6EC2A21C27800B23C63 /* GetInitialPictureURL.swift */,
-				051AC6EE2A21F45B00B23C63 /* UNUserNotificationCenter.swift */,
-				051AC6FC2A22E01300B23C63 /* GetTimeLeft.swift */,
 			);
 			path = Methods;
 			sourceTree = "<group>";
@@ -1079,6 +1120,7 @@
 				051AC6962A1DAA6C00B23C63 /* CreatNewFridge.swift in Sources */,
 				0554E0162A2780F800956B04 /* QRCodeScannerViewController.swift in Sources */,
 				05ED1AD62A1D9E2F0023A13E /* UIStoryboard+Extension.swift in Sources */,
+				0537434C2A307AFA00722FF2 /* MessageData.swift in Sources */,
 				05ED1AC42A1CFAD30023A13E /* CheckEmailVerification.swift in Sources */,
 				0554DFB62A2598E700956B04 /* UICollectionView+Extension.swift in Sources */,
 				0554DFA72A2429DF00956B04 /* IngredientsDetailViewController.swift in Sources */,
@@ -1106,9 +1148,11 @@
 				0554DFEE2A25E66B00956B04 /* TeamLinkViewController.swift in Sources */,
 				051AC68F2A1DA51600B23C63 /* FridgeCell.swift in Sources */,
 				051AC7252A233C5A00B23C63 /* ChooseFridge.swift in Sources */,
+				053743472A306D7500722FF2 /* CreateNewMessage.swift in Sources */,
 				05ED196A2A1766590023A13E /* SceneDelegate.swift in Sources */,
 				051AC6EF2A21F45B00B23C63 /* UNUserNotificationCenter.swift in Sources */,
 				0554E00A2A27419800956B04 /* GetAllInvite.swift in Sources */,
+				053743492A30792B00722FF2 /* GetChatMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

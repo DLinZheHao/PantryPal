@@ -30,7 +30,9 @@
                             <constraint firstItem="tc6-Et-QJu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="osm-YN-FB4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="冰箱名稱" id="6we-2F-ryD"/>
+                    <navigationItem key="navigationItem" title="冰箱名稱" id="6we-2F-ryD">
+                        <barButtonItem key="backBarButtonItem" title=" " id="jnI-zS-qbs"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="ingredientTableView" destination="tc6-Et-QJu" id="xUi-L8-qyw"/>
                     </connections>
@@ -48,6 +50,7 @@
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.84086233379999997" green="0.91034370659999997" blue="0.96670848129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.2823529541" green="0.47843140360000003" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <navigationBarAppearance key="scrollEdgeAppearance">
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </navigationBarAppearance>

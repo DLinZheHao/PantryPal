@@ -42,11 +42,7 @@ class IngredientsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let navigationBar = navigationController?.navigationBar
-        let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.shadowColor = .clear
-        navigationBar?.scrollEdgeAppearance = navigationBarAppearance
-        navigationBar?.standardAppearance = navigationBarAppearance
+        navigationSetting()
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         layoutFAB()
         ingredientTableView.lk_registerCellWithNib(identifier: String(describing: IngredientsTableViewCell.self), bundle: nil)
@@ -66,6 +62,25 @@ class IngredientsViewController: UIViewController {
         header?.orderButton.setTitle("名稱排序▾", for: .normal)
         getData()
     }
+    func navigationSetting() {
+        let navigationBar = navigationController?.navigationBar
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.shadowColor = .clear
+        navigationBar?.scrollEdgeAppearance = navigationBarAppearance
+        navigationBar?.standardAppearance = navigationBarAppearance
+        // 创建一个按钮并设置图像
+        let buttonImage = UIImage.asset(.chat_select)!.withRenderingMode(.alwaysOriginal) // 替换为你自己的图像名称
+        let button = UIBarButtonItem(image: buttonImage, style: .plain, target: self, action: #selector(chatButtonTapped))
+
+        // 将按钮添加到导航栏的右侧
+        navigationItem.rightBarButtonItem = button
+    }
+    @objc func chatButtonTapped() {
+        let nextVC = UIStoryboard.chat.instantiateInitialViewController()!
+
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
 }
 // MARK: - Floaty
 extension IngredientsViewController {
