@@ -15,4 +15,5 @@ struct MessageData {
     let senderID: String
     let textContent: String
     let url: String
+    let isImageLoad: Bool
 }

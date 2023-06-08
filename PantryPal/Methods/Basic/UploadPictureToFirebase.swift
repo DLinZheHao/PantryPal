@@ -21,8 +21,9 @@ func uploadPictureToFirebase(_ selectedFileURL: URL?, completion: @escaping (URL
         DispatchQueue.global().async {
             do {
                 let fileData = try Data(contentsOf: selectedFileURL)
-                
-                _ = photoRef.putData(fileData, metadata: nil) { metadata, error in
+                let image = UIImage(data: fileData)
+                let compressedImageData = image!.jpegData(compressionQuality: 0.0)
+                _ = photoRef.putData(compressedImageData!, metadata: nil) { metadata, error in
                     if let error = error {
                         // 上傳失敗
                         DispatchQueue.main.async {
@@ -62,5 +63,3 @@ func uploadPictureToFirebase(_ selectedFileURL: URL?, completion: @escaping (URL
         }
     }
 }
-
-

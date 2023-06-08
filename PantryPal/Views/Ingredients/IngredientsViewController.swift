@@ -49,9 +49,8 @@ class IngredientsViewController: UIViewController {
         ingredientTableView.lk_registerHeaderWithNib(identifier: String(describing: HeaderView.self), bundle: nil)
         ingredientTableView.sectionHeaderTopPadding = 0
         
-        let header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(refreshAction))
-        header.isAutomaticallyChangeAlpha = true
-        self.ingredientTableView.mj_header = header
+        let newHeader = MJRefreshStateHeader(refreshingTarget: self, refreshingAction: #selector(refreshAction))
+        self.ingredientTableView.mj_header = newHeader
         
         getData()
     }
@@ -69,11 +68,14 @@ class IngredientsViewController: UIViewController {
         navigationBar?.scrollEdgeAppearance = navigationBarAppearance
         navigationBar?.standardAppearance = navigationBarAppearance
         // 创建一个按钮并设置图像
-        let buttonImage = UIImage.asset(.chat_select)!.withRenderingMode(.alwaysOriginal) // 替换为你自己的图像名称
+        let buttonImage = UIImage.asset(.small_chat)!.withRenderingMode(.alwaysOriginal) // 替换为你自己的图像名称
         let button = UIBarButtonItem(image: buttonImage, style: .plain, target: self, action: #selector(chatButtonTapped))
 
+        let refreshButtonImage = UIImage.asset(.refresh)!.withRenderingMode(.alwaysOriginal) // 替换为你自己的图像名称
+        let refreshButton = UIBarButtonItem(image: refreshButtonImage, style: .plain, target: self, action: #selector(refreshAction))
         // 将按钮添加到导航栏的右侧
-        navigationItem.rightBarButtonItem = button
+        navigationItem.rightBarButtonItems = [button, refreshButton]
+
     }
     @objc func chatButtonTapped() {
         let nextVC = UIStoryboard.chat.instantiateInitialViewController()!
@@ -564,7 +566,6 @@ extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigati
             getImageCompletionHandler!(originalImage)
             if let imageURL = info[.imageURL] as? URL {
                 selectedFileURL = imageURL
-                //print("相冊：\(imageURL)")
                 let addIngredientsView = findSubview(ofType: AddIngredientsView.self, in: (self.view)!)
                 addIngredientsView?.imageUrl = imageURL.absoluteString
             } else {
@@ -573,7 +574,6 @@ extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigati
                     self?.selectedFileURL = photoUrl!
                     let addIngredientsView = findSubview(ofType: AddIngredientsView.self, in: self!.view )
                     addIngredientsView?.imageUrl = photoUrl!.absoluteString
-                    //print("拍照：\(photoUrl)")
                 }
             }
         } else if let editedImage = info[.editedImage] as? UIImage {
@@ -633,9 +633,9 @@ extension IngredientsViewController {
     @objc private func refreshAction() {
         self.ingredientTableView.mj_header?.beginRefreshing()
         getData()
-        DispatchQueue.main.async {
-            self.ingredientTableView.mj_header?.endRefreshing()
-        }
+//        DispatchQueue.main.async {
+//            self.ingredientTableView.mj_header?.endRefreshing()
+//        }
     }
 }
 // MARK: 動作簡化
@@ -653,6 +653,7 @@ extension IngredientsViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 self?.view.removeAllLottieViews()
                 self?.ingredientTableView.reloadData()
+                self?.ingredientTableView.mj_header?.endRefreshing()
             }
         } fallCompletion: { [weak self] in
             self?.ingredientsData = []

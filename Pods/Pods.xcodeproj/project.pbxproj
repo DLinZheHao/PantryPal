@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = SwiftLint;
+			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
@@ -598,7 +599,7 @@
 		4EB5D0834FE311A6CDA7FD78EE40E619 /* StringExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Sources/Private/Utility/Extensions/StringExtensions.swift; sourceTree = "<group>"; };
 		4EBC573B229E1A00E76D44056F301631 /* Pods-PantryPal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PantryPal-umbrella.h"; sourceTree = "<group>"; };
 		4EFD0D84362A1C3A29B8A333A3D3D772 /* RoundedCorners.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RoundedCorners.swift; path = Sources/Private/Model/ShapeItems/RoundedCorners.swift; sourceTree = "<group>"; };
-		513C147D59A7B665B56C3A7A6CDEEA84 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = Sources/Private/Model/DotLottie/ZipFoundation/README.md; sourceTree = "<group>"; };
+		513C147D59A7B665B56C3A7A6CDEEA84 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Sources/Private/Model/DotLottie/ZipFoundation/README.md; sourceTree = "<group>"; };
 		516399B454EBC24F062227D56E2972BE /* MJRefreshAutoStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoStateFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m; sourceTree = "<group>"; };
 		518021D3E204E58865CA8F10B6E467CA /* CAAnimation+TimingConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAAnimation+TimingConfiguration.swift"; path = "Sources/Private/CoreAnimation/Animations/CAAnimation+TimingConfiguration.swift"; sourceTree = "<group>"; };
 		51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "lottie-ios"; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -719,7 +720,7 @@
 		9B7CCE742EF0A94E985F15F828F9B34D /* MJRefreshStateTrailer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateTrailer.h; path = MJRefresh/Custom/Trailer/MJRefreshStateTrailer.h; sourceTree = "<group>"; };
 		9BFF95A8EDB963A91A763C90D1783D9D /* KeyframeInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeInterpolator.swift; path = Sources/Private/Utility/Interpolatable/KeyframeInterpolator.swift; sourceTree = "<group>"; };
 		9C2E4A30A827020BA6F2613997597320 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJExtension.h"; path = "MJRefresh/UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EC185663A6457B4BB4A71634E56094C /* CALayer+fillBounds.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+fillBounds.swift"; path = "Sources/Private/CoreAnimation/Extensions/CALayer+fillBounds.swift"; sourceTree = "<group>"; };
 		A0C8E428D980D3C9293A3C2BF740F0CD /* JTAppleCalendar */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JTAppleCalendar; path = JTAppleCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1999E73ACDB1B7E9562D30AA51B51D0 /* JTAppleCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTAppleCalendar.release.xcconfig; sourceTree = "<group>"; };
@@ -826,7 +827,7 @@
 		E36B2B8BBE934AFA2E82C3D271463981 /* FSCalendarCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSCalendarCalculator.h; path = FSCalendar/FSCalendarCalculator.h; sourceTree = "<group>"; };
 		E384B2A092F14F5E80A94B9B19CFF0A2 /* Floaty-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Floaty-umbrella.h"; sourceTree = "<group>"; };
 		E4908790CCBC9025B78C9D7C4FA2FF46 /* ShapeTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeTransform.swift; path = Sources/Private/Model/ShapeItems/ShapeTransform.swift; sourceTree = "<group>"; };
-		E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MJRefresh; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E91E8EE5CA544971B48FD663579BCF /* Rectangle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rectangle.swift; path = Sources/Private/Model/ShapeItems/Rectangle.swift; sourceTree = "<group>"; };
 		E5EF32692156854AFDB3011E4B8D76C2 /* GlobalFunctionsAndExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlobalFunctionsAndExtensions.swift; path = Sources/GlobalFunctionsAndExtensions.swift; sourceTree = "<group>"; };
 		E84BBD2BF787589C55DC622EC951E0C2 /* Interpolatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interpolatable.swift; path = Sources/Public/Keyframes/Interpolatable.swift; sourceTree = "<group>"; };
@@ -1181,7 +1182,6 @@
 				D33819866E922F2227E7F798DDCD8696 /* VisibilityAnimation.swift */,
 				52FF753594BBEB7FF7F248BE742189A8 /* Support Files */,
 			);
-			name = "lottie-ios";
 			path = "lottie-ios";
 			sourceTree = "<group>";
 		};
@@ -1213,7 +1213,6 @@
 				EBB180A0F3B2CAFC77EEDD3372221867 /* IQUIViewController+Additions.swift */,
 				AEB3EBA3F2D735F6BFD260AE898EDA7B /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -1253,7 +1252,6 @@
 				D075B2FD916A3AF4AFBBC531895B47BC /* FSCalendarWeekdayView.m */,
 				2B6713008A9AE40D3674834D573BD17E /* Support Files */,
 			);
-			name = FSCalendar;
 			path = FSCalendar;
 			sourceTree = "<group>";
 		};
@@ -1312,7 +1310,6 @@
 				B85B3399773C5C4F6D32ABB1D1E18723 /* Resources */,
 				F0820BB91D64AAB7A0633C2F4449BE4B /* Support Files */,
 			);
-			name = MJRefresh;
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
@@ -1340,7 +1337,7 @@
 				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
 				A0C8E428D980D3C9293A3C2BF740F0CD /* JTAppleCalendar */,
 				51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */,
-				E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh */,
+				E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh.framework */,
 				1F8E258F9BE7356CD2F57F52361FB03B /* Pods-PantryPal */,
 			);
 			name = Products;
@@ -1391,7 +1388,6 @@
 			children = (
 				5D990F0DFD6DC1A1E5DCA10E51BD33B7 /* Support Files */,
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -1416,7 +1412,6 @@
 				5F97E9FC2F5C17D1B19D19AD65D01357 /* UserInteractionFunctions.swift */,
 				5E1448C44E917D3177C34FFB1AF32CB7 /* Support Files */,
 			);
-			name = JTAppleCalendar;
 			path = JTAppleCalendar;
 			sourceTree = "<group>";
 		};
@@ -1508,7 +1503,6 @@
 				46E7EF1A766D35DDA70046BC014D3A91 /* FoldingCell.swift */,
 				D34B213602281874F06FBA606540B252 /* Support Files */,
 			);
-			name = FoldingCell;
 			path = FoldingCell;
 			sourceTree = "<group>";
 		};
@@ -1565,7 +1559,6 @@
 				6676109DC227BC751D192BC1E44CBB16 /* UIView+Draggable.swift */,
 				666C8D8CEDBE874BD59BCA3F82671E3D /* Support Files */,
 			);
-			name = Floaty;
 			path = Floaty;
 			sourceTree = "<group>";
 		};
@@ -1749,7 +1742,7 @@
 			);
 			name = MJRefresh;
 			productName = MJRefresh;
-			productReference = E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh */;
+			productReference = E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A983770812F919D34BAD7D2C5A7EA95C /* FoldingCell */ = {
@@ -2360,7 +2353,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MJRefresh/MJRefresh-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3053,7 +3046,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MJRefresh/MJRefresh-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

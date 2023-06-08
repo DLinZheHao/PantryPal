@@ -21,9 +21,13 @@ class ManageMemberViewController: UIViewController {
         super.viewDidLoad()
         memberManageTableView.lk_registerCellWithNib(identifier: String(describing: ManageMemberTableViewCell.self), bundle: nil)
         
-        let header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(refreshAction))
-        header.isAutomaticallyChangeAlpha = true
-        self.memberManageTableView.mj_header = header
+//        let header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(refreshAction))
+//        header.isAutomaticallyChangeAlpha = true
+        let newHeader = MJRefreshStateHeader(refreshingTarget: self, refreshingAction: #selector(refreshAction))
+        newHeader.setTitle("開始刷新", for: .refreshing)
+        
+        self.memberManageTableView.mj_header = newHeader
+        // self.memberManageTableView.mj_header?.backgroundColor = .black
     }
     @objc private func refreshAction() {
         self.memberManageTableView.mj_header?.beginRefreshing()

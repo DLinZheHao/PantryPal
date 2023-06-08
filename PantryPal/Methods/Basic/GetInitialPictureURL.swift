@@ -12,7 +12,7 @@ import FirebaseStorage
 func getInitialPictureURL(completion: @escaping (String) -> Void) {
     let storage = Storage.storage()
     let storageRef = storage.reference()
-
+    // watermelon
     // 取得圖片的參考位置
     let imageRef = storageRef.child("watermelon.png")
 

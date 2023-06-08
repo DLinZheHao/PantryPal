@@ -54,7 +54,8 @@ func getChatMessage(completion: @escaping ([MessageData]) -> Void) {
                                           sendDate: sendDate,
                                           senderID: senderID,
                                           textContent: textContent,
-                                          url: url)
+                                          url: url,
+                                          isImageLoad: false)
                 messageArray.append(message)
             }
             completion(messageArray)

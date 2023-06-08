@@ -39,6 +39,7 @@ class ChatViewController: MessagesViewController {
     let sender2 = Sender(senderId: "other", displayName: "西瓜")
     let sender3 = Sender(senderId: "self2", displayName: "南瓜")
     var messages: [Message] = []
+    var messageDateArray: [MessageData] = []
     
     let customInputView = InputView()
     var inputTextField: UITextField?
@@ -52,10 +53,9 @@ class ChatViewController: MessagesViewController {
         guard let currentUserID = Auth.auth().currentUser?.uid else { return }
         sender.senderId = currentUserID
         getChatMessage { [weak self] dataArray in
-            self?.messages = []
-            var imageMessages: [Message] = [] // 存儲圖片消息
+            self!.messageDateArray = findNewMessages(existingMessages: self!.messageDateArray, newMessages: dataArray)
             
-            for messageData in dataArray {
+            for messageData in self!.messageDateArray {
                 if messageData.action == 0 {
                     let sender = Sender(senderId: messageData.senderID, displayName: messageData.name)
                     let message = Message(sender: sender,
@@ -79,10 +79,11 @@ class ChatViewController: MessagesViewController {
                                                       kind: .photo(placeholderMediaItem))
                     self?.messages.append(placeholderMessage)
                     
+                    
                     // 下載圖片
                     UIImage.downloadImage(from: url) { [weak self] image in
                         guard let self = self else { return }
-                        
+
                         // 更新圖片消息
                         if let index = self.messages.firstIndex(where: { $0.messageId == messageData.id }) {
                             let mediaItem = Media(url: url,
@@ -99,7 +100,7 @@ class ChatViewController: MessagesViewController {
                     }
                 }
             }
-            
+            self?.messageDateArray = dataArray
             self?.messagesCollectionView.reloadData()
             self?.messagesCollectionView.scrollToLastItem(animated: true)
         }
@@ -143,7 +144,7 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
 
-        messagesCollectionView.reloadData()
+        // messagesCollectionView.reloadData()
         navigationItem.title = "留言"
     }
     @objc func customButtonTapped() {

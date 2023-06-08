@@ -9,8 +9,6 @@ import UIKit
 
 // swiftlint:disable identifier_name
 enum ImageAsset: String {
-
-    // Fridge tab - Tab
     case fridge
     case fridge_click
     case watermelon
@@ -33,6 +31,8 @@ enum ImageAsset: String {
     case chat_select
     case outline_send_black_48pt
     case outline_send_black_36pt
+    case refresh
+    case small_chat
 }
 // swiftlint:enable identifier_name
 
