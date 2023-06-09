@@ -19,15 +19,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jzl-NS-m5D">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="89"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掃描" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrd-Im-lTY">
-                                        <rect key="frame" x="175" y="60" width="43" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掃描群組QR Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrd-Im-lTY">
+                                        <rect key="frame" x="113" y="64" width="168" height="26"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUR-O4-mBx">
-                                        <rect key="frame" x="8" y="57" width="40" height="32"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUR-O4-mBx">
+                                        <rect key="frame" x="8" y="57" width="39" height="40"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="outline_keyboard_arrow_left_black_48pt"/>
                                         <connections>
                                             <action selector="close" destination="coV-OZ-HZf" eventType="touchUpInside" id="kio-Vq-c2h"/>
                                         </connections>
@@ -35,16 +36,16 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
+                                    <constraint firstItem="Nrd-Im-lTY" firstAttribute="leading" secondItem="Jzl-NS-m5D" secondAttribute="leading" constant="113" id="13e-8d-14p"/>
                                     <constraint firstAttribute="bottom" secondItem="kUR-O4-mBx" secondAttribute="bottom" id="4YA-8I-ii5"/>
-                                    <constraint firstItem="Nrd-Im-lTY" firstAttribute="top" secondItem="Jzl-NS-m5D" secondAttribute="top" constant="60" id="6TR-WR-lr9"/>
                                     <constraint firstAttribute="height" constant="89" id="Ehu-vu-Zsw"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nrd-Im-lTY" secondAttribute="trailing" constant="20" symbolic="YES" id="KrP-3K-LgH"/>
                                     <constraint firstItem="kUR-O4-mBx" firstAttribute="leading" secondItem="Jzl-NS-m5D" secondAttribute="leading" constant="8" id="PTW-qk-U5n"/>
-                                    <constraint firstItem="Nrd-Im-lTY" firstAttribute="leading" secondItem="Jzl-NS-m5D" secondAttribute="leading" constant="175" id="at3-gX-Hyo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nrd-Im-lTY" secondAttribute="trailing" constant="112" id="mZi-lO-eF4"/>
+                                    <constraint firstItem="Nrd-Im-lTY" firstAttribute="top" secondItem="Jzl-NS-m5D" secondAttribute="top" constant="64" id="qoa-C5-5we"/>
                                     <constraint firstItem="kUR-O4-mBx" firstAttribute="top" secondItem="Jzl-NS-m5D" secondAttribute="top" constant="57" id="wLd-ZH-j7U"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR code is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Em-Rc-X6D">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="沒有偵測到QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Em-Rc-X6D">
                                 <rect key="frame" x="0.0" y="725" width="393" height="40"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -78,6 +79,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="outline_keyboard_arrow_left_black_48pt" width="48" height="48"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

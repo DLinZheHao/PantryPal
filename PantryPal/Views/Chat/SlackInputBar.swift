@@ -221,8 +221,9 @@ extension SlackInputBar: AttachmentManagerDelegate {
         self.sendButton.isEnabled = manager.attachments.count > 0
     }
     func attachmentManager(_ manager: AttachmentManager, didRemove attachment: AttachmentManager.Attachment, at index: Int) {
-        self.imageArray.remove(at: index)
-        self.imageURLArray.remove(at: index)
+//        if self.imageArray
+//        self.imageArray.remove(at: index)
+//        self.imageURLArray.remove(at: index)
         self.sendButton.isEnabled = manager.attachments.count > 0
     }
     func attachmentManager(_ manager: AttachmentManager, didSelectAddAttachmentAt index: Int) {

@@ -18,6 +18,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xax-mb-K5n">
                         <rect key="frame" x="24" y="14" width="80" height="76.666666666666671"/>
+                        <color key="tintColor" red="0.10329274889999999" green="0.44693129990000002" blue="0.43896747089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="4a7-JW-oXh"/>
                             <constraint firstAttribute="height" constant="80" id="J5u-f7-L9X"/>
@@ -33,7 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="0.94894558569999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" red="0.79215686269999996" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Svt-sd-PGP" secondAttribute="trailing" constant="7" id="5Vv-Sk-hS0"/>
                     <constraint firstItem="xax-mb-K5n" firstAttribute="top" secondItem="zde-dv-kvF" secondAttribute="top" constant="12" id="7cG-aB-QWc"/>

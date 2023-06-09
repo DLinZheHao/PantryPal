@@ -21,7 +21,9 @@ class CalendarViewController: UIViewController {
     var chineseCalendar: Calendar!
     var calendarClickBlock: ((Bool, Int) -> Void)?
     var currentDate: Date?
-    
+    var checkIsDayDataExsist = [[]]
+    var uniqueDates: Set<Date> = Set()
+    var selectDay: Date?
     private var calendarViewHeightConstraint: NSLayoutConstraint!
     private var calendarBackgroundHeightConstraint: NSLayoutConstraint!
 
@@ -45,7 +47,31 @@ class CalendarViewController: UIViewController {
         calendarSetUp()
         dataTableView.register(UINib(nibName: "DataCell", bundle: nil), forCellReuseIdentifier: "DataCell")
         setup()
-        ingredientsLog(chooseDay: Date()){ [weak self] dataArray in
+        checkDayDateExist(completion: { [weak self] dateArray in
+            self?.uniqueDates = dateArray
+            DispatchQueue.main.async {
+                self?.calendarView.reloadData()
+            }
+        })
+        ingredientsLog(chooseDay: Date()) { [weak self] dataArray in
+            self?.historyData = dataArray
+            DispatchQueue.main.async {
+                self?.dataTableView.reloadData()
+            }
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkDayDateExist(completion: { [weak self] dateArray in
+            self?.uniqueDates = dateArray
+            DispatchQueue.main.async {
+                self?.calendarView.reloadData()
+                if let date = self?.currentDate {
+                    self?.calendarView.deselect(date)
+                }
+            }
+        })
+        ingredientsLog(chooseDay: Date()) { [weak self] dataArray in
             self?.historyData = dataArray
             DispatchQueue.main.async {
                 self?.dataTableView.reloadData()
@@ -148,7 +174,6 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
             dataTableView.refreshControl?.addTarget(self, action: #selector(refreshHandler), for: .valueChanged)
         }
     }
-    
     // MARK: Actions
     @objc func refreshHandler() {
         
@@ -234,7 +259,26 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
         }
     }
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        return 0
+        let calendar = Calendar.current
+        
+        // 获取date的年、月、日组成的日期组件
+        let dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+        
+        // 遍历uniqueDates集合进行比较
+        for uniqueDate in uniqueDates {
+            // 获取uniqueDate的年、月、日组成的日期组件
+            let uniqueDateComponents = calendar.dateComponents([.year, .month, .day], from: uniqueDate)
+            
+            // 使用日期组件的值进行日期的比较
+            if uniqueDateComponents.year == dateComponents.year &&
+                uniqueDateComponents.month == dateComponents.month &&
+                uniqueDateComponents.day == dateComponents.day {
+                // 日期匹配，表示有时间记录
+                return 2 // 返回1表示有事件
+            }
+        }
+        // 没有匹配的日期，表示没有时间记录
+        return 0 // 返回0表示没有事件
     }
     // MARK: 手勢切換日曆
     @objc func handleSwipeGesture(_ gesture: UISwipeGestureRecognizer) {

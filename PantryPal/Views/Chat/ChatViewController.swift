@@ -34,10 +34,11 @@ struct Media: MediaItem {
     var size: CGSize
 }
 class ChatViewController: MessagesViewController {
+    var curruentUserName: String = ""
+    var currentUserID: String = ""
+    
     var member: Member!
-    var sender = Sender(senderId: "0528", displayName: "哲豪")
-    let sender2 = Sender(senderId: "other", displayName: "西瓜")
-    let sender3 = Sender(senderId: "self2", displayName: "南瓜")
+    var sender: Sender?
     var messages: [Message] = []
     var messageDateArray: [MessageData] = []
     
@@ -46,12 +47,13 @@ class ChatViewController: MessagesViewController {
     var sendButton: UIButton?
     
     let inputBarView = SlackInputBar()
-    
+    var saveImageViwe = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
         guard let currentUserID = Auth.auth().currentUser?.uid else { return }
-        sender.senderId = currentUserID
+        sender = Sender(senderId: currentUserID, displayName: curruentUserName)
+        sender!.senderId = currentUserID
         getChatMessage { [weak self] dataArray in
             self!.messageDateArray = findNewMessages(existingMessages: self!.messageDateArray, newMessages: dataArray)
             
@@ -79,8 +81,6 @@ class ChatViewController: MessagesViewController {
                                                       kind: .photo(placeholderMediaItem))
                     self?.messages.append(placeholderMessage)
                     
-                    
-                    // 下載圖片
                     UIImage.downloadImage(from: url) { [weak self] image in
                         guard let self = self else { return }
 
@@ -103,42 +103,12 @@ class ChatViewController: MessagesViewController {
             self?.messageDateArray = dataArray
             self?.messagesCollectionView.reloadData()
             self?.messagesCollectionView.scrollToLastItem(animated: true)
+            self?.messagesCollectionView.messageCellDelegate = self
         }
 
-        // 測試訊息陣列
-//        messages.append(Message(sender: sender2,
-//                                messageId: "1",
-//                                sentDate: Date(),
-//                                kind: .photo(Media(url: nil,
-//                                                   image: .asset(.calendar_select),
-//                                                   placeholderImage: .asset(.calendar_not_select)!,
-//                                                   size: CGSize(width: 250, height: 100)))))
-//        messages.append(Message(sender: sender2,
-//                                messageId: "2",
-//                                sentDate: Date(),
-//                                kind: .photo(Media(url: nil,
-//                                                   image: .asset(.calendar_select),
-//                                                   placeholderImage: .asset(.calendar_not_select)!,
-//                                                   size: CGSize(width: 250, height: 100)))))
-//        messages.append(Message(sender: sender3,
-//                                messageId: "3",
-//                                sentDate: Date(),
-//                                kind: .photo(Media(url: nil,
-//                                                   image: .asset(.calendar_select),
-//                                                   placeholderImage: .asset(.calendar_not_select)!,
-//                                                   size: CGSize(width: 250, height: 100)))))
         inputBarView.delegate = self
         inputBarView.controller = self
         
-//        customInputView.backgroundColor = .secondarySystemBackground
-//
-//        customInputView.setUp { [weak self] (returnTextfield, returnButton) in
-//            self?.sendButton = returnButton
-//            self?.inputTextField = returnTextfield
-//            print("有設定到")
-//            self?.sendButton?.addTarget(self, action: #selector(inputBarSend), for: .touchUpInside)
-//        }
-//
         inputBarType = .custom(inputBarView)
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
@@ -156,7 +126,7 @@ class ChatViewController: MessagesViewController {
 extension ChatViewController: MessagesDataSource {
     // MARK: 選擇目前用戶
     var currentSender: MessageKit.SenderType {
-        return sender
+        return sender!
     }
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessageKit.MessagesCollectionView) -> MessageKit.MessageType {
         return messages[indexPath.section]
@@ -182,6 +152,46 @@ extension ChatViewController: MessagesDataSource {
          string: message.sender.displayName,
          attributes: [.font: UIFont.systemFont(ofSize: 12)])
      }
+}
+extension ChatViewController: MessageCellDelegate {
+    func didTapAvatar(in cell: MessageCollectionViewCell) {
+        print("Avatar tapped")
+    }
+
+    func didTapMessage(in cell: MessageCollectionViewCell) {
+     // handle message here
+     print("Meesage Tapped")
+     }
+    func didTapImage(in cell: MessageCollectionViewCell) {
+         guard let indexPath = messagesCollectionView.indexPath(for: cell),
+                let message = messagesCollectionView.messagesDataSource?.messageForItem(at: indexPath, in: messagesCollectionView) else {
+                    return
+            }
+            if case MessageKind.photo(let media) = message.kind, let imageURL = media.image {
+                let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+                
+                let saveAction = UIAlertAction(title: "儲存至相簿", style: .default) { (_) in
+                    UIImageWriteToSavedPhotosAlbum(imageURL, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+                }
+                
+                let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                
+                actionSheet.addAction(saveAction)
+                actionSheet.addAction(cancelAction)
+                
+                present(actionSheet, animated: true, completion: nil)
+            }
+            
+    }
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // 發生錯誤時執行以下程式碼
+            print("儲存失敗，錯誤訊息：\(error.localizedDescription)")
+        } else {
+            // 圖片成功儲存到相簿時執行以下程式碼
+            print("圖片已成功儲存至相簿")
+        }
+    }
 }
 extension ChatViewController: MessagesLayoutDelegate {
     func heightForLocation(message: MessageType,

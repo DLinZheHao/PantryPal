@@ -19,14 +19,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bH1-jf-lfh">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="89"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掃描" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhT-d4-CBA">
-                                        <rect key="frame" x="175" y="60" width="43" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dth-3g-qyA">
-                                        <rect key="frame" x="8" y="49" width="39" height="40"/>
+                                        <rect key="frame" x="8" y="60" width="39" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="X6T-Dh-bmm"/>
                                             <constraint firstAttribute="width" constant="39" id="h2f-Q0-hyb"/>
@@ -38,18 +32,24 @@
                                             <action selector="dismissAction" destination="Aky-R1-WNs" eventType="touchUpInside" id="ll7-5E-5X5"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掃描商品條碼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhT-d4-CBA">
+                                        <rect key="frame" x="132" y="67" width="128.33333333333337" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
-                                    <constraint firstItem="Dth-3g-qyA" firstAttribute="top" secondItem="bH1-jf-lfh" secondAttribute="top" constant="49" id="F5h-rx-Giu"/>
+                                    <constraint firstItem="LhT-d4-CBA" firstAttribute="leading" secondItem="bH1-jf-lfh" secondAttribute="leading" constant="132" id="1i4-yX-rJL"/>
+                                    <constraint firstItem="Dth-3g-qyA" firstAttribute="top" secondItem="bH1-jf-lfh" secondAttribute="top" constant="60" id="F5h-rx-Giu"/>
                                     <constraint firstAttribute="height" constant="89" id="J4b-eq-IS0"/>
-                                    <constraint firstItem="LhT-d4-CBA" firstAttribute="top" secondItem="bH1-jf-lfh" secondAttribute="top" constant="60" id="VNf-V2-cxE"/>
-                                    <constraint firstItem="LhT-d4-CBA" firstAttribute="leading" secondItem="bH1-jf-lfh" secondAttribute="leading" constant="175" id="bev-07-gdP"/>
                                     <constraint firstItem="Dth-3g-qyA" firstAttribute="leading" secondItem="bH1-jf-lfh" secondAttribute="leading" constant="8" id="gum-a2-a2U"/>
-                                    <constraint firstAttribute="trailing" secondItem="LhT-d4-CBA" secondAttribute="trailing" constant="175" id="tzV-6S-Yc7"/>
+                                    <constraint firstAttribute="trailing" secondItem="LhT-d4-CBA" secondAttribute="trailing" constant="132.66999999999999" id="imU-Dd-YFe"/>
+                                    <constraint firstItem="LhT-d4-CBA" firstAttribute="top" secondItem="bH1-jf-lfh" secondAttribute="top" constant="67" id="jkD-SJ-wr8"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR code is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIS-QV-OwA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="沒有偵測到商品條碼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIS-QV-OwA">
                                 <rect key="frame" x="0.0" y="725" width="393" height="40"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

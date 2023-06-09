@@ -17,6 +17,9 @@ class IngredientsViewController: UIViewController {
     private var animationView: LottieAnimationView?
     var storeStatus = ["冷凍", "冷藏", "常溫"]
     
+    var currentUserName: String?
+    var currentuserID: String?
+    
     var completionHandler: ((URL?) -> Void)?
     var getImageCompletionHandler: ((UIImage) -> Void)?
     
@@ -43,6 +46,10 @@ class IngredientsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationSetting()
+        getUserData { [weak self] (userName, userID) in
+            self?.currentuserID = userID
+            self?.currentUserName = userName
+        }
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         layoutFAB()
         ingredientTableView.lk_registerCellWithNib(identifier: String(describing: IngredientsTableViewCell.self), bundle: nil)
@@ -79,7 +86,12 @@ class IngredientsViewController: UIViewController {
     }
     @objc func chatButtonTapped() {
         let nextVC = UIStoryboard.chat.instantiateInitialViewController()!
-
+        guard let vc = nextVC as? ChatViewController else {
+            self.navigationController?.pushViewController(nextVC, animated: true)
+            return
+        }
+        vc.currentUserID = currentuserID!
+        vc.curruentUserName = currentUserName!
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -508,8 +520,28 @@ extension IngredientsViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
         let today = Date()
-        if date < today {
-            alert("不能選擇今日或之前的時間", self)
+        let myCalendar = Calendar.current
+
+        // 從現在的日期和時間創建 `Date` 實例
+        let currentDate = Date()
+
+        // 將日期元素（年、月、日）提取出來
+        let dateComponents = myCalendar.dateComponents([.year, .month, .day], from: currentDate)
+
+        // 設定日期元素的時、分、秒為 0
+        var newDateComponents = DateComponents()
+        newDateComponents.year = dateComponents.year
+        newDateComponents.month = dateComponents.month
+        newDateComponents.day = dateComponents.day
+        newDateComponents.hour = 0
+        newDateComponents.minute = 0
+        newDateComponents.second = 0
+
+        // 使用 `Calendar` 創建當天凌晨 12 點的 `Date` 實例
+        let midnightDate = myCalendar.date(from: newDateComponents)
+
+        if date < midnightDate! {
+            alert("不能選擇之前的時間", self)
             return false
         }
         return true

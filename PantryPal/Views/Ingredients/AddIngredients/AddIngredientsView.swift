@@ -88,16 +88,6 @@ extension AddIngredientsView {
     }
     // MARK: 送出資料
     @IBAction private func sendData() {
-        // 获取TabBarController的引用
-        if let tabBarController = ingredientsController?.tabBarController {
-
-            // 遍历所有选项卡并開啟它们
-            if let tabItems = tabBarController.tabBar.items {
-                for tabItem in tabItems {
-                    tabItem.isEnabled = true
-                }
-            }
-        }
         let priceText = priceTextfield.text
         let price = Double(priceText ?? "0")
         let storeStatus = storeStatusSegment.selectedSegmentIndex
@@ -166,6 +156,16 @@ extension AddIngredientsView {
             }
         }
         removeFromSuperview()
+        // 获取TabBarController的引用
+        if let tabBarController = ingredientsController?.tabBarController {
+
+            // 遍历所有选项卡并開啟它们
+            if let tabItems = tabBarController.tabBar.items {
+                for tabItem in tabItems {
+                    tabItem.isEnabled = true
+                }
+            }
+        }
     }
     @IBAction func closeView() {
         // 获取TabBarController的引用

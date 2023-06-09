@@ -16,7 +16,7 @@ class AddMemberViewController: UIViewController {
     @IBOutlet weak var searchEmailLabel: UILabel!
     @IBOutlet weak var emailSearchTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
-    
+    @IBOutlet weak var searchButton: UIButton!
     @IBAction func searchTapped() {
         guard let email = emailSearchTextField.text else {
             alert("輸入欄為空，請重新輸入", self)
@@ -46,6 +46,12 @@ class AddMemberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addButton.isHidden = true
+        searchButton.layer.cornerRadius = 10
+        searchButton.layer.masksToBounds = true
+        searchNameLabel.layer.cornerRadius = 10
+        searchNameLabel.layer.masksToBounds = true
+        searchEmailLabel.layer.cornerRadius = 10
+        searchEmailLabel.layer.masksToBounds = true
     }
     
 }

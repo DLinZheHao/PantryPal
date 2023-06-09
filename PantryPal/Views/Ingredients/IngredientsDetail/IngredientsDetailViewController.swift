@@ -34,7 +34,14 @@ class IngredientsDetailViewController: UIViewController {
     @IBOutlet weak var ingredientsNotification: UISegmentedControl!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var dismissImageView: UIImageView!
+    
     @IBAction private func chooseCalendar() {
+        let blackView = BlackBackgroundView()
+        blackView.frame = view.frame
+        blackView.backgroundColor = .black
+        blackView.alpha = 0.2
+        view.addSubview(blackView)
+        
         guard let calendarView = UINib(nibName: "Calendar", bundle: nil).instantiate(withOwner: self, options: nil).first as? CalendarView else {
             print("畫面創建失敗")
             return
@@ -57,6 +64,7 @@ class IngredientsDetailViewController: UIViewController {
             calendarView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
             calendarView.heightAnchor.constraint(equalToConstant: 400)
         ])
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -242,7 +250,29 @@ extension IngredientsDetailViewController: UIImagePickerControllerDelegate, UINa
 extension IngredientsDetailViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
         let today = Date()
-        if date <= today {
+
+        let myCalendar = Calendar.current
+
+        // 從現在的日期和時間創建 `Date` 實例
+        let currentDate = Date()
+
+        // 將日期元素（年、月、日）提取出來
+        let dateComponents = myCalendar.dateComponents([.year, .month, .day], from: currentDate)
+
+        // 設定日期元素的時、分、秒為 0
+        var newDateComponents = DateComponents()
+        newDateComponents.year = dateComponents.year
+        newDateComponents.month = dateComponents.month
+        newDateComponents.day = dateComponents.day
+        newDateComponents.hour = 0
+        newDateComponents.minute = 0
+        newDateComponents.second = 0
+
+        // 使用 `Calendar` 創建當天凌晨 12 點的 `Date` 實例
+        let midnightDate = myCalendar.date(from: newDateComponents)
+
+        if date < midnightDate! {
+            alert("不能選擇之前的時間", self)
             return false
         }
         return true
@@ -253,6 +283,13 @@ extension IngredientsDetailViewController: FSCalendarDelegate, FSCalendarDataSou
         print(dateFormatter.string(from: date))
 
         ingredientsExpiration.text = dateFormatter.string(from: date)
+        let targetView = findSubview(ofType: BlackBackgroundView.self, in: self.view)
+        guard let blackBackgroundView = targetView else {
+            print("找不到")
+            calendar.superview?.removeFromSuperview()
+            return
+        }
+        blackBackgroundView.removeFromSuperview()
         calendar.superview?.removeFromSuperview()
     }
 }
@@ -283,7 +320,7 @@ extension IngredientsDetailViewController {
             return
         }
 
-        guard var fileURL = URL(string: url) else {
+        guard let fileURL = URL(string: url) else {
             print("沒有選取圖片")
             return
         }
@@ -346,6 +383,7 @@ extension IngredientsDetailViewController {
         }
     }
 }
+// MARK: - 基本設定
 extension IngredientsDetailViewController {
     private func setDismissAction() {
         // 创建一个UITapGestureRecognizer对象

@@ -35,7 +35,7 @@ extension FridgeTabBarController {
                 controller.tabBarItem = makeTabBarItem("冰箱")
             case .teamLink:
                 controller = UIStoryboard.teamLink.instantiateInitialViewController()!
-                controller.tabBarItem = makeTabBarItem("成員")
+                controller.tabBarItem = makeTabBarItem("管理")
             case .join:
                 controller = UIStoryboard.join.instantiateInitialViewController()!
                 controller.tabBarItem = makeTabBarItem("加入")
