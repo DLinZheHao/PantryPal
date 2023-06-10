@@ -66,6 +66,10 @@
 		053743582A31DB8900722FF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 053743572A31DB8900722FF2 /* GoogleService-Info.plist */; };
 		0537435A2A32A69700722FF2 /* CheckDayDateExist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053743592A32A69700722FF2 /* CheckDayDateExist.swift */; };
 		0537435C2A32C30B00722FF2 /* GetUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537435B2A32C30B00722FF2 /* GetUserData.swift */; };
+		0537435F2A32FD6A00722FF2 /* ChatGPTKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0537435E2A32FD6A00722FF2 /* ChatGPTKit */; };
+		053743622A32FF7D00722FF2 /* ChatGPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053743612A32FF7D00722FF2 /* ChatGPTViewController.swift */; };
+		053743642A32FF9D00722FF2 /* ChatGPT.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053743632A32FF9D00722FF2 /* ChatGPT.storyboard */; };
+		053743692A331CFF00722FF2 /* SendChatGPTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053743682A331CFF00722FF2 /* SendChatGPTRequest.swift */; };
 		055346142A2D6A1900D0C544 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055346132A2D6A1900D0C544 /* UIColor+Extension.swift */; };
 		0553461B2A2EB77600D0C544 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553461A2A2EB77600D0C544 /* HeaderView.swift */; };
 		0553461D2A2EB79600D0C544 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0553461C2A2EB79600D0C544 /* HeaderView.xib */; };
@@ -218,6 +222,9 @@
 		053743572A31DB8900722FF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		053743592A32A69700722FF2 /* CheckDayDateExist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDayDateExist.swift; sourceTree = "<group>"; };
 		0537435B2A32C30B00722FF2 /* GetUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserData.swift; sourceTree = "<group>"; };
+		053743612A32FF7D00722FF2 /* ChatGPTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTViewController.swift; sourceTree = "<group>"; };
+		053743632A32FF9D00722FF2 /* ChatGPT.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatGPT.storyboard; sourceTree = "<group>"; };
+		053743682A331CFF00722FF2 /* SendChatGPTRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatGPTRequest.swift; sourceTree = "<group>"; };
 		055346132A2D6A1900D0C544 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0553461A2A2EB77600D0C544 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0553461C2A2EB79600D0C544 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -314,6 +321,7 @@
 				05ED1AA92A1C93400023A13E /* FirebaseRemoteConfig in Frameworks */,
 				05ED1AAD2A1C93400023A13E /* FirebaseStorage in Frameworks */,
 				05ED1A8D2A1C93400023A13E /* FirebaseDatabase in Frameworks */,
+				0537435F2A32FD6A00722FF2 /* ChatGPTKit in Frameworks */,
 				05ED1AAF2A1C93400023A13E /* FirebaseStorageCombine-Community in Frameworks */,
 				1D4E96006AE97AE367D41801 /* Pods_PantryPal.framework in Frameworks */,
 				05ED1A872A1C93400023A13E /* FirebaseAuth in Frameworks */,
@@ -577,6 +585,23 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		053743602A32FF2F00722FF2 /* ChatGPT */ = {
+			isa = PBXGroup;
+			children = (
+				053743612A32FF7D00722FF2 /* ChatGPTViewController.swift */,
+				053743632A32FF9D00722FF2 /* ChatGPT.storyboard */,
+			);
+			path = ChatGPT;
+			sourceTree = "<group>";
+		};
+		053743672A331CE400722FF2 /* ChatGPT */ = {
+			isa = PBXGroup;
+			children = (
+				053743682A331CFF00722FF2 /* SendChatGPTRequest.swift */,
+			);
+			path = ChatGPT;
+			sourceTree = "<group>";
+		};
 		055346152A2EB46E00D0C544 /* HeaderCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -788,6 +813,7 @@
 		05ED1AB22A1CA0E30023A13E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				053743602A32FF2F00722FF2 /* ChatGPT */,
 				053525ED2A2F07BE00FE05AE /* Chat */,
 				0554E01E2A28597200956B04 /* Calendar */,
 				0554E0022A2723D000956B04 /* Join */,
@@ -831,6 +857,7 @@
 		05ED1ABC2A1CF48A0023A13E /* Methods */ = {
 			isa = PBXGroup;
 			children = (
+				053743672A331CE400722FF2 /* ChatGPT */,
 				053743442A306D1F00722FF2 /* Basic */,
 				0553461E2A2EBFBC00D0C544 /* Sorted */,
 				052C90292A29B1AF00671811 /* Calendar */,
@@ -929,6 +956,7 @@
 				05ED1AAC2A1C93400023A13E /* FirebaseStorage */,
 				05ED1AAE2A1C93400023A13E /* FirebaseStorageCombine-Community */,
 				053525EF2A2F094000FE05AE /* MessageKit */,
+				0537435E2A32FD6A00722FF2 /* ChatGPTKit */,
 			);
 			productName = PantryPal;
 			productReference = 05ED19642A1766590023A13E /* PantryPal.app */;
@@ -961,6 +989,7 @@
 			packageReferences = (
 				05ED1A792A1C93400023A13E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				053525EE2A2F094000FE05AE /* XCRemoteSwiftPackageReference "MessageKit" */,
+				0537435D2A32FD6A00722FF2 /* XCRemoteSwiftPackageReference "ChatGPTKit" */,
 			);
 			productRefGroup = 05ED19652A1766590023A13E /* Products */;
 			projectDirPath = "";
@@ -981,6 +1010,7 @@
 				0553461D2A2EB79600D0C544 /* HeaderView.xib in Resources */,
 				051AC6A52A1EE18F00B23C63 /* FridgeTabBar.storyboard in Resources */,
 				0554DFFD2A26E66900956B04 /* ManageMemberTableViewCell.xib in Resources */,
+				053743642A32FF9D00722FF2 /* ChatGPT.storyboard in Resources */,
 				051AC6AE2A1EE44B00B23C63 /* Ingredients.storyboard in Resources */,
 				052C90282A29951300671811 /* DataCell.xib in Resources */,
 				0554DFC92A25CDE100956B04 /* TeamLink.storyboard in Resources */,
@@ -1106,6 +1136,7 @@
 				0554E00C2A27426600956B04 /* InviteData.swift in Sources */,
 				051AC6E52A2076B600B23C63 /* FindSubview.swift in Sources */,
 				055346142A2D6A1900D0C544 /* UIColor+Extension.swift in Sources */,
+				053743622A32FF7D00722FF2 /* ChatGPTViewController.swift in Sources */,
 				0554E0082A27345C00956B04 /* FridgeMemberAddInvite.swift in Sources */,
 				0554DFF22A25F60400956B04 /* AddMemberViewController.swift in Sources */,
 				0553461B2A2EB77600D0C544 /* HeaderView.swift in Sources */,
@@ -1136,6 +1167,7 @@
 				0554DFB62A2598E700956B04 /* UICollectionView+Extension.swift in Sources */,
 				0554DFA72A2429DF00956B04 /* IngredientsDetailViewController.swift in Sources */,
 				05ED1AC62A1CFC130023A13E /* SignInViewController.swift in Sources */,
+				053743692A331CFF00722FF2 /* SendChatGPTRequest.swift in Sources */,
 				051AC6E12A204F1400B23C63 /* SimpTradConversion.swift in Sources */,
 				051AC6B72A1F09BB00B23C63 /* UIImage+Extension.swift in Sources */,
 				051AC6942A1DA72300B23C63 /* FetchFridgesData.swift in Sources */,
@@ -1394,6 +1426,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		0537435D2A32FD6A00722FF2 /* XCRemoteSwiftPackageReference "ChatGPTKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heysaik/ChatGPTKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		05ED1A792A1C93400023A13E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1409,6 +1449,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 053525EE2A2F094000FE05AE /* XCRemoteSwiftPackageReference "MessageKit" */;
 			productName = MessageKit;
+		};
+		0537435E2A32FD6A00722FF2 /* ChatGPTKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0537435D2A32FD6A00722FF2 /* XCRemoteSwiftPackageReference "ChatGPTKit" */;
+			productName = ChatGPTKit;
 		};
 		05ED1A7A2A1C93400023A13E /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

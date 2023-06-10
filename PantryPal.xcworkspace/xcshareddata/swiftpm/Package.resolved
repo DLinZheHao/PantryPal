@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "chatgptkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/heysaik/ChatGPTKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0249807759026741e659f9adff00a6691f619b1d"
+      }
+    },
+    {
       "identity" : "firebase-ios-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",

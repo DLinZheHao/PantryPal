@@ -19,6 +19,7 @@ extension UIStoryboard {
     static var qrCodeScanner: UIStoryboard { return stStoryboard(name: "QRCodeScanner")}
     static var calendarPage: UIStoryboard { return stStoryboard(name: "CalendarPage")}
     static var chat: UIStoryboard { return stStoryboard(name: "Chat")}
+    static var chatGPT: UIStoryboard { return stStoryboard(name: "ChatGPT")}
     
     private static func stStoryboard(name: String) -> UIStoryboard {
         return UIStoryboard(name: name, bundle: nil)

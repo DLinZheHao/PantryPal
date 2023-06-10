@@ -25,7 +25,6 @@ extension FridgeTabBarController {
         case teamLink
         case join
         case calendarPage
-
         
         func makeViewController() -> UIViewController {
             let controller: UIViewController

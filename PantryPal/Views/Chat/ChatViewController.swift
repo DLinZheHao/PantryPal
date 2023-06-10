@@ -20,7 +20,7 @@ struct Sender: SenderType {
     var displayName: String
 }
 
-struct Message: MessageType {
+struct MessageForm: MessageType {
     var sender: SenderType
     var messageId: String
     var sentDate: Date
@@ -39,7 +39,7 @@ class ChatViewController: MessagesViewController {
     
     var member: Member!
     var sender: Sender?
-    var messages: [Message] = []
+    var messages: [MessageForm] = []
     var messageDateArray: [MessageData] = []
     
     let customInputView = InputView()
@@ -60,7 +60,7 @@ class ChatViewController: MessagesViewController {
             for messageData in self!.messageDateArray {
                 if messageData.action == 0 {
                     let sender = Sender(senderId: messageData.senderID, displayName: messageData.name)
-                    let message = Message(sender: sender,
+                    let message = MessageForm(sender: sender,
                                           messageId: messageData.id,
                                           sentDate: Date(timeIntervalSince1970: messageData.sendDate),
                                           kind: .text(messageData.textContent))
@@ -75,7 +75,7 @@ class ChatViewController: MessagesViewController {
                                                      image: nil,
                                                      placeholderImage: placeholderImage!,
                                                      size: .zero)
-                    let placeholderMessage = Message(sender: sender,
+                    let placeholderMessage = MessageForm(sender: sender,
                                                       messageId: messageData.id,
                                                       sentDate: Date(timeIntervalSince1970: messageData.sendDate),
                                                       kind: .photo(placeholderMediaItem))
@@ -90,7 +90,7 @@ class ChatViewController: MessagesViewController {
                                                   image: image,
                                                   placeholderImage: placeholderImage!,
                                                   size: image?.size ?? .zero)
-                            let updatedMessage = Message(sender: sender,
+                            let updatedMessage = MessageForm(sender: sender,
                                                           messageId: messageData.id,
                                                           sentDate: Date(timeIntervalSince1970: messageData.sendDate),
                                                           kind: .photo(mediaItem))

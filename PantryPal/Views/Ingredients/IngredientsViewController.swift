@@ -103,20 +103,34 @@ extension IngredientsViewController {
         floaty.addItem("新增食材", icon: .asset(.outline_kitchen_black_36pt)) { [weak self] (_) in
             self?.showAddIngredientsView()
         }
+        floaty.addItem("新增冰箱", icon: .asset(.outline_add_box_black_36pt)) { [weak self] (_) in
+            self?.setUpCreatFridgeView()
+        }
         floaty.addItem("查看成員", icon: .asset(.outline_people_black_36pt)) { [weak self] (_) in
             self?.goMemberPage()
         }
         floaty.addItem("切換冰箱", icon: .asset(.outline_change_circle_black_36pt)) { [weak self] (_) in
             self?.changeFridge()
         }
-        floaty.addItem("新增冰箱", icon: .asset(.outline_add_box_black_36pt)) { [weak self] (_) in
-            self?.setUpCreatFridgeView()
+        floaty.addItem("ChatGPT", icon: .asset(.chatGPT_select)) { [weak self] (_) in
+            self?.goChatGPT()
         }
         floaty.plusColor = .white
         floaty.paddingX = self.view.frame.width / 2 - floaty.frame.width / 2 - CGFloat(155)
         floaty.paddingY = 120
         floaty.sticky = true
         self.view.addSubview(floaty)
+    }
+}
+// MARK: - ChatGPT
+extension IngredientsViewController {
+    private func goChatGPT() {
+        let nextVC = UIStoryboard.chatGPT.instantiateInitialViewController()!
+        guard let vc = nextVC as? ChatGPTViewController else {
+            self.navigationController?.pushViewController(nextVC, animated: true)
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 // MARK: - 切換冰箱

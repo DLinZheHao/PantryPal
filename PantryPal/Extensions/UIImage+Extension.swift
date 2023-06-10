@@ -33,6 +33,8 @@ enum ImageAsset: String {
     case outline_send_black_36pt
     case refresh
     case small_chat
+    case chatGPT_not_select
+    case chatGPT_select
 }
 // swiftlint:enable identifier_name
 
