@@ -16,8 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empt_fridge" translatesAutoresizingMaskIntoConstraints="NO" id="PAt-q1-TCR">
+                                <rect key="frame" x="96.666666666666686" y="326" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="SlQ-Tv-fcW"/>
+                                    <constraint firstAttribute="width" constant="200" id="ac5-Zp-YDy"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="沒有任何食材" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozm-Ui-kgr">
+                                <rect key="frame" x="138.33333333333334" y="485" width="116.33333333333334" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tc6-Et-QJu">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -25,8 +38,12 @@
                         <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="tc6-Et-QJu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="1Xa-FB-t8I"/>
+                            <constraint firstItem="ozm-Ui-kgr" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="70.5" id="78T-i2-hk3"/>
+                            <constraint firstItem="PAt-q1-TCR" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Qyo-9x-RhS"/>
+                            <constraint firstItem="PAt-q1-TCR" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Url-Km-4hL"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tc6-Et-QJu" secondAttribute="trailing" id="az1-TP-She"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="tc6-Et-QJu" secondAttribute="bottom" id="cQd-jH-z8g"/>
+                            <constraint firstItem="ozm-Ui-kgr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="oLj-3E-MIt"/>
                             <constraint firstItem="tc6-Et-QJu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="osm-YN-FB4"/>
                         </constraints>
                     </view>
@@ -34,12 +51,14 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="jnI-zS-qbs"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyImage" destination="PAt-q1-TCR" id="Jar-ee-aYZ"/>
+                        <outlet property="emptyLabel" destination="ozm-Ui-kgr" id="Sie-he-rVV"/>
                         <outlet property="ingredientTableView" destination="tc6-Et-QJu" id="xUi-L8-qyw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055.7251908396945" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1052.6717557251909" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cey-k9-H3A">
@@ -66,6 +85,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="empt_fridge" width="5120" height="5120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

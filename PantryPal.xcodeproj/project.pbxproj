@@ -70,6 +70,9 @@
 		053743622A32FF7D00722FF2 /* ChatGPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053743612A32FF7D00722FF2 /* ChatGPTViewController.swift */; };
 		053743642A32FF9D00722FF2 /* ChatGPT.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053743632A32FF9D00722FF2 /* ChatGPT.storyboard */; };
 		053743692A331CFF00722FF2 /* SendChatGPTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053743682A331CFF00722FF2 /* SendChatGPTRequest.swift */; };
+		053744402A36010700722FF2 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537443F2A36010700722FF2 /* Credential.swift */; };
+		053744432A3601F600722FF2 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 053744422A3601F600722FF2 /* SwiftKeychainWrapper */; };
+		053744452A36EED700722FF2 /* barcode_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 053744442A36EED700722FF2 /* barcode_success.json */; };
 		055346142A2D6A1900D0C544 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055346132A2D6A1900D0C544 /* UIColor+Extension.swift */; };
 		0553461B2A2EB77600D0C544 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553461A2A2EB77600D0C544 /* HeaderView.swift */; };
 		0553461D2A2EB79600D0C544 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0553461C2A2EB79600D0C544 /* HeaderView.xib */; };
@@ -225,6 +228,8 @@
 		053743612A32FF7D00722FF2 /* ChatGPTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTViewController.swift; sourceTree = "<group>"; };
 		053743632A32FF9D00722FF2 /* ChatGPT.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatGPT.storyboard; sourceTree = "<group>"; };
 		053743682A331CFF00722FF2 /* SendChatGPTRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatGPTRequest.swift; sourceTree = "<group>"; };
+		0537443F2A36010700722FF2 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		053744442A36EED700722FF2 /* barcode_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = barcode_success.json; sourceTree = "<group>"; };
 		055346132A2D6A1900D0C544 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0553461A2A2EB77600D0C544 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0553461C2A2EB79600D0C544 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -298,6 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				053744432A3601F600722FF2 /* SwiftKeychainWrapper in Frameworks */,
 				05ED1A992A1C93400023A13E /* FirebaseFunctions in Frameworks */,
 				05ED1A8F2A1C93400023A13E /* FirebaseDatabaseSwift in Frameworks */,
 				05ED1A9F2A1C93400023A13E /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
@@ -346,6 +352,7 @@
 		051AC6992A1DDB0200B23C63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0537443E2A3600EA00722FF2 /* SignIn */,
 				0537434A2A307AE800722FF2 /* Chat */,
 				0554DFF82A26D58500956B04 /* QRcode */,
 				051AC6D22A202EAB00B23C63 /* Barcode */,
@@ -602,6 +609,14 @@
 			path = ChatGPT;
 			sourceTree = "<group>";
 		};
+		0537443E2A3600EA00722FF2 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				0537443F2A36010700722FF2 /* Credential.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		055346152A2EB46E00D0C544 /* HeaderCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -756,6 +771,7 @@
 		05A643912A2B8A5100D37AF6 /* Lotties */ = {
 			isa = PBXGroup;
 			children = (
+				053744442A36EED700722FF2 /* barcode_success.json */,
 				05A6439F2A2B926400D37AF6 /* loadding.json */,
 				05A643942A2B8A8100D37AF6 /* AddSuccess */,
 			);
@@ -957,6 +973,7 @@
 				05ED1AAE2A1C93400023A13E /* FirebaseStorageCombine-Community */,
 				053525EF2A2F094000FE05AE /* MessageKit */,
 				0537435E2A32FD6A00722FF2 /* ChatGPTKit */,
+				053744422A3601F600722FF2 /* SwiftKeychainWrapper */,
 			);
 			productName = PantryPal;
 			productReference = 05ED19642A1766590023A13E /* PantryPal.app */;
@@ -990,6 +1007,7 @@
 				05ED1A792A1C93400023A13E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				053525EE2A2F094000FE05AE /* XCRemoteSwiftPackageReference "MessageKit" */,
 				0537435D2A32FD6A00722FF2 /* XCRemoteSwiftPackageReference "ChatGPTKit" */,
+				053744412A3601F600722FF2 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 05ED19652A1766590023A13E /* Products */;
 			projectDirPath = "";
@@ -1008,6 +1026,7 @@
 				05ED19772A17665A0023A13E /* LaunchScreen.storyboard in Resources */,
 				0554E0042A2723F300956B04 /* Join.storyboard in Resources */,
 				0553461D2A2EB79600D0C544 /* HeaderView.xib in Resources */,
+				053744452A36EED700722FF2 /* barcode_success.json in Resources */,
 				051AC6A52A1EE18F00B23C63 /* FridgeTabBar.storyboard in Resources */,
 				0554DFFD2A26E66900956B04 /* ManageMemberTableViewCell.xib in Resources */,
 				053743642A32FF9D00722FF2 /* ChatGPT.storyboard in Resources */,
@@ -1172,6 +1191,7 @@
 				051AC6B72A1F09BB00B23C63 /* UIImage+Extension.swift in Sources */,
 				051AC6942A1DA72300B23C63 /* FetchFridgesData.swift in Sources */,
 				051AC6EB2A2102A800B23C63 /* CreateNewIngredients.swift in Sources */,
+				053744402A36010700722FF2 /* Credential.swift in Sources */,
 				055346202A2EBFD000D0C544 /* Sorted.swift in Sources */,
 				051AC6CC2A1F904000B23C63 /* AddIngredientsView.swift in Sources */,
 				05EE823B2A23724700946AB7 /* IngredientsRecording.swift in Sources */,
@@ -1347,11 +1367,14 @@
 				DEVELOPMENT_TEAM = Z4U4RWP3LA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PantryPal/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用到相機";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "需要驗證登入";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要使用到相簿";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1376,11 +1399,14 @@
 				DEVELOPMENT_TEAM = Z4U4RWP3LA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PantryPal/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用到相機";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "需要驗證登入";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要使用到相簿";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1434,6 +1460,14 @@
 				kind = branch;
 			};
 		};
+		053744412A3601F600722FF2 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		05ED1A792A1C93400023A13E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1454,6 +1488,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0537435D2A32FD6A00722FF2 /* XCRemoteSwiftPackageReference "ChatGPTKit" */;
 			productName = ChatGPTKit;
+		};
+		053744422A3601F600722FF2 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 053744412A3601F600722FF2 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
 		};
 		05ED1A7A2A1C93400023A13E /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

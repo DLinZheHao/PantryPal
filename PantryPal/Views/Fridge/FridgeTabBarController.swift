@@ -9,7 +9,7 @@ import UIKit
 
 class FridgeTabBarController: UITabBarController {
     var fridgeId: String?
-    private let tabs: [Tab] = [.ingredients, .teamLink, .join, .calendarPage]
+    private let tabs: [Tab] = [.ingredients, .calendarPage, .teamLink, .join]
     override func viewDidLoad() {
         super.viewDidLoad()
         

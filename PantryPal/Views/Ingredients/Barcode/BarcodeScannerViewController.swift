@@ -103,7 +103,7 @@ extension BarcodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                 self.qrCodeFrameView?.frame = CGRect.zero
             }
             animator.startAnimation()
-            //qrCodeFrameView?.frame = CGRect.zero
+            // qrCodeFrameView?.frame = CGRect.zero
             messageLabel.text = "No QR code is detected"
             return
         }
@@ -131,8 +131,8 @@ extension BarcodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     sleep(2)
                     simpTradConversion(goodsName) { [weak self] convertName in
                         DispatchQueue.main.async {
-                            self?.navigationController?.popViewController(animated: true)
-//                            self?.presentingViewController?.dismiss(animated: true)
+                            // self?.navigationController?.popViewController(animated: true)
+                            self?.presentingViewController?.dismiss(animated: true)
                             self?.barcodeReturn!(barcode, goodsPrice)
                             self?.ingredientsNameReturn!(convertName)
                         }

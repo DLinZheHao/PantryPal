@@ -19,14 +19,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jzl-NS-m5D">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="89"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掃描群組QR Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrd-Im-lTY">
-                                        <rect key="frame" x="113" y="64" width="168" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUR-O4-mBx">
-                                        <rect key="frame" x="8" y="57" width="39" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUR-O4-mBx">
+                                        <rect key="frame" x="6" y="57" width="39" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="39" id="1n1-fp-9Uo"/>
+                                            <constraint firstAttribute="height" constant="40" id="Had-rY-CRA"/>
+                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <buttonConfiguration key="configuration" style="plain" image="outline_keyboard_arrow_left_black_48pt"/>
                                         <connections>
@@ -36,12 +34,9 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
-                                    <constraint firstItem="Nrd-Im-lTY" firstAttribute="leading" secondItem="Jzl-NS-m5D" secondAttribute="leading" constant="113" id="13e-8d-14p"/>
-                                    <constraint firstAttribute="bottom" secondItem="kUR-O4-mBx" secondAttribute="bottom" id="4YA-8I-ii5"/>
+                                    <constraint firstAttribute="bottom" secondItem="kUR-O4-mBx" secondAttribute="bottom" constant="-8" id="4YA-8I-ii5"/>
                                     <constraint firstAttribute="height" constant="89" id="Ehu-vu-Zsw"/>
-                                    <constraint firstItem="kUR-O4-mBx" firstAttribute="leading" secondItem="Jzl-NS-m5D" secondAttribute="leading" constant="8" id="PTW-qk-U5n"/>
-                                    <constraint firstAttribute="trailing" secondItem="Nrd-Im-lTY" secondAttribute="trailing" constant="112" id="mZi-lO-eF4"/>
-                                    <constraint firstItem="Nrd-Im-lTY" firstAttribute="top" secondItem="Jzl-NS-m5D" secondAttribute="top" constant="64" id="qoa-C5-5we"/>
+                                    <constraint firstItem="kUR-O4-mBx" firstAttribute="leading" secondItem="Jzl-NS-m5D" secondAttribute="leading" constant="6" id="PTW-qk-U5n"/>
                                     <constraint firstItem="kUR-O4-mBx" firstAttribute="top" secondItem="Jzl-NS-m5D" secondAttribute="top" constant="57" id="wLd-ZH-j7U"/>
                                 </constraints>
                             </view>
@@ -56,6 +51,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掃描群組QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrd-Im-lTY">
+                                <rect key="frame" x="113" y="692" width="168" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SIb-P7-eTW"/>
                         <color key="backgroundColor" red="0.55686277149999996" green="0.55686277149999996" blue="0.57647061349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -65,6 +66,9 @@
                             <constraint firstItem="1Em-Rc-X6D" firstAttribute="leading" secondItem="SIb-P7-eTW" secondAttribute="leading" id="XZk-ZP-Tf3"/>
                             <constraint firstItem="Jzl-NS-m5D" firstAttribute="top" secondItem="AP4-pM-yWd" secondAttribute="top" id="cqe-Ll-2Fa"/>
                             <constraint firstItem="SIb-P7-eTW" firstAttribute="bottom" secondItem="1Em-Rc-X6D" secondAttribute="bottom" constant="53" id="eij-eJ-tcF"/>
+                            <constraint firstAttribute="trailing" secondItem="Nrd-Im-lTY" secondAttribute="trailing" constant="112" id="g9d-5B-IYq"/>
+                            <constraint firstItem="Nrd-Im-lTY" firstAttribute="leading" secondItem="AP4-pM-yWd" secondAttribute="leading" constant="113" id="jgc-HZ-BXe"/>
+                            <constraint firstItem="Nrd-Im-lTY" firstAttribute="top" secondItem="AP4-pM-yWd" secondAttribute="top" constant="692" id="nGL-FF-bM8"/>
                             <constraint firstItem="Jzl-NS-m5D" firstAttribute="trailing" secondItem="SIb-P7-eTW" secondAttribute="trailing" id="xIi-Of-dfg"/>
                         </constraints>
                     </view>

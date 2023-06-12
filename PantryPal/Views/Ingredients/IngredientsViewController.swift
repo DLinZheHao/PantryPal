@@ -15,7 +15,7 @@ import IQKeyboardManagerSwift
 
 class IngredientsViewController: UIViewController {
     private var animationView: LottieAnimationView?
-    var storeStatus = ["冷凍", "冷藏", "常溫"]
+    var storeStatus = ["冷藏", "冷凍", "常溫"]
     
     var currentUserName: String?
     var currentuserID: String?
@@ -43,8 +43,13 @@ class IngredientsViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var emptyImage: UIImageView!
+    @IBOutlet weak var emptyLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emptyImage.isHidden = true
+        emptyLabel.isHidden = true
         navigationSetting()
         getUserData { [weak self] (userName, userID) in
             self?.currentuserID = userID
@@ -86,12 +91,12 @@ class IngredientsViewController: UIViewController {
     }
     @objc func chatButtonTapped() {
         let nextVC = UIStoryboard.chat.instantiateInitialViewController()!
-        guard let vc = nextVC as? ChatViewController else {
+        guard let controller = nextVC as? ChatViewController else {
             self.navigationController?.pushViewController(nextVC, animated: true)
             return
         }
-        vc.currentUserID = currentuserID!
-        vc.curruentUserName = currentUserName!
+        controller.currentUserID = currentuserID!
+        controller.curruentUserName = currentUserName!
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -167,7 +172,7 @@ extension IngredientsViewController {
         blackView.backgroundColor = .black
         blackView.alpha = 0.2
         view.addSubview(blackView)
-        
+        // swiftlint:disable identifier_name
         guard let customView = UINib(nibName: "CreateFridgeView", bundle: nil).instantiate(withOwner: self, options: nil).first as? CreateFridgeView else {
             print("畫面創建失敗")
             return
@@ -280,6 +285,15 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if ingredientsData.isEmpty == true {
+            ingredientTableView.isHidden = true
+            emptyImage.isHidden = false
+            emptyLabel.isHidden = false
+        } else {
+            ingredientTableView.isHidden = false
+            emptyImage.isHidden = true
+            emptyLabel.isHidden = true
+        }
         return ingredientsData.count
     }
     
@@ -350,7 +364,7 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "刪除") { [weak self] (action, sourceView, completionHandler) in
+        let deleteAction = UIContextualAction(style: .destructive, title: "刪除") { [weak self] (_, _, completionHandler) in
             if let id = self?.currentFridgeID,
                let ingredientsID = self?.ingredientsData[indexPath.row].ingredientsID {
                 deleteIngredients(id, ingredientsID) { [weak self] in
@@ -364,20 +378,20 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let runOutAction = UIContextualAction(style: .normal, title: "用完") { [weak self] (action, sourceView, completionHandler) in
+        let runOutAction = UIContextualAction(style: .normal, title: "用完") { [weak self] (_, _, completionHandler) in
            
             guard let ingredientDataArray = self?.ingredientsData,
                   let currentFridgeID = self?.currentFridgeID else { return }
             self?.historyAction(action: 0, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
             completionHandler(true)
         }
-        let expiredAction = UIContextualAction(style: .normal, title: "過期") { [weak self] (action, sourceView, completionHandler) in
+        let expiredAction = UIContextualAction(style: .normal, title: "過期") { [weak self] (_, _, completionHandler) in
             guard let ingredientDataArray = self?.ingredientsData,
                   let currentFridgeID = self?.currentFridgeID else { return }
             self?.historyAction(action: 0, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
             completionHandler(true)
         }
-        let throwAway = UIContextualAction(style: .normal, title: "丟棄") { [weak self] (action, sourceView, completionHandler) in
+        let throwAway = UIContextualAction(style: .normal, title: "丟棄") { [weak self] (_, _, completionHandler) in
             guard let ingredientDataArray = self?.ingredientsData,
                   let currentFridgeID = self?.currentFridgeID else { return }
             self?.historyAction(action: 0, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
