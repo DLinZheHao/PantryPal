@@ -353,8 +353,8 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let nextVC = UIStoryboard.ingredientsDetail.instantiateViewController(
-            withIdentifier: String(describing: IngredientsDetailViewController.self)
-        ) as? IngredientsDetailViewController
+            withIdentifier: String(describing: IngredientDetailTableViewController.self)
+        ) as? IngredientDetailTableViewController
         else {
             print("創建失敗")
             return }
@@ -364,6 +364,7 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
             return 
         }
         nextVC.fridgeId = fridgeID
+        nextVC.ingredientController = self
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         present(nextVC, animated: true, completion: nil)
@@ -409,7 +410,6 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
         }
     }
 
-    
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let runOutAction = UIContextualAction(style: .normal, title: "用完") { [weak self] (_, _, completionHandler) in
            

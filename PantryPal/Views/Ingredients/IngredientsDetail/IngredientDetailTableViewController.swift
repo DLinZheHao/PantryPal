@@ -1,15 +1,15 @@
 //
-//  IngredientsDetailViewController.swift
+//  IngredientDetailTableViewController.swift
 //  PantryPal
 //
-//  Created by 林哲豪 on 2023/5/29.
+//  Created by 林哲豪 on 2023/6/13.
 //
 
 import UIKit
 import Photos
 import FSCalendar
 
-class IngredientsDetailViewController: UIViewController {
+class IngredientDetailTableViewController: UITableViewController {
     
     var fridgeId: String?
     var ingredientsData: PresentIngredientsData?
@@ -21,6 +21,7 @@ class IngredientsDetailViewController: UIViewController {
     var selectedFileURL: String?
     var takingPicture: UIImagePickerController!
     var chineseCalendar: Calendar!
+    var ingredientController: IngredientsViewController?
     
     @IBOutlet weak var choosePictureButton: UIButton!
     @IBOutlet weak var takePictureButton: UIButton!
@@ -33,38 +34,21 @@ class IngredientsDetailViewController: UIViewController {
     @IBOutlet weak var ingredientsStoreStatus: UISegmentedControl!
     @IBOutlet weak var ingredientsNotification: UISegmentedControl!
     @IBOutlet weak var sendButton: UIButton!
-    @IBOutlet weak var dismissImageView: UIImageView!
+    @IBOutlet weak var cancelButton: UIButton!
     
-    @IBAction private func chooseCalendar() {
-        let blackView = BlackBackgroundView()
-        blackView.frame = view.frame
-        blackView.backgroundColor = .black
-        blackView.alpha = 0.2
-        view.addSubview(blackView)
-        
-        guard let calendarView = UINib(nibName: "Calendar", bundle: nil).instantiate(withOwner: self, options: nil).first as? CalendarView else {
-            print("畫面創建失敗")
-            return
+    @IBOutlet weak var calendarView: FSCalendar! {
+        didSet {
+            calendarView.delegate = self
+            calendarView.dataSource = self
+            chineseCalendar = Calendar(identifier: .chinese)
+            calendarView.pagingEnabled = true
+            calendarView.scrollEnabled = true
+            
+            let locale = Locale(identifier: "zh_CN")
+            calendarView.locale = locale
+            calendarView.appearance.caseOptions = .weekdayUsesSingleUpperCase
+            calendarView.appearance.headerDateFormat = "yyyy年MM月"
         }
-        view.addSubview(calendarView)
-        chineseCalendar = Calendar(identifier: .chinese)
-        calendarView.calendar.pagingEnabled = true
-        calendarView.calendar.scrollEnabled = true
-        
-        let locale = Locale(identifier: "zh_CN")
-        calendarView.calendar.locale = locale
-        calendarView.calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
-        calendarView.calendar.appearance.headerDateFormat = "yyyy年MM月"
-        calendarView.calendar.delegate = self
-        calendarView.calendar.dataSource = self
-        calendarView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            calendarView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 250),
-            calendarView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
-            calendarView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
-            calendarView.heightAnchor.constraint(equalToConstant: 400)
-        ])
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,12 +58,46 @@ class IngredientsDetailViewController: UIViewController {
         // 设置选中状态下的字体颜色
         ingredientsStoreStatus.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.init(hex: "487A71")], for: .selected)
         setUp()
-        setDismissAction() 
         setIngredientsData()
     }
+
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 10
+    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // 返回空的 view 隱藏 header
+        return UIView()
+    }
+
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        // 返回空的 view 隱藏 footer
+        return UIView()
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        // 設置 header 高度為 0
+        return 0
+    }
+
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        // 設置 footer 高度為 0
+        return 0
+    }
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+
 }
+
 // MARK: 畫面設定
-extension IngredientsDetailViewController {
+extension IngredientDetailTableViewController {
     private func setIngredientsData() {
         guard let ingredientsData = ingredientsData else {
             alertTitle("開發錯誤", self, "需要修正")
@@ -117,8 +135,7 @@ extension IngredientsDetailViewController {
         }
     }
 }
-// MARK: 掃描功能
-extension IngredientsDetailViewController {
+extension IngredientDetailTableViewController {
     @IBAction func barcodeScanner(_ sender: UIButton) {
         guard let nextVC = UIStoryboard.barcodeScanner.instantiateViewController(
             withIdentifier: String(describing: BarcodeScannerViewController.self)
@@ -151,7 +168,7 @@ extension IngredientsDetailViewController {
     }
 }
 // MARK: 照片功能連接
-extension IngredientsDetailViewController {
+extension IngredientDetailTableViewController {
     @IBAction func choosePicture(_ sender: UIButton) {
         getImageGo(type: 2)
     }
@@ -161,7 +178,7 @@ extension IngredientsDetailViewController {
     }
 }
 // MARK: - 照片選擇控制區域
-extension IngredientsDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension IngredientDetailTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // 去拍照或者去相册选择图片
     func getImageGo(type: Int) {
         takingPicture =  UIImagePickerController.init()
@@ -247,7 +264,7 @@ extension IngredientsDetailViewController: UIImagePickerControllerDelegate, UINa
     }
 }
 // MARK: - 日曆控制
-extension IngredientsDetailViewController: FSCalendarDelegate, FSCalendarDataSource {
+extension IngredientDetailTableViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
         let today = Date()
 
@@ -283,18 +300,10 @@ extension IngredientsDetailViewController: FSCalendarDelegate, FSCalendarDataSou
         print(dateFormatter.string(from: date))
 
         ingredientsExpiration.text = dateFormatter.string(from: date)
-        let targetView = findSubview(ofType: BlackBackgroundView.self, in: self.view)
-        guard let blackBackgroundView = targetView else {
-            print("找不到")
-            calendar.superview?.removeFromSuperview()
-            return
-        }
-        blackBackgroundView.removeFromSuperview()
-        calendar.superview?.removeFromSuperview()
     }
 }
 // MARK: - 送出資料
-extension IngredientsDetailViewController {
+extension IngredientDetailTableViewController {
     @IBAction private func sendData() {
         let priceText = ingredientsPrice.text
         let price = Double(priceText ?? "0")
@@ -373,7 +382,9 @@ extension IngredientsDetailViewController {
                     }
                     // 修改已經存在的ingredients 資料
                     
-                    reviseIngredientsData(ingredientID, data!)
+                    reviseIngredientsData(ingredientID, data!) { [weak self] in
+                        self?.ingredientController?.getData()
+                    }
                     self?.presentingViewController?.dismiss(animated: true)
                 } else {
                     // 無法取得圖片的下載 URL
@@ -383,23 +394,21 @@ extension IngredientsDetailViewController {
         }
     }
 }
-// MARK: - 基本設定
-extension IngredientsDetailViewController {
-    private func setDismissAction() {
-        // 创建一个UITapGestureRecognizer对象
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
-
-        // 将手势识别器添加到UIImageView上
-        dismissImageView.isUserInteractionEnabled = true
-        dismissImageView.addGestureRecognizer(tapGesture)
+// MARK: - 取消
+extension IngredientDetailTableViewController {
+    @IBAction func cancelTapped() {
+        self.presentingViewController?.dismiss(animated: true)
     }
+}
+// MARK: - 基本設定
+extension IngredientDetailTableViewController {
     @objc func imageViewTapped() {
         self.presentingViewController?.dismiss(animated: true)
     }
     private func setUp() {
         tabBarController?.tabBar.isHidden = true
-        ingredientsImage.layer.cornerRadius = 10.0
-        ingredientsImage.layer.masksToBounds = true
+//        ingredientsImage.layer.cornerRadius = 10.0
+//        ingredientsImage.layer.masksToBounds = true
         choosePictureButton.layer.cornerRadius = 10.0
         choosePictureButton.layer.masksToBounds = true
         takePictureButton.layer.cornerRadius = 10.0
@@ -408,5 +417,7 @@ extension IngredientsDetailViewController {
         ingredientsDescription.layer.masksToBounds = true
         sendButton.layer.cornerRadius = 10.0
         sendButton.layer.masksToBounds = true
+        cancelButton.layer.cornerRadius = 10.0
+        cancelButton.layer.masksToBounds = true
     }
 }

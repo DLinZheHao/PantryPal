@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-func reviseIngredientsData(_ ingredientsID: String, _ databaseIngredientsData: DatabaseIngredientsData) {
+func reviseIngredientsData(_ ingredientsID: String, _ databaseIngredientsData: DatabaseIngredientsData, _ completion: @escaping () -> Void) {
     let ingredients = Firestore.firestore().collection("ingredients")
     let ingredientsDoc = ingredients.document(ingredientsID)
     
@@ -34,6 +34,7 @@ func reviseIngredientsData(_ ingredientsID: String, _ databaseIngredientsData: D
                     } else {
                         // 文檔數據更新成功
                         print("食材文檔數據更新成功")
+                        completion()
                     }
                 }
                 
