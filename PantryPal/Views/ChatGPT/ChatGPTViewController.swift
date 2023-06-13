@@ -10,8 +10,10 @@ import MessageKit
 import InputBarAccessoryView
 import Firebase
 import ChatGPTKit
+import JGProgressHUD
 
 class ChatGPTViewController: MessagesViewController {
+    let hud = JGProgressHUD(style: .dark)
     let chattyGPT = ChatGPTKit(apiKey: "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")
     var history = [
         Message(role: .system, content: "你是一個料理的專家，並且會用繁體中文回答"),
@@ -23,6 +25,11 @@ class ChatGPTViewController: MessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        self.messagesCollectionView.addGestureRecognizer(tapGesture)
+
+        hud.textLabel.text = "AI 運算中"
+        hud.addGestureRecognizer(tapGesture)
         tabBarController?.tabBar.isHidden = true
         guard let currentUserID = Auth.auth().currentUser?.uid else { return }
         sender = Sender(senderId: currentUserID, displayName: "用戶")
@@ -31,10 +38,15 @@ class ChatGPTViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messageInputBar.delegate = self
+        messageInputBar.sendButton.setTitle("送出", for: .normal  )
         messagesCollectionView.messagesDisplayDelegate = self
-
+        
         navigationItem.title = "ChatGPT"
     }
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+
 }
 extension ChatGPTViewController: MessagesDataSource {
     // MARK: 選擇目前用戶
@@ -94,6 +106,7 @@ extension ChatGPTViewController: InputBarAccessoryViewDelegate {
         self.messages.append(message)
         
         if firstTime {
+            hud.show(in: self.view)
             let newMessage = Message(role: .system, content: text)
             history.append(newMessage)
             performChatCompletions(history) { [weak self] answer in
@@ -103,11 +116,13 @@ extension ChatGPTViewController: InputBarAccessoryViewDelegate {
                                       kind: .text(answer))
                 self?.messages.append(aiMessage)
                 DispatchQueue.main.async {
+                    self?.hud.dismiss()
                     self?.messagesCollectionView.reloadData()
                 }
             }
             firstTime = false
         } else {
+            hud.show(in: self.view)
             let newMessage = Message(role: .system, content: text)
             performChatCompletions([newMessage]) { [weak self] answer in
                 let aiMessage = MessageForm(sender: self!.sender2,
@@ -116,6 +131,7 @@ extension ChatGPTViewController: InputBarAccessoryViewDelegate {
                                       kind: .text(answer))
                 self?.messages.append(aiMessage)
                 DispatchQueue.main.async {
+                    self?.hud.dismiss()
                     self?.messagesCollectionView.reloadData()
                 }
             }
