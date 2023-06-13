@@ -127,12 +127,20 @@ extension IngredientDetailTableViewController {
         guard let url = imageURL else {
             alertTitle("開發錯誤: 圖片url獲取失敗", self, "需要修正")
             return
-        }
-        UIImage.downloadImage(from: URL(string: url)!) { [weak self] image in
-            DispatchQueue.main.async {
-                self?.ingredientsImage.image = image
+        }        
+        ImageDownloader.shared.downloadImage(from: URL(string: url)!) { [weak self] (image) in
+            if let image = image {
+                // 在这里使用下载的图像
+                DispatchQueue.main.async {
+                    self?.ingredientsImage.image = image
+                }
+            } else {
+                // 下载失败或图像无效
+                print("載入圖片失敗")
             }
         }
+        
+        
     }
 }
 extension IngredientDetailTableViewController {

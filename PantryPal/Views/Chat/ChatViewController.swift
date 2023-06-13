@@ -81,23 +81,29 @@ class ChatViewController: MessagesViewController {
                                                       kind: .photo(placeholderMediaItem))
                     self?.messages.append(placeholderMessage)
                     
-                    UIImage.downloadImage(from: url) { [weak self] image in
-                        guard let self = self else { return }
+                    ImageDownloader.shared.downloadImage(from: url) {[weak self] (image) in
+                        if let image = image {
+                            guard let self = self else { return }
 
-                        // 更新圖片消息
-                        if let index = self.messages.firstIndex(where: { $0.messageId == messageData.id }) {
-                            let mediaItem = Media(url: url,
-                                                  image: image,
-                                                  placeholderImage: placeholderImage!,
-                                                  size: image?.size ?? .zero)
-                            let updatedMessage = MessageForm(sender: sender,
-                                                          messageId: messageData.id,
-                                                          sentDate: Date(timeIntervalSince1970: messageData.sendDate),
-                                                          kind: .photo(mediaItem))
-                            self.messages[index] = updatedMessage
-                            self.messagesCollectionView.reloadData()
+                            // 更新圖片消息
+                            if let index = self.messages.firstIndex(where: { $0.messageId == messageData.id }) {
+                                let mediaItem = Media(url: url,
+                                                      image: image,
+                                                      placeholderImage: placeholderImage!,
+                                                      size: image.size)
+                                let updatedMessage = MessageForm(sender: sender,
+                                                              messageId: messageData.id,
+                                                              sentDate: Date(timeIntervalSince1970: messageData.sendDate),
+                                                              kind: .photo(mediaItem))
+                                self.messages[index] = updatedMessage
+                                self.messagesCollectionView.reloadData()
+                            }
+                        } else {
+                            // 下载失败或图像无效
+                            print("載入圖片失敗")
                         }
                     }
+                    
                 }
             }
             self?.messageDateArray = dataArray

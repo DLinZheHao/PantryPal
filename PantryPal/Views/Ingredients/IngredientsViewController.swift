@@ -343,11 +343,18 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
         } else {
             ingredientsCell.notificationImage.isHidden = true
         }
-        UIImage.downloadImage(from: URL(string: ingredientsData[indexPath.row].url)!) { image in
-            DispatchQueue.main.async {
-                ingredientsCell.ingredientsImage.image = image
+        ImageDownloader.shared.downloadImage(from: URL(string: ingredientsData[indexPath.row].url)!) { (image) in
+            if let image = image {
+                // 在这里使用下载的图像
+                DispatchQueue.main.async {
+                    ingredientsCell.ingredientsImage.image = image
+                }
+            } else {
+                // 下载失败或图像无效
+                print("載入圖片失敗")
             }
         }
+
         return ingredientsCell
     }
     
