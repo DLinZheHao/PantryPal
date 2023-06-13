@@ -11,6 +11,7 @@ class FridgeListViewController: UIViewController {
     
     var currentFridgeID: String?
     var fridges: [FridgeData] = []
+    var ingredientsViewController: IngredientsViewController?
     
     @IBOutlet weak var dissmissImageView: UIImageView!
     @IBOutlet weak var fridgeListTableView: FridgeListTableView! {
@@ -76,11 +77,12 @@ extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         chooseFridge(fridges[indexPath.row].id) { [weak self] in
+            self?.ingredientsViewController?.getData()
             self?.presentingViewController?.dismiss(animated: true)
         }
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "刪除") { [weak self] (action, sourceView, completionHandler) in
+        let deleteAction = UIContextualAction(style: .destructive, title: "刪除") { [weak self] (_, _, completionHandler) in
             if let id = self?.fridges[indexPath.row].id,
                let currentID = self?.currentFridgeID,
                id != currentID {

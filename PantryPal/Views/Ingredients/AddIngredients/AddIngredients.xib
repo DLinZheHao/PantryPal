@@ -153,15 +153,15 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V76-2Z-S5D">
-                    <rect key="frame" x="1" y="6" width="30" height="30"/>
+                    <rect key="frame" x="335" y="5" width="20" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="G36-Vx-KB4"/>
-                        <constraint firstAttribute="width" constant="30" id="cFf-gI-Ngj"/>
+                        <constraint firstAttribute="width" constant="20" id="GHF-6l-jVA"/>
+                        <constraint firstAttribute="height" constant="20" id="qbJ-7m-D56"/>
                     </constraints>
                     <color key="tintColor" red="0.2823529541" green="0.47843140360000003" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="outline_keyboard_arrow_left_black_36pt">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="close_icon">
+                        <color key="titleColor" red="0.19836229089999999" green="0.62412577869999997" blue="0.59694504739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="closeView" destination="iN0-l3-epB" eventType="touchUpInside" id="yY4-q5-I7p"/>
@@ -185,7 +185,6 @@
                 <constraint firstItem="u5j-Ol-ygX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="CI8-LR-rof"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eYC-23-ZhY" secondAttribute="trailing" constant="24" id="EFw-jH-Fj5"/>
                 <constraint firstItem="GPd-Ei-O4j" firstAttribute="top" secondItem="eYC-23-ZhY" secondAttribute="bottom" constant="8" symbolic="YES" id="ERG-US-9NR"/>
-                <constraint firstItem="V76-2Z-S5D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="GqQ-bA-5vO"/>
                 <constraint firstItem="LhY-Bf-wMs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="H0b-gM-Lub"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JEf-Q6-xsV" secondAttribute="trailing" constant="258" id="HTO-9N-dTV"/>
                 <constraint firstAttribute="bottom" secondItem="zSP-PH-hdi" secondAttribute="bottom" id="J3z-61-OjM"/>
@@ -205,7 +204,6 @@
                 <constraint firstItem="u5j-Ol-ygX" firstAttribute="top" secondItem="BB7-DO-nWO" secondAttribute="bottom" constant="27" id="dct-8O-Xd3"/>
                 <constraint firstItem="ILd-CN-bbp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="41" id="dhj-wz-Fi9"/>
                 <constraint firstItem="Lcl-Jp-Lao" firstAttribute="top" secondItem="Cge-Vu-M2L" secondAttribute="bottom" constant="10" id="gCH-Ly-zPl"/>
-                <constraint firstItem="V76-2Z-S5D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="1" id="hWe-ai-yOM"/>
                 <constraint firstItem="JEf-Q6-xsV" firstAttribute="leading" secondItem="Cds-nq-7QG" secondAttribute="trailing" constant="8" symbolic="YES" id="iHu-tU-4co"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="LhY-Bf-wMs" secondAttribute="bottom" constant="72" id="kkz-At-XFn"/>
                 <constraint firstItem="Lcl-Jp-Lao" firstAttribute="leading" secondItem="BB7-DO-nWO" secondAttribute="trailing" constant="15" id="mTq-uG-QLa"/>
@@ -213,7 +211,9 @@
                 <constraint firstItem="Cge-Vu-M2L" firstAttribute="leading" secondItem="GPd-Ei-O4j" secondAttribute="trailing" constant="8" symbolic="YES" id="oyp-cy-Ps2"/>
                 <constraint firstItem="u5j-Ol-ygX" firstAttribute="top" secondItem="Hcf-Ps-YWc" secondAttribute="bottom" constant="27" id="qz3-l1-0Or"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Y5x-6E-kfs" secondAttribute="bottom" constant="78" id="rZh-vb-FpY"/>
+                <constraint firstItem="V76-2Z-S5D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="t4G-4U-JXO"/>
                 <constraint firstItem="LhY-Bf-wMs" firstAttribute="top" secondItem="u5j-Ol-ygX" secondAttribute="bottom" constant="12" id="tfA-aV-p0j"/>
+                <constraint firstAttribute="trailing" secondItem="V76-2Z-S5D" secondAttribute="trailing" constant="5" id="ucf-yQ-J4e"/>
                 <constraint firstItem="Cds-nq-7QG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="ut6-Sa-kgn"/>
                 <constraint firstItem="Hcf-Ps-YWc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="w7Y-bF-Jyq"/>
                 <constraint firstItem="Y5x-6E-kfs" firstAttribute="leading" secondItem="LhY-Bf-wMs" secondAttribute="trailing" constant="16" id="wlB-lt-s0D"/>
@@ -243,8 +243,8 @@
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="camera" catalog="system" width="128" height="93"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="close_icon" width="64" height="64"/>
         <image name="outline_alarm_black_36pt" width="36" height="36"/>
-        <image name="outline_keyboard_arrow_left_black_36pt" width="36" height="36"/>
         <image name="outline_note_add_black_24pt" width="24" height="24"/>
         <image name="watermelon" width="80" height="80"/>
         <systemColor name="labelColor">

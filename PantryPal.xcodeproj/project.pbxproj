@@ -72,7 +72,10 @@
 		053743692A331CFF00722FF2 /* SendChatGPTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053743682A331CFF00722FF2 /* SendChatGPTRequest.swift */; };
 		053744402A36010700722FF2 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537443F2A36010700722FF2 /* Credential.swift */; };
 		053744432A3601F600722FF2 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 053744422A3601F600722FF2 /* SwiftKeychainWrapper */; };
-		053744452A36EED700722FF2 /* barcode_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 053744442A36EED700722FF2 /* barcode_success.json */; };
+		053744452A36EED700722FF2 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 053744442A36EED700722FF2 /* success.json */; };
+		053744472A37014600722FF2 /* BlackBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053744462A37014600722FF2 /* BlackBlurEffect.swift */; };
+		053744492A374BD700722FF2 /* ingredient_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 053744482A374BD700722FF2 /* ingredient_success.json */; };
+		0537444B2A374EBC00722FF2 /* Data_loadding.json in Resources */ = {isa = PBXBuildFile; fileRef = 0537444A2A374EBC00722FF2 /* Data_loadding.json */; };
 		055346142A2D6A1900D0C544 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055346132A2D6A1900D0C544 /* UIColor+Extension.swift */; };
 		0553461B2A2EB77600D0C544 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553461A2A2EB77600D0C544 /* HeaderView.swift */; };
 		0553461D2A2EB79600D0C544 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0553461C2A2EB79600D0C544 /* HeaderView.xib */; };
@@ -229,7 +232,10 @@
 		053743632A32FF9D00722FF2 /* ChatGPT.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatGPT.storyboard; sourceTree = "<group>"; };
 		053743682A331CFF00722FF2 /* SendChatGPTRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatGPTRequest.swift; sourceTree = "<group>"; };
 		0537443F2A36010700722FF2 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
-		053744442A36EED700722FF2 /* barcode_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = barcode_success.json; sourceTree = "<group>"; };
+		053744442A36EED700722FF2 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		053744462A37014600722FF2 /* BlackBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackBlurEffect.swift; sourceTree = "<group>"; };
+		053744482A374BD700722FF2 /* ingredient_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ingredient_success.json; sourceTree = "<group>"; };
+		0537444A2A374EBC00722FF2 /* Data_loadding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Data_loadding.json; sourceTree = "<group>"; };
 		055346132A2D6A1900D0C544 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0553461A2A2EB77600D0C544 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0553461C2A2EB79600D0C544 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -432,6 +438,7 @@
 				051AC6C92A1F901000B23C63 /* AddIngredients.xib */,
 				051AC6CB2A1F904000B23C63 /* AddIngredientsView.swift */,
 				05A643682A2B5F0100D37AF6 /* BlackBackgroundView.swift */,
+				053744462A37014600722FF2 /* BlackBlurEffect.swift */,
 			);
 			path = AddIngredients;
 			sourceTree = "<group>";
@@ -771,8 +778,10 @@
 		05A643912A2B8A5100D37AF6 /* Lotties */ = {
 			isa = PBXGroup;
 			children = (
-				053744442A36EED700722FF2 /* barcode_success.json */,
+				053744442A36EED700722FF2 /* success.json */,
 				05A6439F2A2B926400D37AF6 /* loadding.json */,
+				053744482A374BD700722FF2 /* ingredient_success.json */,
+				0537444A2A374EBC00722FF2 /* Data_loadding.json */,
 				05A643942A2B8A8100D37AF6 /* AddSuccess */,
 			);
 			path = Lotties;
@@ -1026,7 +1035,7 @@
 				05ED19772A17665A0023A13E /* LaunchScreen.storyboard in Resources */,
 				0554E0042A2723F300956B04 /* Join.storyboard in Resources */,
 				0553461D2A2EB79600D0C544 /* HeaderView.xib in Resources */,
-				053744452A36EED700722FF2 /* barcode_success.json in Resources */,
+				053744452A36EED700722FF2 /* success.json in Resources */,
 				051AC6A52A1EE18F00B23C63 /* FridgeTabBar.storyboard in Resources */,
 				0554DFFD2A26E66900956B04 /* ManageMemberTableViewCell.xib in Resources */,
 				053743642A32FF9D00722FF2 /* ChatGPT.storyboard in Resources */,
@@ -1047,10 +1056,12 @@
 				05A643A02A2B926400D37AF6 /* loadding.json in Resources */,
 				0554DFA52A2429A900956B04 /* IngredientsDetail.storyboard in Resources */,
 				0554DFC22A259BFE00956B04 /* MemberCollectionViewCell.xib in Resources */,
+				0537444B2A374EBC00722FF2 /* Data_loadding.json in Resources */,
 				05ED1AD12A1D98120023A13E /* FridgeList.storyboard in Resources */,
 				051AC6D92A202F3600B23C63 /* BarcodeScanner.storyboard in Resources */,
 				05ED196F2A1766590023A13E /* Main.storyboard in Resources */,
 				0554E0182A27838600956B04 /* QRCodeScanner.storyboard in Resources */,
+				053744492A374BD700722FF2 /* ingredient_success.json in Resources */,
 				05A643932A2B8A6B00D37AF6 /* add_ingredients.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1210,6 +1221,7 @@
 				0554DFAB2A24D43D00956B04 /* DeleteFridge.swift in Sources */,
 				052C902D2A29B2C000671811 /* IngredientLog.swift in Sources */,
 				0554DFEE2A25E66B00956B04 /* TeamLinkViewController.swift in Sources */,
+				053744472A37014600722FF2 /* BlackBlurEffect.swift in Sources */,
 				051AC68F2A1DA51600B23C63 /* FridgeCell.swift in Sources */,
 				051AC7252A233C5A00B23C63 /* ChooseFridge.swift in Sources */,
 				053743472A306D7500722FF2 /* CreateNewMessage.swift in Sources */,

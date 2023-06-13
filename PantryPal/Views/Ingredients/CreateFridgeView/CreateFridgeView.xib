@@ -15,7 +15,20 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQn-9n-ZBB">
                     <rect key="frame" x="0.0" y="0.0" width="347" height="190"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="創建冰箱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryr-Qa-j2p">
+                            <rect key="frame" x="119" y="10" width="110" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ryr-Qa-j2p" secondAttribute="trailing" constant="118" id="GKc-1Z-TKS"/>
+                        <constraint firstItem="ryr-Qa-j2p" firstAttribute="leading" secondItem="AQn-9n-ZBB" secondAttribute="leading" constant="119" id="Zal-XN-xEz"/>
+                        <constraint firstItem="ryr-Qa-j2p" firstAttribute="top" secondItem="AQn-9n-ZBB" secondAttribute="top" constant="10" id="dXv-mn-zSS"/>
+                    </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yg-x5-VuF">
                     <rect key="frame" x="123" y="131" width="100" height="32"/>
@@ -31,7 +44,7 @@
                     </state>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輸入新創冰箱名稱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BaQ-3Z-K1y">
-                    <rect key="frame" x="68" y="36" width="210" height="34"/>
+                    <rect key="frame" x="68" y="49" width="210" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="210" id="015-XP-lEv"/>
                         <constraint firstAttribute="height" constant="34" id="ZSp-Pg-TI4"/>
@@ -40,31 +53,31 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-Ae-pu6">
-                    <rect key="frame" x="6" y="6" width="30" height="30"/>
+                    <rect key="frame" x="322" y="5" width="20" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="1eG-qt-ahU"/>
-                        <constraint firstAttribute="height" constant="30" id="ILC-pd-hWZ"/>
+                        <constraint firstAttribute="height" constant="20" id="azV-xt-oJT"/>
+                        <constraint firstAttribute="width" constant="20" id="lba-7p-IGA"/>
                     </constraints>
                     <color key="tintColor" red="0.2823529541" green="0.47843140360000003" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="outline_keyboard_arrow_left_black_36pt"/>
+                    <state key="normal" image="close_icon"/>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="AQn-9n-ZBB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0hs-s0-5bJ"/>
+                <constraint firstAttribute="trailing" secondItem="cHg-Ae-pu6" secondAttribute="trailing" constant="5" id="A4G-fT-Fdp"/>
                 <constraint firstItem="BaQ-3Z-K1y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="68" id="BW4-gi-nCs"/>
+                <constraint firstItem="cHg-Ae-pu6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="DXv-mG-6qF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AQn-9n-ZBB" secondAttribute="trailing" id="GUD-9f-olA"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1Yg-x5-VuF" secondAttribute="bottom" constant="27" id="PCT-jH-XKs"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="AQn-9n-ZBB" secondAttribute="bottom" id="UaN-y2-RGB"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BaQ-3Z-K1y" secondAttribute="trailing" constant="69" id="UlV-CU-0zd"/>
                 <constraint firstItem="1Yg-x5-VuF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="123" id="WKd-tC-xRq"/>
-                <constraint firstItem="1Yg-x5-VuF" firstAttribute="top" secondItem="BaQ-3Z-K1y" secondAttribute="bottom" constant="61" id="XZv-EI-Lge"/>
-                <constraint firstItem="cHg-Ae-pu6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="e7z-gl-P9b"/>
+                <constraint firstItem="1Yg-x5-VuF" firstAttribute="top" secondItem="BaQ-3Z-K1y" secondAttribute="bottom" constant="48" id="XZv-EI-Lge"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1Yg-x5-VuF" secondAttribute="trailing" constant="124" id="jCZ-dz-i1o"/>
                 <constraint firstItem="AQn-9n-ZBB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kKo-h6-gat"/>
-                <constraint firstItem="cHg-Ae-pu6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="zmH-wL-dNj"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -76,7 +89,7 @@
         </view>
     </objects>
     <resources>
-        <image name="outline_keyboard_arrow_left_black_36pt" width="36" height="36"/>
+        <image name="close_icon" width="64" height="64"/>
         <image name="outline_note_add_black_24pt" width="24" height="24"/>
     </resources>
 </document>

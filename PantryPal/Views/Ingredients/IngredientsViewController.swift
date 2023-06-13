@@ -15,6 +15,8 @@ import IQKeyboardManagerSwift
 
 class IngredientsViewController: UIViewController {
     private var animationView: LottieAnimationView?
+    private var successCreateView: LottieAnimationView?
+    
     var storeStatus = ["冷藏", "冷凍", "常溫"]
     
     var currentUserName: String?
@@ -35,6 +37,7 @@ class IngredientsViewController: UIViewController {
     var searchIngredientsData = [PresentIngredientsData]()
     
     var header: HeaderView?
+    var blackBlurEffectView: UIVisualEffectView?
     
     @IBOutlet weak var ingredientTableView: UITableView! {
         didSet {
@@ -56,6 +59,7 @@ class IngredientsViewController: UIViewController {
             self?.currentUserName = userName
         }
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
         layoutFAB()
         ingredientTableView.lk_registerCellWithNib(identifier: String(describing: IngredientsTableViewCell.self), bundle: nil)
         ingredientTableView.lk_registerHeaderWithNib(identifier: String(describing: HeaderView.self), bundle: nil)
@@ -67,11 +71,13 @@ class IngredientsViewController: UIViewController {
         getData()
     }
     override func viewWillAppear(_ animated: Bool) {
+        emptyImage.isHidden = true
+        emptyLabel.isHidden = true
         tabBarController?.tabBar.isHidden = false
-        ingredientsData = []
-        ingredientTableView.reloadData()
-        header?.orderButton.setTitle("名稱排序▾", for: .normal)
-        getData()
+//        ingredientsData = []
+//        ingredientTableView.reloadData()
+//        header?.orderButton.setTitle("名稱排序▾", for: .normal)
+//        getData()
     }
     func navigationSetting() {
         let navigationBar = navigationController?.navigationBar
@@ -131,11 +137,11 @@ extension IngredientsViewController {
 extension IngredientsViewController {
     private func goChatGPT() {
         let nextVC = UIStoryboard.chatGPT.instantiateInitialViewController()!
-        guard let vc = nextVC as? ChatGPTViewController else {
+        guard let viewController = nextVC as? ChatGPTViewController else {
             self.navigationController?.pushViewController(nextVC, animated: true)
             return
         }
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 // MARK: - 切換冰箱
@@ -148,6 +154,7 @@ extension IngredientsViewController {
             print("創建失敗")
             return }
         nextVC.currentFridgeID = currentFridgeID!
+        nextVC.ingredientsViewController = self
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         present(nextVC, animated: true, completion: nil)
@@ -167,21 +174,19 @@ extension IngredientsViewController {
                 }
             }
         }
-        let blackView = BlackBackgroundView()
-        blackView.frame = view.frame
-        blackView.backgroundColor = .black
-        blackView.alpha = 0.2
-        view.addSubview(blackView)
-        // swiftlint:disable identifier_name
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = BlackEffectBackgroundView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blackBlurEffectView = blurEffectView
+        view.addSubview(blurEffectView)
+
         guard let customView = UINib(nibName: "CreateFridgeView", bundle: nil).instantiate(withOwner: self, options: nil).first as? CreateFridgeView else {
             print("畫面創建失敗")
             return
         }
-        customView.frame = CGRect(x: 0, y: 900, width: view.frame.width, height: 250)
+        customView.frame = CGRect(x: 0, y: 900, width: view.frame.width, height: 190)
         view.addSubview(customView)
         customView.backgroundColor = UIColor(hex: "#caeded")
-        customView.closeButton.layer.cornerRadius = 10.0
-        customView.closeButton.layer.masksToBounds = true
         customView.sendButton.layer.cornerRadius = 10.0
         customView.sendButton.layer.masksToBounds = true
         customView.closeButton.addTarget(self, action: #selector(closeCreateView), for: .touchUpInside)
@@ -189,7 +194,11 @@ extension IngredientsViewController {
         
         let animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut)
         animator.addAnimations {
-            customView.frame.origin.y = CGFloat(150)
+            if let navigationBar = self.navigationController?.navigationBar {
+                let convertedFrame = navigationBar.convert(navigationBar.bounds, to: self.view)
+                let yPosition = convertedFrame.maxY
+                customView.frame.origin.y = yPosition
+            }
         }
         animator.startAnimation()
         
@@ -205,14 +214,14 @@ extension IngredientsViewController {
                     tabItem.isEnabled = true
                 }
             }
+            
         }
-        let targetView = findSubview(ofType: BlackBackgroundView.self, in: self.view)
-        guard let blackBackgroundView = targetView else {
-            print("找不到")
+        let targetView = findSubview(ofType: BlackEffectBackgroundView.self, in: self.view)
+        guard let blackEffectBackgroundView = targetView else {
             sender.superview?.removeFromSuperview()
             return
         }
-        blackBackgroundView.removeFromSuperview()
+        blackEffectBackgroundView.removeFromSuperview()
         sender.superview?.removeFromSuperview()
     }
     @objc private func createNewFridgeAction(_ sender: UIButton) {
@@ -230,17 +239,29 @@ extension IngredientsViewController {
         
         if !checkEnterIsEmpty(createView.fridgeNameTextfield) {
             guard let fridgeName = createView.fridgeNameTextfield.text else { return }
-            createNewFridge(fridgeName) {
-                fetchFridgeData { [weak self] _ in
-                    self?.getData()
-                    let targetView = findSubview(ofType: BlackBackgroundView.self, in: self!.view)
-                    guard let blackBackgroundView = targetView else {
-                        print("找不到")
+            createNewFridge(fridgeName) { [weak self] in
+                // self?.getData()
+                
+                // MARK: Lotties 動畫設置
+                self?.successCreateView = .init(name: "ingredient_success")
+                self?.successCreateView!.loopMode = .playOnce
+                if let navigationBar = self?.navigationController?.navigationBar {
+                    let convertedFrame = navigationBar.convert(navigationBar.bounds, to: self!.view)
+                    let yPosition = convertedFrame.maxY
+                    self?.successCreateView!.frame = (self?.view.frame)!
+                    self?.successCreateView!.frame.origin.y = yPosition
+                }
+                self?.successCreateView!.contentMode = .scaleAspectFit
+                self?.view.addSubview((self?.successCreateView!)!)
+                self?.successCreateView!.play { (_) in
+                    let targetView = findSubview(ofType: BlackEffectBackgroundView.self, in: self!.view)
+                    guard let blackEffectBackgroundView = targetView else {
                         sender.superview?.removeFromSuperview()
                         return
                     }
-                    blackBackgroundView.removeFromSuperview()
+                    blackEffectBackgroundView.removeFromSuperview()
                     sender.superview?.removeFromSuperview()
+                    self?.successCreateView?.removeFromSuperview()
                 }
             }
             
@@ -271,11 +292,11 @@ extension IngredientsViewController {
 extension IngredientsViewController: GetRefreshSignal {
     func getSignal() {
         getData()
-        let targetView = findSubview(ofType: BlackBackgroundView.self, in: self.view)
-        guard let blackBackgroundView = targetView else {
+        let targetView = findSubview(ofType: BlackEffectBackgroundView.self, in: self.view)
+        guard let blackEffectBackgroundView = targetView else {
             return
         }
-        blackBackgroundView.removeFromSuperview()
+        blackEffectBackgroundView.removeFromSuperview()
     }
 }
 // MARK: - tableView 控制
@@ -374,8 +395,20 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
             completionHandler(true)
         }
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        swipeConfiguration.performsFirstActionWithFullSwipe = true
+        
         return swipeConfiguration
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 设置初始透明度为0
+        cell.alpha = 0.0
+        
+        // 执行动画效果
+        UIView.animate(withDuration: 0.5) {
+            cell.alpha = 1.0
+        }
+    }
+
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let runOutAction = UIContextualAction(style: .normal, title: "用完") { [weak self] (_, _, completionHandler) in
@@ -439,12 +472,11 @@ extension IngredientsViewController {
                 }
             }
         }
-
-        let blackView = BlackBackgroundView()
-        blackView.frame = view.frame
-        blackView.backgroundColor = .black
-        blackView.alpha = 0.2
-        view.addSubview(blackView)
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = BlackEffectBackgroundView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blackBlurEffectView = blurEffectView
+        view.addSubview(blurEffectView)
         
         guard let addIngredientsView = UINib(nibName: "AddIngredients", bundle: nil).instantiate(withOwner: self, options: nil).first as? AddIngredientsView else {
             print("畫面創建失敗")
@@ -492,7 +524,11 @@ extension IngredientsViewController {
 
         let animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut)
         animator.addAnimations {
-            addIngredientsView.frame.origin.y = CGFloat(150)
+            if let navigationBar = self.navigationController?.navigationBar {
+                let convertedFrame = navigationBar.convert(navigationBar.bounds, to: self.view)
+                let yPosition = convertedFrame.maxY
+                addIngredientsView.frame.origin.y = yPosition
+            }
         }
         animator.startAnimation()
 
@@ -700,7 +736,7 @@ extension IngredientsViewController {
 }
 // MARK: 動作簡化
 extension IngredientsViewController {
-    private func getData() {
+    func getData() {
         userLastUseFridge { [weak self] (passFridgeData, passFridgeID) in
             self?.currentFridgeID = passFridgeID
             self?.fridgeData = passFridgeData
@@ -779,5 +815,4 @@ extension IngredientsViewController: UISearchBarDelegate {
             getData()
         }
     }
-
 }

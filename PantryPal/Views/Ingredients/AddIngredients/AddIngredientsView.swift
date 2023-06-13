@@ -6,6 +6,8 @@
 //
 import UIKit
 import FSCalendar
+import Lottie
+
 protocol GetRefreshSignal {
     func getSignal()
 }
@@ -18,6 +20,7 @@ class AddIngredientsView: UIView, FSCalendarDelegate {
     var isEnable = false
     var chineseCalendar: Calendar!
     var delegate: GetRefreshSignal?
+    private var successAddView: LottieAnimationView?
     
     @IBOutlet weak var barcodeTextField: UITextField!
     @IBOutlet weak var ingredientsNameTextField: UITextField!
@@ -146,8 +149,23 @@ extension AddIngredientsView {
                                                    belongFridge: belongFridgeId)
 
                     createNewIndredients(data!) { [self] in
-                        print("嘗試執行")
-                        delegate!.getSignal()
+
+                        // MARK: Lotties 動畫設置
+                        self.successAddView = .init(name: "ingredient_success")
+                        self.successAddView!.loopMode = .playOnce
+                        if let navigationBar = self.ingredientsController?.navigationController?.navigationBar {
+                            let convertedFrame = navigationBar.convert(navigationBar.bounds, to: ingredientsController!.view)
+                            let yPosition = convertedFrame.maxY
+                            self.successAddView!.frame = self.bounds
+                            self.successAddView!.frame.origin.y = yPosition
+                        }
+                        self.successAddView!.contentMode = .scaleAspectFit
+                        self.ingredientsController!.view.addSubview(self.successAddView!)
+                        self.successAddView!.play { (_) in
+                            print("動畫執行")
+                            self.successAddView?.removeFromSuperview()
+                            self.delegate!.getSignal()
+                        }
                     }
                 } else {
                     // 無法取得圖片的下載 URL
@@ -179,12 +197,12 @@ extension AddIngredientsView {
             }
         }
         
-        let targetView = findSubview(ofType: BlackBackgroundView.self, in: self.superview!)
-        guard let blackBackgroundView = targetView else {
+        let targetView = findSubview(ofType: BlackEffectBackgroundView.self, in: self.superview!)
+        guard let blackEffectBackgroundView = targetView else {
             removeFromSuperview()
             return
         }
-        blackBackgroundView.removeFromSuperview()
+        blackEffectBackgroundView.removeFromSuperview()
         removeFromSuperview()
     }
     @objc func enableAlert() {
