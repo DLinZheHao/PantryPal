@@ -3,6 +3,7 @@ PODS:
   - FoldingCell (5.0.2)
   - FSCalendar (2.8.4)
   - IQKeyboardManagerSwift (6.5.11)
+  - JGProgressHUD (2.2)
   - JTAppleCalendar (7.1.8)
   - lottie-ios (4.2.0)
   - MJRefresh (3.7.5)
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - FoldingCell
   - FSCalendar
   - IQKeyboardManagerSwift
+  - JGProgressHUD
   - JTAppleCalendar (~> 7.1)
   - lottie-ios
   - MJRefresh
@@ -24,6 +26,7 @@ SPEC REPOS:
     - FoldingCell
     - FSCalendar
     - IQKeyboardManagerSwift
+    - JGProgressHUD
     - JTAppleCalendar
     - lottie-ios
     - MJRefresh
@@ -34,11 +37,12 @@ SPEC CHECKSUMS:
   FoldingCell: f92eb5fb9842319e7cd08c71533c98408b785099
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   JTAppleCalendar: b7fb40852f5f319fe55c8ec3861f1de0edc99cc8
   lottie-ios: 809ecf2d460ed650a6aed7aa88b2ec45fab4779c
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   SwiftLint: 1ac76dac888ca05cb0cf24d0c85887ec1209961d
 
-PODFILE CHECKSUM: 862792fc6f8bef88bd8f35983276bfb275c762ca
+PODFILE CHECKSUM: b56815a40fd2439b6e6ca1b975c151cdb85f691f
 
 COCOAPODS: 1.12.0

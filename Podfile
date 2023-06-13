@@ -14,4 +14,5 @@ target 'PantryPal' do
   pod 'FoldingCell'
   pod 'Floaty', '~> 4.2.0'
   pod 'lottie-ios'
+  pod 'JGProgressHUD'
 end
