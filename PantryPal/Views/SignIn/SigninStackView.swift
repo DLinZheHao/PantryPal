@@ -55,18 +55,13 @@ class SigninStackView: UIStackView {
                 print("創建失敗")
                 return }
             
-            nextVC.modalPresentationStyle = .fullScreen
-            nextVC.modalTransitionStyle = .crossDissolve
-            controller.present(nextVC, animated: true, completion: nil)
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first {
+                window.rootViewController = nextVC
+            }
+
         }
     }
-//    func faceIDSetUp() {
-//        // 创建一个点击手势识别器
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(authenticateWithBiometric))
-//        
-//        // 将手势识别器添加到UITextField
-//        emailTextField.addGestureRecognizer(tapGesture)
-//    }
     func authenticateWithBiometric() {
         // Get the local authentication context.
         let localAuthContext = LAContext()

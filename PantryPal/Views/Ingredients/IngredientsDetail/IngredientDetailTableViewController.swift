@@ -313,6 +313,7 @@ extension IngredientDetailTableViewController: FSCalendarDelegate, FSCalendarDat
 // MARK: - 送出資料
 extension IngredientDetailTableViewController {
     @IBAction private func sendData() {
+        sendButton.isEnabled = false
         let priceText = ingredientsPrice.text
         let price = Double(priceText ?? "0")
         let storeStatus = ingredientsStoreStatus.selectedSegmentIndex
@@ -405,14 +406,14 @@ extension IngredientDetailTableViewController {
 // MARK: - 取消
 extension IngredientDetailTableViewController {
     @IBAction func cancelTapped() {
-        self.presentingViewController?.dismiss(animated: true)
+        cancelButton.isHidden = true
+        cancelButton.isEnabled = false
+        dismiss(animated: true)
+        print("取消")
     }
 }
 // MARK: - 基本設定
 extension IngredientDetailTableViewController {
-    @objc func imageViewTapped() {
-        self.presentingViewController?.dismiss(animated: true)
-    }
     private func setUp() {
         tabBarController?.tabBar.isHidden = true
 //        ingredientsImage.layer.cornerRadius = 10.0
