@@ -154,12 +154,13 @@ extension SlackInputBar: UIImagePickerControllerDelegate, UINavigationController
                 // 將照片存儲到相冊並獲取 URL
                 saveImageToPhotoAlbum(originalImage) { [weak self] photoUrl in
                     self?.selectedFileURL = photoUrl!
+                    self?.imageURLArray.append(photoUrl!)
                 }
             }
         } else if let editedImage = info[.editedImage] as? UIImage {
             // 拍攝的照片
             self.imageArray.append(editedImage)
-            let handled = self.attachmentManager.handleInput(of: editedImage)
+//            let handled = self.attachmentManager.handleInput(of: editedImage)
             // image.image = editedImage
             // getImageCompletionHandler!(editedImage)
             // 將照片存儲到相冊並獲取 URL
@@ -208,30 +209,37 @@ extension SlackInputBar: UIImagePickerControllerDelegate, UINavigationController
 extension SlackInputBar: AttachmentManagerDelegate {
     
     // MARK: - AttachmentManagerDelegate
-    
     func attachmentManager(_ manager: AttachmentManager, shouldBecomeVisible: Bool) {
         setAttachmentManager(active: shouldBecomeVisible)
     }
-    
     func attachmentManager(_ manager: AttachmentManager, didReloadTo attachments: [AttachmentManager.Attachment]) {
         self.sendButton.isEnabled = manager.attachments.count > 0
     }
-    
     func attachmentManager(_ manager: AttachmentManager, didInsert attachment: AttachmentManager.Attachment, at index: Int) {
         self.sendButton.isEnabled = manager.attachments.count > 0
     }
     func attachmentManager(_ manager: AttachmentManager, didRemove attachment: AttachmentManager.Attachment, at index: Int) {
-//        if self.imageArray
-//        self.imageArray.remove(at: index)
-//        self.imageURLArray.remove(at: index)
         self.sendButton.isEnabled = manager.attachments.count > 0
     }
     func attachmentManager(_ manager: AttachmentManager, didSelectAddAttachmentAt index: Int) {
-        getImageGo(type: 2)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let albumAction = UIAlertAction(title: "相簿", style: .default) { [weak self] (_) in
+            self?.getImageGo(type: 2)
+        }
+        let takePictureAction = UIAlertAction(title: "拍照", style: .default) { [weak self] (_)  in
+            self?.getImageGo(type: 1)
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        
+        actionSheet.addAction(albumAction)
+        actionSheet.addAction(takePictureAction)
+        actionSheet.addAction(cancelAction)
+
+        controller!.present(actionSheet, animated: true, completion: nil)
     }
     
     // MARK: - AttachmentManagerDelegate Helper
-    
     func setAttachmentManager(active: Bool) {
         print("觸發６")
         let topStackView = self.topStackView

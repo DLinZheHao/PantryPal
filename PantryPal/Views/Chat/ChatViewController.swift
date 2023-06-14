@@ -237,6 +237,8 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
                     }
                 }
             }
+        } else {
+            print("照片沒有送出")
         }
         // 清空輸入欄的文字
         inputBar.inputTextView.text = ""
@@ -250,4 +252,3 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
         messagesCollectionView.scrollToLastItem(animated: true)
     }
 }
-
