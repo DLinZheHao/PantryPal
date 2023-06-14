@@ -66,7 +66,7 @@ extension ChatGPTViewController: MessagesDataSource {
        at indexPath: IndexPath,
        in messagesCollectionView: MessagesCollectionView) -> CGFloat {
        
-       return 12
+       return 20
      }
      
      func messageTopLabelAttributedText(
@@ -92,6 +92,23 @@ extension ChatGPTViewController: MessagesDisplayDelegate {
     func inputBar(_: InputBarAccessoryView, textViewTextDidChangeTo _: String) {
         
     }
+    func configureAvatarView(
+        _ avatarView: AvatarView,
+        for message: MessageType,
+        at indexPath: IndexPath,
+        in messagesCollectionView: MessagesCollectionView) {
+            // 根據消息設定頭像
+            if let myMessage = message as? MessageForm, myMessage.sender.senderId == self.sender?.senderId {
+                // 設定自定義的頭像
+                // avatarView.image = ...
+                avatarView.set(avatar: Avatar(image: UIImage.asset(.user)))
+                
+            } else {
+                // 設定預設的頭像
+                avatarView.set(avatar: Avatar(image: UIImage.asset(.ai)))
+            }
+        }
+
 }
 
 extension ChatGPTViewController: InputBarAccessoryViewDelegate {

@@ -54,6 +54,7 @@ class ChatViewController: MessagesViewController {
         guard let currentUserID = Auth.auth().currentUser?.uid else { return }
         sender = Sender(senderId: currentUserID, displayName: curruentUserName)
         sender!.senderId = currentUserID
+        
         getChatMessage { [weak self] dataArray in
             self!.messageDateArray = findNewMessages(existingMessages: self!.messageDateArray, newMessages: dataArray)
             
@@ -147,7 +148,7 @@ extension ChatViewController: MessagesDataSource {
        at indexPath: IndexPath,
        in messagesCollectionView: MessagesCollectionView) -> CGFloat {
        
-       return 12
+       return 20
      }
      
      func messageTopLabelAttributedText(
@@ -212,6 +213,23 @@ extension ChatViewController: MessagesDisplayDelegate {
     func inputBar(_: InputBarAccessoryView, textViewTextDidChangeTo _: String) {
         
     }
+    // MARK: sender 的頭像
+    func configureAvatarView(
+        _ avatarView: AvatarView,
+        for message: MessageType,
+        at indexPath: IndexPath,
+        in messagesCollectionView: MessagesCollectionView) {
+            // 根據消息設定頭像
+            if let myMessage = message as? MessageForm, myMessage.sender.senderId == self.sender?.senderId {
+                // 設定自定義的頭像
+                // avatarView.image = ...
+                avatarView.set(avatar: Avatar(image: UIImage.asset(.user)))
+                
+            } else {
+                // 設定預設的頭像
+                avatarView.set(avatar: Avatar(image: UIImage.asset(.profile_user)))
+            }
+        }
 }
 
 extension ChatViewController: InputBarAccessoryViewDelegate {
