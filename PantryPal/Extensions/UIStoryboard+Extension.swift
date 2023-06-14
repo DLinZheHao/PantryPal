@@ -20,7 +20,7 @@ extension UIStoryboard {
     static var calendarPage: UIStoryboard { return stStoryboard(name: "CalendarPage")}
     static var chat: UIStoryboard { return stStoryboard(name: "Chat")}
     static var chatGPT: UIStoryboard { return stStoryboard(name: "ChatGPT")}
-    
+    static var arKit: UIStoryboard { return stStoryboard(name: "ARKit")}
     private static func stStoryboard(name: String) -> UIStoryboard {
         return UIStoryboard(name: name, bundle: nil)
     }

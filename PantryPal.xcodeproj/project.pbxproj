@@ -53,6 +53,11 @@
 		052C90282A29951300671811 /* DataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052C90262A29951300671811 /* DataCell.xib */; };
 		052C902B2A29B20500671811 /* isSameDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C902A2A29B20500671811 /* isSameDay.swift */; };
 		052C902D2A29B2C000671811 /* IngredientLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C902C2A29B2C000671811 /* IngredientLog.swift */; };
+		05343B722A3991C9009E2640 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05343B712A3991C9009E2640 /* ARKit.framework */; };
+		05343B752A3992C3009E2640 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343B742A3992C3009E2640 /* ARViewController.swift */; };
+		05343B772A3992D1009E2640 /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05343B762A3992D1009E2640 /* ARKit.storyboard */; };
+		05343B7D2A39949E009E2640 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343B7C2A39949E009E2640 /* Scene.swift */; };
+		05343B832A399EEE009E2640 /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05343B822A399EEE009E2640 /* Scene.sks */; };
 		053525EC2A2EFBA500FE05AE /* changeFridgeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053525EB2A2EFBA500FE05AE /* changeFridgeName.swift */; };
 		053525F02A2F094000FE05AE /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 053525EF2A2F094000FE05AE /* MessageKit */; };
 		053525F22A2F0A3300FE05AE /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053525F12A2F0A3300FE05AE /* Chat.storyboard */; };
@@ -217,6 +222,11 @@
 		052C90262A29951300671811 /* DataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataCell.xib; sourceTree = "<group>"; };
 		052C902A2A29B20500671811 /* isSameDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isSameDay.swift; sourceTree = "<group>"; };
 		052C902C2A29B2C000671811 /* IngredientLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientLog.swift; sourceTree = "<group>"; };
+		05343B712A3991C9009E2640 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
+		05343B742A3992C3009E2640 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		05343B762A3992D1009E2640 /* ARKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARKit.storyboard; sourceTree = "<group>"; };
+		05343B7C2A39949E009E2640 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		05343B822A399EEE009E2640 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
 		053525EB2A2EFBA500FE05AE /* changeFridgeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeFridgeName.swift; sourceTree = "<group>"; };
 		053525F12A2F0A3300FE05AE /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		053525F32A2F0A4F00FE05AE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +327,7 @@
 				05ED1A9F2A1C93400023A13E /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				05ED1AA52A1C93400023A13E /* FirebaseMessaging in Frameworks */,
 				05ED1A852A1C93400023A13E /* FirebaseAppDistribution-Beta in Frameworks */,
+				05343B722A3991C9009E2640 /* ARKit.framework in Frameworks */,
 				05ED1A892A1C93400023A13E /* FirebaseAuthCombine-Community in Frameworks */,
 				05ED1A952A1C93400023A13E /* FirebaseFirestoreCombine-Community in Frameworks */,
 				05ED1A7F2A1C93400023A13E /* FirebaseAnalyticsSwift in Frameworks */,
@@ -538,6 +549,17 @@
 				053743592A32A69700722FF2 /* CheckDayDateExist.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		05343B732A39927E009E2640 /* ARKit_SpriteKit */ = {
+			isa = PBXGroup;
+			children = (
+				05343B742A3992C3009E2640 /* ARViewController.swift */,
+				05343B822A399EEE009E2640 /* Scene.sks */,
+				05343B762A3992D1009E2640 /* ARKit.storyboard */,
+				05343B7C2A39949E009E2640 /* Scene.swift */,
+			);
+			path = ARKit_SpriteKit;
 			sourceTree = "<group>";
 		};
 		053525ED2A2F07BE00FE05AE /* Chat */ = {
@@ -848,6 +870,7 @@
 		05ED1AB22A1CA0E30023A13E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				05343B732A39927E009E2640 /* ARKit_SpriteKit */,
 				053743602A32FF2F00722FF2 /* ChatGPT */,
 				053525ED2A2F07BE00FE05AE /* Chat */,
 				0554E01E2A28597200956B04 /* Calendar */,
@@ -930,6 +953,7 @@
 		19ABFE95C280C8C18AB53C58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05343B712A3991C9009E2640 /* ARKit.framework */,
 				9D6A1EA9F5C052F834352855 /* Pods_PantryPal.framework */,
 			);
 			name = Frameworks;
@@ -1045,6 +1069,7 @@
 			files = (
 				05ED19772A17665A0023A13E /* LaunchScreen.storyboard in Resources */,
 				0554E0042A2723F300956B04 /* Join.storyboard in Resources */,
+				05343B772A3992D1009E2640 /* ARKit.storyboard in Resources */,
 				0553461D2A2EB79600D0C544 /* HeaderView.xib in Resources */,
 				053744452A36EED700722FF2 /* success.json in Resources */,
 				051AC6A52A1EE18F00B23C63 /* FridgeTabBar.storyboard in Resources */,
@@ -1060,6 +1085,7 @@
 				051AC6CA2A1F901000B23C63 /* AddIngredients.xib in Resources */,
 				051AC6902A1DA51600B23C63 /* FridgeCell.xib in Resources */,
 				0554DFB12A25959B00956B04 /* Members.storyboard in Resources */,
+				05343B832A399EEE009E2640 /* Scene.sks in Resources */,
 				051AC6D12A1F98C200B23C63 /* Calendar.xib in Resources */,
 				051AC6FB2A2210CA00B23C63 /* IngredientsTableViewCell.xib in Resources */,
 				05ED19742A17665A0023A13E /* Assets.xcassets in Resources */,
@@ -1164,6 +1190,7 @@
 				051AC6AB2A1EE43000B23C63 /* IngredientsViewController.swift in Sources */,
 				05A643A22A2B97FF00D37AF6 /* UIView+Extension.swift in Sources */,
 				0554E0132A2773FB00956B04 /* AcceptInvite.swift in Sources */,
+				05343B752A3992C3009E2640 /* ARViewController.swift in Sources */,
 				051AC6E72A20AB1800B23C63 /* UploadPictureToFirebase.swift in Sources */,
 				05ED196C2A1766590023A13E /* LobbyViewController.swift in Sources */,
 				051AC6CF2A1F98AD00B23C63 /* CalendarView.swift in Sources */,
@@ -1226,6 +1253,7 @@
 				0554E01C2A28356600956B04 /* DeleteMember.swift in Sources */,
 				0554DFF42A25F61200956B04 /* ManageMemberViewController.swift in Sources */,
 				05A643212A2B1B5100D37AF6 /* StoreStatus.swift in Sources */,
+				05343B7D2A39949E009E2640 /* Scene.swift in Sources */,
 				0537444D2A380BD800722FF2 /* IngredientDetailTableViewController.swift in Sources */,
 				05ED1ACA2A1D8DEF0023A13E /* Alert.swift in Sources */,
 				0537434E2A31790400722FF2 /* FindNewMessage.swift in Sources */,
