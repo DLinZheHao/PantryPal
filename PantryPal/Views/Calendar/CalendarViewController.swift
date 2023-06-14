@@ -205,14 +205,14 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
         calendarView.locale = locale
         calendarView.appearance.caseOptions = .weekdayUsesSingleUpperCase
         calendarView.placeholderType = .none
-        calendarView.appearance.titleDefaultColor = .white
-        calendarView.appearance.titleTodayColor = .white
+        calendarView.appearance.titleDefaultColor = .black
+        calendarView.appearance.titleTodayColor = .black
         calendarView.appearance.todayColor = .lightGray
-        calendarView.appearance.weekdayTextColor = .white
+        calendarView.appearance.weekdayTextColor = .black
         calendarView.appearance.titleWeekendColor = .lightGray
         calendarView.appearance.subtitleWeekendColor = .yellow
 
-        calendarView.appearance.headerTitleColor = .white
+        calendarView.appearance.headerTitleColor = .black
         calendarView.appearance.headerDateFormat = "yyyy年MM月"
         
         calendarView.appearance.selectionColor = .darkGray
@@ -280,6 +280,13 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
         // 没有匹配的日期，表示没有时间记录
         return 0 // 返回0表示没有事件
     }
+    func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
+        if isDateToday(date) {
+            return "今"
+        }
+        return nil
+    }
+
     // MARK: 手勢切換日曆
     @objc func handleSwipeGesture(_ gesture: UISwipeGestureRecognizer) {
         print("觸發 ")

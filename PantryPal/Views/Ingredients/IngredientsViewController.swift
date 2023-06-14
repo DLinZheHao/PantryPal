@@ -428,13 +428,13 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
         let expiredAction = UIContextualAction(style: .normal, title: "過期") { [weak self] (_, _, completionHandler) in
             guard let ingredientDataArray = self?.ingredientsData,
                   let currentFridgeID = self?.currentFridgeID else { return }
-            self?.historyAction(action: 0, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
+            self?.historyAction(action: 1, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
             completionHandler(true)
         }
         let throwAway = UIContextualAction(style: .normal, title: "丟棄") { [weak self] (_, _, completionHandler) in
             guard let ingredientDataArray = self?.ingredientsData,
                   let currentFridgeID = self?.currentFridgeID else { return }
-            self?.historyAction(action: 0, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
+            self?.historyAction(action: 2, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
             completionHandler(true)
         }
         runOutAction.backgroundColor = .gray
