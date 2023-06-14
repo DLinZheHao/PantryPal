@@ -10,6 +10,8 @@ import UIKit
 class JoinViewController: UIViewController {
     var inviteData: [InviteData] = []
 
+    @IBOutlet weak var mailboxLabel: UILabel!
+    @IBOutlet weak var mailboxImage: UIImageView!
     @IBOutlet weak var inviteTableView: UITableView! {
         didSet {
             inviteTableView.delegate = self
@@ -17,7 +19,6 @@ class JoinViewController: UIViewController {
         }
     }
     @IBOutlet weak var scannerButton: UIButton!
-    
     @IBAction func scannerButtonTapped() {
         print("按下")
         guard let nextVC = UIStoryboard.qrCodeScanner.instantiateViewController(
@@ -34,6 +35,8 @@ class JoinViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
+        mailboxImage.isHidden = true
+        mailboxLabel.isHidden = true
     }
     
 }
@@ -43,6 +46,15 @@ extension JoinViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if inviteData.isEmpty {
+            tableView.isHidden = true
+            mailboxImage.isHidden = false
+            mailboxLabel.isHidden = false
+        } else {
+            tableView.isHidden = false
+            mailboxImage.isHidden = true
+            mailboxLabel.isHidden = true
+        }
         return inviteData.count
     }
     

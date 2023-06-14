@@ -90,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="掃描加入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07h-rf-Sb9">
-                                <rect key="frame" x="16" y="367" width="102" height="30"/>
+                                <rect key="frame" x="15.999999999999993" y="367" width="101.33333333333331" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -125,16 +125,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JBX-2H-5dr">
+                                <rect key="frame" x="130" y="150" width="133" height="153.66666666666663"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mailbox" translatesAutoresizingMaskIntoConstraints="NO" id="g6k-il-mmy">
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="109"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="109" id="Tr6-Ui-uDD"/>
+                                            <constraint firstAttribute="width" constant="133" id="rUo-Hg-RA5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前沒有邀請喔" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yh-Wq-Q34">
+                                        <rect key="frame" x="0.0" y="117.00000000000001" width="133" height="36.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.96644011789999995" green="0.95290944609999995" blue="0.94215892909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="baq-wT-m11" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="1bR-o4-7gm"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0vt-7G-DNy" secondAttribute="trailing" constant="56" id="3C5-Ct-ZZV"/>
+                            <constraint firstAttribute="bottom" secondItem="JBX-2H-5dr" secondAttribute="bottom" constant="548.33000000000004" id="5Op-dE-tM6"/>
                             <constraint firstItem="puO-JY-bpO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="124" id="7Xs-DC-eui"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="baq-wT-m11" secondAttribute="trailing" constant="275" id="8q8-XY-Txx"/>
                             <constraint firstItem="hwc-K6-CHg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="90d-nh-z40"/>
+                            <constraint firstItem="JBX-2H-5dr" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="150" id="CeX-Av-q49"/>
                             <constraint firstItem="0vt-7G-DNy" firstAttribute="top" secondItem="hwc-K6-CHg" secondAttribute="bottom" constant="155" id="Cr6-ru-vjF"/>
+                            <constraint firstItem="JBX-2H-5dr" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="130" id="D1R-17-wSn"/>
                             <constraint firstItem="NdG-QS-laz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="KSc-V9-72J"/>
                             <constraint firstItem="hwc-K6-CHg" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-15" id="Pok-C2-Cof"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="puO-JY-bpO" secondAttribute="trailing" constant="124" id="SLF-Tu-twe"/>
@@ -153,12 +174,15 @@
                             <constraint firstItem="NdG-QS-laz" firstAttribute="top" secondItem="07h-rf-Sb9" secondAttribute="bottom" constant="185" id="mTh-Zi-jzY"/>
                             <constraint firstItem="07h-rf-Sb9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ndU-F8-V6H"/>
                             <constraint firstItem="Ff8-o2-MyL" firstAttribute="top" secondItem="hwc-K6-CHg" secondAttribute="bottom" constant="155" id="smf-Ff-xLY"/>
+                            <constraint firstAttribute="trailing" secondItem="JBX-2H-5dr" secondAttribute="trailing" constant="130" id="yTL-bg-a1N"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ff8-o2-MyL" secondAttribute="trailing" constant="24" id="zXu-bJ-a3M"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Rnc-gG-is6"/>
                     <connections>
                         <outlet property="inviteTableView" destination="hwc-K6-CHg" id="LRG-rX-Btm"/>
+                        <outlet property="mailboxImage" destination="g6k-il-mmy" id="Uxw-yw-9Eb"/>
+                        <outlet property="mailboxLabel" destination="9Yh-Wq-Q34" id="RJE-NE-1PG"/>
                         <outlet property="scannerButton" destination="puO-JY-bpO" id="Bxj-8q-pgv"/>
                     </connections>
                 </viewController>
@@ -168,6 +192,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mailbox" width="256" height="256"/>
         <image name="plus.viewfinder" catalog="system" width="128" height="115"/>
         <image name="point" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">

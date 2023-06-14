@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,9 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background4" translatesAutoresizingMaskIntoConstraints="NO" id="eyl-be-B4G">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wood" translatesAutoresizingMaskIntoConstraints="NO" id="Z7y-Nf-kyM">
                                 <rect key="frame" x="0.0" y="89" width="393" height="329"/>
                                 <constraints>
@@ -54,24 +50,20 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96644011789999995" green="0.95290944609999995" blue="0.94215892909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cIv-kP-auf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="0yB-1l-JnR"/>
                             <constraint firstItem="cIv-kP-auf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2Ah-Wl-uL9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="x4Y-bf-xdw" secondAttribute="trailing" id="2ZQ-4x-Pxn"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eyl-be-B4G" secondAttribute="trailing" id="7YG-zJ-1kC"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="QKn-t7-3eP" secondAttribute="bottom" id="8cX-ko-UZC"/>
                             <constraint firstItem="cIv-kP-auf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="BHy-uq-fKJ"/>
                             <constraint firstItem="x4Y-bf-xdw" firstAttribute="top" secondItem="Z7y-Nf-kyM" secondAttribute="bottom" id="DhB-HH-JSK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QKn-t7-3eP" secondAttribute="trailing" id="K6e-UN-ZZo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="x4Y-bf-xdw" secondAttribute="bottom" id="Qas-KY-zDP"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="eyl-be-B4G" secondAttribute="bottom" id="RHV-1l-WdM"/>
                             <constraint firstItem="Z7y-Nf-kyM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TTq-Tx-Gzi"/>
-                            <constraint firstItem="eyl-be-B4G" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Xgd-vs-Og8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Z7y-Nf-kyM" secondAttribute="trailing" id="beQ-kC-h4X"/>
                             <constraint firstItem="x4Y-bf-xdw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fbd-a3-XJP"/>
                             <constraint firstItem="Z7y-Nf-kyM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="kmv-ci-7yz"/>
-                            <constraint firstItem="eyl-be-B4G" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pEB-VR-evF"/>
                             <constraint firstItem="QKn-t7-3eP" firstAttribute="top" secondItem="Z7y-Nf-kyM" secondAttribute="bottom" id="vOH-4B-si9"/>
                             <constraint firstItem="QKn-t7-3eP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yEB-tq-ru3"/>
                         </constraints>
@@ -88,10 +80,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background4" width="1200" height="1604"/>
         <image name="wood" width="3544" height="2364"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
