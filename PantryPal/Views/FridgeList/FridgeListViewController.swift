@@ -86,7 +86,7 @@ extension FridgeListViewController: UITableViewDelegate, UITableViewDataSource {
             if let id = self?.fridges[indexPath.row].id,
                let currentID = self?.currentFridgeID,
                id != currentID {
-                deleteFridge(id) { [weak self] in
+                deleteFridge(self!, id) { [weak self] in
                     fetchFridgeData { [weak self] getData in
                         self?.fridges = getData
                         self?.fridgeListTableView.reloadData()

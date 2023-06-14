@@ -447,7 +447,6 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
     
     private func historyAction(action: Int, ingredietnsDataArray: [PresentIngredientsData], indexPath: IndexPath, fridgeID: String) {
         
-        
         let ingredientsHistoryData = IngredientsHistoryData(barcode: ingredietnsDataArray[indexPath.row].barcode,
                                                             ingredientsID: ingredietnsDataArray[indexPath.row].ingredientsID,
                                                             name: ingredietnsDataArray[indexPath.row].name,
