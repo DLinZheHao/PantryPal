@@ -63,7 +63,6 @@
 		05343B8A2A3A9B1E009E2640 /* RealityKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05343B892A3A9B1E009E2640 /* RealityKit.storyboard */; };
 		05343B942A3AA0DB009E2640 /* MyBeer.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 05343B932A3AA0DB009E2640 /* MyBeer.rcproject */; };
 		05343B962A3AABB3009E2640 /* beer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 05343B952A3AABB3009E2640 /* beer.usdz */; };
-		05343B9A2A3AB632009E2640 /* small_beer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 05343B992A3AB632009E2640 /* small_beer.usdz */; };
 		05343B9C2A3AB7A3009E2640 /* MeasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343B9B2A3AB7A3009E2640 /* MeasureViewController.swift */; };
 		05343B9E2A3AB7BD009E2640 /* Measure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05343B9D2A3AB7BD009E2640 /* Measure.storyboard */; };
 		05343BA52A3B0F54009E2640 /* Measure_2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05343BA42A3B0F54009E2640 /* Measure_2.storyboard */; };
@@ -245,7 +244,6 @@
 		05343B892A3A9B1E009E2640 /* RealityKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RealityKit.storyboard; sourceTree = "<group>"; };
 		05343B932A3AA0DB009E2640 /* MyBeer.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = MyBeer.rcproject; sourceTree = "<group>"; };
 		05343B952A3AABB3009E2640 /* beer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = beer.usdz; sourceTree = "<group>"; };
-		05343B992A3AB632009E2640 /* small_beer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = small_beer.usdz; sourceTree = "<group>"; };
 		05343B9B2A3AB7A3009E2640 /* MeasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureViewController.swift; sourceTree = "<group>"; };
 		05343B9D2A3AB7BD009E2640 /* Measure.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Measure.storyboard; sourceTree = "<group>"; };
 		05343BA42A3B0F54009E2640 /* Measure_2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Measure_2.storyboard; sourceTree = "<group>"; };
@@ -627,7 +625,6 @@
 		05343BA12A3ABA65009E2640 /* 3DModel */ = {
 			isa = PBXGroup;
 			children = (
-				05343B992A3AB632009E2640 /* small_beer.usdz */,
 				05343B952A3AABB3009E2640 /* beer.usdz */,
 			);
 			path = 3DModel;
@@ -1166,7 +1163,6 @@
 				05ED19742A17665A0023A13E /* Assets.xcassets in Resources */,
 				053525F22A2F0A3300FE05AE /* Chat.storyboard in Resources */,
 				0537444F2A380C6A00722FF2 /* IngredientsDetail.storyboard in Resources */,
-				05343B9A2A3AB632009E2640 /* small_beer.usdz in Resources */,
 				05A643A02A2B926400D37AF6 /* loadding.json in Resources */,
 				0554DFC22A259BFE00956B04 /* MemberCollectionViewCell.xib in Resources */,
 				0537444B2A374EBC00722FF2 /* Data_loadding.json in Resources */,
