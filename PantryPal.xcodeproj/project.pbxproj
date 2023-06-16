@@ -58,6 +58,19 @@
 		05343B772A3992D1009E2640 /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05343B762A3992D1009E2640 /* ARKit.storyboard */; };
 		05343B7D2A39949E009E2640 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343B7C2A39949E009E2640 /* Scene.swift */; };
 		05343B832A399EEE009E2640 /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05343B822A399EEE009E2640 /* Scene.sks */; };
+		05343B862A3A9A9D009E2640 /* RealityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05343B852A3A9A9D009E2640 /* RealityKit.framework */; };
+		05343B882A3A9B05009E2640 /* RealityKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343B872A3A9B05009E2640 /* RealityKitViewController.swift */; };
+		05343B8A2A3A9B1E009E2640 /* RealityKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05343B892A3A9B1E009E2640 /* RealityKit.storyboard */; };
+		05343B942A3AA0DB009E2640 /* MyBeer.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 05343B932A3AA0DB009E2640 /* MyBeer.rcproject */; };
+		05343B962A3AABB3009E2640 /* beer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 05343B952A3AABB3009E2640 /* beer.usdz */; };
+		05343B9A2A3AB632009E2640 /* small_beer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 05343B992A3AB632009E2640 /* small_beer.usdz */; };
+		05343B9C2A3AB7A3009E2640 /* MeasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343B9B2A3AB7A3009E2640 /* MeasureViewController.swift */; };
+		05343B9E2A3AB7BD009E2640 /* Measure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05343B9D2A3AB7BD009E2640 /* Measure.storyboard */; };
+		05343BA52A3B0F54009E2640 /* Measure_2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05343BA42A3B0F54009E2640 /* Measure_2.storyboard */; };
+		05343BA72A3B0F6C009E2640 /* ARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343BA62A3B0F6B009E2640 /* ARSCNView.swift */; };
+		05343BA92A3B0F7C009E2640 /* SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343BA82A3B0F7C009E2640 /* SCNVector3.swift */; };
+		05343BAB2A3B0F90009E2640 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343BAA2A3B0F90009E2640 /* Line.swift */; };
+		05343BAD2A3B0FC7009E2640 /* MeasureObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343BAC2A3B0FC7009E2640 /* MeasureObjectViewController.swift */; };
 		053525EC2A2EFBA500FE05AE /* changeFridgeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053525EB2A2EFBA500FE05AE /* changeFridgeName.swift */; };
 		053525F02A2F094000FE05AE /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 053525EF2A2F094000FE05AE /* MessageKit */; };
 		053525F22A2F0A3300FE05AE /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053525F12A2F0A3300FE05AE /* Chat.storyboard */; };
@@ -227,6 +240,19 @@
 		05343B762A3992D1009E2640 /* ARKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARKit.storyboard; sourceTree = "<group>"; };
 		05343B7C2A39949E009E2640 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		05343B822A399EEE009E2640 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
+		05343B852A3A9A9D009E2640 /* RealityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealityKit.framework; path = System/Library/Frameworks/RealityKit.framework; sourceTree = SDKROOT; };
+		05343B872A3A9B05009E2640 /* RealityKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityKitViewController.swift; sourceTree = "<group>"; };
+		05343B892A3A9B1E009E2640 /* RealityKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RealityKit.storyboard; sourceTree = "<group>"; };
+		05343B932A3AA0DB009E2640 /* MyBeer.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = MyBeer.rcproject; sourceTree = "<group>"; };
+		05343B952A3AABB3009E2640 /* beer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = beer.usdz; sourceTree = "<group>"; };
+		05343B992A3AB632009E2640 /* small_beer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = small_beer.usdz; sourceTree = "<group>"; };
+		05343B9B2A3AB7A3009E2640 /* MeasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureViewController.swift; sourceTree = "<group>"; };
+		05343B9D2A3AB7BD009E2640 /* Measure.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Measure.storyboard; sourceTree = "<group>"; };
+		05343BA42A3B0F54009E2640 /* Measure_2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Measure_2.storyboard; sourceTree = "<group>"; };
+		05343BA62A3B0F6B009E2640 /* ARSCNView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSCNView.swift; sourceTree = "<group>"; };
+		05343BA82A3B0F7C009E2640 /* SCNVector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector3.swift; sourceTree = "<group>"; };
+		05343BAA2A3B0F90009E2640 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		05343BAC2A3B0FC7009E2640 /* MeasureObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureObjectViewController.swift; sourceTree = "<group>"; };
 		053525EB2A2EFBA500FE05AE /* changeFridgeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeFridgeName.swift; sourceTree = "<group>"; };
 		053525F12A2F0A3300FE05AE /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		053525F32A2F0A4F00FE05AE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -351,6 +377,7 @@
 				1D4E96006AE97AE367D41801 /* Pods_PantryPal.framework in Frameworks */,
 				05ED1A872A1C93400023A13E /* FirebaseAuth in Frameworks */,
 				05ED1A912A1C93400023A13E /* FirebaseDynamicLinks in Frameworks */,
+				05343B862A3A9A9D009E2640 /* RealityKit.framework in Frameworks */,
 				05ED1A932A1C93400023A13E /* FirebaseFirestore in Frameworks */,
 				05ED1AAB2A1C93400023A13E /* FirebaseRemoteConfigSwift in Frameworks */,
 			);
@@ -560,6 +587,50 @@
 				05343B7C2A39949E009E2640 /* Scene.swift */,
 			);
 			path = ARKit_SpriteKit;
+			sourceTree = "<group>";
+		};
+		05343B842A3A9A82009E2640 /* RealityKit */ = {
+			isa = PBXGroup;
+			children = (
+				05343BA12A3ABA65009E2640 /* 3DModel */,
+				05343B932A3AA0DB009E2640 /* MyBeer.rcproject */,
+				05343B872A3A9B05009E2640 /* RealityKitViewController.swift */,
+				05343B892A3A9B1E009E2640 /* RealityKit.storyboard */,
+			);
+			path = RealityKit;
+			sourceTree = "<group>";
+		};
+		05343B972A3AB48F009E2640 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				05343B982A3AB4C4009E2640 /* ARKit_Measure */,
+				05343B732A39927E009E2640 /* ARKit_SpriteKit */,
+				05343B842A3A9A82009E2640 /* RealityKit */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		05343B982A3AB4C4009E2640 /* ARKit_Measure */ = {
+			isa = PBXGroup;
+			children = (
+				05343B9B2A3AB7A3009E2640 /* MeasureViewController.swift */,
+				05343BAC2A3B0FC7009E2640 /* MeasureObjectViewController.swift */,
+				05343BA62A3B0F6B009E2640 /* ARSCNView.swift */,
+				05343BA82A3B0F7C009E2640 /* SCNVector3.swift */,
+				05343BAA2A3B0F90009E2640 /* Line.swift */,
+				05343B9D2A3AB7BD009E2640 /* Measure.storyboard */,
+				05343BA42A3B0F54009E2640 /* Measure_2.storyboard */,
+			);
+			path = ARKit_Measure;
+			sourceTree = "<group>";
+		};
+		05343BA12A3ABA65009E2640 /* 3DModel */ = {
+			isa = PBXGroup;
+			children = (
+				05343B992A3AB632009E2640 /* small_beer.usdz */,
+				05343B952A3AABB3009E2640 /* beer.usdz */,
+			);
+			path = 3DModel;
 			sourceTree = "<group>";
 		};
 		053525ED2A2F07BE00FE05AE /* Chat */ = {
@@ -870,7 +941,7 @@
 		05ED1AB22A1CA0E30023A13E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				05343B732A39927E009E2640 /* ARKit_SpriteKit */,
+				05343B972A3AB48F009E2640 /* AR */,
 				053743602A32FF2F00722FF2 /* ChatGPT */,
 				053525ED2A2F07BE00FE05AE /* Chat */,
 				0554E01E2A28597200956B04 /* Calendar */,
@@ -953,6 +1024,7 @@
 		19ABFE95C280C8C18AB53C58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05343B852A3A9A9D009E2640 /* RealityKit.framework */,
 				05343B712A3991C9009E2640 /* ARKit.framework */,
 				9D6A1EA9F5C052F834352855 /* Pods_PantryPal.framework */,
 			);
@@ -1073,15 +1145,18 @@
 				0553461D2A2EB79600D0C544 /* HeaderView.xib in Resources */,
 				053744452A36EED700722FF2 /* success.json in Resources */,
 				051AC6A52A1EE18F00B23C63 /* FridgeTabBar.storyboard in Resources */,
+				05343B9E2A3AB7BD009E2640 /* Measure.storyboard in Resources */,
 				0554DFFD2A26E66900956B04 /* ManageMemberTableViewCell.xib in Resources */,
 				053743642A32FF9D00722FF2 /* ChatGPT.storyboard in Resources */,
 				051AC6AE2A1EE44B00B23C63 /* Ingredients.storyboard in Resources */,
 				052C90282A29951300671811 /* DataCell.xib in Resources */,
+				05343B8A2A3A9B1E009E2640 /* RealityKit.storyboard in Resources */,
 				0554DFC92A25CDE100956B04 /* TeamLink.storyboard in Resources */,
 				0554E0222A285B0A00956B04 /* CalendarPage.storyboard in Resources */,
 				051AC6A12A1DED2E00B23C63 /* CreateFridgeView.xib in Resources */,
 				05A643962A2B8AB500D37AF6 /* AddSuccess.xib in Resources */,
 				053743582A31DB8900722FF2 /* GoogleService-Info.plist in Resources */,
+				05343BA52A3B0F54009E2640 /* Measure_2.storyboard in Resources */,
 				051AC6CA2A1F901000B23C63 /* AddIngredients.xib in Resources */,
 				051AC6902A1DA51600B23C63 /* FridgeCell.xib in Resources */,
 				0554DFB12A25959B00956B04 /* Members.storyboard in Resources */,
@@ -1091,6 +1166,7 @@
 				05ED19742A17665A0023A13E /* Assets.xcassets in Resources */,
 				053525F22A2F0A3300FE05AE /* Chat.storyboard in Resources */,
 				0537444F2A380C6A00722FF2 /* IngredientsDetail.storyboard in Resources */,
+				05343B9A2A3AB632009E2640 /* small_beer.usdz in Resources */,
 				05A643A02A2B926400D37AF6 /* loadding.json in Resources */,
 				0554DFC22A259BFE00956B04 /* MemberCollectionViewCell.xib in Resources */,
 				0537444B2A374EBC00722FF2 /* Data_loadding.json in Resources */,
@@ -1100,6 +1176,7 @@
 				0554E0182A27838600956B04 /* QRCodeScanner.storyboard in Resources */,
 				053744492A374BD700722FF2 /* ingredient_success.json in Resources */,
 				05A643932A2B8A6B00D37AF6 /* add_ingredients.json in Resources */,
+				05343B962A3AABB3009E2640 /* beer.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1177,10 +1254,13 @@
 				05ED1ABB2A1CA63E0023A13E /* InformationStackView.swift in Sources */,
 				05ED1ACE2A1D971E0023A13E /* FridgeListViewController.swift in Sources */,
 				051AC6DF2A204EE900B23C63 /* FetchIngredientApiData.swift in Sources */,
+				05343B942A3AA0DB009E2640 /* MyBeer.rcproject in Sources */,
 				05A643982A2B8AC800D37AF6 /* AddSuccessView.swift in Sources */,
 				0537435A2A32A69700722FF2 /* CheckDayDateExist.swift in Sources */,
 				052C90232A2979FD00671811 /* IngredientsHistoryData.swift in Sources */,
 				051AC6BB2A1F27C400B23C63 /* FridgeData.swift in Sources */,
+				05343BAB2A3B0F90009E2640 /* Line.swift in Sources */,
+				05343B882A3A9B05009E2640 /* RealityKitViewController.swift in Sources */,
 				051AC6B92A1F1B2B00B23C63 /* UserLastUseFridge.swift in Sources */,
 				051AC6BE2A1F2E9E00B23C63 /* MemberIDData.swift in Sources */,
 				051AC6922A1DA67C00B23C63 /* UITableView+Extension.swift in Sources */,
@@ -1197,6 +1277,7 @@
 				051AC6C32A1F58F700B23C63 /* FridgeAllData.swift in Sources */,
 				05ED1ABE2A1CF4A40023A13E /* UserDataInit.swift in Sources */,
 				0554DFB82A2599B700956B04 /* MemberViewController.swift in Sources */,
+				05343B9C2A3AB7A3009E2640 /* MeasureViewController.swift in Sources */,
 				0554DFFA2A26D5A100956B04 /* GenerateQRCode.swift in Sources */,
 				053743422A301A1800722FF2 /* SlackInputBar.swift in Sources */,
 				0554E0202A285AF100956B04 /* CalendarViewController.swift in Sources */,
@@ -1207,6 +1288,7 @@
 				055346142A2D6A1900D0C544 /* UIColor+Extension.swift in Sources */,
 				053743622A32FF7D00722FF2 /* ChatGPTViewController.swift in Sources */,
 				0554E0082A27345C00956B04 /* FridgeMemberAddInvite.swift in Sources */,
+				05343BA92A3B0F7C009E2640 /* SCNVector3.swift in Sources */,
 				0554DFF22A25F60400956B04 /* AddMemberViewController.swift in Sources */,
 				0553461B2A2EB77600D0C544 /* HeaderView.swift in Sources */,
 				051AC6E32A206ECC00B23C63 /* UIResponder+Extension.swift in Sources */,
@@ -1218,10 +1300,12 @@
 				051AC6A72A1EE1F500B23C63 /* FridgeTabBarController.swift in Sources */,
 				051AC6982A1DD98500B23C63 /* FridgeListTableView.swift in Sources */,
 				051AC6DD2A203F0E00B23C63 /* FailGetData.swift in Sources */,
+				05343BA72A3B0F6C009E2640 /* ARSCNView.swift in Sources */,
 				052C902B2A29B20500671811 /* isSameDay.swift in Sources */,
 				0554DFB32A2595B500956B04 /* example.swift in Sources */,
 				0554E01A2A281D5800956B04 /* QRCdoeInviteAccept.swift in Sources */,
 				053525EC2A2EFBA500FE05AE /* changeFridgeName.swift in Sources */,
+				05343BAD2A3B0FC7009E2640 /* MeasureObjectViewController.swift in Sources */,
 				051AC6D52A202ECA00B23C63 /* BarcodeIngredientData.swift in Sources */,
 				0554DFFF2A26E69300956B04 /* ManageMemberTableViewCell.swift in Sources */,
 				052C90272A29951300671811 /* DataCell.swift in Sources */,

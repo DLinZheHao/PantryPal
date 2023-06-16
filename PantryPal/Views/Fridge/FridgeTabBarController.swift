@@ -9,7 +9,7 @@ import UIKit
 
 class FridgeTabBarController: UITabBarController {
     var fridgeId: String?
-    private let tabs: [Tab] = [.ingredients, .calendarPage, .teamLink, .join]
+    private let tabs: [Tab] = [.ingredients, .calendarPage, .teamLink, .join, .measure]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +25,9 @@ extension FridgeTabBarController {
         case teamLink
         case join
         case calendarPage
-
+        case realityKit
+        case measure
+        
         func makeViewController() -> UIViewController {
             let controller: UIViewController
             switch self {
@@ -41,6 +43,12 @@ extension FridgeTabBarController {
             case .calendarPage:
                 controller = UIStoryboard.calendarPage.instantiateInitialViewController()!
                 controller.tabBarItem = makeTabBarItem("日曆")
+            case .realityKit:
+                controller = UIStoryboard.realityKit.instantiateInitialViewController()!
+                controller.tabBarItem = makeTabBarItem("AR")
+            case .measure:
+                controller = UIStoryboard.measure.instantiateInitialViewController()!
+                controller.tabBarItem = makeTabBarItem("AR")
             }
             
             // controller.tabBarItem.imageInsets = UIEdgeInsets(top: 6.0, left: 0.0, bottom: -6.0, right: 0.0)
@@ -61,6 +69,10 @@ extension FridgeTabBarController {
                 return .asset(.join_not_select)!.withRenderingMode(.alwaysOriginal)
             case .calendarPage:
                 return .asset(.calendar_not_select)!.withRenderingMode(.alwaysOriginal)
+            case .realityKit:
+                return .asset(.calendar_not_select)!.withRenderingMode(.alwaysOriginal)
+            case .measure:
+                return .asset(.calendar_not_select)!.withRenderingMode(.alwaysOriginal)
             }
         }
 
@@ -73,6 +85,10 @@ extension FridgeTabBarController {
             case .join:
                 return .asset(.join_select)!.withRenderingMode(.alwaysOriginal)
             case .calendarPage:
+                return .asset(.calendar_select)!.withRenderingMode(.alwaysOriginal)
+            case .realityKit:
+                return .asset(.calendar_select)!.withRenderingMode(.alwaysOriginal)
+            case .measure:
                 return .asset(.calendar_select)!.withRenderingMode(.alwaysOriginal)
             }
         }

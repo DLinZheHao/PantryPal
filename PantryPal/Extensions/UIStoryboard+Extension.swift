@@ -21,6 +21,9 @@ extension UIStoryboard {
     static var chat: UIStoryboard { return stStoryboard(name: "Chat")}
     static var chatGPT: UIStoryboard { return stStoryboard(name: "ChatGPT")}
     static var arKit: UIStoryboard { return stStoryboard(name: "ARKit")}
+    static var realityKit: UIStoryboard { return stStoryboard(name: "RealityKit")}
+    static var measure: UIStoryboard { return stStoryboard(name: "Measure_2")}
+    
     private static func stStoryboard(name: String) -> UIStoryboard {
         return UIStoryboard(name: name, bundle: nil)
     }
