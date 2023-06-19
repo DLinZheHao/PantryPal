@@ -341,9 +341,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5G-sx-lfH">
-                                        <rect key="frame" x="290.66666666666669" y="331" width="93.333333333333314" height="35"/>
+                                        <rect key="frame" x="327" y="339" width="56" height="35"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="生物辨識"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="face-id"/>
                                         <connections>
                                             <action selector="faceIDButtonTap" destination="8cb-zw-WNO" eventType="touchUpInside" id="FEj-F1-BS7"/>
                                         </connections>
@@ -357,7 +357,7 @@
                                     <constraint firstAttribute="trailing" secondItem="8cb-zw-WNO" secondAttribute="trailing" constant="26" id="8Y4-pf-8B4"/>
                                     <constraint firstAttribute="bottom" secondItem="8cb-zw-WNO" secondAttribute="bottom" constant="159" id="BHV-Le-pHo"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QUP-EE-d0z" secondAttribute="trailing" constant="20" symbolic="YES" id="EbE-zt-UJ6"/>
-                                    <constraint firstAttribute="bottom" secondItem="q5G-sx-lfH" secondAttribute="bottom" constant="186" id="IOe-nU-eWS"/>
+                                    <constraint firstAttribute="bottom" secondItem="q5G-sx-lfH" secondAttribute="bottom" constant="178" id="IOe-nU-eWS"/>
                                     <constraint firstItem="8cb-zw-WNO" firstAttribute="leading" secondItem="cbV-Im-ZRy" secondAttribute="leading" constant="26" id="Pzc-5D-EJB"/>
                                     <constraint firstItem="QUP-EE-d0z" firstAttribute="top" secondItem="8cb-zw-WNO" secondAttribute="bottom" constant="64" id="Rzx-81-OW5"/>
                                     <constraint firstItem="9Wc-hB-XA7" firstAttribute="leading" secondItem="cbV-Im-ZRy" secondAttribute="leading" constant="161" id="SiS-mn-Erw"/>
@@ -365,8 +365,8 @@
                                     <constraint firstAttribute="bottom" secondItem="QUP-EE-d0z" secondAttribute="bottom" constant="70" id="XP6-dd-Ygm"/>
                                     <constraint firstItem="8cb-zw-WNO" firstAttribute="top" secondItem="cbV-Im-ZRy" secondAttribute="top" constant="158" id="f9q-Ir-Yds"/>
                                     <constraint firstItem="8cb-zw-WNO" firstAttribute="top" secondItem="9Wc-hB-XA7" secondAttribute="bottom" constant="64" id="pt4-WC-qWr"/>
-                                    <constraint firstAttribute="trailing" secondItem="q5G-sx-lfH" secondAttribute="trailing" constant="9" id="q4x-c6-R9u"/>
-                                    <constraint firstItem="q5G-sx-lfH" firstAttribute="top" secondItem="cbV-Im-ZRy" secondAttribute="top" constant="331" id="qhX-ns-XRB"/>
+                                    <constraint firstAttribute="trailing" secondItem="q5G-sx-lfH" secondAttribute="trailing" constant="10" id="q4x-c6-R9u"/>
+                                    <constraint firstItem="q5G-sx-lfH" firstAttribute="top" secondItem="cbV-Im-ZRy" secondAttribute="top" constant="339" id="qhX-ns-XRB"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登入開始使用功能" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3K-W8-LEW">
@@ -431,6 +431,7 @@
     </scenes>
     <resources>
         <image name="email" width="24" height="16"/>
+        <image name="face-id" width="32" height="32"/>
         <image name="icecube" width="389" height="337"/>
         <image name="lock" width="20" height="27"/>
         <image name="nametag" width="24" height="20"/>
