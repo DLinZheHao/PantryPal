@@ -39,6 +39,7 @@ final class MeasureObjectViewController: UIViewController {
         super.viewWillAppear(animated)
         // 空閒計時器
         UIApplication.shared.isIdleTimerDisabled = true
+        session.run(sessionConfiguration, options: [.resetTracking, .removeExistingAnchors])
     }
     
     override func viewWillDisappear(_ animated: Bool) {
