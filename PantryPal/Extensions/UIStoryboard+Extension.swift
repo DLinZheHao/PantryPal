@@ -23,6 +23,7 @@ extension UIStoryboard {
     static var arKit: UIStoryboard { return stStoryboard(name: "ARKit")}
     static var realityKit: UIStoryboard { return stStoryboard(name: "RealityKit")}
     static var measure: UIStoryboard { return stStoryboard(name: "Measure_2")}
+    static var tools: UIStoryboard { return stStoryboard(name: "Tools")}
     
     private static func stStoryboard(name: String) -> UIStoryboard {
         return UIStoryboard(name: name, bundle: nil)

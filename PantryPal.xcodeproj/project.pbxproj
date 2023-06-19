@@ -70,6 +70,9 @@
 		05343BA92A3B0F7C009E2640 /* SCNVector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343BA82A3B0F7C009E2640 /* SCNVector3.swift */; };
 		05343BAB2A3B0F90009E2640 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343BAA2A3B0F90009E2640 /* Line.swift */; };
 		05343BAD2A3B0FC7009E2640 /* MeasureObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343BAC2A3B0FC7009E2640 /* MeasureObjectViewController.swift */; };
+		05343BB02A3C2F60009E2640 /* Tools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05343BAF2A3C2F60009E2640 /* Tools.storyboard */; };
+		05343BB22A3C2FBF009E2640 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343BB12A3C2FBF009E2640 /* ToolsViewController.swift */; };
+		05343BB42A3C3976009E2640 /* ToolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05343BB32A3C3976009E2640 /* ToolsCollectionViewCell.swift */; };
 		053525EC2A2EFBA500FE05AE /* changeFridgeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053525EB2A2EFBA500FE05AE /* changeFridgeName.swift */; };
 		053525F02A2F094000FE05AE /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 053525EF2A2F094000FE05AE /* MessageKit */; };
 		053525F22A2F0A3300FE05AE /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053525F12A2F0A3300FE05AE /* Chat.storyboard */; };
@@ -251,6 +254,9 @@
 		05343BA82A3B0F7C009E2640 /* SCNVector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector3.swift; sourceTree = "<group>"; };
 		05343BAA2A3B0F90009E2640 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		05343BAC2A3B0FC7009E2640 /* MeasureObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasureObjectViewController.swift; sourceTree = "<group>"; };
+		05343BAF2A3C2F60009E2640 /* Tools.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tools.storyboard; sourceTree = "<group>"; };
+		05343BB12A3C2FBF009E2640 /* ToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsViewController.swift; sourceTree = "<group>"; };
+		05343BB32A3C3976009E2640 /* ToolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsCollectionViewCell.swift; sourceTree = "<group>"; };
 		053525EB2A2EFBA500FE05AE /* changeFridgeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeFridgeName.swift; sourceTree = "<group>"; };
 		053525F12A2F0A3300FE05AE /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		053525F32A2F0A4F00FE05AE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -630,6 +636,16 @@
 			path = 3DModel;
 			sourceTree = "<group>";
 		};
+		05343BAE2A3C2F29009E2640 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				05343BAF2A3C2F60009E2640 /* Tools.storyboard */,
+				05343BB12A3C2FBF009E2640 /* ToolsViewController.swift */,
+				05343BB32A3C3976009E2640 /* ToolsCollectionViewCell.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		053525ED2A2F07BE00FE05AE /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -938,6 +954,7 @@
 		05ED1AB22A1CA0E30023A13E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				05343BAE2A3C2F29009E2640 /* Tools */,
 				05343B972A3AB48F009E2640 /* AR */,
 				053743602A32FF2F00722FF2 /* ChatGPT */,
 				053525ED2A2F07BE00FE05AE /* Chat */,
@@ -1156,6 +1173,7 @@
 				05343BA52A3B0F54009E2640 /* Measure_2.storyboard in Resources */,
 				051AC6CA2A1F901000B23C63 /* AddIngredients.xib in Resources */,
 				051AC6902A1DA51600B23C63 /* FridgeCell.xib in Resources */,
+				05343BB02A3C2F60009E2640 /* Tools.storyboard in Resources */,
 				0554DFB12A25959B00956B04 /* Members.storyboard in Resources */,
 				05343B832A399EEE009E2640 /* Scene.sks in Resources */,
 				051AC6D12A1F98C200B23C63 /* Calendar.xib in Resources */,
@@ -1278,6 +1296,7 @@
 				053743422A301A1800722FF2 /* SlackInputBar.swift in Sources */,
 				0554E0202A285AF100956B04 /* CalendarViewController.swift in Sources */,
 				053744522A3841EE00722FF2 /* ImageDownloader.swift in Sources */,
+				05343BB22A3C2FBF009E2640 /* ToolsViewController.swift in Sources */,
 				053525F42A2F0A4F00FE05AE /* ChatViewController.swift in Sources */,
 				0554E00C2A27426600956B04 /* InviteData.swift in Sources */,
 				051AC6E52A2076B600B23C63 /* FindSubview.swift in Sources */,
@@ -1309,6 +1328,7 @@
 				0554E0012A2705C600956B04 /* SearchUser.swift in Sources */,
 				051AC6962A1DAA6C00B23C63 /* CreatNewFridge.swift in Sources */,
 				0554E0162A2780F800956B04 /* QRCodeScannerViewController.swift in Sources */,
+				05343BB42A3C3976009E2640 /* ToolsCollectionViewCell.swift in Sources */,
 				0537435C2A32C30B00722FF2 /* GetUserData.swift in Sources */,
 				05ED1AD62A1D9E2F0023A13E /* UIStoryboard+Extension.swift in Sources */,
 				0537434C2A307AFA00722FF2 /* MessageData.swift in Sources */,

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tools View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="ToolsViewController" customModule="PantryPal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HvK-Lm-LIy">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ls2-hm-TXa">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ToolsCollectionViewCell" id="rCS-yH-5U6" customClass="ToolsCollectionViewCell" customModule="PantryPal" customModuleProvider="target">
+                                        <rect key="frame" x="97.666666666666671" y="50" width="198" height="180"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uEo-Ra-xjq">
+                                            <rect key="frame" x="0.0" y="0.0" width="198" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Dan-Leonard" translatesAutoresizingMaskIntoConstraints="NO" id="C0M-V5-HA5">
+                                                    <rect key="frame" x="19" y="13" width="160" height="107"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="826-yF-TZW">
+                                                    <rect key="frame" x="78" y="151" width="0.0" height="0.0"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ＡＲ測量食材長度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtJ-d4-fxO">
+                                                    <rect key="frame" x="17" y="139" width="164" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="C0M-V5-HA5" firstAttribute="leading" secondItem="uEo-Ra-xjq" secondAttribute="leading" constant="19" id="3ht-mX-hti"/>
+                                                <constraint firstItem="C0M-V5-HA5" firstAttribute="top" secondItem="uEo-Ra-xjq" secondAttribute="top" constant="13" id="64g-9l-8Vt"/>
+                                                <constraint firstItem="ZtJ-d4-fxO" firstAttribute="top" secondItem="C0M-V5-HA5" secondAttribute="bottom" constant="19" id="8Dh-xH-0rk"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZtJ-d4-fxO" secondAttribute="bottom" constant="17" id="GI4-J0-w2u"/>
+                                                <constraint firstItem="ZtJ-d4-fxO" firstAttribute="leading" secondItem="uEo-Ra-xjq" secondAttribute="leading" constant="17" id="dFx-73-kUE"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZtJ-d4-fxO" secondAttribute="trailing" constant="17" id="ghd-d5-XWo"/>
+                                                <constraint firstAttribute="trailing" secondItem="C0M-V5-HA5" secondAttribute="trailing" constant="19" id="riw-US-HSE"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="198" height="180"/>
+                                        <connections>
+                                            <outlet property="toolImage" destination="C0M-V5-HA5" id="AeI-P8-AqH"/>
+                                            <outlet property="toolLabel" destination="ZtJ-d4-fxO" id="k9D-y8-1Zb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZKT-rL-rt8">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小工具" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5g-A5-HTt">
+                                            <rect key="frame" x="158" y="10" width="76" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="f5g-A5-HTt" firstAttribute="leading" secondItem="ZKT-rL-rt8" secondAttribute="leading" constant="158" id="81E-4i-yAE"/>
+                                        <constraint firstAttribute="bottom" secondItem="f5g-A5-HTt" secondAttribute="bottom" constant="10" id="Uot-9w-eAM"/>
+                                        <constraint firstAttribute="trailing" secondItem="f5g-A5-HTt" secondAttribute="trailing" constant="159" id="qXB-3h-PGl"/>
+                                        <constraint firstItem="f5g-A5-HTt" firstAttribute="top" secondItem="ZKT-rL-rt8" secondAttribute="top" constant="10" id="rwm-VE-VXz"/>
+                                    </constraints>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HvK-Lm-LIy" secondAttribute="bottom" id="DXM-W5-hIm"/>
+                            <constraint firstItem="HvK-Lm-LIy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="L8E-i9-grw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HvK-Lm-LIy" secondAttribute="trailing" id="Lwx-eR-F7a"/>
+                            <constraint firstItem="HvK-Lm-LIy" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="x0o-Uf-PNf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="toolCollectionView" destination="HvK-Lm-LIy" id="W9e-FB-aha"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Dan-Leonard" width="300" height="300"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
