@@ -44,7 +44,7 @@ extension FridgeTabBarController {
                 controller.tabBarItem = makeTabBarItem("日曆")
             case .measure:
                 controller = UIStoryboard.measure.instantiateInitialViewController()!
-                controller.tabBarItem = makeTabBarItem("工具")
+                controller.tabBarItem = makeTabBarItem("測量")
             }
             
             // controller.tabBarItem.imageInsets = UIEdgeInsets(top: 6.0, left: 0.0, bottom: -6.0, right: 0.0)
@@ -66,7 +66,7 @@ extension FridgeTabBarController {
             case .calendarPage:
                 return .asset(.calendar_not_select)!.withRenderingMode(.alwaysOriginal)
             case .measure:
-                return .asset(.calendar_not_select)!.withRenderingMode(.alwaysOriginal)
+                return .asset(.measure_not_select)!.withRenderingMode(.alwaysOriginal)
             }
         }
 
@@ -81,7 +81,7 @@ extension FridgeTabBarController {
             case .calendarPage:
                 return .asset(.calendar_select)!.withRenderingMode(.alwaysOriginal)
             case .measure:
-                return .asset(.calendar_select)!.withRenderingMode(.alwaysOriginal)
+                return .asset(.measure_select)!.withRenderingMode(.alwaysOriginal)
             }
         }
         

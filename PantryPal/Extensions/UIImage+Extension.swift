@@ -38,6 +38,8 @@ enum ImageAsset: String {
     case user
     case profile_user
     case ai
+    case measure_not_select
+    case measure_select
 }
 // swiftlint:enable identifier_name
 
