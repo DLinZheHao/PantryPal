@@ -48,9 +48,9 @@ class AddMemberViewController: UIViewController {
         addButton.isHidden = true
         searchButton.layer.cornerRadius = 10
         searchButton.layer.masksToBounds = true
-        searchNameLabel.layer.cornerRadius = 10
+        searchNameLabel.layer.cornerRadius = 5
         searchNameLabel.layer.masksToBounds = true
-        searchEmailLabel.layer.cornerRadius = 10
+        searchEmailLabel.layer.cornerRadius = 5
         searchEmailLabel.layer.masksToBounds = true
     }
     

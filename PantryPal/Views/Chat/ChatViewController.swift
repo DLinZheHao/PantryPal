@@ -121,12 +121,14 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
 
-        // messagesCollectionView.reloadData()
         navigationItem.title = "留言"
     }
     @objc func customButtonTapped() {
         // 自訂按鈕的點擊事件處理
         print("Custom button tapped!")
+    }
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
 
 }
@@ -161,15 +163,20 @@ extension ChatViewController: MessagesDataSource {
      }
 }
 extension ChatViewController: MessageCellDelegate {
+    func didTapBackground(in cell: MessageCollectionViewCell) {
+        hideKeyboard()
+    }
     func didTapAvatar(in cell: MessageCollectionViewCell) {
         print("Avatar tapped")
+        hideKeyboard()
     }
-
     func didTapMessage(in cell: MessageCollectionViewCell) {
-     // handle message here
-     print("Meesage Tapped")
-     }
+        // handle message here
+        print("Meesage Tapped")
+        hideKeyboard()
+    }
     func didTapImage(in cell: MessageCollectionViewCell) {
+         cell.isUserInteractionEnabled = true
          guard let indexPath = messagesCollectionView.indexPath(for: cell),
                 let message = messagesCollectionView.messagesDataSource?.messageForItem(at: indexPath, in: messagesCollectionView) else {
                     return
@@ -205,7 +212,6 @@ extension ChatViewController: MessagesLayoutDelegate {
                            at indexPath: IndexPath,
                            with maxWidth: CGFloat,
                            in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        
         return 0
     }
 }
@@ -231,7 +237,6 @@ extension ChatViewController: MessagesDisplayDelegate {
             }
         }
 }
-
 extension ChatViewController: InputBarAccessoryViewDelegate {
     // 當用戶點擊發送按鈕時調用
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
@@ -261,12 +266,26 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
         // 清空輸入欄的文字
         inputBar.inputTextView.text = ""
         // 清空所有資料
-        inputBarView.attachmentManager.invalidate()
+        // inputBarView.topStackView.isHidden = true
+        
         inputBarView.imageURLArray = []
         inputBarView.imageArray = []
         // 重新加載聊天視圖
-        messagesCollectionView.reloadData()
+//        DispatchQueue.main.async {
+//            self.inputBarView.attachmentManager.invalidate()
+//            self.inputBarView.attachmentManager.reloadData()
+//            self.inputBarView.layoutIfNeeded()
+//            self.messagesCollectionView.reloadData()
+//            // 滾動到最後一條訊息
+//            self.messagesCollectionView.scrollToLastItem(animated: true)
+//        }
+        inputBarView.attachmentManager.invalidate()
+        inputBarView.attachmentManager.reloadData()
+        inputBarView.layoutIfNeeded()
+        
+        // messagesCollectionView.reloadData()
         // 滾動到最後一條訊息
         messagesCollectionView.scrollToLastItem(animated: true)
+        
     }
 }

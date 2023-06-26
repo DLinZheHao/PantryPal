@@ -29,13 +29,13 @@ class SigninStackView: UIStackView {
     }
     func signIn(_ controller: UIViewController) {
         
-//        guard let emallAddress = emailTextField.text, emallAddress != "",
-//              let password = passwordTextField.text, password != "" else {
-//            alert("輸入格不能為空白", controller)
-//            return
-//        }
-        let emallAddress = "a8570870z@gmail.com"
-        let password = "0917652683c"
+        guard let emallAddress = emailTextField.text, emallAddress != "",
+              let password = passwordTextField.text, password != "" else {
+            alert("輸入格不能為空白", controller)
+            return
+        }
+//        let emallAddress = "a8570870z@gmail.com"
+//        let password = "0917652683c"
 //        let emallAddress = "123@gmail.com"
 //        let password = "123456789"
         let creds = Credentials.init(email: emallAddress, password: password)

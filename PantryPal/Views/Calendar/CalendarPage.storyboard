@@ -15,8 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wood" translatesAutoresizingMaskIntoConstraints="NO" id="Z7y-Nf-kyM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z7y-Nf-kyM">
                                 <rect key="frame" x="0.0" y="89" width="393" height="329"/>
+                                <color key="backgroundColor" red="0.10329274889999999" green="0.44693129990000002" blue="0.43896747089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="393" id="tiU-23-wxK"/>
                                     <constraint firstAttribute="height" constant="329" id="wYY-Td-myz"/>
@@ -79,7 +80,4 @@
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="wood" width="3544" height="2364"/>
-    </resources>
 </document>

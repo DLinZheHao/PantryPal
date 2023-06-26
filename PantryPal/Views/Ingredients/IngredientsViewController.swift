@@ -14,28 +14,25 @@ import Lottie
 import IQKeyboardManagerSwift
 
 class IngredientsViewController: UIViewController {
+    
     private var animationView: LottieAnimationView?
     private var successCreateView: LottieAnimationView?
     
+    var isSearch = false
     var storeStatus = ["冷藏", "冷凍", "常溫"]
     
     var currentUserName: String?
     var currentuserID: String?
-    
     var completionHandler: ((URL?) -> Void)?
     var getImageCompletionHandler: ((UIImage) -> Void)?
-    
     var imageURL: String?
     var selectedFileURL: URL?
     var takingPicture: UIImagePickerController!
-    
     var currentFridgeID: String?
     var fridgeData: FridgeData?
     var memberData: [MemberIDData]?
     var ingredientsData: [PresentIngredientsData] = []
-    
     var searchIngredientsData = [PresentIngredientsData]()
-    
     var header: HeaderView?
     var blackBlurEffectView: UIVisualEffectView?
     
@@ -71,14 +68,17 @@ class IngredientsViewController: UIViewController {
         getData()
     }
     override func viewWillAppear(_ animated: Bool) {
-        emptyImage.isHidden = true
-        emptyLabel.isHidden = true
+        if ingredientsData.isEmpty {
+            emptyImage.isHidden = false
+            emptyLabel.isHidden = false
+        }
         tabBarController?.tabBar.isHidden = false
 //        ingredientsData = []
 //        ingredientTableView.reloadData()
 //        header?.orderButton.setTitle("名稱排序▾", for: .normal)
 //        getData()
     }
+    // MARK: navigation bar item 設置
     func navigationSetting() {
         let navigationBar = navigationController?.navigationBar
         let navigationBarAppearance = UINavigationBarAppearance()
@@ -86,10 +86,10 @@ class IngredientsViewController: UIViewController {
         navigationBar?.scrollEdgeAppearance = navigationBarAppearance
         navigationBar?.standardAppearance = navigationBarAppearance
         // 创建一个按钮并设置图像
-        let buttonImage = UIImage.asset(.small_chat)!.withRenderingMode(.alwaysOriginal) // 替换为你自己的图像名称
+        let buttonImage = UIImage(systemName: "ellipsis.bubble")
         let button = UIBarButtonItem(image: buttonImage, style: .plain, target: self, action: #selector(chatButtonTapped))
 
-        let refreshButtonImage = UIImage.asset(.refresh)!.withRenderingMode(.alwaysOriginal) // 替换为你自己的图像名称
+        let refreshButtonImage = UIImage(systemName: "arrow.triangle.2.circlepath")
         let refreshButton = UIBarButtonItem(image: refreshButtonImage, style: .plain, target: self, action: #selector(refreshAction))
         // 将按钮添加到导航栏的右侧
         navigationItem.rightBarButtonItems = [button, refreshButton]
@@ -123,7 +123,7 @@ extension IngredientsViewController {
         floaty.addItem("切換冰箱", icon: .asset(.outline_change_circle_black_36pt)) { [weak self] (_) in
             self?.changeFridge()
         }
-        floaty.addItem("ChatGPT", icon: .asset(.chatGPT_select)) { [weak self] (_) in
+        floaty.addItem("智能小助手", icon: .asset(.chatGPT_select)) { [weak self] (_) in
             self?.goChatGPT()
         }
         floaty.plusColor = .white
@@ -306,14 +306,16 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if ingredientsData.isEmpty == true {
-            ingredientTableView.isHidden = true
-            emptyImage.isHidden = false
-            emptyLabel.isHidden = false
-        } else {
-            ingredientTableView.isHidden = false
-            emptyImage.isHidden = true
-            emptyLabel.isHidden = true
+        if !isSearch {
+            if ingredientsData.isEmpty == true {
+                ingredientTableView.isHidden = true
+                emptyImage.isHidden = false
+                emptyLabel.isHidden = false
+            } else {
+                ingredientTableView.isHidden = false
+                emptyImage.isHidden = true
+                emptyLabel.isHidden = true
+            }
         }
         return ingredientsData.count
     }
@@ -751,8 +753,10 @@ extension IngredientsViewController {
             self?.memberData = passMemberData
         } ingredientCompletion: { [weak self] passIngredientsData in
             self?.ingredientsData = sortByName(passIngredientsData)
+            self?.header?.dataArray = sortByName(passIngredientsData)
             print("執行")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                self?.header?.orderButton.setTitle("名稱排序▾", for: .normal)
                 self?.view.removeAllLottieViews()
                 self?.ingredientTableView.reloadData()
                 self?.ingredientTableView.mj_header?.endRefreshing()
@@ -795,12 +799,13 @@ extension IngredientsViewController {
 extension IngredientsViewController: UISearchBarDelegate {
     func search(_ searchTerm: String) {
         print("搜尋觸發")
+        isSearch = true
         if searchTerm.isEmpty {
             print("沒有結果")
             // searchIngredientsData = ingredientsData
         } else {
             print("有結果")
-            searchIngredientsData = ingredientsData
+            // searchIngredientsData = ingredientsData
             ingredientsData = ingredientsData.filter {
                 $0.name.contains(searchTerm)
             }
@@ -818,6 +823,7 @@ extension IngredientsViewController: UISearchBarDelegate {
             // 清除按鈕被按下，搜索文字被清空
             // 在這裡處理相應操作
             print("清除按鈕觸發")
+            isSearch = false
             getData()
         }
     }

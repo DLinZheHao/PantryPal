@@ -16,11 +16,11 @@ class ChatGPTViewController: MessagesViewController {
     let hud = JGProgressHUD(style: .dark)
     let chattyGPT = ChatGPTKit(apiKey: "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")
     var history = [
-        Message(role: .system, content: "你是一個料理的專家，並且會用繁體中文回答"),
+        Message(role: .system, content: "你是一個料理的專家，並且會用繁體中文回答")
     ]
     var firstTime = true
     var sender: Sender?
-    var sender2 = Sender(senderId: "123", displayName: "ＡＩ")
+    var sender2 = Sender(senderId: "123", displayName: "小助手")
     var messages: [MessageForm] = []
 
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class ChatGPTViewController: MessagesViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         self.messagesCollectionView.addGestureRecognizer(tapGesture)
 
-        hud.textLabel.text = "AI 運算中"
+        hud.textLabel.text = "處理中"
         hud.addGestureRecognizer(tapGesture)
         tabBarController?.tabBar.isHidden = true
         guard let currentUserID = Auth.auth().currentUser?.uid else { return }
@@ -41,7 +41,7 @@ class ChatGPTViewController: MessagesViewController {
         messageInputBar.sendButton.setTitle("送出", for: .normal  )
         messagesCollectionView.messagesDisplayDelegate = self
         
-        navigationItem.title = "ChatGPT"
+        navigationItem.title = "智能小助手"
     }
     @objc func hideKeyboard() {
         view.endEditing(true)

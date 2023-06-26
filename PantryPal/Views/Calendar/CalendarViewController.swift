@@ -203,18 +203,19 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
         
         let locale = Locale(identifier: "zh_CN")
         calendarView.locale = locale
-        calendarView.appearance.caseOptions = .weekdayUsesSingleUpperCase
+        // calendarView.appearance.caseOptions = .weekdayUsesSingleUpperCase
         calendarView.placeholderType = .none
-        calendarView.appearance.titleDefaultColor = .black
-        calendarView.appearance.titleTodayColor = .black
+        calendarView.appearance.titleDefaultColor = .white
+        calendarView.appearance.titleTodayColor = .white
         calendarView.appearance.todayColor = .lightGray
-        calendarView.appearance.weekdayTextColor = .black
+        calendarView.appearance.weekdayTextColor = .white
         calendarView.appearance.titleWeekendColor = .lightGray
         calendarView.appearance.subtitleWeekendColor = .yellow
-
-        calendarView.appearance.headerTitleColor = .black
+        calendarView.appearance.eventDefaultColor = .white
+        calendarView.appearance.eventSelectionColor = .white
+        calendarView.appearance.headerTitleColor = .white
         calendarView.appearance.headerDateFormat = "yyyy年MM月"
-        
+
         calendarView.appearance.selectionColor = .darkGray
         calendarView.appearance.subtitleSelectionColor = .yellow
         calendarView.appearance.borderRadius = 0.4
@@ -258,6 +259,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
             }
         }
     }
+    
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         let calendar = Calendar.current
         

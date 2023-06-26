@@ -15,6 +15,7 @@ class FridgeTabBarController: UITabBarController {
         
         viewControllers = tabs.map { $0.makeViewController() }
         self.tabBar.itemPositioning = .automatic
+        self.tabBar.tintColor = .black
         delegate = self
     }
 }
@@ -58,30 +59,30 @@ extension FridgeTabBarController {
         private var image: UIImage? {
             switch self {
             case .ingredients:
-                return .asset(.fridge_not_select)!.withRenderingMode(.alwaysOriginal)
+                return UIImage(systemName: "refrigerator")
             case .teamLink:
-                return .asset(.teamLink_not_select)!.withRenderingMode(.alwaysOriginal)
+                return UIImage(systemName: "person.2.crop.square.stack")
             case .join:
-                return .asset(.join_not_select)!.withRenderingMode(.alwaysOriginal)
+                return UIImage(systemName: "person.crop.circle.badge.plus")
             case .calendarPage:
-                return .asset(.calendar_not_select)!.withRenderingMode(.alwaysOriginal)
+                return UIImage(systemName: "calendar.circle")
             case .measure:
-                return .asset(.measure_not_select)!.withRenderingMode(.alwaysOriginal)
+                return UIImage(systemName: "ruler")
             }
         }
 
         private var selectedImage: UIImage? {
             switch self {
             case .ingredients:
-                return .asset(.fridge_select)!.withRenderingMode(.alwaysOriginal)
+                return UIImage(systemName: "refrigerator.fill")?.withRenderingMode(.alwaysOriginal)
             case .teamLink:
-                return .asset(.teamLink_select)!.withRenderingMode(.alwaysOriginal)
+                return UIImage(systemName: "person.2.crop.square.stack.fill")?.withRenderingMode(.alwaysOriginal)
             case .join:
-                return .asset(.join_select)!.withRenderingMode(.alwaysOriginal)
+                return UIImage(systemName: "person.crop.circle.fill.badge.plus")?.withRenderingMode(.alwaysOriginal)
             case .calendarPage:
-                return .asset(.calendar_select)!.withRenderingMode(.alwaysOriginal)
+                return UIImage(systemName: "calendar.circle.fill")
             case .measure:
-                return .asset(.measure_select)!.withRenderingMode(.alwaysOriginal)
+                return UIImage(systemName: "ruler.fill")?.withRenderingMode(.alwaysOriginal)
             }
         }
         

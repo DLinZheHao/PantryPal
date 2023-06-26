@@ -244,11 +244,19 @@ extension SlackInputBar: AttachmentManagerDelegate {
         print("觸發６")
         let topStackView = self.topStackView
         if active && !topStackView.arrangedSubviews.contains(attachmentManager.attachmentView) {
-            topStackView.insertArrangedSubview(attachmentManager.attachmentView, at: topStackView.arrangedSubviews.count)
-            topStackView.layoutIfNeeded()
+            topStackView.insertArrangedSubview(attachmentManager.attachmentView,
+                                               at: topStackView.arrangedSubviews.count)
+            DispatchQueue.main.async {
+                self.topStackView.layoutIfNeeded()
+                self.topStackView.setNeedsLayout()
+            }
         } else if !active && topStackView.arrangedSubviews.contains(attachmentManager.attachmentView) {
             topStackView.removeArrangedSubview(attachmentManager.attachmentView)
-            topStackView.layoutIfNeeded()
+            DispatchQueue.main.async {
+                self.topStackView.setNeedsLayout()
+                self.topStackView.layoutIfNeeded()
+                
+            }
         }
     }
 }

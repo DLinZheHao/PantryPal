@@ -10,6 +10,7 @@ import MJRefresh
 class ManageMemberViewController: UIViewController {
     var memberData: [MemberData] = []
     var currentFridgeID: String?
+    var teamLinkViewController: TeamLinkViewController?
     
     @IBOutlet weak var memberManageTableView: UITableView! {
         didSet {
@@ -31,9 +32,14 @@ class ManageMemberViewController: UIViewController {
     }
     @objc private func refreshAction() {
         self.memberManageTableView.mj_header?.beginRefreshing()
-//        getData()
-        DispatchQueue.main.async {
-            self.memberManageTableView.mj_header?.endRefreshing()
+        userLastUseFridgeForMember { [weak self] data in
+            self?.currentFridgeID = data.id
+        } manageClosure: { [weak self] memberData in
+            self?.memberData = memberData
+            DispatchQueue.main.async {
+                self?.memberManageTableView.reloadData()
+                self?.memberManageTableView.mj_header?.endRefreshing()
+            }
         }
     }
 }

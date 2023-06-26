@@ -67,8 +67,9 @@ class TeamLinkViewController: UIViewController {
             manageMemberViewController = manageVC
             userLastUseFridgeForMember { data in
                 manageVC.currentFridgeID = data.id
-            } manageClosure: { memberData in
+            } manageClosure: { [weak self] memberData in
                 manageVC.memberData = memberData
+                manageVC.teamLinkViewController = self!
                 manageVC.memberManageTableView.reloadData()
             }
         }
@@ -109,7 +110,7 @@ class TeamLinkViewController: UIViewController {
 }
 
 extension TeamLinkViewController {
-    private func getData() {
+   func getData() {
         userLastUseFridgeForMember { [weak self] data in
             self?.currentFridgeData = data
             self?.fridgeChangeButton.setTitle(data.name, for: .normal)

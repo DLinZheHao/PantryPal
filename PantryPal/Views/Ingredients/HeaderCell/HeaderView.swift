@@ -28,7 +28,7 @@ class HeaderView: UITableViewHeaderFooterView {
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertAction.Style.cancel)
         
         let sortByName = UIAlertAction(title: "名稱排序", style: UIAlertAction.Style.default) { (_) -> Void in
-            var sortArray = chooseSort(0, dataArray)
+            let sortArray = chooseSort(0, dataArray)
             self.orderButton.setTitle("名稱排序▾", for: .normal)
             guard let ingredientViewController = controller as? IngredientsViewController else {
                 print("失敗")
@@ -40,7 +40,7 @@ class HeaderView: UITableViewHeaderFooterView {
             }
         }
         
-        let sortByLeftTime = UIAlertAction(title: "時間排序", style: UIAlertAction.Style.default) { (alertAction) -> Void in
+        let sortByLeftTime = UIAlertAction(title: "時間排序", style: UIAlertAction.Style.default) { (_) -> Void in
             var sortArray = chooseSort(1, dataArray)
             self.orderButton.setTitle("時間排序▾", for: .normal)
             guard let ingredientViewController = controller as? IngredientsViewController else {
