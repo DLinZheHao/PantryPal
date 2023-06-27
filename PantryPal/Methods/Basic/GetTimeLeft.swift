@@ -7,7 +7,7 @@
 
 import Foundation
 
-func getLeftTime(_ futureDate: Date) -> String {
+func getRemainingTime(_ futureDate: Date) -> String {
     let calendar = Calendar.current
     let currentDate = Date()
 

@@ -305,7 +305,7 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
         ingredientsCell.textLabelSetting(name: ingredientsData[indexPath.row].name,
                                          price: "\(String(Int(ingredientsData[indexPath.row].price)))元",
                                          status: "\(storeStatus[ingredientsData[indexPath.row].storeStatus])保存")
-        ingredientsCell.expirationLabel.text = getLeftTime(ingredientsData[indexPath.row].expiration)
+        ingredientsCell.expirationLabel.text = getRemainingTime(ingredientsData[indexPath.row].expiration)
         ingredientsCell.updateCellColorBasedOnExpiration()
         ingredientsCell.shouldEnableNotificationsImage(isEnable: ingredientsData[indexPath.row].enableNotifications)
         ImageDownloader.shared.downloadImage(from: URL(string: ingredientsData[indexPath.row].url)!) { (image) in
@@ -570,7 +570,7 @@ extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigati
         if type == 1 {
             takingPicture.sourceType = .camera
             // 拍照时是否显示工具栏
-            // takingPicture.showsCameraControls = true
+             takingPicture.showsCameraControls = true
         } else if type == 2 {
             takingPicture.sourceType = .photoLibrary
         }
@@ -656,7 +656,7 @@ extension IngredientsViewController {
 // MARK: 動作簡化
 extension IngredientsViewController {
     func getData() {
-        fetchFridgeData() { [weak self] (passFridgeData, passFridgeID) in
+        fetchFridgeData { [weak self] (passFridgeData, passFridgeID) in
             self?.currentFridgeID = passFridgeID
             self?.fridgeData = passFridgeData
             self?.navigationItem.title = self?.fridgeData?.name
@@ -665,7 +665,6 @@ extension IngredientsViewController {
         } ingredientDataFetchCompletion: { [weak self] passIngredientsData in
             self?.ingredientsData = sortByName(passIngredientsData)
             self?.header?.dataArray = sortByName(passIngredientsData)
-            print("執行")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 self?.header?.orderButton.setTitle("名稱排序▾", for: .normal)
                 self?.view.removeAllLottieViews()
