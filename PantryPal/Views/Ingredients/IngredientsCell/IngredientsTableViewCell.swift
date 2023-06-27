@@ -27,8 +27,33 @@ class IngredientsTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func styleSetting() {
+        self.selectionStyle = .none
+        self.backgroundColor = UIColor.clear
+        self.contentView.backgroundColor = UIColor.clear
+    }
+    
+    func textLabelSetting(name: String, price: String, status: String) {
+        self.ingredientsNameLabel.text = name
+        self.ingredientsPriceLabel.text = price
+        self.ingredientsStatusLabel.text = status
+    }
+    
+    func updateCellColorBasedOnExpiration() {
+        if self.expirationLabel.text == "已過期" {
+            self.backgroundImageView.backgroundColor = UIColor(hex: "E2271A", alpha: 0.3)
+        } else {
+            self.backgroundImageView.backgroundColor = UIColor(hex: "#caeded", alpha: 0.8)
+        }
+    }
+    
+    func shouldEnableNotificationsImage(isEnable: Bool) {
+        if isEnable {
+            self.notificationImage.isHidden = false
+        } else {
+            self.notificationImage.isHidden = true
+        }
+    }
 }

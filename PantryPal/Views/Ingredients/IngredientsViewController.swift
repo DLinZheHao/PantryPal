@@ -22,7 +22,7 @@ class IngredientsViewController: UIViewController {
     var storeStatus = ["冷藏", "冷凍", "常溫"]
     
     var currentUserName: String?
-    var currentuserID: String?
+    var currentUserID: String?
     var completionHandler: ((URL?) -> Void)?
     var getImageCompletionHandler: ((UIImage) -> Void)?
     var imageURL: String?
@@ -48,16 +48,19 @@ class IngredientsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         emptyImage.isHidden = true
         emptyLabel.isHidden = true
+        
         navigationSetting()
+        layoutFAB()
+        getData()
+        
         getUserData { [weak self] (userName, userID) in
-            self?.currentuserID = userID
+            self?.currentUserID = userID
             self?.currentUserName = userName
         }
-        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-        IQKeyboardManager.shared.enableAutoToolbar = false
-        layoutFAB()
+        
         ingredientTableView.lk_registerCellWithNib(identifier: String(describing: IngredientsTableViewCell.self), bundle: nil)
         ingredientTableView.lk_registerHeaderWithNib(identifier: String(describing: HeaderView.self), bundle: nil)
         ingredientTableView.sectionHeaderTopPadding = 0
@@ -65,7 +68,6 @@ class IngredientsViewController: UIViewController {
         let newHeader = MJRefreshStateHeader(refreshingTarget: self, refreshingAction: #selector(refreshAction))
         self.ingredientTableView.mj_header = newHeader
         
-        getData()
     }
     override func viewWillAppear(_ animated: Bool) {
         if ingredientsData.isEmpty {
@@ -73,25 +75,22 @@ class IngredientsViewController: UIViewController {
             emptyLabel.isHidden = false
         }
         tabBarController?.tabBar.isHidden = false
-//        ingredientsData = []
-//        ingredientTableView.reloadData()
-//        header?.orderButton.setTitle("名稱排序▾", for: .normal)
-//        getData()
     }
     // MARK: navigation bar item 設置
     func navigationSetting() {
         let navigationBar = navigationController?.navigationBar
         let navigationBarAppearance = UINavigationBarAppearance()
+        
         navigationBarAppearance.shadowColor = .clear
         navigationBar?.scrollEdgeAppearance = navigationBarAppearance
         navigationBar?.standardAppearance = navigationBarAppearance
-        // 创建一个按钮并设置图像
+        
         let buttonImage = UIImage(systemName: "ellipsis.bubble")
         let button = UIBarButtonItem(image: buttonImage, style: .plain, target: self, action: #selector(chatButtonTapped))
 
         let refreshButtonImage = UIImage(systemName: "arrow.triangle.2.circlepath")
         let refreshButton = UIBarButtonItem(image: refreshButtonImage, style: .plain, target: self, action: #selector(refreshAction))
-        // 将按钮添加到导航栏的右侧
+        
         navigationItem.rightBarButtonItems = [button, refreshButton]
 
     }
@@ -101,11 +100,19 @@ class IngredientsViewController: UIViewController {
             self.navigationController?.pushViewController(nextVC, animated: true)
             return
         }
-        controller.currentUserID = currentuserID!
+        controller.currentUserID = currentUserID!
         controller.curruentUserName = currentUserName!
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
+    private func tabbarSwitch(_ switchBool: Bool) {
+        if let tabBarController = self.tabBarController {
+            if let tabItems = tabBarController.tabBar.items {
+                for tabItem in tabItems {
+                    tabItem.isEnabled = switchBool
+                }
+            }
+        }
+    }
 }
 // MARK: - Floaty
 extension IngredientsViewController {
@@ -150,54 +157,41 @@ extension IngredientsViewController {
         guard let nextVC = UIStoryboard.fridgeList.instantiateViewController(
             withIdentifier: String(describing: FridgeListViewController.self)
         ) as? FridgeListViewController
-        else {
-            print("創建失敗")
-            return }
+        else { return }
+        
         nextVC.currentFridgeID = currentFridgeID!
         nextVC.ingredientsViewController = self
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         present(nextVC, animated: true, completion: nil)
-        // navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 // MARK: - 新增冰箱
 extension IngredientsViewController {
     private func setUpCreatFridgeView() {
-        // 获取TabBarController的引用
-        if let tabBarController = self.tabBarController {
-
-            // 遍历所有选项卡并開啟它们
-            if let tabItems = tabBarController.tabBar.items {
-                for tabItem in tabItems {
-                    tabItem.isEnabled = false
-                }
-            }
-        }
+        tabbarSwitch(false)
         let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = BlackEffectBackgroundView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blackBlurEffectView = blurEffectView
         view.addSubview(blurEffectView)
 
-        guard let customView = UINib(nibName: "CreateFridgeView", bundle: nil).instantiate(withOwner: self, options: nil).first as? CreateFridgeView else {
-            print("畫面創建失敗")
-            return
-        }
-        customView.frame = CGRect(x: 0, y: 900, width: view.frame.width, height: 190)
-        view.addSubview(customView)
-        customView.backgroundColor = UIColor(hex: "#caeded")
-        customView.sendButton.layer.cornerRadius = 10.0
-        customView.sendButton.layer.masksToBounds = true
-        customView.closeButton.addTarget(self, action: #selector(closeCreateView), for: .touchUpInside)
-        customView.sendButton.addTarget(self, action: #selector(createNewFridgeAction), for: .touchUpInside)
+        let customView = UINib(nibName: "CreateFridgeView", bundle: nil).instantiate(withOwner: self, options: nil).first
+        guard let createFridgeView = customView as? CreateFridgeView else { return }
+        
+        createFridgeView.frame = CGRect(x: 0, y: 900, width: view.frame.width, height: 190)
+        view.addSubview(createFridgeView)
+        
+        createFridgeView.setUp()
+        createFridgeView.closeButton.addTarget(self, action: #selector(closeCreateView), for: .touchUpInside)
+        createFridgeView.sendButton.addTarget(self, action: #selector(createNewFridgeAction), for: .touchUpInside)
         
         let animator = UIViewPropertyAnimator(duration: 0.5, curve: .easeOut)
         animator.addAnimations {
             if let navigationBar = self.navigationController?.navigationBar {
                 let convertedFrame = navigationBar.convert(navigationBar.bounds, to: self.view)
                 let yPosition = convertedFrame.maxY
-                customView.frame.origin.y = yPosition
+                createFridgeView.frame.origin.y = yPosition
             }
         }
         animator.startAnimation()
@@ -205,17 +199,8 @@ extension IngredientsViewController {
     }
     
     @objc private func closeCreateView(_ sender: UIButton) {
-        // 获取TabBarController的引用
-        if let tabBarController = self.tabBarController {
-
-            // 遍历所有选项卡并開啟它们
-            if let tabItems = tabBarController.tabBar.items {
-                for tabItem in tabItems {
-                    tabItem.isEnabled = true
-                }
-            }
-            
-        }
+        tabbarSwitch(true)
+        
         let targetView = findSubview(ofType: BlackEffectBackgroundView.self, in: self.view)
         guard let blackEffectBackgroundView = targetView else {
             sender.superview?.removeFromSuperview()
@@ -225,23 +210,13 @@ extension IngredientsViewController {
         sender.superview?.removeFromSuperview()
     }
     @objc private func createNewFridgeAction(_ sender: UIButton) {
-        // 获取TabBarController的引用
-        if let tabBarController = self.tabBarController {
-
-            // 遍历所有选项卡并開啟它们
-            if let tabItems = tabBarController.tabBar.items {
-                for tabItem in tabItems {
-                    tabItem.isEnabled = true
-                }
-            }
-        }
+        tabbarSwitch(true)
         guard let createView = sender.superview as? CreateFridgeView else { return }
         
         if !checkEnterIsEmpty(createView.fridgeNameTextfield) {
             guard let fridgeName = createView.fridgeNameTextfield.text else { return }
             createNewFridge(fridgeName) { [weak self] in
-                // self?.getData()
-                
+
                 // MARK: Lotties 動畫設置
                 self?.successCreateView = .init(name: "ingredient_success")
                 self?.successCreateView!.loopMode = .playOnce
@@ -325,34 +300,20 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
             withIdentifier: String(describing: IngredientsTableViewCell.self),
             for: indexPath)
         guard let ingredientsCell = cell as? IngredientsTableViewCell else { return cell }
-        // 設置 cell 的選擇樣式為 .none
-        ingredientsCell.selectionStyle = .none
-        ingredientsCell.backgroundColor = UIColor.clear
-        ingredientsCell.contentView.backgroundColor = UIColor.clear
-        ingredientsCell.ingredientsNameLabel.text = ingredientsData[indexPath.row].name
-        ingredientsCell.ingredientsPriceLabel.text = "\(String(Int(ingredientsData[indexPath.row].price)))元"
-        ingredientsCell.ingredientsStatusLabel.text = "\(storeStatus[ingredientsData[indexPath.row].storeStatus])保存"
+        
+        ingredientsCell.styleSetting()
+        ingredientsCell.textLabelSetting(name: ingredientsData[indexPath.row].name,
+                                         price: "\(String(Int(ingredientsData[indexPath.row].price)))元",
+                                         status: "\(storeStatus[ingredientsData[indexPath.row].storeStatus])保存")
         ingredientsCell.expirationLabel.text = getLeftTime(ingredientsData[indexPath.row].expiration)
-        
-        if ingredientsCell.expirationLabel.text == "已過期" {
-            ingredientsCell.backgroundImageView.backgroundColor = UIColor(hex: "E2271A", alpha: 0.3)
-        } else {
-            ingredientsCell.backgroundImageView.backgroundColor = UIColor(hex: "#caeded", alpha: 0.8)
-        }
-        
-        if ingredientsData[indexPath.row].enableNotifications {
-            ingredientsCell.notificationImage.isHidden = false
-        } else {
-            ingredientsCell.notificationImage.isHidden = true
-        }
+        ingredientsCell.updateCellColorBasedOnExpiration()
+        ingredientsCell.shouldEnableNotificationsImage(isEnable: ingredientsData[indexPath.row].enableNotifications)
         ImageDownloader.shared.downloadImage(from: URL(string: ingredientsData[indexPath.row].url)!) { (image) in
             if let image = image {
-                // 在这里使用下载的图像
                 DispatchQueue.main.async {
                     ingredientsCell.ingredientsImage.image = image
                 }
             } else {
-                // 下载失败或图像无效
                 print("載入圖片失敗")
             }
         }
@@ -391,7 +352,7 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return  UITableView.automaticDimension// 返回 Header View 高度
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -410,32 +371,24 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
         return swipeConfiguration
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // 设置初始透明度为0
         cell.alpha = 0.0
-        
-        // 执行动画效果
         UIView.animate(withDuration: 0.5) {
             cell.alpha = 1.0
         }
     }
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard let ingredientDataArray = self.ingredientsData.isEmpty ? nil : self.ingredientsData,
+              let currentFridgeID = self.currentFridgeID else { return nil }
         let runOutAction = UIContextualAction(style: .normal, title: "用完") { [weak self] (_, _, completionHandler) in
-           
-            guard let ingredientDataArray = self?.ingredientsData,
-                  let currentFridgeID = self?.currentFridgeID else { return }
             self?.historyAction(action: 0, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
             completionHandler(true)
         }
         let expiredAction = UIContextualAction(style: .normal, title: "過期") { [weak self] (_, _, completionHandler) in
-            guard let ingredientDataArray = self?.ingredientsData,
-                  let currentFridgeID = self?.currentFridgeID else { return }
             self?.historyAction(action: 1, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
             completionHandler(true)
         }
         let throwAway = UIContextualAction(style: .normal, title: "丟棄") { [weak self] (_, _, completionHandler) in
-            guard let ingredientDataArray = self?.ingredientsData,
-                  let currentFridgeID = self?.currentFridgeID else { return }
             self?.historyAction(action: 2, ingredietnsDataArray: ingredientDataArray, indexPath: indexPath, fridgeID: currentFridgeID)
             completionHandler(true)
         }
@@ -464,54 +417,25 @@ extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource 
         processingAction(fridgeID: fridgeID, ingredientsHistoryData: ingredientsHistoryData) { [weak self] in
             self?.getData()
         }
-        
     }
 }
 // MARK: - Floaty 新增食材畫面: 掃描條碼 照片選擇
 extension IngredientsViewController {
     private func showAddIngredientsView() {
-        // 获取TabBarController的引用
-        if let tabBarController = self.tabBarController {
-
-            // 遍历所有选项卡并禁用它们
-            if let tabItems = tabBarController.tabBar.items {
-                for tabItem in tabItems {
-                    tabItem.isEnabled = false
-                }
-            }
-        }
+        tabbarSwitch(false)
         let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = BlackEffectBackgroundView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blackBlurEffectView = blurEffectView
         view.addSubview(blurEffectView)
         
-        guard let addIngredientsView = UINib(nibName: "AddIngredients", bundle: nil).instantiate(withOwner: self, options: nil).first as? AddIngredientsView else {
-            print("畫面創建失敗")
-            return
-        }
+        let customView = UINib(nibName: "AddIngredients", bundle: nil).instantiate(withOwner: self, options: nil).first
+        guard let addIngredientsView = customView as? AddIngredientsView else { return }
         addIngredientsView.frame = CGRect(x: 0, y: 900, width: view.frame.width, height: 400)
         view.addSubview(addIngredientsView)
         
-        // 設置邊框顏色和粗細
-        addIngredientsView.sendButton.layer.borderWidth = 2.0
-        addIngredientsView.sendButton.layer.borderColor = UIColor.white.cgColor
-
-        // 如果需要圓角邊框，你可以添加以下代碼
-        addIngredientsView.sendButton.layer.cornerRadius = 10.0
-        addIngredientsView.sendButton.layer.masksToBounds = true
-        
-        addIngredientsView.backgroundColor = UIColor(hex: "#caeded")
-        addIngredientsView.ingredientsDescribe.layer.cornerRadius = 10.0
-        addIngredientsView.ingredientsDescribe.layer.masksToBounds = true
-        addIngredientsView.ingredientsImageView.layer.cornerRadius = 10.0
-        addIngredientsView.ingredientsImageView.layer.masksToBounds = true
-        addIngredientsView.containerView.layer.cornerRadius = 10.0
-        addIngredientsView.containerView.layer.masksToBounds = true
-        addIngredientsView.takePictureButtin.layer.cornerRadius = 10.0
-        addIngredientsView.takePictureButtin.layer.masksToBounds = true
-        addIngredientsView.choosePictureButton.layer.cornerRadius = 10.0
-        addIngredientsView.choosePictureButton.layer.masksToBounds = true
+        // MARK: - 將一些 addIngredientsView 的設定，弄到 addIngredientsView 成為 func
+        addIngredientsView.addIngredientsViewSetUp()
         addIngredientsView.scannerButton.addTarget(self, action: #selector(barcodeScanner), for: .touchUpInside)
         addIngredientsView.choosePictureButton.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
         addIngredientsView.takePictureButtin.addTarget(self, action: #selector(takePicture), for: .touchUpInside)
@@ -591,7 +515,6 @@ extension IngredientsViewController {
 extension IngredientsViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-        let today = Date()
         let myCalendar = Calendar.current
 
         // 從現在的日期和時間創建 `Date` 實例
@@ -621,8 +544,7 @@ extension IngredientsViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy年MM月dd日"
-        print(dateFormatter.string(from: date))
-
+        
         let targetView = findSubview(ofType: AddIngredientsView.self, in: (calendar.superview?.superview?.superview)!)
         guard let addIngredientsView = targetView else {
             print("日曆日期失敗")
@@ -665,8 +587,6 @@ extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigati
         }
         
         if let originalImage = info[.originalImage] as? UIImage {
-            // 照片來自相簿
-            // image.image = originalImage
             getImageCompletionHandler!(originalImage)
             if let imageURL = info[.imageURL] as? URL {
                 selectedFileURL = imageURL
@@ -681,8 +601,6 @@ extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigati
                 }
             }
         } else if let editedImage = info[.editedImage] as? UIImage {
-            // 拍攝的照片
-            // image.image = editedImage
             getImageCompletionHandler!(editedImage)
             // 將照片存儲到相冊並獲取 URL
             saveImageToPhotoAlbum(editedImage) { [weak self] photoUrl in
@@ -694,17 +612,13 @@ extension IngredientsViewController: UIImagePickerControllerDelegate, UINavigati
     }
     func saveImageToPhotoAlbum(_ image: UIImage, completion: @escaping (URL?) -> Void) {
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-        
-        // 在 `image(_:didFinishSavingWithError:contextInfo:)` 中獲取 URL
         self.completionHandler = completion
     }
 
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            print("無法存儲照片: \(error.localizedDescription)")
+        if error != nil {
             self.completionHandler?(nil)
         } else {
-            // 從相冊中獲取最新的照片 URL
             fetchNewestPhotoURL { url in
                 self.completionHandler?(url)
             }
@@ -737,21 +651,18 @@ extension IngredientsViewController {
     @objc private func refreshAction() {
         self.ingredientTableView.mj_header?.beginRefreshing()
         getData()
-//        DispatchQueue.main.async {
-//            self.ingredientTableView.mj_header?.endRefreshing()
-//        }
     }
 }
 // MARK: 動作簡化
 extension IngredientsViewController {
     func getData() {
-        userLastUseFridge { [weak self] (passFridgeData, passFridgeID) in
+        fetchFridgeData() { [weak self] (passFridgeData, passFridgeID) in
             self?.currentFridgeID = passFridgeID
             self?.fridgeData = passFridgeData
             self?.navigationItem.title = self?.fridgeData?.name
-        } memberCompletion: { [weak self] passMemberData in
+        } memberDataFetchCompletion: { [weak self] passMemberData in
             self?.memberData = passMemberData
-        } ingredientCompletion: { [weak self] passIngredientsData in
+        } ingredientDataFetchCompletion: { [weak self] passIngredientsData in
             self?.ingredientsData = sortByName(passIngredientsData)
             self?.header?.dataArray = sortByName(passIngredientsData)
             print("執行")
@@ -761,13 +672,13 @@ extension IngredientsViewController {
                 self?.ingredientTableView.reloadData()
                 self?.ingredientTableView.mj_header?.endRefreshing()
             }
-        } fallCompletion: { [weak self] in
+        } fallHandler: { [weak self] in
             self?.ingredientsData = []
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 self?.view.removeAllLottieViews()
                 self?.ingredientTableView.reloadData()
             }
-        } loadding: { [weak self] in
+        } loadingHandler: { [weak self] in
             self?.animationView = .init(name: "loadding")
             self?.animationView!.frame = (self?.view.bounds)!
             self?.animationView!.contentMode = .scaleAspectFit
@@ -783,14 +694,10 @@ extension IngredientsViewController {
 }
 // MARK: go member Page
 extension IngredientsViewController {
-
     func goMemberPage() {
         guard let nextVC = UIStoryboard.members.instantiateViewController(
             withIdentifier: String(describing: MemberViewController.self)
-        ) as? MemberViewController else {
-            print("創建失敗")
-            return
-        }
+        ) as? MemberViewController else { return }
         nextVC.currentFridgeID = currentFridgeID
         present(nextVC, animated: true, completion: nil)
     }
@@ -798,14 +705,10 @@ extension IngredientsViewController {
 // MARK: searchBar 控制區域
 extension IngredientsViewController: UISearchBarDelegate {
     func search(_ searchTerm: String) {
-        print("搜尋觸發")
         isSearch = true
         if searchTerm.isEmpty {
             print("沒有結果")
-            // searchIngredientsData = ingredientsData
         } else {
-            print("有結果")
-            // searchIngredientsData = ingredientsData
             ingredientsData = ingredientsData.filter {
                 $0.name.contains(searchTerm)
             }
@@ -820,9 +723,6 @@ extension IngredientsViewController: UISearchBarDelegate {
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            // 清除按鈕被按下，搜索文字被清空
-            // 在這裡處理相應操作
-            print("清除按鈕觸發")
             isSearch = false
             getData()
         }

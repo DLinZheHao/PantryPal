@@ -210,3 +210,27 @@ extension AddIngredientsView {
         isEnable = !isEnable
     }
 }
+// MARK: 初始設置
+extension AddIngredientsView {
+    func addIngredientsViewSetUp() {
+        // 設置邊框顏色和粗細
+        sendButton.layer.borderWidth = 2.0
+        sendButton.layer.borderColor = UIColor.white.cgColor
+
+        // 如果需要圓角邊框，你可以添加以下代碼
+        sendButton.layer.cornerRadius = 10.0
+        sendButton.layer.masksToBounds = true
+        
+        self.backgroundColor = UIColor(hex: "#caeded")
+        ingredientsDescribe.layer.cornerRadius = 10.0
+        ingredientsDescribe.layer.masksToBounds = true
+        ingredientsImageView.layer.cornerRadius = 10.0
+        ingredientsImageView.layer.masksToBounds = true
+        containerView.layer.cornerRadius = 10.0
+        containerView.layer.masksToBounds = true
+        takePictureButtin.layer.cornerRadius = 10.0
+        takePictureButtin.layer.masksToBounds = true
+        choosePictureButton.layer.cornerRadius = 10.0
+        choosePictureButton.layer.masksToBounds = true
+    }
+}

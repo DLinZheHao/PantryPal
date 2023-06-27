@@ -8,18 +8,30 @@
 import UIKit
 import Firebase
 
-func userLastUseFridge(fridgeCompletion: @escaping (FridgeData, String) -> Void,
-                       memberCompletion: @escaping (Array<MemberIDData>) -> Void,
-                       ingredientCompletion: @escaping (Array<PresentIngredientsData>) -> Void,
-                       fallCompletion: @escaping () -> Void,
-                       loadding: @escaping () -> Void) {
-    guard let currentUserId = Auth.auth().currentUser?.uid else {
+func fetchFridgeData(fridgeDataFetchCompletion: @escaping (FridgeData, String) -> Void,
+                     memberDataFetchCompletion: @escaping (Array<MemberIDData>) -> Void,
+                     ingredientDataFetchCompletion: @escaping (Array<PresentIngredientsData>) -> Void,
+                     fallHandler: @escaping () -> Void,
+                     loadingHandler: @escaping () -> Void) {
+    guard let currentUserID = Auth.auth().currentUser?.uid else {
         print("登入狀態有問題")
         return
     }
-    loadding()
+    loadingHandler()
+    fetchLastUsedFridge(currentUserID,
+                        fridgeDataFetchCompletion,
+                        memberDataFetchCompletion,
+                        ingredientDataFetchCompletion,
+                        fallHandler)
+}
+
+private func fetchLastUsedFridge(_ currentUserID: String,
+                                 _ fridgeDataFetchCompletion: @escaping (FridgeData, String) -> Void,
+                                 _ memberDataFetchCompletion: @escaping (Array<MemberIDData>) -> Void,
+                                 _ ingredientDataFetchCompletion: @escaping (Array<PresentIngredientsData>) -> Void,
+                                 _ fallHandler: @escaping () -> Void) {
     let users = Firestore.firestore().collection("users")
-    let document = users.document(currentUserId)
+    let document = users.document(currentUserID)
     
     document.getDocument { (document, error) in
         if let error = error {
@@ -60,17 +72,16 @@ func userLastUseFridge(fridgeCompletion: @escaping (FridgeData, String) -> Void,
                 print("冰箱文檔發生錯誤")
                 return
             }
-            fridgeCompletion(FridgeData(id: id, name: name, createdTime: createdTime), lastUseFridgeId)
+            fridgeDataFetchCompletion(FridgeData(id: id, name: name, createdTime: createdTime), lastUseFridgeId)
             print("使用者當前冰箱資料： \(fridgeData)")
             
-            
             getMembers(lastUseFridgeId) { memberData in
-                memberCompletion(memberData)
+                memberDataFetchCompletion(memberData)
             }
             getIngredients(lastUseFridgeId) { ingredientData in
-                ingredientCompletion(ingredientData)
+                ingredientDataFetchCompletion(ingredientData)
             } fall: {
-                fallCompletion()
+                fallHandler()
             }
             
         }

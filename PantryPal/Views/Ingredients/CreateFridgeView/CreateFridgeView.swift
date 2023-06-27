@@ -12,4 +12,10 @@ class CreateFridgeView: UIView {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var fridgeNameTextfield: UITextField!
     @IBOutlet weak var sendButton: UIButton!
+    
+    func setUp() {
+        self.backgroundColor = UIColor(hex: "#caeded")
+        self.sendButton.layer.cornerRadius = 10.0
+        self.sendButton.layer.masksToBounds = true
+    }
 }
