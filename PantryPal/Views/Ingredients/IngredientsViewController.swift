@@ -656,7 +656,7 @@ extension IngredientsViewController {
 // MARK: 動作簡化
 extension IngredientsViewController {
     func getData() {
-        fetchFridgeData { [weak self] (passFridgeData, passFridgeID) in
+        fetchData { [weak self] (passFridgeData, passFridgeID) in
             self?.currentFridgeID = passFridgeID
             self?.fridgeData = passFridgeData
             self?.navigationItem.title = self?.fridgeData?.name

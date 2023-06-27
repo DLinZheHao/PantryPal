@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-func fetchFridgeData(fridgeDataFetchCompletion: @escaping (FridgeData, String) -> Void,
+func fetchData(fridgeDataFetchCompletion: @escaping (FridgeData, String) -> Void,
                      memberDataFetchCompletion: @escaping (Array<MemberIDData>) -> Void,
                      ingredientDataFetchCompletion: @escaping (Array<PresentIngredientsData>) -> Void,
                      fallHandler: @escaping () -> Void,

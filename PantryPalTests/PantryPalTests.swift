@@ -31,7 +31,7 @@ final class PantryPalTests: XCTestCase {
     func testFetchFridgeData() {
         let expectation = XCTestExpectation(description: "fridgeDataFetchCompletion should be called")
         
-        fetchFridgeData(fridgeDataFetchCompletion: { _, _ in
+        fetchData(fridgeDataFetchCompletion: { _, _ in
             expectation.fulfill()
         }, memberDataFetchCompletion: { _ in
         }, ingredientDataFetchCompletion: { _ in
