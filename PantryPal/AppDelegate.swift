@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.enableAutoToolbar = false
+        
         //-- 注册推送
         let center = UNUserNotificationCenter.current()
         center.delegate = self as UNUserNotificationCenterDelegate
@@ -40,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 //用户已经拒绝推送通知
                 //-- 弹出页面提示用户去显示
                 
-            }else if (setting.authorizationStatus == .authorized){
+            } else if (setting.authorizationStatus == .authorized){
                 //已注册 已授权 --注册同志获取 token
                 // 请求授权时异步进行的，这里需要在主线程进行通知的注册
                 DispatchQueue.main.async {

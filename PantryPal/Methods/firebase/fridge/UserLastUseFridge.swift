@@ -9,10 +9,10 @@ import UIKit
 import Firebase
 
 func fetchData(fridgeDataFetchCompletion: @escaping (FridgeData, String) -> Void,
-                     memberDataFetchCompletion: @escaping (Array<MemberIDData>) -> Void,
-                     ingredientDataFetchCompletion: @escaping (Array<PresentIngredientsData>) -> Void,
-                     fallHandler: @escaping () -> Void,
-                     loadingHandler: @escaping () -> Void) {
+               memberDataFetchCompletion: @escaping (Array<MemberIDData>) -> Void,
+               ingredientDataFetchCompletion: @escaping (Array<PresentIngredientsData>) -> Void,
+               fallHandler: @escaping () -> Void,
+               loadingHandler: @escaping () -> Void) {
     guard let currentUserID = Auth.auth().currentUser?.uid else {
         print("登入狀態有問題")
         return
@@ -78,6 +78,7 @@ private func fetchLastUsedFridge(_ currentUserID: String,
             getMembers(lastUseFridgeId) { memberData in
                 memberDataFetchCompletion(memberData)
             }
+            
             getIngredients(lastUseFridgeId) { ingredientData in
                 ingredientDataFetchCompletion(ingredientData)
             } fall: {
@@ -130,7 +131,6 @@ private func getIngredients(_ fridgeId: String, completion: @escaping (Array<Pre
             return
         }
         
-        let semaphore = DispatchSemaphore(value: 1)
         let queue = DispatchQueue.global(qos: .background)
         
         var allIngredientsID: [String] = []

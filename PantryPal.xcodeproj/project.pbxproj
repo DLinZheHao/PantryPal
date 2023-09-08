@@ -202,6 +202,7 @@
 
 /* Begin PBXFileReference section */
 		0326F2F00EBE78192A8E555F /* Pods-PantryPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PantryPal.debug.xcconfig"; path = "Target Support Files/Pods-PantryPal/Pods-PantryPal.debug.xcconfig"; sourceTree = "<group>"; };
+		0501769A2AAA9EDC005D8738 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		051AC68D2A1DA51600B23C63 /* FridgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeCell.swift; sourceTree = "<group>"; };
 		051AC68E2A1DA51600B23C63 /* FridgeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FridgeCell.xib; sourceTree = "<group>"; };
 		051AC6912A1DA67C00B23C63 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -970,6 +971,7 @@
 				053743572A31DB8900722FF2 /* GoogleService-Info.plist */,
 				05ED19782A17665A0023A13E /* Info.plist */,
 				05ED19702A1766590023A13E /* PantryPal.xcdatamodeld */,
+				0501769A2AAA9EDC005D8738 /* Config.xcconfig */,
 			);
 			path = PantryPal;
 			sourceTree = "<group>";

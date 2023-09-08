@@ -25,7 +25,7 @@ func notificationRegister(_ date: Date, _ itemName: String, _ itemID: String) {
     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
     let request = UNNotificationRequest(identifier: itemID, content: content, trigger: trigger)
     
-    UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
+    UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
         print("成功建立通知...")
     })
 
